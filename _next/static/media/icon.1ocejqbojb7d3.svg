@@ -1,0 +1,44 @@
+<svg 
+  width="32" 
+  height="32" 
+  viewBox="0 0 32 32" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  {/* Smooth, high-contrast dark background disc to make it pop in any browser tab */}
+  <rect width="32" height="32" rx="8" fill="#0f172a" />
+  
+  {/* Subtly glowing outer border */}
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="7.25" stroke="url(#icon-gradient)" stroke-width="1.5" opacity="0.3" />
+
+  {/* Main geometric desk frame structure */}
+  <rect 
+    x="6" 
+    y="9" 
+    width="20" 
+    height="14" 
+    rx="3" 
+    stroke="url(#icon-gradient)" 
+    stroke-width="2" 
+    filter="url(#glow)"
+  />
+
+  {/* Glowing grid lines */}
+  <line x1="10" y1="13" x2="15" y2="13" stroke="url(#icon-gradient)" stroke-width="2" stroke-linecap="round" />
+  <line x1="10" y1="18" x2="22" y2="18" stroke="url(#icon-gradient)" stroke-width="2" stroke-linecap="round" />
+  
+  {/* Premium focal calculation point */}
+  <circle cx="20" cy="13" r="2" fill="url(#icon-gradient)" filter="url(#glow)" />
+</svg>
