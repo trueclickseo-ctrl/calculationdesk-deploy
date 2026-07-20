@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 
 export const seoData = {
-  whatIs: `Goods and Services Tax (GST) is an indirect tax used in many nations on goods and services sold for domestic consumption. The tax is included in the final price and paid by consumers, but it is remitted to the government by the businesses selling the goods and services. GST is commonly calculated either as an addition (exclusive tax rate) or subtraction (inclusive tax rate) of the base product price.`,
+  whatIs: `Goods and Services Tax (GST) is an indirect tax used in many nations on goods and services sold for domestic consumption. The tax is included in the final price and paid by consumers, but it is remitted to the government by the businesses selling the goods and services. GST is commonly calculated either as an addition (exclusive tax rate) or subtraction (inclusive tax rate) of the base product price. You can verify international tax rules on official revenue platforms: the [IRS (US)](https://www.irs.gov), the [GST Portal (India)](https://www.gst.gov.in), [HMRC (UK)](https://www.gov.uk/government/organisations/hm-revenue-customs), the [European Commission (EU)](https://taxation-customs.ec.europa.eu), the [FBR (Pakistan)](https://www.fbr.gov.pk), the [NBR (Bangladesh)](https://nbr.gov.bd), and the [GIB (Turkey)](https://www.gib.gov.tr).`,
   formula: `The formulas used to calculate GST are:
 
 **To Add GST (Tax Exclusive Price):**

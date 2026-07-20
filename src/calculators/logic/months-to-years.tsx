@@ -4,12 +4,43 @@ import React, { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 
 export const seoData = {
-  whatIs: 'The Months to Years Converter translates calendar months into decimal years.',
-  formula: '$$\\text{Years} = \\frac{\\text{Months}}{12}$$',
-  example: 'Standard conversion ratios applied.',
+  whatIs: 'The Months to Years Converter is a simple time-conversion utility designed to calculate the equivalent number of calendar years from a given period in months. Parents tracking child milestones, lease holders, human resource officers calculating work experience, and financial analysts use this tool to translate shorter monthly counts into clear year representations.',
+  formula: `To convert months to years, divide the total number of months by 12:
+
+$$\\text{Years} = \\frac{\\text{Months}}{12}$$
+
+This formula works because a standard calendar year is defined as having exactly 12 months. Dividing any monthly figure by 12 scales the time duration up to the yearly unit. Knowing how to convert months to years helps in planning contracts and timelines.`,
+  example: `Let's look at a months to years conversion example. Suppose a contract is signed for a duration of exactly 45 months.
+
+1. Identify the input months: $M = 45$.
+2. Apply the conversion formula:
+   $$\\text{Years} = \\frac{45}{12}$$
+3. Divide 45 by 12:
+   $$\\text{Years} = 3.75$$
+
+Thus, 45 months is equivalent to exactly 3.75 years (or 3 years and 9 months).`,
   faqs: [
-    { q: 'Is this conversion exact?', a: 'Yes, it uses standardized international conversion constants.' }
-  ]
+    {
+      q: 'How many months are in a standard year?',
+      a: 'There are exactly 12 months in a standard calendar year. This structure is used globally across the Gregorian calendar system.',
+    },
+    {
+      q: 'How do you convert months to years manually?',
+      a: 'To convert months to years manually, divide the total months by 12. The quotient represents the whole years, and the remainder represents the remaining months. For example, 15 months is 1 year (12 months) and 3 months.',
+    },
+    {
+      q: 'What is 18 months in years?',
+      a: 'Dividing 18 by 12 results in exactly 1.5 years, which is equivalent to 1 year and 6 months (or one and a half years).',
+    },
+    {
+      q: 'Does this conversion change in leap years?',
+      a: 'No. While leap years add one day to February (resulting in 366 days in that year), a year always contains exactly 12 months. The mathematical conversion factor remains exactly 12.',
+    },
+    {
+      q: 'Why is time tracked in months for young children?',
+      a: 'Young children develop extremely rapidly. Tracking their age in months (e.g., 18 months, 24 months) provides a more precise representation of their growth milestones than tracking in years.',
+    },
+  ],
 };
 
 export default function Convertermonthstoyears() {

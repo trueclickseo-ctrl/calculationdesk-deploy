@@ -114,7 +114,7 @@ export default function Header() {
           <div className="relative hidden md:block" ref={catMenuRef}>
             <button 
               onClick={() => setCatMenuOpen(!catMenuOpen)}
-              className="flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors py-2"
+              className="flex items-center gap-1.5 text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2"
             >
               Categories
               <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${catMenuOpen ? 'rotate-180' : ''}`} />
@@ -147,10 +147,10 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/about" className="hidden md:block text-sm font-medium text-foreground/80 hover:text-primary transition-colors py-2">
+          <Link href="/about" className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
             About
           </Link>
-          <Link href="/contact" className="hidden md:block text-sm font-medium text-foreground/80 hover:text-primary transition-colors py-2">
+          <Link href="/contact" className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
             Contact
           </Link>
         </div>

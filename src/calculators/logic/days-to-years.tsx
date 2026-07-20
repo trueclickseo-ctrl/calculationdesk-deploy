@@ -4,12 +4,43 @@ import React, { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 
 export const seoData = {
-  whatIs: 'The Days to Years Converter translates days into calendar years.',
-  formula: '$$\\text{Years} = \\frac{\\text{Days}}{365.2425}$$',
-  example: 'Standard conversion ratios applied.',
+  whatIs: 'The Days to Years Converter is a time-conversion tool designed to accurately translate durations measured in days into standard calendar years. Contract specialists, project managers, astrologers, and historians use this tool to calculate age durations, milestone completions, and long-term project schedules. By converting days into decimal years, you can get a clearer, normalized view of duration.',
+  formula: `To convert days to years, divide the total number of days by the average number of days in a year:
+
+$$\\text{Years} = \\frac{\\text{Days}}{365.2425}$$
+
+Although a common calendar year contains exactly 365 days, a leap year occurs once every four years (with minor exceptions) and contains 366 days. To ensure precision over long epochs, scientists and calculators use the mean Gregorian year length of 365.2425 days. Knowing how to convert days to years formula helps in long-term date calculations.`,
+  example: `Let's look at a days to years calculation example. Suppose you want to convert exactly 1,000 days into years.
+
+1. Identify the input days: $D = 1,000$.
+2. Apply the conversion formula:
+   $$\\text{Years} = \\frac{1,000}{365.2425}$$
+3. Divide 1,000 by 365.2425:
+   $$\\text{Years} \\approx 2.7379$$
+
+Thus, 1,000 days is equivalent to approximately 2.7379 years (or 2 years, 8 months, and 26 days).`,
   faqs: [
-    { q: 'Is this conversion exact?', a: 'Yes, it uses standardized international conversion constants.' }
-  ]
+    {
+      q: 'How many days are in a standard calendar year?',
+      a: 'A standard calendar year contains 365 days. A leap year contains 366 days, with the extra day added to the end of February to align the calendar year with the solar year.',
+    },
+    {
+      q: 'Why is the conversion factor 365.2425 instead of 365?',
+      a: 'The solar year (the time it takes Earth to orbit the Sun) is roughly 365.2422 days. The Gregorian calendar system approximates this by using a leap year rule that averages out to exactly 365.2425 days per year.',
+    },
+    {
+      q: 'How do you convert years back to days?',
+      a: 'To convert years to days, multiply the number of years by 365.2425. For example, 5 years is equal to 5 × 365.2425 ≈ 1,826.21 days.',
+    },
+    {
+      q: 'What is 500 days in years?',
+      a: 'Dividing 500 by 365.2425 results in approximately 1.369 years, which is equivalent to 1 year, 4 months, and 13 days.',
+    },
+    {
+      q: 'Do businesses use 360 days instead of 365 for calculations?',
+      a: 'Yes. Some financial institutions and interest formulas utilize a conventional year of 360 days (known as the 30/360 day-count convention) to simplify calculations, but calendar conversions use the real average of 365.2425 days.',
+    },
+  ],
 };
 
 export default function Converterdaystoyears() {

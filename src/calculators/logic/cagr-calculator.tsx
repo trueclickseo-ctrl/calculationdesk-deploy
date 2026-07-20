@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 
 export const seoData = {
-  whatIs: `Compound Annual Growth Rate (CAGR) is the rate of return that would be required for an investment to grow from its initial balance to its final balance, assuming the profits were reinvested at the end of each year of the investment's lifespan. It is one of the most accurate ways to compare the performance of different investments (like stocks, mutual funds, or real estate) over time.`,
+  whatIs: 'Compound Annual Growth Rate (CAGR) is the rate of return that would be required for an investment to grow from its initial balance to its final balance, assuming the profits were reinvested at the end of each year of the investment\'s lifespan. It is one of the most accurate ways to compare the performance of different investments (like stocks, mutual funds, or real estate) over time. You can check investment guides and CAGR models on official regulatory sites: the [US Securities and Exchange Commission (SEC)](https://www.sec.gov), the [Securities and Exchange Board of India (SEBI)](https://www.sebi.gov.in), the [European Securities and Markets Authority (ESMA)](https://www.esma.europa.eu), the [Financial Conduct Authority (FCA)](https://www.fca.org.uk), the [Securities and Exchange Commission of Pakistan (SECP)](https://www.secp.gov.pk), the [Bangladesh Securities and Exchange Commission (BSEC)](https://sec.gov.bd), and the [Capital Markets Board of Turkey (SPK)](https://www.spk.gov.tr).',
   formula: `The formula to calculate the Compound Annual Growth Rate (CAGR) is:
 
 $$\\text{CAGR} = \\left(\\frac{\\text{Ending Value}}{\\text{Beginning Value}}\\right)^{\\frac{1}{t}} - 1$$
@@ -37,14 +37,33 @@ Where:
       q: 'Is CAGR useful for comparing different assets?',
       a: 'Yes, it is the industry standard for comparing performance because it normalizes returns over different time frames, allowing you to compare a stock held for 3 years with a property held for 10 years.',
     },
+    {
+      q: 'Can CAGR be negative?',
+      a: 'Yes. If the ending value of your investment is less than the beginning value, the resulting CAGR will be negative, indicating a compound annual loss over the holding period.',
+    },
+    {
+      q: 'Why is CAGR preferred over average annual returns?',
+      a: 'Average annual returns can be misleading due to compounding. For example, if an investment loses 50% in Year 1 and gains 50% in Year 2, the average return is 0%, but you have actually lost 25% of your money. CAGR accurately reflects this loss as a negative 13.4% compound annual return.',
+    },
   ],
 };
 
 export default function CagrCalculator() {
+  const [currency, setCurrency] = useState<'INR' | 'USD' | 'EUR' | 'GBP' | 'PKR' | 'BDT' | 'TRY'>('USD');
   const [initialValue, setInitialValue] = useState<number>(10000);
   const [finalValue, setFinalValue] = useState<number>(20000);
   const [duration, setDuration] = useState<number>(5);
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const currencySymbols: Record<string, string> = {
+    INR: '₹',
+    USD: '$',
+    EUR: '€',
+    GBP: '£',
+    PKR: 'Rs',
+    BDT: '৳',
+    TRY: '₺',
+  };
 
   const isValid = initialValue > 0 && finalValue > 0 && duration > 0 && duration <= 100;
 
@@ -88,7 +107,26 @@ export default function CagrCalculator() {
         
         {/* Input Panel */}
         <div className="lg:col-span-6 rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <h2 className="text-xl font-bold text-foreground mb-6">Investment Valuation</h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-xl font-bold text-foreground">Investment Valuation</h2>
+            
+            {/* Currency Select */}
+            <div className="w-24">
+              <select
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value as any)}
+                className="block w-full py-1.5 px-2 text-xs font-semibold rounded-lg border border-border bg-background text-foreground/80 outline-none cursor-pointer"
+              >
+                <option value="USD">USD ($)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="PKR">PKR (Rs)</option>
+                <option value="BDT">BDT (৳)</option>
+                <option value="TRY">TRY (₺)</option>
+              </select>
+            </div>
+          </div>
           
           <div className="space-y-5">
             <div>
@@ -97,14 +135,14 @@ export default function CagrCalculator() {
               </label>
               <div className="relative rounded-xl border border-border bg-background focus-within:border-primary focus-within:ring-4 focus-within:ring-ring-custom transition-all">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-foreground/40 font-semibold">
-                  $
+                  {currencySymbols[currency]}
                 </div>
                 <input
                   id="initial-value"
                   type="number"
                   value={initialValue || ''}
                   onChange={(e) => setInitialValue(Number(e.target.value))}
-                  className="block w-full py-3 pl-8 pr-4 text-sm font-medium outline-none bg-transparent"
+                  className="block w-full py-3 pl-8 pr-4 text-sm font-medium outline-none bg-transparent text-foreground"
                 />
               </div>
               {errors.initialValue && <p className="text-xs text-red-500 mt-1 font-medium">{errors.initialValue}</p>}
@@ -116,14 +154,14 @@ export default function CagrCalculator() {
               </label>
               <div className="relative rounded-xl border border-border bg-background focus-within:border-primary focus-within:ring-4 focus-within:ring-ring-custom transition-all">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-foreground/40 font-semibold">
-                  $
+                  {currencySymbols[currency]}
                 </div>
                 <input
                   id="final-value"
                   type="number"
                   value={finalValue || ''}
                   onChange={(e) => setFinalValue(Number(e.target.value))}
-                  className="block w-full py-3 pl-8 pr-4 text-sm font-medium outline-none bg-transparent"
+                  className="block w-full py-3 pl-8 pr-4 text-sm font-medium outline-none bg-transparent text-foreground"
                 />
               </div>
               {errors.finalValue && <p className="text-xs text-red-500 mt-1 font-medium">{errors.finalValue}</p>}
@@ -139,7 +177,7 @@ export default function CagrCalculator() {
                   type="number"
                   value={duration || ''}
                   onChange={(e) => setDuration(Number(e.target.value))}
-                  className="block w-full py-3 px-4 text-sm font-medium outline-none bg-transparent"
+                  className="block w-full py-3 px-4 text-sm font-medium outline-none bg-transparent text-foreground"
                 />
               </div>
               {errors.duration && <p className="text-xs text-red-500 mt-1 font-medium">{errors.duration}</p>}
@@ -149,7 +187,7 @@ export default function CagrCalculator() {
               <button
                 type="button"
                 onClick={handleCalculate}
-                className="flex-1 bg-primary text-white font-bold py-3 px-4 rounded-xl hover:bg-primary-hover shadow-lg shadow-primary/20 transition-all cursor-pointer text-center text-sm"
+                className="flex-grow bg-primary text-white font-bold py-3 px-4 rounded-xl hover:bg-primary-hover shadow-lg shadow-primary/20 transition-all cursor-pointer text-center text-sm"
               >
                 Calculate CAGR
               </button>
@@ -199,7 +237,7 @@ export default function CagrCalculator() {
                     Total Absolute Profit
                   </span>
                   <span className="block text-lg font-bold text-foreground mt-1">
-                    ${results.totalProfit.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+                    {currencySymbols[currency]}{results.totalProfit.toLocaleString(undefined, { maximumFractionDigits: 2 })}
                   </span>
                 </div>
               </div>

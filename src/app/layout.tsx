@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MathScrollAnimation from "@/components/MathScrollAnimation";
+import ScrollNavigator from "@/components/ScrollNavigator";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
             <main className="flex-grow">{children}</main>
             <Footer />
             <MathScrollAnimation />
+            <ScrollNavigator />
           </div>
         </ThemeProvider>
         {/* Google Analytics */}

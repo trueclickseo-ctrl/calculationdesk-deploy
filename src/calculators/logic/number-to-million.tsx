@@ -4,12 +4,45 @@ import React, { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 
 export const seoData = {
-  whatIs: 'The Number to Millions Converter translates large numbers to million, billion, or trillion representations.',
-  formula: '$$\\text{Millions} = \\frac{\\text{Number}}{1,000,000}$$',
-  example: '1,500,000 to millions is 1.50 million.',
+  whatIs: 'The Number to Millions Converter is an online tool designed to convert large numbers into easily readable formats like Millions (M), Billions (B), and Trillions (T). Financial analysts, journalists, marketers, and researchers use this utility to simplify massive figures found in budgets, market reports, and scientific studies. Converting long strings of digits into scale-abbreviated versions makes them much easier to read and present in reports.',
+  formula: `To convert a raw number to millions, billions, or trillions, divide the number by the corresponding scale factor:
+
+$$\\text{Millions} = \\frac{\\text{Number}}{1,000,000}$$
+$$\\text{Billions} = \\frac{\\text{Number}}{1,000,000,000}$$
+$$\\text{Trillions} = \\frac{\\text{Number}}{1,000,000,000,000}$$
+
+This calculation scales down large integers into small decimals. For example, dividing by 1,000,000 shifts the decimal point six places to the left, which is the standard conversion factor for millions. Understanding the convert numbers to millions formula helps in simplifying data visualization.`,
+  example: `Let's look at a number to millions conversion example. Suppose you want to convert the number 42,500,000 into millions and billions.
+
+1. Identify the input value: $N = 42,500,000$.
+2. To convert to millions, apply the formula:
+   $$\\text{Millions} = \\frac{42,500,000}{1,000,000} = 42.5\\text{ million}$$
+3. To convert to billions, apply the formula:
+   $$\\text{Billions} = \\frac{42,500,000}{1,000,000,000} = 0.0425\\text{ billion}$$
+
+Thus, 42,500,000 equals exactly 42.5 million or 0.0425 billion.`,
   faqs: [
-    { q: 'What formats are shown?', a: 'Millions, Billions, and Trillions.' }
-  ]
+    {
+      q: 'How many zeros are in a million?',
+      a: 'A standard million contains exactly six zeros (1,000,000). A billion contains nine zeros (1,000,000,000) and a trillion contains twelve zeros (1,000,000,000,000) in the short scale numbering system.',
+    },
+    {
+      q: 'What is the short scale vs long scale numbering system?',
+      a: 'The short scale system (used in the US, UK, and modern finance) defines a billion as a thousand million ($10^9$) and a trillion as a million million ($10^{12}$). The long scale system (used historically in parts of Europe) defines a billion as a million million ($10^{12}$).',
+    },
+    {
+      q: 'How do you write 1.5 million in full numbers?',
+      a: 'To write 1.5 million in full digits, multiply 1.5 by 1,000,000, which equals 1,500,000.',
+    },
+    {
+      q: 'Why is it helpful to convert numbers to millions?',
+      a: 'Large numbers with many zeros are difficult for the human brain to process quickly and can lead to reading errors. Abbreviating them to millions or billions makes reports, presentations, and dashboards cleaner and more readable.',
+    },
+    {
+      q: 'What is 100 million in billions?',
+      a: '100 million is equivalent to exactly 0.1 billion. This is calculated by dividing 100,000,000 by 1,000,000,000.',
+    },
+  ],
 };
 
 export default function NumberMillionCalculator() {

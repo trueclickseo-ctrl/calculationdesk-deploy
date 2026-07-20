@@ -4,12 +4,43 @@ import React, { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 
 export const seoData = {
-  whatIs: 'The ML to OZ Converter translates liquid volume from milliliters to fluid ounces.',
-  formula: '$$\\text{Fluid Ounces} = \\text{Milliliters} \\times 0.033814$$',
-  example: 'Standard conversion ratios applied.',
+  whatIs: 'The ML to OZ Converter is a volume-conversion tool designed to translate milliliters (ml) into US fluid ounces (fl oz). Bartenders, chefs, baristas, medical practitioners, and beauty experts use this tool to translate recipe measures, liquid dosages, and cosmetics packaging. Since fluid ounces are widely used in the United States while milliliters are the metric standard globally, this converter bridges the gap instantly.',
+  formula: `To convert milliliters to fluid ounces, multiply the volume in milliliters by 0.033814:
+
+$$\\text{Fluid Ounces} = \\text{Milliliters} \\times 0.033814$$
+
+This multiplier represents the volume of one milliliter expressed in US fluid ounces. Because one US fluid ounce is internationally defined as exactly 29.5735295625 milliliters, dividing 1 by 29.5735295625 gives the conversion constant of approximately 0.033814. Knowing the convert ml to oz formula is very helpful in culinary measurements.`,
+  example: `Let's look at an ml to oz calculation example. Suppose you have a beverage container that holds exactly 500 ml of water, and you want to find its volume in fluid ounces.
+
+1. Identify the input volume: $V = 500$ ml.
+2. Apply the conversion formula:
+   $$\\text{Fluid Ounces} = 500 \\times 0.033814$$
+3. Perform the multiplication:
+   $$\\text{Fluid Ounces} \\approx 16.907$$
+
+Thus, 500 ml is equivalent to approximately 16.91 US fluid ounces.`,
   faqs: [
-    { q: 'Is this conversion exact?', a: 'Yes, it uses standardized international conversion constants.' }
-  ]
+    {
+      q: 'How many milliliters are in one fluid ounce?',
+      a: 'There are approximately 29.5735 milliliters in one US fluid ounce. In the UK and Imperial system, one fluid ounce is slightly smaller and equals exactly 28.4130625 milliliters.',
+    },
+    {
+      q: 'Is this converter based on US fluid ounces or UK Imperial fluid ounces?',
+      a: 'This converter utilizes the US fluid ounce standard ($1\\text{ fl oz} \\approx 29.5735\\text{ ml}$), which is the standard system of units in the United States and international commerce.',
+    },
+    {
+      q: 'How do you convert milliliters to ounces manually?',
+      a: 'To convert manually, you can divide the milliliter amount by 29.57. For a quick approximation, divide by 30 (e.g., 150 ml is approximately 150 / 30 = 5 fl oz).',
+    },
+    {
+      q: 'What is 250 ml in ounces?',
+      a: '250 ml (approximately a standard cup size) is equal to 250 × 0.033814 ≈ 8.45 US fluid ounces.',
+    },
+    {
+      q: 'Why is there a difference between dry ounces and fluid ounces?',
+      a: 'Dry ounces (oz) measure weight and are based on mass units, whereas fluid ounces (fl oz) measure volume and are based on the capacity of liquid containers. They are not interchangeable.',
+    },
+  ],
 };
 
 export default function Convertermltooz() {

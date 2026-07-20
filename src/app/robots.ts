@@ -6,11 +6,18 @@ const BASE_URL = 'https://calculationdesk.com'; // Replace with the actual deplo
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/_next/'],
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/_next/'],
+      },
+      {
+        userAgent: ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended'],
+        allow: '/',
+        disallow: ['/api/', '/_next/'],
+      }
+    ],
     sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }

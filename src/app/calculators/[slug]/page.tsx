@@ -8,9 +8,93 @@ import RelatedCalculators from '@/components/RelatedCalculators';
 import FavoriteTracker, { FavoriteButton } from '@/components/FavoriteTracker';
 import { ArrowLeft, Send } from 'lucide-react';
 import Link from 'next/link';
+import fs from 'fs';
+import path from 'path';
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+function getSeoData(slug: string) {
+  try {
+    const filePath = path.join(process.cwd(), 'src/calculators/logic', `${slug}.tsx`);
+    if (!fs.existsSync(filePath)) return null;
+    const content = fs.readFileSync(filePath, 'utf8');
+    
+    const startIdx = content.indexOf('export const seoData =');
+    if (startIdx === -1) return null;
+    
+    const braceStart = content.indexOf('{', startIdx);
+    if (braceStart === -1) return null;
+    
+    let braceCount = 1;
+    let i = braceStart + 1;
+    let inString: string | null = null;
+    
+    while (i < content.length && braceCount > 0) {
+      const char = content[i];
+      if (char === '\\') {
+        i += 2;
+        continue;
+      }
+      if (inString) {
+        if (char === inString) {
+          inString = null;
+        }
+      } else {
+        if (char === '"' || char === "'" || char === '`') {
+          inString = char;
+        } else if (char === '{') {
+          braceCount++;
+        } else if (char === '}') {
+          braceCount--;
+        }
+      }
+      i++;
+    }
+    
+    if (braceCount === 0) {
+      const objStr = content.substring(braceStart, i);
+      const evalFn = new Function(`return ${objStr}`);
+      return evalFn();
+    }
+    return null;
+  } catch (e) {
+    console.error('Failed to parse seoData statically for ' + slug, e);
+    return null;
+  }
+}
+
+function parseMarkdownLinks(text: string) {
+  if (!text) return '';
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: (string | React.ReactNode)[] = [];
+  let lastIdx = 0;
+  let match;
+  
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIdx) {
+      parts.push(text.substring(lastIdx, match.index));
+    }
+    parts.push(
+      <a 
+        key={match.index} 
+        href={match[2]} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-primary hover:underline font-semibold"
+      >
+        {match[1]}
+      </a>
+    );
+    lastIdx = regex.lastIndex;
+  }
+  
+  if (lastIdx < text.length) {
+    parts.push(text.substring(lastIdx));
+  }
+  
+  return parts.length > 0 ? parts : text;
 }
 
 export async function generateStaticParams() {
@@ -60,7 +144,7 @@ export default async function CalculatorPage({ params }: Props) {
     try {
       const calcModule = await import(`@/calculators/logic/${slug}`);
       CalculatorComponent = calcModule.default;
-      seo = calcModule.seoData;
+      seo = getSeoData(slug);
     } catch (e) {
       console.error(`Failed to import calculator logic for ${slug}`, e);
     }
@@ -171,27 +255,27 @@ export default async function CalculatorPage({ params }: Props) {
                         What is the {calc.title}?
                       </h2>
                       <div className="text-sm text-foreground/75 leading-relaxed space-y-4">
-                        <p>{seo.whatIs}</p>
+                        <p className="whitespace-pre-line">{parseMarkdownLinks(seo.whatIs)}</p>
                       </div>
                     </div>
-
+ 
                     {/* Section 2: Formula explanation */}
                     <div className="border-t border-border/60 pt-8">
                       <h2 className="text-xl md:text-2xl font-black text-foreground mb-4">
                         Formula & Calculation Method
                       </h2>
                       <div className="text-sm text-foreground/75 leading-relaxed space-y-4 prose dark:prose-invert max-w-none">
-                        <p className="whitespace-pre-line">{seo.formula}</p>
+                        <p className="whitespace-pre-line">{parseMarkdownLinks(seo.formula)}</p>
                       </div>
                     </div>
-
+ 
                     {/* Section 3: Worked Example */}
                     <div className="border-t border-border/60 pt-8">
                       <h2 className="text-xl md:text-2xl font-black text-foreground mb-4">
                         Worked Example Calculation
                       </h2>
                       <div className="text-sm text-foreground/75 leading-relaxed space-y-4 bg-background border border-border p-5 rounded-2xl">
-                        <p className="whitespace-pre-line">{seo.example}</p>
+                        <p className="whitespace-pre-line">{parseMarkdownLinks(seo.example)}</p>
                       </div>
                     </div>
 
@@ -277,27 +361,27 @@ export default async function CalculatorPage({ params }: Props) {
                     What is the {calc.title}?
                   </h2>
                   <div className="text-sm text-foreground/75 leading-relaxed space-y-4">
-                    <p>{seo.whatIs}</p>
+                    <p className="whitespace-pre-line">{parseMarkdownLinks(seo.whatIs)}</p>
                   </div>
                 </div>
-
+ 
                 {/* Section 2: Formula explanation */}
                 <div className="border-t border-border/60 pt-8">
                   <h2 className="text-xl md:text-2xl font-black text-foreground mb-4">
                     Formula & Calculation Method
                   </h2>
                   <div className="text-sm text-foreground/75 leading-relaxed space-y-4 prose dark:prose-invert max-w-none">
-                    <p className="whitespace-pre-line">{seo.formula}</p>
+                    <p className="whitespace-pre-line">{parseMarkdownLinks(seo.formula)}</p>
                   </div>
                 </div>
-
+ 
                 {/* Section 3: Worked Example */}
                 <div className="border-t border-border/60 pt-8">
                   <h2 className="text-xl md:text-2xl font-black text-foreground mb-4">
                     Worked Example Calculation
                   </h2>
                   <div className="text-sm text-foreground/75 leading-relaxed space-y-4 bg-background border border-border p-5 rounded-2xl">
-                    <p className="whitespace-pre-line">{seo.example}</p>
+                    <p className="whitespace-pre-line">{parseMarkdownLinks(seo.example)}</p>
                   </div>
                 </div>
 

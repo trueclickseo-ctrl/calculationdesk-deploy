@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { RefreshCw, AlertTriangle } from 'lucide-react';
 
 export const seoData = {
-  whatIs: `A Systematic Withdrawal Plan (SWP) is a facility offered by mutual funds that allows investors to withdraw a specific amount of money at regular intervals (usually monthly) from their existing mutual fund investments. It is popular among retirees who want a regular monthly cash flow while keeping their remaining capital invested to earn compounding returns.`,
+  whatIs: 'A Systematic Withdrawal Plan (SWP) is a facility offered by mutual funds that allows investors to withdraw a specific amount of money at regular intervals (usually monthly) from their existing mutual fund investments. It is popular among retirees who want a regular monthly cash flow while keeping their remaining capital invested to earn compounding returns. You can review investment and retirement income guides on the official [US Securities and Exchange Commission website](https://www.sec.gov).',
   formula: `SWP balances are calculated by running a monthly simulation where interest is credited first, and the withdrawal is deducted:
 
 $$B_m = B_{m-1} \\times (1 + i) - W$$
@@ -40,15 +40,34 @@ Where:
       q: 'How are withdrawals in SWP taxed?',
       a: 'Each withdrawal in an SWP is treated as a partial redemption of mutual fund units. Taxes (Capital Gains Tax) are levied only on the gains portion of the redeemed units, not the principal, which is tax-advantageous.',
     },
+    {
+      q: 'Can I change the SWP withdrawal amount later?',
+      a: 'Yes, most mutual fund companies allow you to modify the systematic withdrawal amount, change the withdrawal frequency (e.g., from monthly to quarterly), or stop the SWP altogether at any point without penalties.',
+    },
+    {
+      q: 'What is a safe withdrawal rate for SWP?',
+      a: 'A safe withdrawal rate typically ranges from 4% to 6% of your initial capital per year. Keeping your withdrawal rate below or near your expected long-term return rate helps protect your principal from depleting, ensuring your corpus lasts throughout retirement.',
+    },
   ],
 };
 
 export default function SwpCalculator() {
+  const [currency, setCurrency] = useState<'INR' | 'USD' | 'EUR' | 'GBP' | 'PKR' | 'BDT' | 'TRY'>('USD');
   const [totalInvestment, setTotalInvestment] = useState<number>(1000000);
   const [withdrawal, setWithdrawal] = useState<number>(6000);
   const [expectedRate, setExpectedRate] = useState<number>(8);
   const [tenure, setTenure] = useState<number>(10);
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const currencySymbols: Record<string, string> = {
+    INR: '₹',
+    USD: '$',
+    EUR: '€',
+    GBP: '£',
+    PKR: 'Rs',
+    BDT: '৳',
+    TRY: '₺',
+  };
 
   const isValid = totalInvestment > 0 && withdrawal > 0 && expectedRate >= 0 && expectedRate <= 100 && tenure > 0 && tenure <= 50;
 
@@ -78,8 +97,8 @@ export default function SwpCalculator() {
     }
 
     const totalPayout = totalWithdrawn + currentBalance;
-    const withdrawnPercent = (totalWithdrawn / totalPayout) * 100;
-    const balancePercent = (currentBalance / totalPayout) * 100;
+    const withdrawnPercent = (totalWithdrawn / (totalPayout || 1)) * 100;
+    const balancePercent = (currentBalance / (totalPayout || 1)) * 100;
 
     results = {
       finalBalance: currentBalance,
@@ -120,7 +139,26 @@ export default function SwpCalculator() {
         
         {/* Input Panel */}
         <div className="lg:col-span-6 rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <h2 className="text-xl font-bold text-foreground mb-6">SWP Plan Setup</h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-xl font-bold text-foreground">SWP Plan Setup</h2>
+            
+            {/* Currency Select */}
+            <div className="w-24">
+              <select
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value as any)}
+                className="block w-full py-1.5 px-2 text-xs font-semibold rounded-lg border border-border bg-background text-foreground/80 outline-none cursor-pointer"
+              >
+                <option value="USD">USD ($)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="PKR">PKR (Rs)</option>
+                <option value="BDT">BDT (৳)</option>
+                <option value="TRY">TRY (₺)</option>
+              </select>
+            </div>
+          </div>
           
           <div className="space-y-5">
             <div>
@@ -129,7 +167,7 @@ export default function SwpCalculator() {
               </label>
               <div className="relative rounded-xl border border-border bg-background focus-within:border-primary focus-within:ring-4 focus-within:ring-ring-custom transition-all">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-foreground/40 font-semibold">
-                  $
+                  {currencySymbols[currency]}
                 </div>
                 <input
                   id="total-investment"
@@ -148,7 +186,7 @@ export default function SwpCalculator() {
               </label>
               <div className="relative rounded-xl border border-border bg-background focus-within:border-primary focus-within:ring-4 focus-within:ring-ring-custom transition-all">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-foreground/40 font-semibold">
-                  $
+                  {currencySymbols[currency]}
                 </div>
                 <input
                   id="withdrawal"
@@ -243,7 +281,7 @@ export default function SwpCalculator() {
                       Remaining Balance
                     </span>
                     <span className="block text-xl font-extrabold text-primary mt-1">
-                      ${results.finalBalance.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                      {currencySymbols[currency]}{results.finalBalance.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </span>
                   </div>
                   <div className="rounded-xl bg-background p-4 border border-border">
@@ -251,7 +289,7 @@ export default function SwpCalculator() {
                       Total Withdrawn Amount
                     </span>
                     <span className="block text-lg font-bold text-foreground mt-1">
-                      ${results.totalWithdrawn.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                      {currencySymbols[currency]}{results.totalWithdrawn.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </span>
                   </div>
                 </div>
@@ -262,7 +300,7 @@ export default function SwpCalculator() {
                       Total Interest Accrued
                     </span>
                     <span className="block text-lg font-bold text-foreground mt-1">
-                      ${results.totalInterestEarned.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                      {currencySymbols[currency]}{results.totalInterestEarned.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </span>
                   </div>
                   <span className="text-xs bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 font-bold px-2 py-0.5 rounded-full">

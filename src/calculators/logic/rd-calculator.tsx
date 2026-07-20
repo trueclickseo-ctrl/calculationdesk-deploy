@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 
 export const seoData = {
-  whatIs: `A Recurring Deposit (RD) is a term deposit service offered by banks which allows people with regular incomes to deposit a fixed amount every month into their RD account and earn interest at the rates applicable to Fixed Deposits. It is similar to making regular savings deposits, with interest compounding quarterly and paid at the end of the term.`,
+  whatIs: 'A Recurring Deposit (RD) is a term deposit service offered by banks which allows people with regular incomes to deposit a fixed amount every month into their RD account and earn interest at the rates applicable to Fixed Deposits. It is similar to making regular savings deposits, with interest compounding quarterly and paid at the end of the term. You can verify interest rate regulations and savings deposit guidelines on official central banking websites: the [Federal Reserve (US)](https://www.federalreserve.gov), the [Reserve Bank of India (RBI)](https://www.rbi.org.in), the [Bank of England (UK)](https://www.bankofengland.co.uk), the [European Central Bank (EU)](https://www.ecb.europa.eu), the [State Bank of Pakistan (SBP)](https://www.sbp.org.pk), the [Bangladesh Bank (BB)](https://www.bb.org.bd), and the [Central Bank of the Republic of Turkey (TCMB)](https://www.tcmb.gov.tr).',
   formula: `The maturity amount of a Recurring Deposit is computed by adding the future value of each monthly installment compounded quarterly:
 
 $$M = \\sum_{k=1}^{n} P \\times \\left(1 + \\frac{r}{4 \\times 100}\\right)^{\\frac{k}{3}}$$
@@ -36,15 +36,34 @@ Where:
       q: 'Can I choose a different compounding frequency for RD?',
       a: 'Standard banking norms compound RD interest quarterly. However, some banks might offer monthly compounding or simple interest for shorter terms.',
     },
+    {
+      q: 'Is RD interest taxable?',
+      a: 'Yes, interest earned on Recurring Deposits is fully taxable according to your income tax slab. In India, banks also deduct TDS (Tax Deducted at Source) if the total interest earned across all your term deposits exceeds ₹40,000 (₹50,000 for senior citizens) in a financial year.',
+    },
+    {
+      q: 'Can I withdraw my Recurring Deposit before maturity?',
+      a: 'Yes, premature withdrawal of RD is allowed, but banks usually levy a penalty charge (typically 0.5% to 1% lower interest than the contracted rate for the period the deposit remained with the bank) and do not allow partial withdrawals.',
+    },
   ],
 };
 
 export default function RdCalculator() {
+  const [currency, setCurrency] = useState<'INR' | 'USD' | 'EUR' | 'GBP' | 'PKR' | 'BDT' | 'TRY'>('USD');
   const [monthlyDeposit, setMonthlyDeposit] = useState<number>(5000);
   const [interestRate, setInterestRate] = useState<number>(6.8);
   const [tenure, setTenure] = useState<number>(5);
   const [tenureType, setTenureType] = useState<'years' | 'months'>('years');
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const currencySymbols: Record<string, string> = {
+    INR: '₹',
+    USD: '$',
+    EUR: '€',
+    GBP: '£',
+    PKR: 'Rs',
+    BDT: '৳',
+    TRY: '₺',
+  };
 
   const isValid = monthlyDeposit > 0 && interestRate > 0 && interestRate <= 100 && tenure > 0 && 
                   (tenureType === 'years' ? tenure <= 50 : tenure <= 600);
@@ -66,8 +85,8 @@ export default function RdCalculator() {
     const totalInvested = P * n;
     const estInterest = Math.max(0, maturityAmount - totalInvested);
 
-    const principalPercent = (totalInvested / maturityAmount) * 100;
-    const interestPercent = (estInterest / maturityAmount) * 100;
+    const principalPercent = (totalInvested / (maturityAmount || 1)) * 100;
+    const interestPercent = (estInterest / (maturityAmount || 1)) * 100;
 
     results = {
       maturityAmount,
@@ -112,7 +131,26 @@ export default function RdCalculator() {
         
         {/* Input Panel */}
         <div className="lg:col-span-6 rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <h2 className="text-xl font-bold text-foreground mb-6">RD Savings Plan</h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-xl font-bold text-foreground">RD Savings Plan</h2>
+            
+            {/* Currency Select */}
+            <div className="w-24">
+              <select
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value as any)}
+                className="block w-full py-1.5 px-2 text-xs font-semibold rounded-lg border border-border bg-background text-foreground/80 outline-none cursor-pointer"
+              >
+                <option value="USD">USD ($)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="PKR">PKR (Rs)</option>
+                <option value="BDT">BDT (৳)</option>
+                <option value="TRY">TRY (₺)</option>
+              </select>
+            </div>
+          </div>
           
           <div className="space-y-5">
             <div>
@@ -121,14 +159,14 @@ export default function RdCalculator() {
               </label>
               <div className="relative rounded-xl border border-border bg-background focus-within:border-primary focus-within:ring-4 focus-within:ring-ring-custom transition-all">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-foreground/40 font-semibold">
-                  $
+                  {currencySymbols[currency]}
                 </div>
                 <input
                   id="monthly-deposit"
                   type="number"
                   value={monthlyDeposit || ''}
                   onChange={(e) => setMonthlyDeposit(Number(e.target.value))}
-                  className="block w-full py-3 pl-8 pr-4 text-sm font-medium outline-none bg-transparent"
+                  className="block w-full py-3 pl-8 pr-4 text-sm font-medium outline-none bg-transparent text-foreground"
                 />
               </div>
               {errors.monthlyDeposit && <p className="text-xs text-red-500 mt-1 font-medium">{errors.monthlyDeposit}</p>}
@@ -148,7 +186,7 @@ export default function RdCalculator() {
                   step="0.01"
                   value={interestRate || ''}
                   onChange={(e) => setInterestRate(Number(e.target.value))}
-                  className="block w-full py-3 pl-4 pr-10 text-sm font-medium outline-none bg-transparent"
+                  className="block w-full py-3 pl-4 pr-10 text-sm font-medium outline-none bg-transparent text-foreground"
                 />
               </div>
               {errors.interestRate && <p className="text-xs text-red-500 mt-1 font-medium">{errors.interestRate}</p>}
@@ -165,7 +203,7 @@ export default function RdCalculator() {
                     type="number"
                     value={tenure || ''}
                     onChange={(e) => setTenure(Number(e.target.value))}
-                    className="block w-full py-3 px-4 text-sm font-medium outline-none bg-transparent"
+                    className="block w-full py-3 px-4 text-sm font-medium outline-none bg-transparent text-foreground"
                   />
                 </div>
                 <div className="flex rounded-xl border border-border bg-background p-1.5 gap-1 select-none">
@@ -228,7 +266,7 @@ export default function RdCalculator() {
                       Expected Maturity Amount
                     </span>
                     <span className="block text-2xl font-extrabold text-primary mt-1">
-                      ${results.maturityAmount.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                      {currencySymbols[currency]}{results.maturityAmount.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </span>
                   </div>
                   <div className="rounded-xl bg-background p-4 border border-border">
@@ -236,7 +274,7 @@ export default function RdCalculator() {
                       Total Invested Amount
                     </span>
                     <span className="block text-lg font-bold text-foreground mt-1">
-                      ${results.totalInvested.toLocaleString()}
+                      {currencySymbols[currency]}{results.totalInvested.toLocaleString()}
                     </span>
                   </div>
                   <div className="rounded-xl bg-background p-4 border border-border">
@@ -244,7 +282,7 @@ export default function RdCalculator() {
                       Est. Interest Earned
                     </span>
                     <span className="block text-lg font-bold text-foreground mt-1">
-                      ${results.estInterest.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                      {currencySymbols[currency]}{results.estInterest.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </span>
                   </div>
                 </div>
