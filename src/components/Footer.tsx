@@ -115,6 +115,11 @@ export default function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/90">Legal & Support</h3>
             <ul className="mt-4 space-y-2.5">
               <li>
+                <Link href="/blog/" className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors">
+                  Learning Blog
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors">
                   About Us
                 </Link>

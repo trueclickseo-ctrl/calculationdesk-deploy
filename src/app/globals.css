@@ -89,3 +89,28 @@ input[type="range"]::-webkit-slider-thumb {
     opacity: 0;
   }
 }
+
+/* Print Styles for PDF Export */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, footer, .no-print, [id="global-search"], button, select, input[type="button"] {
+    display: none !important;
+  }
+  .lg\:col-span-8 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+  .lg\:col-span-4 {
+    display: none !important;
+  }
+  .shadow-sm, .shadow-md, .shadow-2xl {
+    box-shadow: none !important;
+  }
+  .border, .border-border {
+    border-color: #cbd5e1 !important;
+  }
+}

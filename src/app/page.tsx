@@ -51,7 +51,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-transparent to-transparent py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-transparent to-transparent py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -60,15 +60,15 @@ export default function HomePage() {
                 Finance, Education, Health & Business
               </span>
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-lg text-foreground/70">
-              Simple, accurate, and fast calculators for every need. Choose from 124 specialized calculators across 9 major categories.
+            <p className="mx-auto mt-6 max-w-xl text-base md:text-lg text-foreground/70">
+              Simple, accurate, and fast calculators for every need. Choose from over 280 specialized tools updated for 2026.
             </p>
-            <div className="mt-10 flex justify-center gap-4">
+            <div className="mt-8 flex justify-center gap-4">
               <a
                 href="#categories-grid"
                 className="rounded-xl bg-primary px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
               >
-                Explore Calculators
+                Browse Categories
               </a>
               <button
                 onClick={() => {
@@ -81,6 +81,81 @@ export default function HomePage() {
                 Search Directory
               </button>
             </div>
+          </div>
+
+          {/* Quick-Access Top Calculators Above the Fold */}
+          <div className="mt-16 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+            <Link
+              href="/calculators/emi-calculator/"
+              className="group rounded-2xl border border-border bg-card p-5 shadow-sm hover:border-primary/30 hover:shadow-md hover:scale-[1.02] transition-all flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-primary">Popular</span>
+                <h3 className="mt-1.5 font-bold text-sm md:text-base text-foreground group-hover:text-primary transition-colors">
+                  EMI Calculator
+                </h3>
+                <p className="mt-1 text-xs text-foreground/50 line-clamp-2">
+                  Compute home, car, and personal loan EMIs with amortization schedules.
+                </p>
+              </div>
+              <span className="mt-4 inline-flex items-center gap-1 text-[11px] font-bold text-primary">
+                Calculate &rarr;
+              </span>
+            </Link>
+
+            <Link
+              href="/calculators/sip-calculator/"
+              className="group rounded-2xl border border-border bg-card p-5 shadow-sm hover:border-primary/30 hover:shadow-md hover:scale-[1.02] transition-all flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-500">Wealth</span>
+                <h3 className="mt-1.5 font-bold text-sm md:text-base text-foreground group-hover:text-primary transition-colors">
+                  SIP Calculator
+                </h3>
+                <p className="mt-1 text-xs text-foreground/50 line-clamp-2">
+                  Calculate mutual fund returns and systematic investments.
+                </p>
+              </div>
+              <span className="mt-4 inline-flex items-center gap-1 text-[11px] font-bold text-primary">
+                Calculate &rarr;
+              </span>
+            </Link>
+
+            <Link
+              href="/calculators/indian-income-tax-calculator/"
+              className="group rounded-2xl border border-border bg-card p-5 shadow-sm hover:border-primary/30 hover:shadow-md hover:scale-[1.02] transition-all flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-amber-500">Tax</span>
+                <h3 className="mt-1.5 font-bold text-sm md:text-base text-foreground group-hover:text-primary transition-colors">
+                  Income Tax India
+                </h3>
+                <p className="mt-1 text-xs text-foreground/50 line-clamp-2">
+                  Compare new vs old tax regime slabs for FY 2025-26.
+                </p>
+              </div>
+              <span className="mt-4 inline-flex items-center gap-1 text-[11px] font-bold text-primary">
+                Calculate &rarr;
+              </span>
+            </Link>
+
+            <Link
+              href="/calculators/crypto-tax-calculator/"
+              className="group rounded-2xl border border-border bg-card p-5 shadow-sm hover:border-primary/30 hover:shadow-md hover:scale-[1.02] transition-all flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-indigo-500">Crypto</span>
+                <h3 className="mt-1.5 font-bold text-sm md:text-base text-foreground group-hover:text-primary transition-colors">
+                  Crypto Tax
+                </h3>
+                <p className="mt-1 text-xs text-foreground/50 line-clamp-2">
+                  Estimate capital gains and TDS under section 115BBH rules.
+                </p>
+              </div>
+              <span className="mt-4 inline-flex items-center gap-1 text-[11px] font-bold text-primary">
+                Calculate &rarr;
+              </span>
+            </Link>
           </div>
         </div>
       </section>

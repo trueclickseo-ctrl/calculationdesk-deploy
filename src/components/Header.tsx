@@ -147,6 +147,9 @@ export default function Header() {
             )}
           </div>
 
+          <Link href="/blog/" className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
+            Blog
+          </Link>
           <Link href="/about" className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
             About
           </Link>
