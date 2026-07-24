@@ -1,7 +1,7 @@
 // SERVER COMPONENT — no 'use client'. Footer is entirely static HTML.
 import React from 'react';
 import Link from 'next/link';
-import { CATEGORIES } from '@/calculators.config';
+import { CATEGORIES } from '@/data/categories';
 import { Calculator, Mail, Shield, BookOpen } from 'lucide-react';
 import Logo from '@/components/Logo';
 

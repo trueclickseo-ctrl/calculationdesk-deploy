@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '@/context/ThemeContext';
-import { CATEGORIES } from '@/calculators.config';
+import { CATEGORIES } from '@/data/categories';
 
 // Slim shape matching public/search-index.json
 interface SlimCalc { s: string; t: string; d: string; c: string; k: string; i: number; }

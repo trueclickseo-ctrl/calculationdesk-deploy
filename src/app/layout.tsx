@@ -19,22 +19,28 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
-      {/* Set dark class before first paint to avoid flash of light mode */}
+        {/* Preconnect to third-party origins — reduces DNS + TLS latency */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+        {/* Set dark class before first paint — prevents flash of light mode */}
         <script
           dangerouslySetInnerHTML={{
             __html: `try{var t=localStorage.getItem('theme');if(t==='dark'||(t==null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}`,
           }}
         />
-        {/* Google Tag Manager — loaded after page is interactive */}
+
+        {/* GTM — deferred until after page load to not block LCP */}
         <script
-          defer
           dangerouslySetInnerHTML={{
             __html: `window.addEventListener('load',function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-53RFG5QW');});`,
           }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        {/* GTM noscript */}
+        {/* GTM noscript fallback */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-53RFG5QW"
@@ -43,6 +49,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+
         <ThemeProvider>
           <div className="flex flex-col min-h-screen">
             <Header />
@@ -52,15 +59,29 @@ export default function RootLayout({
             <ScrollNavigator />
           </div>
         </ThemeProvider>
-        {/* Google Analytics — loaded after page, non-blocking */}
+
+        {/* GA — loaded after page via requestIdleCallback for zero impact on LCP/TBT */}
         <script
-          defer
-          src="https://www.googletagmanager.com/gtag/js?id=G-Q7V59CCCKJ"
-        />
-        <script
-          defer
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q7V59CCCKJ');`,
+            __html: `
+              (function(){
+                function loadGA(){
+                  var s=document.createElement('script');
+                  s.async=true;
+                  s.src='https://www.googletagmanager.com/gtag/js?id=G-Q7V59CCCKJ';
+                  document.head.appendChild(s);
+                  window.dataLayer=window.dataLayer||[];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js',new Date());
+                  gtag('config','G-Q7V59CCCKJ');
+                }
+                if('requestIdleCallback' in window){
+                  requestIdleCallback(loadGA,{timeout:4000});
+                } else {
+                  window.addEventListener('load',loadGA);
+                }
+              })();
+            `,
           }}
         />
       </body>
