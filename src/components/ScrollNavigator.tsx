@@ -8,24 +8,26 @@ export default function ScrollNavigator() {
   const [showDown, setShowDown] = useState(true);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight;
-      const winHeight = window.innerHeight;
-
-      // Show scroll-to-top button after scrolling 300px
-      setShowUp(scrollY > 300);
-
-      // Show scroll-to-bottom button if we are not close to the bottom (within 150px)
-      setShowDown(scrollY + winHeight < docHeight - 150);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        const winHeight = window.innerHeight;
+        setShowUp(scrollY > 300);
+        setShowDown(scrollY + winHeight < docHeight - 150);
+        ticking = false;
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    // Initial check
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
