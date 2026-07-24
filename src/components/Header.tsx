@@ -5,6 +5,16 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '@/context/ThemeContext';
 import { CATEGORIES, CALCULATORS } from '@/calculators.config';
+
+// Build a slim search index once at module level (not every render)
+const SEARCH_INDEX = CALCULATORS.map(c => ({
+  slug: c.slug,
+  title: c.title,
+  description: c.description,
+  category: c.category,
+  keywords: c.keywords,
+}));
+
 import { 
   Search, Sun, Moon, Menu, X, ChevronDown, Calculator, 
   TrendingUp, BookOpen, Calendar, Heart, Briefcase, Scale, Sparkles, Cpu, Home,
@@ -71,17 +81,24 @@ export default function Header() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Client-side fuzzy search computed during render
+  // Header search — uses slim index, early-exit loop instead of .filter()
   const searchResults = searchQuery.trim()
-    ? CALCULATORS.filter(calc => {
+    ? (() => {
         const query = searchQuery.toLowerCase().trim();
-        const matchTitle = calc.title.toLowerCase().includes(query);
-        const matchDesc = calc.description.toLowerCase().includes(query);
-        const matchCat = calc.category.toLowerCase().includes(query);
-        const matchKeywords = calc.keywords.some(keyword => keyword.toLowerCase().includes(query));
-        return matchTitle || matchDesc || matchCat || matchKeywords;
-      }).slice(0, 8)
+        const out: typeof SEARCH_INDEX = [];
+        for (let i = 0; i < SEARCH_INDEX.length && out.length < 8; i++) {
+          const c = SEARCH_INDEX[i];
+          if (
+            c.title.toLowerCase().includes(query) ||
+            c.description.toLowerCase().includes(query) ||
+            c.category.toLowerCase().includes(query) ||
+            c.keywords.some(k => k.toLowerCase().includes(query))
+          ) out.push(c);
+        }
+        return out;
+      })()
     : [];
+
 
   const handleSearchResultClick = (slug: string) => {
     setSearchQuery('');
@@ -91,7 +108,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-card/95 backdrop-blur-md transition-colors duration-200">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-card/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Logo */}

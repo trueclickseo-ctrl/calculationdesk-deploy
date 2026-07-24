@@ -15,16 +15,35 @@ interface FavoriteTrackerProps {
 const RECENTS_KEY = 'calchub_recents';
 const FAVORITES_KEY = 'calchub_favorites';
 
+function getStoredArray(key: string): string[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const item = localStorage.getItem(key);
+    if (!item) return [];
+    const parsed = JSON.parse(item);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function setStoredArray(key: string, arr: string[]): void {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(key, JSON.stringify(arr));
+  } catch {}
+}
+
 export function FavoriteButton({ slug }: { slug: string }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
-    const favorites: string[] = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+    const favorites = getStoredArray(FAVORITES_KEY);
     setIsFavorite(favorites.includes(slug));
   }, [slug]);
 
   const toggleFavorite = () => {
-    const favorites: string[] = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+    const favorites = getStoredArray(FAVORITES_KEY);
     let updated: string[];
     if (favorites.includes(slug)) {
       updated = favorites.filter(s => s !== slug);
@@ -33,9 +52,10 @@ export function FavoriteButton({ slug }: { slug: string }) {
       updated = [...favorites, slug];
       setIsFavorite(true);
     }
-    localStorage.setItem(FAVORITES_KEY, JSON.stringify(updated));
-    // Trigger storage event for other components to update
-    window.dispatchEvent(new Event('storage'));
+    setStoredArray(FAVORITES_KEY, updated);
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('storage'));
+    }
   };
 
   return (
@@ -58,8 +78,8 @@ export default function FavoriteTracker({ currentSlug }: FavoriteTrackerProps) {
   const [favorites, setFavorites] = useState<CalculatorConfig[]>([]);
 
   const loadData = () => {
-    const recentSlugs: string[] = JSON.parse(localStorage.getItem(RECENTS_KEY) || '[]');
-    const favoriteSlugs: string[] = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+    const recentSlugs = getStoredArray(RECENTS_KEY);
+    const favoriteSlugs = getStoredArray(FAVORITES_KEY);
 
     const recentItems = recentSlugs
       .map(slug => CALCULATORS.find(c => c.slug === slug))
@@ -76,10 +96,10 @@ export default function FavoriteTracker({ currentSlug }: FavoriteTrackerProps) {
   useEffect(() => {
     // Add current slug to recents on mount
     if (currentSlug) {
-      const recentSlugs: string[] = JSON.parse(localStorage.getItem(RECENTS_KEY) || '[]');
+      const recentSlugs = getStoredArray(RECENTS_KEY);
       const filtered = recentSlugs.filter(s => s !== currentSlug);
       const updated = [currentSlug, ...filtered].slice(0, 5); // keep last 5
-      localStorage.setItem(RECENTS_KEY, JSON.stringify(updated));
+      setStoredArray(RECENTS_KEY, updated);
     }
 
     loadData();

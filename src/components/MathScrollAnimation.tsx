@@ -31,17 +31,6 @@ export function triggerScrollToTop() {
 export default function MathScrollAnimation() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
-  useEffect(() => {
-    // Check if this is the first visit to show a welcome animation
-    const hasVisited = localStorage.getItem('calchub_welcome_shown');
-    if (!hasVisited) {
-      localStorage.setItem('calchub_welcome_shown', 'true');
-      const timer = setTimeout(() => {
-        window.dispatchEvent(new Event('scroll-to-top-animation'));
-      }, 800);
-      return () => clearTimeout(timer);
-    }
-  }, []);
 
   useEffect(() => {
     const handleTrigger = () => {

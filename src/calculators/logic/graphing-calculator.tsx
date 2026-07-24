@@ -271,13 +271,24 @@ export default function GraphingCalculator() {
     dragStart.current = { x: e.clientX, y: e.clientY };
   };
 
+  const rafId = useRef<number | null>(null);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!isDragging.current) return;
-    const dx = e.clientX - dragStart.current.x;
-    const dy = e.clientY - dragStart.current.y;
-    setOffsetX(prev => prev + dx);
-    setOffsetY(prev => prev + dy);
-    dragStart.current = { x: e.clientX, y: e.clientY };
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+
+    if (rafId.current !== null) return;
+
+    rafId.current = requestAnimationFrame(() => {
+      rafId.current = null;
+      if (!isDragging.current) return;
+      const dx = clientX - dragStart.current.x;
+      const dy = clientY - dragStart.current.y;
+      setOffsetX(prev => prev + dx);
+      setOffsetY(prev => prev + dy);
+      dragStart.current = { x: clientX, y: clientY };
+    });
   };
 
   const handleMouseUpOrLeave = () => {

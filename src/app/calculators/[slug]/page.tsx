@@ -11,61 +11,9 @@ import EmbedCodeWidget from '@/components/EmbedCodeWidget';
 import FeedbackWidget from '@/components/FeedbackWidget';
 import { ArrowLeft, Send } from 'lucide-react';
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
 
 interface Props {
   params: Promise<{ slug: string }>;
-}
-
-function getSeoData(slug: string) {
-  try {
-    const filePath = path.join(process.cwd(), 'src/calculators/logic', `${slug}.tsx`);
-    if (!fs.existsSync(filePath)) return null;
-    const content = fs.readFileSync(filePath, 'utf8');
-    
-    const startIdx = content.indexOf('export const seoData =');
-    if (startIdx === -1) return null;
-    
-    const braceStart = content.indexOf('{', startIdx);
-    if (braceStart === -1) return null;
-    
-    let braceCount = 1;
-    let i = braceStart + 1;
-    let inString: string | null = null;
-    
-    while (i < content.length && braceCount > 0) {
-      const char = content[i];
-      if (char === '\\') {
-        i += 2;
-        continue;
-      }
-      if (inString) {
-        if (char === inString) {
-          inString = null;
-        }
-      } else {
-        if (char === '"' || char === "'" || char === '`') {
-          inString = char;
-        } else if (char === '{') {
-          braceCount++;
-        } else if (char === '}') {
-          braceCount--;
-        }
-      }
-      i++;
-    }
-    
-    if (braceCount === 0) {
-      const objStr = content.substring(braceStart, i);
-      const evalFn = new Function(`return ${objStr}`);
-      return evalFn();
-    }
-    return null;
-  } catch (e) {
-    console.error('Failed to parse seoData statically for ' + slug, e);
-    return null;
-  }
 }
 
 function parseMarkdownLinks(text: string) {
@@ -129,6 +77,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } else if (calc.category === 'date-time' || calc.category === 'unit-converter') {
     title = `Online ${calc.title} – Free & Instant Calculator | CalculationDesk`;
     description = `Convert and compute values quickly using our free online ${calc.title.toLowerCase()}. Fast, reliable, and optimized for mobile devices.`;
+  } else if (calc.category === 'business' || calc.category === 'real-estate') {
+    title = `Free ${calc.title} – Professional Business & Property Tool | CalculationDesk`;
+    description = `Analyze commercial metrics, property yields, and business cash flows with our free online ${calc.title.toLowerCase()}. Fast, accurate calculations with formulas.`;
+  } else if (['physics', 'chemistry', 'biology', 'ecology', 'technology'].includes(calc.category)) {
+    title = `Online ${calc.title} – Science & Tech Calculator | CalculationDesk`;
+    description = `Compute scientific values, equations, and conversion parameters with our free online ${calc.title.toLowerCase()}. Built for students, researchers, and engineers.`;
+  } else if (calc.category === 'statistics' || calc.category === 'education') {
+    title = `Free ${calc.title} – Learn & Solve Instantly | CalculationDesk`;
+    description = `Solve problems, calculate probability, and analyze data sets step-by-step with our free online ${calc.title.toLowerCase()}. Ideal for classroom learning.`;
+  } else if (['everyday-life', 'lifestyle', 'construction'].includes(calc.category)) {
+    title = `Free ${calc.title} – Easy & Practical Calculator | CalculationDesk`;
+    description = `Make everyday planning, budgeting, and estimation easy with our free online ${calc.title.toLowerCase()}. Optimized for quick mobile calculations.`;
   }
 
   return {
@@ -162,7 +122,7 @@ export default async function CalculatorPage({ params }: Props) {
     try {
       const calcModule = await import(`@/calculators/logic/${slug}`);
       CalculatorComponent = calcModule.default;
-      seo = getSeoData(slug);
+      seo = calcModule.seoData || null;
     } catch (e) {
       console.error(`Failed to import calculator logic for ${slug}`, e);
     }
