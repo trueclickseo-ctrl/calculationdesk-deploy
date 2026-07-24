@@ -29,7 +29,7 @@ export default function Footer() {
               className="flex items-center gap-2 text-primary font-bold text-lg"
             >
               <Logo className="h-5 w-5" />
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">CalculationDesk</span>
+              <span className="text-primary font-bold">CalculationDesk</span>
             </Link>
             <p className="text-sm text-foreground/70 max-w-xs leading-relaxed">
               Fast, accurate, and completely free online calculators. CalculationDesk provides over 280+ specialized calculation tools for finance, education, health, lifestyle, and business.

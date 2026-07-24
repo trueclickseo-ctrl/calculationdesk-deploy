@@ -47,7 +47,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-3xl">
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Free Online Calculators for{' '}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="text-primary font-extrabold">
                 Finance, Education, Health &amp; Business
               </span>
             </h1>

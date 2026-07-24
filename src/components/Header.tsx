@@ -108,7 +108,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-card/95 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-card">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Logo */}
@@ -125,7 +125,7 @@ export default function Header() {
             className="flex items-center gap-2 text-primary font-bold text-xl hover:opacity-90"
           >
             <Logo className="h-6 w-6" />
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">CalculationDesk</span>
+            <span className="text-primary font-bold text-xl">CalculationDesk</span>
           </Link>
           
           {/* Categories Dropdown (Desktop) */}
