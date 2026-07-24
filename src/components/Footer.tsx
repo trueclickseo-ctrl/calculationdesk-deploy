@@ -2,10 +2,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { CATEGORIES } from '@/data/categories';
-import { Calculator, Mail, Shield, BookOpen } from 'lucide-react';
+import { Mail, Shield, BookOpen } from 'lucide-react';
 import Logo from '@/components/Logo';
-
-
 
 const POPULAR_CALCS = [
   { name: 'EMI Calculator', slug: 'emi-calculator' },
@@ -27,6 +25,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Link
               href="/"
+              prefetch={false}
               className="flex items-center gap-2 text-primary font-bold text-lg"
             >
               <Logo className="h-5 w-5" />
@@ -44,7 +43,8 @@ export default function Footer() {
               {POPULAR_CALCS.map((item) => (
                 <li key={item.slug}>
                   <Link
-                    href={`/calculators/${item.slug}`}
+                    href={`/calculators/${item.slug}/`}
+                    prefetch={false}
                     className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors"
                   >
                     {item.name}
@@ -61,7 +61,8 @@ export default function Footer() {
               {CATEGORIES.slice(0, 8).map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    href={`/categories/${cat.slug}`}
+                    href={`/categories/${cat.slug}/`}
+                    prefetch={false}
                     className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors"
                   >
                     {cat.name}
@@ -78,7 +79,8 @@ export default function Footer() {
               {CATEGORIES.slice(8).map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    href={`/categories/${cat.slug}`}
+                    href={`/categories/${cat.slug}/`}
+                    prefetch={false}
                     className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors"
                   >
                     {cat.name}
@@ -94,14 +96,14 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               {[
                 { href: '/blog/', label: 'Learning Blog' },
-                { href: '/about', label: 'About Us' },
-                { href: '/contact', label: 'Contact Support' },
-                { href: '/privacy', label: 'Privacy Policy' },
-                { href: '/terms', label: 'Terms & Conditions' },
-                { href: '/disclaimer', label: 'Disclaimer' },
+                { href: '/about/', label: 'About Us' },
+                { href: '/contact/', label: 'Contact Support' },
+                { href: '/privacy/', label: 'Privacy Policy' },
+                { href: '/terms/', label: 'Terms & Conditions' },
+                { href: '/disclaimer/', label: 'Disclaimer' },
               ].map(link => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors">
+                  <Link href={link.href} prefetch={false} className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -121,9 +123,9 @@ export default function Footer() {
             . Calculations are for educational and estimation purposes only.
           </p>
           <div className="flex gap-4 text-foreground/50">
-            <Link href="/contact" className="hover:text-primary transition-colors" aria-label="Contact Support"><Mail className="h-4 w-4" /></Link>
-            <Link href="/privacy" className="hover:text-primary transition-colors" aria-label="Privacy Policy"><Shield className="h-4 w-4" /></Link>
-            <Link href="/terms" className="hover:text-primary transition-colors" aria-label="Terms of Service"><BookOpen className="h-4 w-4" /></Link>
+            <Link href="/contact/" prefetch={false} className="hover:text-primary transition-colors" aria-label="Contact Support"><Mail className="h-4 w-4" /></Link>
+            <Link href="/privacy/" prefetch={false} className="hover:text-primary transition-colors" aria-label="Privacy Policy"><Shield className="h-4 w-4" /></Link>
+            <Link href="/terms/" prefetch={false} className="hover:text-primary transition-colors" aria-label="Terms of Service"><BookOpen className="h-4 w-4" /></Link>
           </div>
         </div>
       </div>

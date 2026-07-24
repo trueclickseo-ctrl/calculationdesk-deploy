@@ -107,7 +107,7 @@ export default async function CalculatorPage({ params }: Props) {
 
   const category = CATEGORIES.find((c) => c.slug === calc.category);
   const categoryName = category ? category.name : 'Category';
-  const categoryPath = category ? `/categories/${category.slug}` : '/';
+  const categoryPath = category ? `/categories/${category.slug}/` : '/';
 
   // Breadcrumbs items
   const breadcrumbItems = [

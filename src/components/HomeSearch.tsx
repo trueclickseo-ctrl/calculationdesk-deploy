@@ -90,7 +90,8 @@ export default function HomeSearch() {
         {!loading && results.map((calc) => (
           <Link
             key={calc.s}
-            href={`/calculators/${calc.s}`}
+            href={`/calculators/${calc.s}/`}
+            prefetch={false}
             className="flex items-center justify-between rounded-xl border border-border bg-background p-3.5 hover:border-primary/30 hover:bg-primary/5 transition-colors text-xs md:text-sm font-semibold text-foreground text-left"
           >
             <span className="truncate">{calc.t}</span>

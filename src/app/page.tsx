@@ -81,6 +81,7 @@ export default function HomePage() {
               <Link
                 key={card.href}
                 href={card.href}
+                prefetch={false}
                 className="group rounded-2xl border border-border bg-card p-5 shadow-sm hover:border-primary/30 hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
@@ -117,7 +118,8 @@ export default function HomePage() {
               return (
                 <Link
                   key={calc.slug}
-                  href={`/calculators/${calc.slug}`}
+                  href={`/calculators/${calc.slug}/`}
+                  prefetch={false}
                   className="group rounded-2xl border border-border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md transition-all flex flex-col justify-between"
                 >
                   <div>
@@ -156,7 +158,8 @@ export default function HomePage() {
               return (
                 <Link
                   key={cat.slug}
-                  href={`/categories/${cat.slug}`}
+                  href={`/categories/${cat.slug}/`}
+                  prefetch={false}
                   className="group rounded-2xl border border-border bg-card p-6 shadow-sm hover:border-primary/20 hover:shadow-md transition-all flex items-start gap-4"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
