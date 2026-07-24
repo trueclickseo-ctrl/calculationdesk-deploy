@@ -1,19 +1,13 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '@/context/ThemeContext';
-import { CATEGORIES, CALCULATORS } from '@/calculators.config';
+import { CATEGORIES } from '@/calculators.config';
 
-// Build a slim search index once at module level (not every render)
-const SEARCH_INDEX = CALCULATORS.map(c => ({
-  slug: c.slug,
-  title: c.title,
-  description: c.description,
-  category: c.category,
-  keywords: c.keywords,
-}));
+// Slim shape matching public/search-index.json
+interface SlimCalc { s: string; t: string; d: string; c: string; k: string; i: number; }
 
 import { 
   Search, Sun, Moon, Menu, X, ChevronDown, Calculator, 
@@ -81,24 +75,30 @@ export default function Header() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Header search — uses slim index, early-exit loop instead of .filter()
-  const searchResults = searchQuery.trim()
+  const [searchIndex, setSearchIndex] = useState<SlimCalc[] | null>(null);
+  const indexFetched = useRef(false);
+
+  const fetchSearchIndex = useCallback(async () => {
+    if (indexFetched.current) return;
+    indexFetched.current = true;
+    try {
+      const res = await fetch('/search-index.json');
+      setSearchIndex(await res.json());
+    } catch { /* silently ignore */ }
+  }, []);
+
+  // Header search — lazy fetches /search-index.json on first focus
+  const searchResults: SlimCalc[] = searchQuery.trim() && searchIndex
     ? (() => {
-        const query = searchQuery.toLowerCase().trim();
-        const out: typeof SEARCH_INDEX = [];
-        for (let i = 0; i < SEARCH_INDEX.length && out.length < 8; i++) {
-          const c = SEARCH_INDEX[i];
-          if (
-            c.title.toLowerCase().includes(query) ||
-            c.description.toLowerCase().includes(query) ||
-            c.category.toLowerCase().includes(query) ||
-            c.keywords.some(k => k.toLowerCase().includes(query))
-          ) out.push(c);
+        const q = searchQuery.toLowerCase().trim();
+        const out: SlimCalc[] = [];
+        for (let i = 0; i < searchIndex.length && out.length < 8; i++) {
+          const c = searchIndex[i];
+          if (c.t.toLowerCase().includes(q) || c.d.toLowerCase().includes(q) || c.k.includes(q)) out.push(c);
         }
         return out;
       })()
     : [];
-
 
   const handleSearchResultClick = (slug: string) => {
     setSearchQuery('');
@@ -187,8 +187,8 @@ export default function Header() {
                 placeholder="Search calculators... (Ctrl+K)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                onFocus={() => setSearchFocused(true)}
-                className="w-full rounded-full border border-border bg-background py-2 pl-10 pr-4 text-sm outline-none transition-all placeholder:text-foreground/40 focus:border-primary focus:ring-4 focus:ring-ring-custom"
+                onFocus={() => { setSearchFocused(true); fetchSearchIndex(); }}
+                className="w-full rounded-full border border-border bg-background py-2 pl-10 pr-4 text-sm outline-none transition-colors placeholder:text-foreground/40 focus:border-primary focus:ring-4 focus:ring-ring-custom"
               />
               {searchQuery && (
                 <button 
@@ -209,19 +209,19 @@ export default function Header() {
                       Search Results
                     </div>
                     {searchResults.map((calc) => {
-                      const Icon = CATEGORY_ICONS[calc.category] || Calculator;
+                      const Icon = CATEGORY_ICONS[calc.c] || Calculator;
                       return (
                         <button
-                          key={calc.slug}
-                          onClick={() => handleSearchResultClick(calc.slug)}
+                          key={calc.s}
+                          onClick={() => handleSearchResultClick(calc.s)}
                           className="flex items-center gap-3 w-full text-left rounded-lg px-3 py-2 hover:bg-background transition-colors"
                         >
                           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
-                            <Icon className="h-4.5 w-4.5" />
+                            <Icon className="h-4 w-4" />
                           </div>
                           <div className="overflow-hidden">
-                            <div className="text-sm font-medium text-foreground truncate">{calc.title}</div>
-                            <div className="text-xs text-foreground/50 truncate">{calc.description}</div>
+                            <div className="text-sm font-medium text-foreground truncate">{calc.t}</div>
+                            <div className="text-xs text-foreground/50 truncate">{calc.d}</div>
                           </div>
                         </button>
                       );
