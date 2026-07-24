@@ -31,13 +31,6 @@ export default function RootLayout({
             __html: `try{var t=localStorage.getItem('theme');if(t==='dark'||(t==null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}`,
           }}
         />
-
-        {/* GTM — deferred until after page load to not block LCP */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.addEventListener('load',function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-53RFG5QW');});`,
-          }}
-        />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         {/* GTM noscript fallback */}
@@ -60,26 +53,37 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
 
-        {/* GA — loaded after page via requestIdleCallback for zero impact on LCP/TBT */}
+        {/* Deferred Third-Party Analytics (GTM & GA) — loads on user interaction or after 3.5s idle */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(){
-                function loadGA(){
-                  var s=document.createElement('script');
-                  s.async=true;
-                  s.src='https://www.googletagmanager.com/gtag/js?id=G-Q7V59CCCKJ';
-                  document.head.appendChild(s);
-                  window.dataLayer=window.dataLayer||[];
+                var loaded = false;
+                function loadScripts(){
+                  if (loaded) return;
+                  loaded = true;
+                  
+                  // GTM
+                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-53RFG5QW');
+                  
+                  // GA
+                  var s = d.createElement('script');
+                  s.async = true;
+                  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q7V59CCCKJ';
+                  d.head.appendChild(s);
+                  window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
-                  gtag('js',new Date());
-                  gtag('config','G-Q7V59CCCKJ');
+                  gtag('js', new Date());
+                  gtag('config', 'G-Q7V59CCCKJ');
                 }
-                if('requestIdleCallback' in window){
-                  requestIdleCallback(loadGA,{timeout:4000});
-                } else {
-                  window.addEventListener('load',loadGA);
+                
+                var events = ['pointerdown', 'mousemove', 'keydown', 'touchstart', 'scroll'];
+                function trigger(){
+                  loadScripts();
+                  events.forEach(function(e){ window.removeEventListener(e, trigger); });
                 }
+                events.forEach(function(e){ window.addEventListener(e, trigger, {passive: true}); });
+                setTimeout(loadScripts, 3500);
               })();
             `,
           }}
