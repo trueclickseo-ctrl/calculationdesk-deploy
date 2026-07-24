@@ -135,10 +135,10 @@ export default function Footer() {
             . Calculations are for educational and estimation purposes only.
           </p>
           <div className="flex gap-4 text-foreground/50">
-            <a href="#" className="hover:text-primary transition-colors" aria-label="GitHub"><GithubIcon className="h-4 w-4" /></a>
-            <a href="#" className="hover:text-primary transition-colors" aria-label="Contact"><Mail className="h-4 w-4" /></a>
-            <a href="#" className="hover:text-primary transition-colors" aria-label="Privacy"><Shield className="h-4 w-4" /></a>
-            <a href="#" className="hover:text-primary transition-colors" aria-label="Terms"><BookOpen className="h-4 w-4" /></a>
+            <a href="https://github.com/trueclickseo-ctrl/calculationdesk-deploy" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="GitHub Repository"><GithubIcon className="h-4 w-4" /></a>
+            <Link href="/contact" className="hover:text-primary transition-colors" aria-label="Contact Support"><Mail className="h-4 w-4" /></Link>
+            <Link href="/privacy" className="hover:text-primary transition-colors" aria-label="Privacy Policy"><Shield className="h-4 w-4" /></Link>
+            <Link href="/terms" className="hover:text-primary transition-colors" aria-label="Terms of Service"><BookOpen className="h-4 w-4" /></Link>
           </div>
         </div>
       </div>
