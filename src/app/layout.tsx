@@ -53,19 +53,18 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
 
-        {/* Third-Party Analytics (GTM & GA) — loads ONLY on first real user interaction */}
+        {/* Analytics — loaded after window load via requestIdleCallback (Zero TBT impact) */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(){
-                var loaded = false;
-                function loadScripts(){
-                  if (loaded) return;
-                  loaded = true;
-                  
+                function initAnalytics(){
+                  if (window._analyticsLoaded) return;
+                  window._analyticsLoaded = true;
+
                   // GTM
                   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-53RFG5QW');
-                  
+
                   // GA
                   var s = d.createElement('script');
                   s.async = true;
@@ -76,13 +75,20 @@ export default function RootLayout({
                   gtag('js', new Date());
                   gtag('config', 'G-Q7V59CCCKJ');
                 }
-                
-                var events = ['pointerdown', 'mousemove', 'keydown', 'touchstart', 'scroll'];
-                function trigger(){
-                  loadScripts();
-                  events.forEach(function(e){ window.removeEventListener(e, trigger); });
+
+                function scheduleInit(){
+                  if ('requestIdleCallback' in window) {
+                    requestIdleCallback(initAnalytics, { timeout: 3000 });
+                  } else {
+                    setTimeout(initAnalytics, 1500);
+                  }
                 }
-                events.forEach(function(e){ window.addEventListener(e, trigger, {passive: true}); });
+
+                if (document.readyState === 'complete') {
+                  scheduleInit();
+                } else {
+                  window.addEventListener('load', scheduleInit);
+                }
               })();
             `,
           }}
