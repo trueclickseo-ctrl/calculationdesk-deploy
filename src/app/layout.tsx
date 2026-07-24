@@ -53,7 +53,7 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
 
-        {/* Deferred Third-Party Analytics (GTM & GA) — loads on user interaction or after 3.5s idle */}
+        {/* Third-Party Analytics (GTM & GA) — loads ONLY on first real user interaction */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -83,7 +83,6 @@ export default function RootLayout({
                   events.forEach(function(e){ window.removeEventListener(e, trigger); });
                 }
                 events.forEach(function(e){ window.addEventListener(e, trigger, {passive: true}); });
-                setTimeout(loadScripts, 3500);
               })();
             `,
           }}
