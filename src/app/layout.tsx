@@ -19,6 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
+      {/* Set dark class before first paint to avoid flash of light mode */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme');if(t==='dark'||(t==null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}`,
+          }}
+        />
         {/* Google Tag Manager — loaded after page is interactive */}
         <script
           defer
