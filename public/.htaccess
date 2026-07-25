@@ -3,19 +3,20 @@
 RewriteEngine On
 
 # 0. Canonical redirects (Force HTTPS, WWW, and Trailing Slash in a single hop)
-# Rule 1: Non-WWW + No Trailing Slash (and not a file) -> Redirect to HTTPS + WWW + Trailing Slash
-RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC]
+# Rule 1: Non-WWW or HTTP + No Trailing Slash (and not a file) -> Redirect to HTTPS + WWW + Trailing Slash
+RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC,OR]
+RewriteCond %{HTTPS} off
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !/$
 RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,4}$
 RewriteRule ^(.*)$ https://www.calculationdesk.com/$1/ [R=301,L]
 
-# Rule 2: Non-WWW + Trailing Slash (or is a file) -> Redirect to HTTPS + WWW
-RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC]
+# Rule 2: Non-WWW or HTTP + Trailing Slash (or is a file) -> Redirect to HTTPS + WWW
+RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC,OR]
+RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://www.calculationdesk.com/$1 [R=301,L]
 
-# Rule 3: WWW + No Trailing Slash (and not a file) -> Redirect to WWW + Trailing Slash
-RewriteCond %{HTTP_HOST} ^www\.calculationdesk\.com$ [NC]
+# Rule 3: WWW + HTTPS + No Trailing Slash (and not a file) -> Redirect to WWW + Trailing Slash
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !/$
 RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,4}$
