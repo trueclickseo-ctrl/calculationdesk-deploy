@@ -43,7 +43,7 @@ export default function Footer() {
               {POPULAR_CALCS.map((item) => (
                 <li key={item.slug}>
                   <Link
-                    href={`/calculators/${item.slug}/`}
+                    href={`/calculators/${item.slug}`}
                     prefetch={false}
                     className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors"
                   >
@@ -61,7 +61,7 @@ export default function Footer() {
               {CATEGORIES.slice(0, 8).map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    href={`/categories/${cat.slug}/`}
+                    href={`/categories/${cat.slug}`}
                     prefetch={false}
                     className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors"
                   >
@@ -79,7 +79,7 @@ export default function Footer() {
               {CATEGORIES.slice(8).map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    href={`/categories/${cat.slug}/`}
+                    href={`/categories/${cat.slug}`}
                     prefetch={false}
                     className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors"
                   >
@@ -95,12 +95,12 @@ export default function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/90">Legal &amp; Support</h3>
             <ul className="mt-4 space-y-2.5">
               {[
-                { href: '/blog/', label: 'Learning Blog' },
-                { href: '/about/', label: 'About Us' },
-                { href: '/contact/', label: 'Contact Support' },
-                { href: '/privacy/', label: 'Privacy Policy' },
-                { href: '/terms/', label: 'Terms & Conditions' },
-                { href: '/disclaimer/', label: 'Disclaimer' },
+                { href: '/blog', label: 'Learning Blog' },
+                { href: '/about', label: 'About Us' },
+                { href: '/contact', label: 'Contact Support' },
+                { href: '/privacy', label: 'Privacy Policy' },
+                { href: '/terms', label: 'Terms & Conditions' },
+                { href: '/disclaimer', label: 'Disclaimer' },
               ].map(link => (
                 <li key={link.href}>
                   <Link href={link.href} prefetch={false} className="text-sm text-foreground/75 hover:text-primary hover:underline transition-colors">
@@ -123,9 +123,9 @@ export default function Footer() {
             . Calculations are for educational and estimation purposes only.
           </p>
           <div className="flex gap-4 text-foreground/50">
-            <Link href="/contact/" prefetch={false} className="hover:text-primary transition-colors" aria-label="Contact Support"><Mail className="h-4 w-4" /></Link>
-            <Link href="/privacy/" prefetch={false} className="hover:text-primary transition-colors" aria-label="Privacy Policy"><Shield className="h-4 w-4" /></Link>
-            <Link href="/terms/" prefetch={false} className="hover:text-primary transition-colors" aria-label="Terms of Service"><BookOpen className="h-4 w-4" /></Link>
+            <Link href="/contact" prefetch={false} className="hover:text-primary transition-colors" aria-label="Contact Support"><Mail className="h-4 w-4" /></Link>
+            <Link href="/privacy" prefetch={false} className="hover:text-primary transition-colors" aria-label="Privacy Policy"><Shield className="h-4 w-4" /></Link>
+            <Link href="/terms" prefetch={false} className="hover:text-primary transition-colors" aria-label="Terms of Service"><BookOpen className="h-4 w-4" /></Link>
           </div>
         </div>
       </div>

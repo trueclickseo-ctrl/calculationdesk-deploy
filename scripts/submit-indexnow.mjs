@@ -20,12 +20,12 @@ async function main() {
   // 2. Gather URLs to submit
   const urlSet = new Set([
     `${BASE_URL}/`,
-    `${BASE_URL}/about/`,
-    `${BASE_URL}/contact/`,
-    `${BASE_URL}/disclaimer/`,
-    `${BASE_URL}/privacy/`,
-    `${BASE_URL}/terms/`,
-    `${BASE_URL}/blog/`,
+    `${BASE_URL}/about`,
+    `${BASE_URL}/contact`,
+    `${BASE_URL}/disclaimer`,
+    `${BASE_URL}/privacy`,
+    `${BASE_URL}/terms`,
+    `${BASE_URL}/blog`,
   ]);
 
   // Read from sitemap.xml if available
@@ -59,9 +59,9 @@ async function main() {
 
     for (const slug of slugMatches) {
       if (categorySlugs.includes(slug)) {
-        urlSet.add(`${BASE_URL}/categories/${slug}/`);
+        urlSet.add(`${BASE_URL}/categories/${slug}`);
       } else {
-        urlSet.add(`${BASE_URL}/calculators/${slug}/`);
+        urlSet.add(`${BASE_URL}/calculators/${slug}`);
       }
     }
   }

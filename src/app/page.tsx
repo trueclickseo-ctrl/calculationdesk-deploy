@@ -80,10 +80,10 @@ export default function HomePage() {
           {/* Quick-Access Top Calculators — static HTML, no JS */}
           <div className="mt-16 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
             {[
-              { href: '/calculators/emi-calculator/', label: 'Popular', color: 'text-primary', title: 'EMI Calculator', desc: 'Compute home, car, and personal loan EMIs with amortization schedules.' },
-              { href: '/calculators/sip-calculator/', label: 'Wealth', color: 'text-emerald-500', title: 'SIP Calculator', desc: 'Calculate mutual fund returns and systematic investments.' },
-              { href: '/calculators/indian-income-tax-calculator/', label: 'Tax', color: 'text-amber-500', title: 'Income Tax India', desc: 'Compare new vs old tax regime slabs for FY 2025-26.' },
-              { href: '/calculators/bmi-calculator/', label: 'Health', color: 'text-rose-500', title: 'BMI Calculator', desc: 'Check your Body Mass Index and healthy weight range instantly.' },
+              { href: '/calculators/emi-calculator', label: 'Popular', color: 'text-primary', title: 'EMI Calculator', desc: 'Compute home, car, and personal loan EMIs with amortization schedules.' },
+              { href: '/calculators/sip-calculator', label: 'Wealth', color: 'text-emerald-500', title: 'SIP Calculator', desc: 'Calculate mutual fund returns and systematic investments.' },
+              { href: '/calculators/indian-income-tax-calculator', label: 'Tax', color: 'text-amber-500', title: 'Income Tax India', desc: 'Compare new vs old tax regime slabs for FY 2025-26.' },
+              { href: '/calculators/bmi-calculator', label: 'Health', color: 'text-rose-500', title: 'BMI Calculator', desc: 'Check your Body Mass Index and healthy weight range instantly.' },
             ].map(card => (
               <Link
                 key={card.href}
@@ -125,7 +125,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={calc.slug}
-                  href={`/calculators/${calc.slug}/`}
+                  href={`/calculators/${calc.slug}`}
                   prefetch={false}
                   className="group rounded-2xl border border-border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md transition-all flex flex-col justify-between"
                 >
@@ -165,7 +165,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={cat.slug}
-                  href={`/categories/${cat.slug}/`}
+                  href={`/categories/${cat.slug}`}
                   prefetch={false}
                   className="group rounded-2xl border border-border bg-card p-6 shadow-sm hover:border-primary/20 hover:shadow-md transition-all flex items-start gap-4"
                 >

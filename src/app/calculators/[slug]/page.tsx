@@ -95,7 +95,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: {
-      canonical: `/calculators/${slug}/`,
+      canonical: `/calculators/${slug}`,
     },
   };
 }
@@ -110,7 +110,7 @@ export default async function CalculatorPage({ params }: Props) {
 
   const category = CATEGORIES.find((c) => c.slug === calc.category);
   const categoryName = category ? category.name : 'Category';
-  const categoryPath = category ? `/categories/${category.slug}/` : '/';
+  const categoryPath = category ? `/categories/${category.slug}` : '/';
 
   // Breadcrumbs items
   const breadcrumbItems = [
@@ -146,13 +146,13 @@ export default async function CalculatorPage({ params }: Props) {
         '@type': 'ListItem',
         'position': 2,
         'name': categoryName,
-        'item': `https://www.calculationdesk.com/categories/${calc.category}/`,
+        'item': `https://www.calculationdesk.com/categories/${calc.category}`,
       },
       {
         '@type': 'ListItem',
         'position': 3,
         'name': calc.title,
-        'item': `https://www.calculationdesk.com/calculators/${calc.slug}/`,
+        'item': `https://www.calculationdesk.com/calculators/${calc.slug}`,
       },
     ],
   };

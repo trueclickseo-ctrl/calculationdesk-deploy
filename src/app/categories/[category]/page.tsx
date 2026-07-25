@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${cat.name} Calculators - Free Tools | CalculationDesk`,
     description: `Free, accurate ${cat.name} calculators. ${cat.description} Explore calculators, calculations, and formulas online.`,
     alternates: {
-      canonical: `/categories/${category}/`,
+      canonical: `/categories/${category}`,
     },
   };
 }

@@ -25,7 +25,7 @@ export default function RelatedCalculators({ categorySlug, currentSlug }: Relate
         {related.map((calc) => (
           <Link
             key={calc.slug}
-            href={`/calculators/${calc.slug}/`}
+            href={`/calculators/${calc.slug}`}
             prefetch={false}
             className="flex items-center justify-between group rounded-xl border border-border bg-background/50 p-3 hover:border-primary/30 hover:bg-primary/5 transition-all"
           >
@@ -46,7 +46,7 @@ export default function RelatedCalculators({ categorySlug, currentSlug }: Relate
       
       <div className="mt-5 text-center">
         <Link 
-          href={`/categories/${categorySlug}/`}
+          href={`/categories/${categorySlug}`}
           prefetch={false}
           className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-secondary hover:underline transition-all"
         >

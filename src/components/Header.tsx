@@ -104,7 +104,7 @@ export default function Header() {
     setSearchQuery('');
     setSearchFocused(false);
     setMobileMenuOpen(false);
-    router.push(`/calculators/${slug}/`);
+    router.push(`/calculators/${slug}`);
   };
 
   return (
@@ -146,7 +146,7 @@ export default function Header() {
                     return (
                       <Link
                         key={cat.slug}
-                        href={`/categories/${cat.slug}/`}
+                        href={`/categories/${cat.slug}`}
                         prefetch={false}
                         onClick={() => setCatMenuOpen(false)}
                         className="flex items-start gap-3 rounded-lg p-2 hover:bg-background transition-colors"
@@ -166,13 +166,13 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/blog/" prefetch={false} className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
+          <Link href="/blog" prefetch={false} className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
             Blog
           </Link>
-          <Link href="/about/" prefetch={false} className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
+          <Link href="/about" prefetch={false} className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
             About
           </Link>
-          <Link href="/contact/" prefetch={false} className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
+          <Link href="/contact" prefetch={false} className="hidden md:block text-base font-bold text-foreground/90 hover:text-primary transition-colors py-2">
             Contact
           </Link>
         </div>
@@ -280,7 +280,7 @@ export default function Header() {
                 return (
                   <Link
                     key={cat.slug}
-                    href={`/categories/${cat.slug}/`}
+                    href={`/categories/${cat.slug}`}
                     prefetch={false}
                     onClick={() => setMobileMenuOpen(false)}
                     className="flex items-center gap-2 rounded-lg p-2 border border-border hover:bg-background transition-colors"
