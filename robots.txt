@@ -1,0 +1,14 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+User-Agent: GPTBot
+User-Agent: ClaudeBot
+User-Agent: PerplexityBot
+User-Agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://www.calculationdesk.com/sitemap.xml
