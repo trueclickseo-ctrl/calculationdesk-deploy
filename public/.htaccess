@@ -8,11 +8,13 @@ RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC,OR]
 RewriteCond %{HTTPS} off
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} ^/(.*)/$
+RewriteCond %{REQUEST_URI} !/yandex_[a-zA-Z0-9]+\.html$
 RewriteRule ^(.*)/$ https://www.calculationdesk.com/$1 [R=301,L]
 
 # Rule 2: Non-WWW or HTTP + NO Trailing Slash (or is a file/directory) -> Redirect to HTTPS + WWW
 RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC,OR]
 RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !/yandex_[a-zA-Z0-9]+\.html$
 RewriteRule ^(.*)$ https://www.calculationdesk.com/$1 [R=301,L]
 
 # Rule 3: WWW + HTTPS + Trailing Slash (and not a directory/root) -> Strip Trailing Slash
