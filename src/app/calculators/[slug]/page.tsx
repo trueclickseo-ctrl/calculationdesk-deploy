@@ -94,6 +94,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: {
+      canonical: `/calculators/${slug}/`,
+    },
   };
 }
 
@@ -137,19 +140,19 @@ export default async function CalculatorPage({ params }: Props) {
         '@type': 'ListItem',
         'position': 1,
         'name': 'Home',
-        'item': 'https://calculationdesk.com',
+        'item': 'https://www.calculationdesk.com/',
       },
       {
         '@type': 'ListItem',
         'position': 2,
         'name': categoryName,
-        'item': `https://calculationdesk.com/categories/${calc.category}`,
+        'item': `https://www.calculationdesk.com/categories/${calc.category}/`,
       },
       {
         '@type': 'ListItem',
         'position': 3,
         'name': calc.title,
-        'item': `https://calculationdesk.com/calculators/${calc.slug}`,
+        'item': `https://www.calculationdesk.com/calculators/${calc.slug}/`,
       },
     ],
   };

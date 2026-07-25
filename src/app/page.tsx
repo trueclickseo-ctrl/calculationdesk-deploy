@@ -1,7 +1,14 @@
 // SERVER COMPONENT — no 'use client'. Renders as static HTML, zero client JS.
 import React from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { CATEGORIES, CALCULATORS } from '@/calculators.config';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 import AdSlot from '@/components/AdSlot';
 import HomeSearch from '@/components/HomeSearch';
 import {

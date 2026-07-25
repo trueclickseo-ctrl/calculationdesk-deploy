@@ -1,8 +1,12 @@
 import React from 'react';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Disclaimer - CalculationDesk',
   description: 'Read the official CalculationDesk disclaimer regarding the accuracy and educational nature of our online calculators.',
+  alternates: {
+    canonical: '/disclaimer/',
+  },
 };
 
 export default function DisclaimerPage() {

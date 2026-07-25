@@ -11,7 +11,7 @@ interface EmbedCodeWidgetProps {
 export default function EmbedCodeWidget({ title, slug }: EmbedCodeWidgetProps) {
   const [copied, setCopied] = useState(false);
 
-  const embedCode = `<iframe src="https://calculationdesk.com/calculators/${slug}/?embed=true" width="100%" height="650" style="border:none;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);" title="${title} Widget"></iframe>`;
+  const embedCode = `<iframe src="https://www.calculationdesk.com/calculators/${slug}/?embed=true" width="100%" height="650" style="border:none;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);" title="${title} Widget"></iframe>`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(embedCode).then(() => {

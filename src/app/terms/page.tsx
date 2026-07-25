@@ -1,8 +1,12 @@
 import React from 'react';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Terms & Conditions - CalculationDesk',
   description: 'Review the Terms & Conditions governing your use of the CalculationDesk website and free calculation directory.',
+  alternates: {
+    canonical: '/terms/',
+  },
 };
 
 export default function TermsPage() {

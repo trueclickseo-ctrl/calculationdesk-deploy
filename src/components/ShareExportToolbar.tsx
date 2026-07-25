@@ -15,7 +15,7 @@ export default function ShareExportToolbar({ title, slug }: ShareExportToolbarPr
     if (typeof window !== 'undefined') {
       return window.location.href;
     }
-    return `https://calculationdesk.com/calculators/${slug}/`;
+    return `https://www.calculationdesk.com/calculators/${slug}/`;
   };
 
   const handleCopyLink = () => {

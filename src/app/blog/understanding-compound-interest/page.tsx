@@ -1,8 +1,15 @@
-'use client';
-
 import React from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Calculator } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Understanding Compound Interest Compounding Frequencies - CalculationDesk',
+  description: 'A deep-dive into how compounding intervals (daily, monthly, quarterly) affect your savings growth, complete with mathematical comparisons.',
+  alternates: {
+    canonical: '/blog/understanding-compound-interest/',
+  },
+};
 
 export default function CompoundInterestArticle() {
   return (

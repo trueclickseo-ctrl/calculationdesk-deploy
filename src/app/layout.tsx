@@ -7,6 +7,7 @@ import ScrollNavigator from "@/components/ScrollNavigator";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.calculationdesk.com"),
   title: "CalculationDesk - Free Online Calculators for Finance, Math, Health & Life",
   description: "Calculate loans (EMI), track physical health (BMI), check age details, and search 280+ free online calculators. Simple, accurate, and lightning-fast calculations.",
 };

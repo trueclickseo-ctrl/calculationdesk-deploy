@@ -1,8 +1,12 @@
 import React from 'react';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Privacy Policy - CalculationDesk',
   description: 'Understand how CalculationDesk respects your privacy. We do not collect or track your personal calculation inputs.',
+  alternates: {
+    canonical: '/privacy/',
+  },
 };
 
 export default function PrivacyPage() {

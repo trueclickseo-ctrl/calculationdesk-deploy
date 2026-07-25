@@ -1,8 +1,15 @@
-'use client';
-
 import React from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen, Clock, ArrowRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'CalculationDesk Learning Portal - Blog',
+  description: 'Deep-dive financial guides, mathematical formulas, and investment planning advice.',
+  alternates: {
+    canonical: '/blog/',
+  },
+};
 
 const BLOG_POSTS = [
   {

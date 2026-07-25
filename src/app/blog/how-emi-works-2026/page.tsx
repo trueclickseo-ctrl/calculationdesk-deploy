@@ -1,8 +1,15 @@
-'use client';
-
 import React from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Calculator, Calendar } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'How Loan EMIs are Calculated (Formula & Guide) - CalculationDesk',
+  description: 'Learn the mathematical formula behind Equated Monthly Installments (EMIs) for home and car loans, and how to reduce your overall interest burden.',
+  alternates: {
+    canonical: '/blog/how-emi-works-2026/',
+  },
+};
 
 export default function EmiArticle() {
   return (
