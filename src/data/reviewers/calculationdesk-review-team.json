@@ -1,0 +1,9 @@
+{
+  "id": "calculationdesk-review-team",
+  "name": "CalculationDesk Review Team",
+  "role": "Quality Assurance & Formula Verifiers",
+  "expertise": "Software Verification, Mathematical Accuracy, Cross-industry Formulas",
+  "bio": "Our internal Review Team ensures that every calculator logic corresponds precisely to established academic standards and industry specifications.",
+  "profileUrl": "/reviewers/calculationdesk-review-team",
+  "reviewedTopics": ["all"]
+}

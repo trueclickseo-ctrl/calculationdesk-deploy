@@ -1,0 +1,9 @@
+{
+  "id": "editorial-team",
+  "name": "CalculationDesk Editorial Team",
+  "role": "Content & Calculation Editors",
+  "expertise": "General Mathematics, Conversions, Time & Date Calculations",
+  "bio": "The CalculationDesk Editorial Team consists of math educators, technical writers, and product specialists dedicated to ensuring accuracy and clarity for everyday calculations.",
+  "profileUrl": "/authors/editorial-team",
+  "reviewedTopics": ["education", "date-time", "unit-converter", "everyday-life", "lifestyle"]
+}

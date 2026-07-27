@@ -1,0 +1,9 @@
+{
+  "id": "david-miller",
+  "name": "David Miller, PhD",
+  "role": "Scientific Reviewer & Consultant",
+  "expertise": "Applied Mathematics, Statistics & Physics",
+  "bio": "Dr. David Miller is an associate professor of physics with research interests in mathematical modeling. He verifies the physical, chemical, and statistical formulas used across our tools.",
+  "profileUrl": "/reviewers/david-miller",
+  "reviewedTopics": ["physics", "chemistry", "statistics", "ecology", "biology"]
+}

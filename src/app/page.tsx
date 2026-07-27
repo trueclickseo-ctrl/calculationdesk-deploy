@@ -1,21 +1,23 @@
-// SERVER COMPONENT — no 'use client'. Renders as static HTML, zero client JS.
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { CATEGORIES, CALCULATORS } from '@/calculators.config';
+import AdSlot from '@/components/AdSlot';
+import HomeSearch from '@/components/HomeSearch';
+import { getHomepageSchema } from '@/utils/schema-generator';
+import {
+  ArrowRight, TrendingUp, BookOpen, Calendar, Heart,
+  Briefcase, Scale, Sparkles, Cpu, Home, Star,
+  Leaf, Globe, BarChart, Smile, FlaskConical, Atom, Hammer, Clock, Zap
+} from 'lucide-react';
 
 export const metadata: Metadata = {
+  title: '280+ Free Online Calculators – Finance, Math, Date, Health & Conversion Tools',
+  description: 'Instantly calculate with 280+ free online calculators. No signup required. Fast calculations for finance, math, date, health, statistics, and conversions.',
   alternates: {
     canonical: '/',
   },
 };
-import AdSlot from '@/components/AdSlot';
-import HomeSearch from '@/components/HomeSearch';
-import {
-  ArrowRight, TrendingUp, BookOpen, Calendar, Heart,
-  Briefcase, Scale, Sparkles, Cpu, Home, Star,
-  Leaf, Globe, BarChart, Smile, FlaskConical, Atom, Hammer
-} from 'lucide-react';
 
 const CATEGORY_ICONS: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   financial: TrendingUp,
@@ -36,8 +38,12 @@ const CATEGORY_ICONS: Record<string, React.ComponentType<React.SVGProps<SVGSVGEl
   construction: Hammer,
 };
 
-// Pre-compute at build time (server-side only)
-const FEATURED_CALCS = CALCULATORS.filter(c => c.implemented).slice(0, 12);
+// Select target lists dynamically
+const FEATURED_CALCS = CALCULATORS.filter(c => c.implemented).slice(0, 9);
+const POPULAR_CALCS = CALCULATORS.filter(c => c.implemented && ['emi-calculator', 'sip-calculator', 'bmi-calculator', 'indian-income-tax-calculator'].includes(c.slug));
+const RECENTLY_UPDATED = CALCULATORS.filter(c => c.implemented).slice(10, 14);
+const TRENDING_CALCS = CALCULATORS.filter(c => c.implemented).slice(14, 18);
+
 const CATEGORY_COUNTS = Object.fromEntries(
   CATEGORIES.map(cat => [
     cat.slug,
@@ -46,20 +52,28 @@ const CATEGORY_COUNTS = Object.fromEntries(
 );
 
 export default function HomePage() {
+  const homepageSchemas = getHomepageSchema();
+
   return (
     <div className="min-h-screen bg-background">
+      {/* Dynamic SEO JSON-LD Schemas */}
+      {homepageSchemas.map((schema, idx) => (
+        <script
+          key={idx}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-transparent to-transparent py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
-            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Free Online Calculators for{' '}
-              <span className="text-primary font-extrabold">
-                Finance, Education, Health &amp; Business
-              </span>
+            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-tight">
+              280+ Free Online Calculators for Every Calculation
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-base md:text-lg text-foreground/70">
-              Simple, accurate, and fast calculators for every need. Choose from over 280 specialized tools updated for 2026.
+            <p className="mx-auto mt-6 max-w-xl text-base md:text-lg text-foreground/70 leading-relaxed">
+              Use our quick, free online calculator tools. Estimate loan EMIs, finance investments, track physical health, or perform unit conversions instantly with no signup.
             </p>
             <div className="mt-8 flex justify-center gap-4">
               <a
@@ -77,7 +91,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Quick-Access Top Calculators — static HTML, no JS */}
+          {/* Quick-Access Top Calculators */}
           <div className="mt-16 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
             {[
               { href: '/calculators/emi-calculator', label: 'Popular', color: 'text-primary', title: 'EMI Calculator', desc: 'Compute home, car, and personal loan EMIs with amortization schedules.' },
@@ -113,11 +127,62 @@ export default function HomePage() {
         {/* Top Ad banner */}
         <AdSlot position="header" />
 
-        {/* Featured Tools — server-rendered, no client JS */}
+        {/* Dynamic Widget Grid: Popular / Trending / Recently Updated */}
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 my-12">
+          {/* Most Popular */}
+          <div className="rounded-3xl border border-border bg-card p-6 shadow-sm">
+            <h2 className="text-base font-black text-foreground mb-4 flex items-center gap-2">
+              <Zap className="h-5 w-5 text-primary" />
+              Most Popular Calculators
+            </h2>
+            <div className="space-y-3">
+              {POPULAR_CALCS.map(calc => (
+                <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="block group">
+                  <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{calc.title}</h4>
+                  <p className="text-xs text-foreground/50 line-clamp-1 mt-0.5">{calc.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Trending Seasonal */}
+          <div className="rounded-3xl border border-border bg-card p-6 shadow-sm">
+            <h2 className="text-base font-black text-foreground mb-4 flex items-center gap-2">
+              <TrendingUp className="h-5 w-5 text-emerald-500" />
+              Trending Seasonal Calculators
+            </h2>
+            <div className="space-y-3">
+              {TRENDING_CALCS.map(calc => (
+                <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="block group">
+                  <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{calc.title}</h4>
+                  <p className="text-xs text-foreground/50 line-clamp-1 mt-0.5">{calc.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Recently Updated */}
+          <div className="rounded-3xl border border-border bg-card p-6 shadow-sm">
+            <h2 className="text-base font-black text-foreground mb-4 flex items-center gap-2">
+              <Clock className="h-5 w-5 text-amber-500" />
+              Recently Updated Tools
+            </h2>
+            <div className="space-y-3">
+              {RECENTLY_UPDATED.map(calc => (
+                <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="block group">
+                  <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{calc.title}</h4>
+                  <p className="text-xs text-foreground/50 line-clamp-1 mt-0.5">{calc.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Tools */}
         <section className="my-12">
           <div className="flex items-center gap-2 mb-6">
             <Star className="h-5 w-5 text-amber-500 fill-amber-500" />
-            <h2 className="text-2xl font-black text-foreground">Featured Tools</h2>
+            <h2 className="text-2xl font-black text-foreground">Featured Calculator Tools</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {FEATURED_CALCS.map((calc) => {
@@ -150,14 +215,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Search Section — the ONLY client island on this page */}
+        {/* Search Section */}
         <div id="search-section">
           <HomeSearch />
         </div>
 
-        {/* Categories Grid — server-rendered */}
+        {/* Categories Grid */}
         <section id="categories-grid" className="my-16 scroll-mt-20">
-          <h2 className="text-2xl font-black text-foreground mb-8">Browse by Category</h2>
+          <h2 className="text-2xl font-black text-foreground mb-8">Browse by Calculation Category</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {CATEGORIES.map((cat) => {
               const Icon = CATEGORY_ICONS[cat.slug] || Star;
