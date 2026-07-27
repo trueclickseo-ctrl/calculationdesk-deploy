@@ -11,4 +11,9 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://www.calculationdesk.com/sitemap.xml
+Sitemap: https://www.calculationdesk.com/calculator-sitemap.xml
+Sitemap: https://www.calculationdesk.com/category-sitemap.xml
+Sitemap: https://www.calculationdesk.com/page-sitemap.xml
+Sitemap: https://www.calculationdesk.com/pillar-sitemap.xml
+Sitemap: https://www.calculationdesk.com/guide-sitemap.xml
+Sitemap: https://www.calculationdesk.com/subcategory-sitemap.xml
