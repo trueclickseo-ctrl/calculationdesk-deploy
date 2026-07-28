@@ -2,24 +2,35 @@
 
 RewriteEngine On
 
-# Step 1: Force HTTPS + WWW host for EVERY request (files, sitemaps, pages, everything)
+# Step 1: Real files — force https+www only, no trailing slash logic
+RewriteCond %{REQUEST_FILENAME} -f
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\.calculationdesk\.com$ [NC]
 RewriteRule ^(.*)$ https://www.calculationdesk.com/$1 [R=301,L,QSA]
-
-# Step 2: Now that host+protocol are guaranteed correct, decide about trailing slash.
-# Skip trailing-slash logic for real files (images, css, js, etc.)
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# Skip trailing-slash logic for sitemap/robots/verification files
+# Step 2: Sitemap/robots/verification files — same, no trailing slash logic
+RewriteCond %{REQUEST_URI} ^/robots\.txt$ [NC,OR]
+RewriteCond %{REQUEST_URI} ^/[a-zA-Z0-9_-]+\.xml$ [NC,OR]
+RewriteCond %{REQUEST_URI} ^/yandex_[a-zA-Z0-9]+\.html$ [NC]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.calculationdesk\.com$ [NC]
+RewriteRule ^(.*)$ https://www.calculationdesk.com/$1 [R=301,L,QSA]
 RewriteCond %{REQUEST_URI} ^/robots\.txt$ [NC,OR]
 RewriteCond %{REQUEST_URI} ^/[a-zA-Z0-9_-]+\.xml$ [NC,OR]
 RewriteCond %{REQUEST_URI} ^/yandex_[a-zA-Z0-9]+\.html$ [NC]
 RewriteRule ^ - [L]
 
-# Step 3: Everything else — append trailing slash if missing, preserve query string
-RewriteCond %{REQUEST_FILENAME} !-f
+# Step 3: Everything else — single combined check, one redirect regardless of
+# how many things are wrong (protocol, host, and/or trailing slash)
+# 3a: Ends with a slash (or is root), but host/protocol is wrong -> redirect directly without duplicating slash
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.calculationdesk\.com$ [NC]
+RewriteCond %{REQUEST_URI} /$
+RewriteRule ^(.*)$ https://www.calculationdesk.com/$1 [R=301,L,QSA]
+
+# 3b: Missing trailing slash -> redirect directly, appending slash
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ https://www.calculationdesk.com/$1/ [R=301,L,QSA]
 
