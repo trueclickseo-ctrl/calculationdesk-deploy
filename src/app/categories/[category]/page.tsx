@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${cat.name} Calculators – 100% Free, Instant & Accurate Tools | CalculationDesk`,
     description: `Access our free, accurate suite of ${cat.name} calculators. ${cat.description} Complete with formulas, step-by-step guides, and worked examples online.`,
     alternates: {
-      canonical: `/categories/${category}`,
+      canonical: `/categories/${category}/`,
     },
   };
 }
@@ -101,7 +101,7 @@ export default async function CategoryPage({ params }: Props) {
                 {activeCalcs.map((calc) => (
                   <Link
                     key={calc.slug}
-                    href={`/calculators/${calc.slug}`}
+                    href={`/calculators/${calc.slug}/`}
                     prefetch={false}
                     className="group rounded-2xl border border-border bg-card p-6 shadow-sm hover:border-primary/20 hover:shadow-md hover:scale-[1.01] transition-all flex flex-col justify-between"
                   >
@@ -181,7 +181,7 @@ export default async function CategoryPage({ params }: Props) {
                 Learn formulas, variables, step-by-step methods, and detailed examples for everyday planning.
               </p>
               <Link
-                href={`/pillar/${category === 'financial' ? 'finance' : category}-calculators`}
+                href={`/pillar/${category === 'financial' ? 'finance' : category}-calculators/`}
                 className="inline-flex items-center gap-1 text-xs font-black text-primary hover:underline"
               >
                 <span>Read the Complete Guide</span>
@@ -231,7 +231,7 @@ export default async function CategoryPage({ params }: Props) {
                 {seoData.relatedCategories.map((rcat) => (
                   <Link
                     key={rcat.slug}
-                    href={`/categories/${rcat.slug}`}
+                    href={`/categories/${rcat.slug}/`}
                     className="block text-sm font-bold text-primary hover:underline hover:text-secondary-hover transition-colors"
                   >
                     → {rcat.name}

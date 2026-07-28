@@ -10,7 +10,7 @@ export async function GET() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${CATEGORIES.map(cat => `
   <url>
-    <loc>${BASE_URL}/categories/${cat.slug}</loc>
+    <loc>${BASE_URL}/categories/${cat.slug}/</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

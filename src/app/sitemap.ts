@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Category pages
   CATEGORIES.forEach((cat) => {
     routes.push({
-      url: `${BASE_URL}/categories/${cat.slug}`,
+      url: `${BASE_URL}/categories/${cat.slug}/`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Calculator pages
   CALCULATORS.forEach((calc) => {
     routes.push({
-      url: `${BASE_URL}/calculators/${calc.slug}`,
+      url: `${BASE_URL}/calculators/${calc.slug}/`,
       lastModified: new Date(),
       changeFrequency: calc.implemented ? 'weekly' : 'monthly',
       priority: calc.implemented ? 0.7 : 0.4,
@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ['about', 'contact', 'privacy', 'terms', 'disclaimer', 'blog'];
   staticPages.forEach((page) => {
     routes.push({
-      url: `${BASE_URL}/${page}`,
+      url: `${BASE_URL}/${page}/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts = ['how-emi-works-2026', 'understanding-compound-interest'];
   blogPosts.forEach((post) => {
     routes.push({
-      url: `${BASE_URL}/blog/${post}`,
+      url: `${BASE_URL}/blog/${post}/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Disclaimer - CalculationDesk',
   description: 'Read the official CalculationDesk disclaimer regarding the accuracy and educational nature of our online calculators.',
   alternates: {
-    canonical: '/disclaimer',
+    canonical: '/disclaimer/',
   },
 };
 

@@ -11,7 +11,7 @@ export async function GET() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${STATIC_PAGES.map(page => `
   <url>
-    <loc>${BASE_URL}/${page}</loc>
+    <loc>${page === '' ? `${BASE_URL}/` : `${BASE_URL}/${page}/`}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${page === '' ? '1.0' : '0.5'}</priority>

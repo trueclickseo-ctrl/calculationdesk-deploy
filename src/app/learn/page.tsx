@@ -7,7 +7,7 @@ export const metadata = {
   title: 'CalculationDesk Learning Center – Math, Finance & Science Guides',
   description: 'Explore our comprehensive library of math formulas, financial guides, statistics tutorials, and conversion cheat sheets.',
   alternates: {
-    canonical: '/learn',
+    canonical: '/learn/',
   },
 };
 
@@ -17,8 +17,8 @@ const SECTIONS = [
     description: 'Master compound interest, amortization formulas, and retirement planning equations.',
     slug: 'finance',
     links: [
-      { title: 'How Compound Interest Works', href: '/guides/how-compound-interest-works' },
-      { title: 'The Financial Formula Handbook', href: '/guides/finance-formula-handbook' }
+      { title: 'How Compound Interest Works', href: '/guides/how-compound-interest-works/' },
+      { title: 'The Financial Formula Handbook', href: '/guides/finance-formula-handbook/' }
     ]
   },
   {
@@ -26,8 +26,8 @@ const SECTIONS = [
     description: 'Solve percentage increases, decrease ratios, fractions, and quadratic algebra.',
     slug: 'math',
     links: [
-      { title: 'How To Calculate Percentages', href: '/guides/how-to-calculate-percentages' },
-      { title: 'College Math Formula Sheet', href: '/guides/math-formulas-reference' }
+      { title: 'How To Calculate Percentages', href: '/guides/how-to-calculate-percentages/' },
+      { title: 'College Math Formula Sheet', href: '/guides/math-formulas-reference/' }
     ]
   }
 ];
@@ -38,7 +38,7 @@ export default function LearnPage() {
     "@type": "CollectionPage",
     "name": "CalculationDesk Learning Center",
     "description": "Educational resource hub explaining formulas, calculations, and real-world math applications.",
-    "url": "https://www.calculationdesk.com/learn",
+    "url": "https://www.calculationdesk.com/learn/",
     "publisher": {
       "@type": "Organization",
       "name": "CalculationDesk",

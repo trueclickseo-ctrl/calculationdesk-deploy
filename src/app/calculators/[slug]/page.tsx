@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: seoData.seoTitle,
     description: seoData.metaDescription,
     alternates: {
-      canonical: `/calculators/${slug}`,
+      canonical: `/calculators/${slug}/`,
     },
   };
 }
@@ -83,7 +83,7 @@ export default async function CalculatorPage({ params }: Props) {
   const seoData = getCalculatorSeoData(slug);
   const category = CATEGORIES.find((c) => c.slug === calc.category);
   const categoryName = category ? category.name : 'Category';
-  const categoryPath = category ? `/categories/${category.slug}` : '/';
+  const categoryPath = category ? `/categories/${category.slug}/` : '/';
 
   // Semantic related links
   const semanticLinks = getSemanticLinks(slug);
@@ -368,7 +368,7 @@ export default async function CalculatorPage({ params }: Props) {
                 {semanticLinks.map((link) => (
                   <Link
                     key={link.slug}
-                    href={`/calculators/${link.slug}`}
+                    href={`/calculators/${link.slug}/`}
                     className="block text-sm hover:underline"
                     data-analytics-event="related_calculator_clicked"
                   >

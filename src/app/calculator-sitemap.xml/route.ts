@@ -10,7 +10,7 @@ export async function GET() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${CALCULATORS.map(calc => `
   <url>
-    <loc>${BASE_URL}/calculators/${calc.slug}</loc>
+    <loc>${BASE_URL}/calculators/${calc.slug}/</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>${calc.implemented ? 'weekly' : 'monthly'}</changefreq>
     <priority>${calc.implemented ? '0.8' : '0.5'}</priority>

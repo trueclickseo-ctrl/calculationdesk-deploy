@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: config.title,
     description: config.description,
     alternates: {
-      canonical: `/guides/${slug}`,
+      canonical: `/guides/${slug}/`,
     },
   };
 }
@@ -90,7 +90,7 @@ export default async function GuidePage({ params }: Props) {
               {config.calculators.map((calc) => (
                 <Link
                   key={calc.slug}
-                  href={`/calculators/${calc.slug}`}
+                  href={`/calculators/${calc.slug}/`}
                   className="block p-4 rounded-2xl border border-border bg-card hover:border-primary hover:shadow-sm font-semibold text-primary hover:text-secondary text-sm"
                 >
                   {calc.title} →

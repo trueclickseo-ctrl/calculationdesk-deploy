@@ -137,7 +137,7 @@ export default function HomePage() {
             </h2>
             <div className="space-y-3">
               {POPULAR_CALCS.map(calc => (
-                <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="block group">
+                <Link key={calc.slug} href={`/calculators/${calc.slug}/`} className="block group">
                   <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{calc.title}</h4>
                   <p className="text-xs text-foreground/50 line-clamp-1 mt-0.5">{calc.description}</p>
                 </Link>
@@ -153,7 +153,7 @@ export default function HomePage() {
             </h2>
             <div className="space-y-3">
               {TRENDING_CALCS.map(calc => (
-                <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="block group">
+                <Link key={calc.slug} href={`/calculators/${calc.slug}/`} className="block group">
                   <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{calc.title}</h4>
                   <p className="text-xs text-foreground/50 line-clamp-1 mt-0.5">{calc.description}</p>
                 </Link>
@@ -169,7 +169,7 @@ export default function HomePage() {
             </h2>
             <div className="space-y-3">
               {RECENTLY_UPDATED.map(calc => (
-                <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="block group">
+                <Link key={calc.slug} href={`/calculators/${calc.slug}/`} className="block group">
                   <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{calc.title}</h4>
                   <p className="text-xs text-foreground/50 line-clamp-1 mt-0.5">{calc.description}</p>
                 </Link>
@@ -190,7 +190,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={calc.slug}
-                  href={`/calculators/${calc.slug}`}
+                  href={`/calculators/${calc.slug}/`}
                   prefetch={false}
                   className="group rounded-2xl border border-border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md transition-all flex flex-col justify-between"
                 >
@@ -230,7 +230,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={cat.slug}
-                  href={`/categories/${cat.slug}`}
+                  href={`/categories/${cat.slug}/`}
                   prefetch={false}
                   className="group rounded-2xl border border-border bg-card p-6 shadow-sm hover:border-primary/20 hover:shadow-md transition-all flex items-start gap-4"
                 >

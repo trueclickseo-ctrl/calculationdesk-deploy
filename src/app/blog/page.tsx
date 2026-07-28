@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'CalculationDesk Learning Portal - Blog',
   description: 'Deep-dive financial guides, mathematical formulas, and investment planning advice.',
   alternates: {
-    canonical: '/blog',
+    canonical: '/blog/',
   },
 };
 

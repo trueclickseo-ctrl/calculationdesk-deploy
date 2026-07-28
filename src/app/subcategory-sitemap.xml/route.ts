@@ -25,7 +25,7 @@ export async function GET() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${SUBCATEGORIES.map(s => `
   <url>
-    <loc>${BASE_URL}/subcategory/${s}</loc>
+    <loc>${BASE_URL}/subcategory/${s}/</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>

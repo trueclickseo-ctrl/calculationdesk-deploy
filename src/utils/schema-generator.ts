@@ -29,7 +29,7 @@ export function getCategorySchema(categoryName: string, categorySlug: string, ca
   const itemListElement = calculators.map((calc, index) => ({
     "@type": "ListItem",
     "position": index + 1,
-    "url": `https://www.calculationdesk.com/calculators/${calc.slug}`
+    "url": `https://www.calculationdesk.com/calculators/${calc.slug}/`
   }));
 
   return [
@@ -37,7 +37,7 @@ export function getCategorySchema(categoryName: string, categorySlug: string, ca
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": `${categoryName} Calculators - CalculationDesk`,
-      "url": `https://www.calculationdesk.com/categories/${categorySlug}`,
+      "url": `https://www.calculationdesk.com/categories/${categorySlug}/`,
       "description": `A curated collection of free online calculators for ${categoryName.toLowerCase()}.`,
       "mainEntity": {
         "@type": "ItemList",
@@ -58,7 +58,7 @@ export function getCategorySchema(categoryName: string, categorySlug: string, ca
           "@type": "ListItem",
           "position": 2,
           "name": categoryName,
-          "item": `https://www.calculationdesk.com/categories/${categorySlug}`
+          "item": `https://www.calculationdesk.com/categories/${categorySlug}/`
         }
       ]
     }
@@ -87,13 +87,13 @@ export function getCalculatorSchema(
         "@type": "ListItem",
         "position": 2,
         "name": categoryName,
-        "item": `https://www.calculationdesk.com/categories/${categorySlug}`
+        "item": `https://www.calculationdesk.com/categories/${categorySlug}/`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": title,
-        "item": `https://www.calculationdesk.com/calculators/${slug}`
+        "item": `https://www.calculationdesk.com/calculators/${slug}/`
       }
     ]
   };
@@ -105,7 +105,7 @@ export function getCalculatorSchema(
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": title,
-    "url": `https://www.calculationdesk.com/calculators/${slug}`,
+    "url": `https://www.calculationdesk.com/calculators/${slug}/`,
     "operatingSystem": "All",
     "applicationCategory": "EducationalApplication",
     "offers": {
@@ -155,7 +155,7 @@ export function getGuideSchema(title: string, slug: string, description: string,
       "author": {
         "@type": "Person",
         "name": authorName,
-        "url": "https://www.calculationdesk.com/authors/editorial-team"
+        "url": "https://www.calculationdesk.com/authors/editorial-team/"
       },
       "publisher": {
         "@type": "Organization",
@@ -165,7 +165,7 @@ export function getGuideSchema(title: string, slug: string, description: string,
           "url": "https://www.calculationdesk.com/icon.svg"
         }
       },
-      "mainEntityOfPage": `https://www.calculationdesk.com/guides/${slug}`
+      "mainEntityOfPage": `https://www.calculationdesk.com/guides/${slug}/`
     }
   ];
 }

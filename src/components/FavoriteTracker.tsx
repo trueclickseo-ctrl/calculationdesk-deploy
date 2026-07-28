@@ -131,7 +131,7 @@ export default function FavoriteTracker({ currentSlug }: FavoriteTrackerProps) {
             {favorites.map(calc => (
               <Link
                 key={calc.slug}
-                href={`/calculators/${calc.slug}`}
+                href={`/calculators/${calc.slug}/`}
                 className="flex items-center justify-between rounded-xl border border-border bg-background/50 px-4 py-3 hover:border-primary/30 hover:bg-primary/5 transition-all text-sm font-semibold text-foreground"
               >
                 <span>{calc.title}</span>
@@ -162,7 +162,7 @@ export default function FavoriteTracker({ currentSlug }: FavoriteTrackerProps) {
             {recents.map(calc => (
               <Link
                 key={calc.slug}
-                href={`/calculators/${calc.slug}`}
+                href={`/calculators/${calc.slug}/`}
                 className="flex items-center justify-between rounded-xl border border-border bg-background/50 px-4 py-3 hover:border-primary/30 hover:bg-primary/5 transition-all text-sm font-semibold text-foreground"
               >
                 <span>{calc.title}</span>

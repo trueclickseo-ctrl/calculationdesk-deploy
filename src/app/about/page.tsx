@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'About Us - CalculationDesk',
   description: 'Learn about CalculationDesk, the ultimate online resource for fast, accurate, and completely free calculations across finance, education, health, lifestyle, and science.',
   alternates: {
-    canonical: '/about',
+    canonical: '/about/',
   },
 };
 

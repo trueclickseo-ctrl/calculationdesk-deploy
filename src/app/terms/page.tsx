@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Terms & Conditions - CalculationDesk',
   description: 'Review the Terms & Conditions governing your use of the CalculationDesk website and free calculation directory.',
   alternates: {
-    canonical: '/terms',
+    canonical: '/terms/',
   },
 };
 

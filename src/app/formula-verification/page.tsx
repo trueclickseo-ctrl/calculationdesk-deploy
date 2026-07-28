@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Formula Verification Policy | CalculationDesk',
   description: 'Understand how we test, audit, and verify the mathematical and scientific formulas used in our calculators.',
   alternates: {
-    canonical: '/formula-verification',
+    canonical: '/formula-verification/',
   },
 };
 

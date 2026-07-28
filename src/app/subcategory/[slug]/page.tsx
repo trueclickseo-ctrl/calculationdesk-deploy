@@ -167,7 +167,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${config.title} – Free Tools | CalculationDesk`,
     description: config.description,
     alternates: {
-      canonical: `/subcategory/${slug}`,
+      canonical: `/subcategory/${slug}/`,
     },
   };
 }
@@ -214,7 +214,7 @@ export default async function SubcategoryPage({ params }: Props) {
                 {relatedCalcs.map((calc) => (
                   <Link
                     key={calc.slug}
-                    href={`/calculators/${calc.slug}`}
+                    href={`/calculators/${calc.slug}/`}
                     className="group rounded-2xl border border-border bg-card p-6 shadow-sm hover:border-primary/20 hover:shadow-md transition-all flex flex-col justify-between"
                   >
                     <div>

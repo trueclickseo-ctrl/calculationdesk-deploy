@@ -20,7 +20,7 @@ export async function GET() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${PILLAR_PAGES.map(p => `
   <url>
-    <loc>${BASE_URL}/pillar/${p}</loc>
+    <loc>${BASE_URL}/pillar/${p}/</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

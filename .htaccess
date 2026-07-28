@@ -2,43 +2,35 @@
 
 RewriteEngine On
 
-# 0. Canonical redirects (Force HTTPS, WWW, and NO Trailing Slash in a single hop)
-# Rule 1: Non-WWW or HTTP + Trailing Slash (and not a directory) -> Redirect to HTTPS + WWW + NO Trailing Slash
-RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC,OR]
-RewriteCond %{HTTPS} off
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} ^/(.*)/$
-RewriteCond %{REQUEST_URI} !/yandex_[a-zA-Z0-9]+\.html$
-RewriteRule ^(.*)/$ https://www.calculationdesk.com/$1 [R=301,L]
+# Step 1: Force HTTPS + WWW host for EVERY request (files, sitemaps, pages, everything)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.calculationdesk\.com$ [NC]
+RewriteRule ^(.*)$ https://www.calculationdesk.com/$1 [R=301,L,QSA]
 
-# Rule 2: Non-WWW or HTTP + NO Trailing Slash (or is a file/directory) -> Redirect to HTTPS + WWW
-RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC,OR]
-RewriteCond %{HTTPS} off
-RewriteCond %{REQUEST_URI} !/yandex_[a-zA-Z0-9]+\.html$
-RewriteRule ^(.*)$ https://www.calculationdesk.com/$1 [R=301,L]
-
-# Rule 3: WWW + HTTPS + Trailing Slash (and not a directory/root) -> Strip Trailing Slash
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} ^/(.+)/$
-RewriteRule ^(.*)/$ https://www.calculationdesk.com/$1 [R=301,L]
-
-
-# 1. Allow direct access to real files (like .txt, .xml, .svg, images, css, js)
+# Step 2: Now that host+protocol are guaranteed correct, decide about trailing slash.
+# Skip trailing-slash logic for real files (images, css, js, etc.)
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# 2. Allow direct access to real directories
-RewriteCond %{REQUEST_FILENAME} -d
+# Skip trailing-slash logic for sitemap/robots/verification files
+RewriteCond %{REQUEST_URI} ^/robots\.txt$ [NC,OR]
+RewriteCond %{REQUEST_URI} ^/[a-zA-Z0-9_-]+\.xml$ [NC,OR]
+RewriteCond %{REQUEST_URI} ^/yandex_[a-zA-Z0-9]+\.html$ [NC]
 RewriteRule ^ - [L]
 
-# 3. Route clean URLs to corresponding index.html files if available
+# Step 3: Everything else — append trailing slash if missing, preserve query string
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ https://www.calculationdesk.com/$1/ [R=301,L,QSA]
+
+# Step 4: Route clean URLs to corresponding index.html files if available
 RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^(.*)/$ /$1/index.html [L]
 
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.*)$ /$1.html [L]
 
-# 4. Custom 404 handler
+# Custom 404 handler
 ErrorDocument 404 /404.html
 
 # Enable Gzip / Deflate Compression

@@ -19,7 +19,7 @@ export default function RelatedGuides({ guideSlugs }: RelatedGuidesProps) {
         {guideSlugs.map((slug) => (
           <Link
             key={slug}
-            href={`/guides/${slug}`}
+            href={`/guides/${slug}/`}
             className="block text-sm font-semibold text-primary hover:underline hover:text-secondary-hover transition-colors"
           >
             → How {slug.replace(/-/g, ' ')} Works

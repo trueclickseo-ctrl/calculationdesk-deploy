@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Editorial Policy & Standards | CalculationDesk',
   description: 'Learn about our content standards, editorial integrity, and calculator validation processes.',
   alternates: {
-    canonical: '/editorial-policy',
+    canonical: '/editorial-policy/',
   },
 };
 

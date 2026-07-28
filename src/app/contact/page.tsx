@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Contact Us - CalculationDesk',
   description: 'Have a suggestion, feedback, or need help with a calculator? Get in touch with the CalculationDesk team.',
   alternates: {
-    canonical: '/contact',
+    canonical: '/contact/',
   },
 };
 
