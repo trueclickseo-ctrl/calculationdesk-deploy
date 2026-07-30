@@ -42,7 +42,14 @@ for (const block of blocks) {
     : [];
 
   if (slug && title) {
-    entries.push({ slug, title, description, category, keywords, implemented });
+    entries.push({
+      s: slug,
+      t: title,
+      d: description.slice(0, 140),
+      c: category,
+      k: keywords.join(' ').toLowerCase(),
+      i: implemented ? 1 : 0,
+    });
   }
 }
 

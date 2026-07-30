@@ -50,14 +50,18 @@ export default function HomeSearch() {
     [loadIndex]
   );
 
-  const results: { s: string; t: string; i: number }[] = query.trim()
+  const results: { s: string; t: string; i: number }[] = (query ?? '').trim() && Array.isArray(index)
     ? (() => {
-        if (!index) return [];
-        const q = query.toLowerCase();
+        const q = (query ?? '').toLowerCase().trim();
+        if (!q) return DEFAULTS;
         const out: SlimCalc[] = [];
         for (let i = 0; i < index.length && out.length < 6; i++) {
           const c = index[i];
-          if (c.t.toLowerCase().includes(q) || c.d.toLowerCase().includes(q) || c.k.includes(q)) {
+          if (!c) continue;
+          const title = (c.t ?? '').toLowerCase();
+          const desc = (c.d ?? '').toLowerCase();
+          const kw = Array.isArray(c.k) ? c.k.join(' ').toLowerCase() : (c.k ?? '').toLowerCase();
+          if (title.includes(q) || desc.includes(q) || kw.includes(q)) {
             out.push(c);
           }
         }

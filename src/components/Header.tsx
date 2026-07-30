@@ -88,13 +88,20 @@ export default function Header() {
   }, []);
 
   // Header search — lazy fetches /search-index.json on first focus
-  const searchResults: SlimCalc[] = searchQuery.trim() && searchIndex
+  const searchResults: SlimCalc[] = (searchQuery ?? '').trim() && Array.isArray(searchIndex)
     ? (() => {
-        const q = searchQuery.toLowerCase().trim();
+        const q = (searchQuery ?? '').toLowerCase().trim();
+        if (!q) return [];
         const out: SlimCalc[] = [];
         for (let i = 0; i < searchIndex.length && out.length < 8; i++) {
           const c = searchIndex[i];
-          if (c.t.toLowerCase().includes(q) || c.d.toLowerCase().includes(q) || c.k.includes(q)) out.push(c);
+          if (!c) continue;
+          const title = (c.t ?? '').toLowerCase();
+          const desc = (c.d ?? '').toLowerCase();
+          const kw = Array.isArray(c.k) ? c.k.join(' ').toLowerCase() : (c.k ?? '').toLowerCase();
+          if (title.includes(q) || desc.includes(q) || kw.includes(q)) {
+            out.push(c);
+          }
         }
         return out;
       })()
