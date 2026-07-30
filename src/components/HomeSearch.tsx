@@ -58,10 +58,12 @@ export default function HomeSearch() {
         for (let i = 0; i < index.length && out.length < 6; i++) {
           const c = index[i];
           if (!c) continue;
+          const slug = (c.s ?? '').toLowerCase();
           const title = (c.t ?? '').toLowerCase();
           const desc = (c.d ?? '').toLowerCase();
+          const cat = (c.c ?? '').toLowerCase();
           const kw = Array.isArray(c.k) ? c.k.join(' ').toLowerCase() : (c.k ?? '').toLowerCase();
-          if (title.includes(q) || desc.includes(q) || kw.includes(q)) {
+          if (title.includes(q) || slug.includes(q) || desc.includes(q) || cat.includes(q) || kw.includes(q)) {
             out.push(c);
           }
         }
@@ -98,6 +100,11 @@ export default function HomeSearch() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-3xl mx-auto">
         {loading && (
           <div className="col-span-3 text-sm text-foreground/40 py-4">Loading…</div>
+        )}
+        {!loading && query.trim() && results.length === 0 && (
+          <div className="col-span-3 text-sm text-foreground/50 py-6">
+            No calculators match &ldquo;{query}&rdquo;
+          </div>
         )}
         {!loading && results.map((calc) => (
           <Link
