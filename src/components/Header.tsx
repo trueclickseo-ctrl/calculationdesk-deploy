@@ -76,15 +76,30 @@ export default function Header() {
   }, []);
 
   const [searchIndex, setSearchIndex] = useState<SlimCalc[] | null>(null);
-  const indexFetched = useRef(false);
 
-  const fetchSearchIndex = useCallback(async () => {
-    if (indexFetched.current) return;
-    indexFetched.current = true;
-    try {
-      const res = await fetch('/search-index.json');
-      setSearchIndex(await res.json());
-    } catch { /* silently ignore */ }
+  useEffect(() => {
+    let isMounted = true;
+    async function loadIndex() {
+      try {
+        const res = await fetch('/search-index.json');
+        if (!res.ok) {
+          console.error('[Search] Failed to fetch /search-index.json. HTTP status:', res.status);
+          return;
+        }
+        const data = await res.json();
+        if (isMounted) {
+          console.log('[Search] Successfully loaded index items count:', Array.isArray(data) ? data.length : 0);
+          if (Array.isArray(data) && data.length > 0) {
+            console.log('[Search] Sample index item:', data[0]);
+          }
+          setSearchIndex(data);
+        }
+      } catch (err) {
+        console.error('[Search] Error loading search-index.json:', err);
+      }
+    }
+    loadIndex();
+    return () => { isMounted = false; };
   }, []);
 
   // Header search — lazy fetches /search-index.json on first focus
@@ -204,7 +219,7 @@ export default function Header() {
                   placeholder="Search calculators... (Ctrl+K)"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  onFocus={() => { setSearchFocused(true); fetchSearchIndex(); }}
+                  onFocus={() => setSearchFocused(true)}
                   className="w-full rounded-full border border-border bg-background py-2 pl-10 pr-4 text-sm outline-none transition-colors placeholder:text-foreground/40 focus:border-primary focus:ring-4 focus:ring-ring-custom"
                 />
                 {searchQuery && (

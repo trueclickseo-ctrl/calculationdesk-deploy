@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
 
@@ -24,31 +24,31 @@ export default function HomeSearch() {
   const [query, setQuery] = useState('');
   const [index, setIndex] = useState<SlimCalc[] | null>(null);
   const [loading, setLoading] = useState(false);
-  const fetchedRef = useRef(false);
 
-  // Lazy-load search index only when user starts typing
-  const loadIndex = useCallback(async () => {
-    if (fetchedRef.current) return;
-    fetchedRef.current = true;
-    setLoading(true);
-    try {
-      const res = await fetch('/search-index.json');
-      const data: SlimCalc[] = await res.json();
-      setIndex(data);
-    } catch {
-      // silently fail — search just won't work
-    } finally {
-      setLoading(false);
+  useEffect(() => {
+    let isMounted = true;
+    async function loadIndex() {
+      setLoading(true);
+      try {
+        const res = await fetch('/search-index.json');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (isMounted) {
+          setIndex(data);
+        }
+      } catch {
+        /* silently ignore */
+      } finally {
+        if (isMounted) setLoading(false);
+      }
     }
+    loadIndex();
+    return () => { isMounted = false; };
   }, []);
 
-  const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setQuery(e.target.value);
-      loadIndex();
-    },
-    [loadIndex]
-  );
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  }, []);
 
   const results: { s: string; t: string; i: number }[] = (query ?? '').trim() && Array.isArray(index)
     ? (() => {
