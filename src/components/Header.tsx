@@ -104,7 +104,7 @@ export default function Header() {
     setSearchQuery('');
     setSearchFocused(false);
     setMobileMenuOpen(false);
-    router.push(`/calculators/${slug}/`);
+    window.location.href = `/calculators/${slug}/`;
   };
 
   return (
