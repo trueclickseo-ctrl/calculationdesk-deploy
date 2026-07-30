@@ -179,28 +179,37 @@ export default function Header() {
 
         {/* Search & Actions */}
         <div className="flex items-center gap-4 flex-1 justify-end max-w-lg md:max-w-md">
-          {/* Search Bar Container */}
-          <div className="relative w-full" ref={searchRef}>
-            <div className="relative">
-              <Search className="absolute top-2.5 left-3 h-4 w-4 text-foreground/40 pointer-events-none" />
-              <input
-                id="global-search"
-                type="text"
-                placeholder="Search calculators... (Ctrl+K)"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onFocus={() => { setSearchFocused(true); fetchSearchIndex(); }}
-                className="w-full rounded-full border border-border bg-background py-2 pl-10 pr-4 text-sm outline-none transition-colors placeholder:text-foreground/40 focus:border-primary focus:ring-4 focus:ring-ring-custom"
-              />
-              {searchQuery && (
-                <button 
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-2.5 rounded-full p-0.5 text-foreground/40 hover:bg-border hover:text-foreground"
-                >
-                  <X className="h-3 w-3" />
-                </button>
-              )}
-            </div>
+            {/* Search Bar Container */}
+            <div className="relative w-full" ref={searchRef}>
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (searchResults.length > 0) {
+                    handleSearchResultClick(searchResults[0].s);
+                  }
+                }}
+                className="relative"
+              >
+                <Search className="absolute top-2.5 left-3 h-4 w-4 text-foreground/40 pointer-events-none" />
+                <input
+                  id="global-search"
+                  type="text"
+                  placeholder="Search calculators... (Ctrl+K)"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => { setSearchFocused(true); fetchSearchIndex(); }}
+                  className="w-full rounded-full border border-border bg-background py-2 pl-10 pr-4 text-sm outline-none transition-colors placeholder:text-foreground/40 focus:border-primary focus:ring-4 focus:ring-ring-custom"
+                />
+                {searchQuery && (
+                  <button 
+                    type="button"
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3 top-2.5 rounded-full p-0.5 text-foreground/40 hover:bg-border hover:text-foreground"
+                  >
+                    <X className="h-3 w-3" />
+                  </button>
+                )}
+              </form>
 
             {/* Live Search Results Overlay */}
             {searchFocused && (searchQuery.trim() || searchResults.length > 0) && (

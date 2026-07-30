@@ -71,7 +71,15 @@ export default function HomeSearch() {
       <p className="text-sm text-foreground/60 mb-6">
         Instantly lookup formulas and calculations across 280+ specialized calculators.
       </p>
-      <div className="relative max-w-xl mx-auto mb-8">
+      <form 
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (results.length > 0) {
+            window.location.href = `/calculators/${results[0].s}/`;
+          }
+        }}
+        className="relative max-w-xl mx-auto mb-8"
+      >
         <Search className="absolute left-4 top-3.5 h-5 w-5 text-foreground/35 pointer-events-none" />
         <input
           id="global-search"
@@ -81,7 +89,7 @@ export default function HomeSearch() {
           onChange={handleChange}
           className="w-full rounded-full border border-border bg-background py-3 pl-12 pr-6 text-sm md:text-base outline-none transition-colors placeholder:text-foreground/45 focus:border-primary focus:ring-4 focus:ring-ring-custom"
         />
-      </div>
+      </form>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-3xl mx-auto">
         {loading && (
