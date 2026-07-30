@@ -30,7 +30,7 @@ export default function HomeSearch() {
     async function loadIndex() {
       setLoading(true);
       try {
-        const res = await fetch('/search-index.json');
+        const res = await fetch('search-index.json');
         if (!res.ok) return;
         const data = await res.json();
         if (isMounted) {

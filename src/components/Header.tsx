@@ -81,9 +81,9 @@ export default function Header() {
     let isMounted = true;
     async function loadIndex() {
       try {
-        const res = await fetch('/search-index.json');
+        const res = await fetch('search-index.json');
         if (!res.ok) {
-          console.error('[Search] Failed to fetch /search-index.json. HTTP status:', res.status);
+          console.error('[Search] Failed to fetch search-index.json. HTTP status:', res.status);
           return;
         }
         const data = await res.json();
