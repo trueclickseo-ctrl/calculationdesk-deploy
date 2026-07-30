@@ -104,7 +104,7 @@ export default function Header() {
     setSearchQuery('');
     setSearchFocused(false);
     setMobileMenuOpen(false);
-    router.push(`/calculators/${slug}`);
+    router.push(`/calculators/${slug}/`);
   };
 
   return (
@@ -222,9 +222,15 @@ export default function Header() {
                     {searchResults.map((calc) => {
                       const Icon = CATEGORY_ICONS[calc.c] || Calculator;
                       return (
-                        <button
+                        <Link
                           key={calc.s}
-                          onClick={() => handleSearchResultClick(calc.s)}
+                          href={`/calculators/${calc.s}/`}
+                          prefetch={false}
+                          onClick={() => {
+                            setSearchQuery('');
+                            setSearchFocused(false);
+                            setMobileMenuOpen(false);
+                          }}
                           className="flex items-center gap-3 w-full text-left rounded-lg px-3 py-2 hover:bg-background transition-colors"
                         >
                           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
@@ -234,7 +240,7 @@ export default function Header() {
                             <div className="text-sm font-medium text-foreground truncate">{calc.t}</div>
                             <div className="text-xs text-foreground/50 truncate">{calc.d}</div>
                           </div>
-                        </button>
+                        </Link>
                       );
                     })}
                   </div>
