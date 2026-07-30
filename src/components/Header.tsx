@@ -88,10 +88,6 @@ export default function Header() {
         }
         const data = await res.json();
         if (isMounted) {
-          console.log('[Search] Successfully loaded index items count:', Array.isArray(data) ? data.length : 0);
-          if (Array.isArray(data) && data.length > 0) {
-            console.log('[Search] Sample index item:', data[0]);
-          }
           setSearchIndex(data);
         }
       } catch (err) {
@@ -102,7 +98,7 @@ export default function Header() {
     return () => { isMounted = false; };
   }, []);
 
-  // Header search — lazy fetches /search-index.json on first focus
+  // Header search — matches title, slug, description, category, and keywords
   const searchResults: SlimCalc[] = (searchQuery ?? '').trim() && Array.isArray(searchIndex)
     ? (() => {
         const q = (searchQuery ?? '').toLowerCase().trim();
@@ -111,10 +107,12 @@ export default function Header() {
         for (let i = 0; i < searchIndex.length && out.length < 8; i++) {
           const c = searchIndex[i];
           if (!c) continue;
+          const slug = (c.s ?? '').toLowerCase();
           const title = (c.t ?? '').toLowerCase();
           const desc = (c.d ?? '').toLowerCase();
+          const cat = (c.c ?? '').toLowerCase();
           const kw = Array.isArray(c.k) ? c.k.join(' ').toLowerCase() : (c.k ?? '').toLowerCase();
-          if (title.includes(q) || desc.includes(q) || kw.includes(q)) {
+          if (title.includes(q) || slug.includes(q) || desc.includes(q) || cat.includes(q) || kw.includes(q)) {
             out.push(c);
           }
         }
