@@ -75,28 +75,14 @@ export default function Header() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const [searchIndex, setSearchIndex] = useState<SlimCalc[] | null>(null);
-
-  useEffect(() => {
-    let isMounted = true;
-    async function loadIndex() {
-      try {
-        const res = await fetch('search-index.json');
-        if (!res.ok) {
-          console.error('[Search] Failed to fetch search-index.json. HTTP status:', res.status);
-          return;
-        }
-        const data = await res.json();
-        if (isMounted) {
-          setSearchIndex(data);
-        }
-      } catch (err) {
-        console.error('[Search] Error loading search-index.json:', err);
-      }
+  const [searchIndex, setSearchIndex] = useState<SlimCalc[] | null>(() => {
+    try {
+      // Inline embedded backup of search index for zero-latency instant search without HTTP fetch failures
+      return require('../../public/search-index.json');
+    } catch {
+      return null;
     }
-    loadIndex();
-    return () => { isMounted = false; };
-  }, []);
+  });
 
   // Header search — matches title, slug, description, category, and keywords
   const searchResults: SlimCalc[] = (searchQuery ?? '').trim() && Array.isArray(searchIndex)

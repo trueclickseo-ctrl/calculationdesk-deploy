@@ -22,29 +22,14 @@ const DEFAULTS = [
 
 export default function HomeSearch() {
   const [query, setQuery] = useState('');
-  const [index, setIndex] = useState<SlimCalc[] | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    let isMounted = true;
-    async function loadIndex() {
-      setLoading(true);
-      try {
-        const res = await fetch('search-index.json');
-        if (!res.ok) return;
-        const data = await res.json();
-        if (isMounted) {
-          setIndex(data);
-        }
-      } catch {
-        /* silently ignore */
-      } finally {
-        if (isMounted) setLoading(false);
-      }
+  const [index, setIndex] = useState<SlimCalc[] | null>(() => {
+    try {
+      return require('../../public/search-index.json');
+    } catch {
+      return null;
     }
-    loadIndex();
-    return () => { isMounted = false; };
-  }, []);
+  });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
