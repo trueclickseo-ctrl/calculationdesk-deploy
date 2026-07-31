@@ -94,10 +94,10 @@ export default function HomePage() {
           {/* Quick-Access Top Calculators */}
           <div className="mt-16 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
             {[
-              { href: '/calculators/emi-calculator', label: 'Popular', color: 'text-primary', title: 'EMI Calculator', desc: 'Compute home, car, and personal loan EMIs with amortization schedules.' },
-              { href: '/calculators/sip-calculator', label: 'Wealth', color: 'text-emerald-500', title: 'SIP Calculator', desc: 'Calculate mutual fund returns and systematic investments.' },
-              { href: '/calculators/indian-income-tax-calculator', label: 'Tax', color: 'text-amber-500', title: 'Income Tax India', desc: 'Compare new vs old tax regime slabs for FY 2025-26.' },
-              { href: '/calculators/bmi-calculator', label: 'Health', color: 'text-rose-500', title: 'BMI Calculator', desc: 'Check your Body Mass Index and healthy weight range instantly.' },
+              { href: '/calculators/emi-calculator/', label: 'Popular', color: 'text-primary', title: 'EMI Calculator', desc: 'Compute home, car, and personal loan EMIs with amortization schedules.' },
+              { href: '/calculators/sip-calculator/', label: 'Wealth', color: 'text-emerald-500', title: 'SIP Calculator', desc: 'Calculate mutual fund returns and systematic investments.' },
+              { href: '/calculators/indian-income-tax-calculator/', label: 'Tax', color: 'text-amber-500', title: 'Income Tax India', desc: 'Compare new vs old tax regime slabs for FY 2025-26.' },
+              { href: '/calculators/bmi-calculator/', label: 'Health', color: 'text-rose-500', title: 'BMI Calculator', desc: 'Check your Body Mass Index and healthy weight range instantly.' },
             ].map(card => (
               <Link
                 key={card.href}
