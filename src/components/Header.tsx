@@ -128,10 +128,10 @@ export default function Header() {
                 triggerScrollToTop();
               }
             }}
-            className="flex items-center gap-2 text-primary font-bold text-xl hover:opacity-90"
+            className="flex items-center gap-1.5 sm:gap-2 text-primary font-bold text-base sm:text-xl shrink-0 hover:opacity-90"
           >
-            <Logo className="h-6 w-6" />
-            <span className="text-primary font-bold text-xl">CalculationDesk</span>
+            <Logo className="h-5 w-5 sm:h-6 sm:w-6 shrink-0" />
+            <span className="text-primary font-bold text-base sm:text-xl truncate">CalculationDesk</span>
           </Link>
           
           {/* Categories Dropdown (Desktop) */}
@@ -219,7 +219,7 @@ export default function Header() {
 
             {/* Live Search Results Overlay */}
             {searchFocused && (searchQuery.trim() || searchResults.length > 0) && (
-              <div className="absolute right-0 mt-2 w-full min-w-[280px] md:min-w-[400px] rounded-xl border border-border bg-card shadow-2xl p-2 animate-in fade-in duration-100">
+              <div className="absolute right-0 left-0 sm:left-auto mt-2 w-full max-w-[calc(100vw-2rem)] sm:max-w-md rounded-xl border border-border bg-card shadow-2xl p-2 animate-in fade-in duration-100">
                 {searchResults.length > 0 ? (
                   <div className="flex flex-col gap-1">
                     <div className="px-3 py-1.5 text-xs font-semibold text-foreground/40 uppercase tracking-wider">

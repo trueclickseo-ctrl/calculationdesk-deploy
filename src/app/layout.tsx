@@ -6,6 +6,12 @@ import MathScrollAnimation from "@/components/MathScrollAnimation";
 import ScrollNavigator from "@/components/ScrollNavigator";
 import "./globals.css";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.calculationdesk.com"),
   title: "CalculationDesk - Free Online Calculators for Finance, Math, Health & Life",
@@ -20,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* Preconnect to third-party origins — reduces DNS + TLS latency */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
