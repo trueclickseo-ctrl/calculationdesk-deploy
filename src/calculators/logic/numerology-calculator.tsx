@@ -108,7 +108,7 @@ export default function NumerologyCalculator() {
         
         {/* Input Panel */}
         <div className="lg:col-span-5 rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <h2 className="text-xl font-bold text-foreground mb-6">Astrological Profile</h2>
+          <h2 className="text-xl font-bold text-foreground mb-6">Birth Date Input</h2>
 
           <div className="space-y-5">
             <div>

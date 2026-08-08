@@ -112,7 +112,7 @@ export default function FlamesCalculator() {
         
         {/* Input Panel */}
         <div className="lg:col-span-5 rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <h2 className="text-xl font-bold text-foreground mb-6">Timesheet Variables</h2>
+          <h2 className="text-xl font-bold text-foreground mb-6">Names to Compare</h2>
 
           <div className="space-y-5">
             <div>
