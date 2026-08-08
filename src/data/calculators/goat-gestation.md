@@ -1,14 +1,14 @@
 ---
-title: "Goat Gestation Calculator – Estimate Expected Kidding Dates"
-seoTitle: "Goat Gestation Calculator - Estimate Kidding Delivery Dates | CalculationDesk"
-metaDescription: "Calculate expected kidding delivery dates and 145-to-155 day delivery windows for pregnant does based on mating or breeding dates."
-category: "agriculture"
-subcategory: "livestock-calculators"
-tags: ["goat gestation calculator", "goat pregnancy calculator", "when will my goat kid", "goat kidding date calculator", "doe pregnancy length"]
+title: "Goat Gestation Calculator – Estimate Kidding Due Dates"
+seoTitle: "Goat Gestation Calculator - Estimate Kidding Due Dates | CalculationDesk"
+metaDescription: "Project expected kidding due dates and normal 145 to 155 day delivery windows for pregnant does based on mating or breeding dates."
+category: "pets"
+subcategory: "animal-calculators"
+tags: ["goat gestation calculator", "goat due date calculator", "how long is a goat pregnant", "goat kidding date calculator", "caprine pregnancy timeline"]
 priority: "high"
-importance: 10
+importance: 9
 clusterPriority: "primary"
-searchIntent: "transactional"
+searchIntent: "informational"
 authorId: "editorial-team"
 reviewerId: "calculationdesk-review-team"
 lastUpdated: "2026-08-09"
@@ -20,141 +20,126 @@ nextReviewDate: "2026-11-09"
 refreshPriority: "high"
 seoPriority:
   tier: 1
-  reason: "Primary caprine gestation period and kidding delivery date calculation query"
+  reason: "Primary goat pregnancy timeline and kidding due date forecast query"
 titleVariants:
-  - "Goat Gestation Calculator - Estimate Kidding Delivery Dates | CalculationDesk"
+  - "Goat Gestation Calculator - Estimate Kidding Due Dates | CalculationDesk"
 aiSummary:
-  definition: "The Goat Gestation Calculator projects expected kidding delivery dates and normal 145-to-155 day birthing windows for pregnant does based on their mating or breeding date."
-  quickAnswer: "A doe bred on October 1st has an estimated kidding date of February 28th of the following year (150 days later), with a normal expected delivery window ranging from February 23rd to March 5th."
-  formulaSummary: "Expected Kidding Date = Breeding Date + 150 Days | Delivery Window = Breeding Date + 145 Days to Breeding Date + 155 Days"
-  whenToUse: "Use this caprine calendar tool after hand-mating or artificial insemination (AI) to prepare kidding stalls, schedule veterinary checkups, and plan doe nutritional changes."
-  whoShouldUse: "Goat breeders, livestock farmers, homesteaders, 4-H youth, and veterinary extension agents."
-  limitations: "Calculates an estimated calendar date. Does not confirm pregnancy status, determine litter size, or guarantee exact biological birthing timing."
+  definition: "The Goat Gestation Calculator predicts expected kidding due dates and normal delivery windows (145 to 155 days) for pregnant does based on recorded mating or artificial insemination dates."
+  quickAnswer: "A doe bred on October 1st has an estimated kidding due date of February 28th (150 days post-breeding), with a normal delivery window spanning from February 23rd (Day 145) to March 7th (Day 155)."
+  formulaSummary: "KiddingDate = BreedingDate + 150 days | RangeStart = BreedingDate + 145 days | RangeEnd = BreedingDate + 155 days"
+  whenToUse: "Use this caprine pregnancy calculator when scheduling kidding stall preparation, dry-off periods for dairy does, and prenatal nutritional adjustments."
+  whoShouldUse: "Goat breeders, dairy goat managers, homesteaders, 4-H members, and livestock veterinarians."
+  limitations: "Calculates estimated delivery based on an average 150-day caprine gestation timeline. Actual delivery dates vary by breed size, litter size (twins vs triplets), and doe age."
   keyTakeaways:
- - "Calculates Expected Kidding Date, Expected Delivery Range (145–155 Days), and Countdown Days Remaining."
- - "Uses the standard caprine average gestation period of 150 days (5 months)."
- - "Outlines biological variations across miniature breeds (145 days) vs large dairy/meat breeds (152+ days)."
- - "Provides authoritative veterinary indicators of impending labor."
+ - "Calculates Expected Kidding Date, Expected Delivery Range (145–155 Days), and Days Remaining."
+ - "Uses the standard 150-day average caprine pregnancy model."
+ - "Differentiates miniature breed gestation (~145 days) from large dairy/meat breed gestation (~150-152 days)."
+ - "Outlines physical signs of approaching labor (bagging up, softening tailhead ligaments, nesting)."
 peopleAlsoAsk:
-  - "How many days is a goat pregnant?"
-  - "What is the delivery window for a pregnant doe?"
-  - "What are the physical signs that a goat is about to kid?"
-  - "What should I do if a doe goes past 155 days of pregnancy?"
+  - "How long is a goat pregnant?"
+  - "How many days is a goat's gestation period?"
+  - "Can a goat deliver early at 140 days?"
+  - "What are signs that a goat is about to kid?"
 examples:
-  - title: "Breeding Date October 1st"
-    inputs: "Breeding / Mating Date = October 1, 2026"
-    calculation: "Step 1: Base Gestation = 150 days. Step 2: Expected Kidding Date = October 1 + 150 days = February 28, 2027. Step 3: Range Start (145 days) = February 23, 2027. Step 4: Range End (155 days) = March 5, 2027."
-    result: "Expected Kidding Date = Sunday, February 28, 2027 | Delivery Range = Feb 23, 2027 to Mar 5, 2027"
-  - title: "Breeding Date November 15th"
-    inputs: "Breeding / Mating Date = November 15, 2026"
-    calculation: "Step 1: Add 150 days to Nov 15 -> Expected Kidding Date = April 14, 2027. Step 2: Delivery Window = April 9, 2027 to April 19, 2027."
-    result: "Expected Kidding Date = Wednesday, April 14, 2027"
+  - title: "October 1st Breeding Date"
+    inputs: "Breeding/Mating Date = October 1st"
+    calculation: "Step 1: Target Kidding Date = October 1st + 150 days = February 28th. Step 2: Delivery Window Start (Day 145) = February 23rd. Step 3: Delivery Window End (Day 155) = March 7th."
+    result: "Expected Kidding Date = February 28th | Delivery Range = February 23rd to March 7th"
+  - title: "November 15th Breeding Date"
+    inputs: "Breeding/Mating Date = November 15th"
+    calculation: "Step 1: Target Kidding Date = November 15th + 150 days = April 14th of following year. Step 2: Range Start = April 9th. Step 3: Range End = April 19th."
+    result: "Expected Kidding Date = April 14th | Delivery Range = April 9th to April 19th"
 faqs:
-  - q: "How long is a goat's gestation period?"
-    a: "The average gestation period for goats is **150 days** (approximately 5 months). A normal delivery window ranges between 145 and 155 days."
-  - q: "Do miniature goat breeds have shorter gestation periods?"
-    a: "Yes. Miniature breeds like Nigerian Dwarfs and Pygmy goats often kid slightly earlier (around **143 to 147 days**), whereas larger meat breeds (Boer) and dairy breeds (Nubian, Saanen) average **150 to 152 days**."
-  - q: "Can a doe deliver viable kids early?"
-    a: "Kids born before Day 142 are premature and rarely have fully developed lungs to survive without intensive veterinary care. Kids born between Day 145 and 155 are fully viable."
+  - q: "How long is a goat's average gestation period?"
+    a: "The average caprine gestation period is **150 days** (approximately 5 months). Normal pregnancies range between **145 and 155 days**."
+  - q: "Do different goat breeds have different gestation lengths?"
+    a: "Yes. Miniature breeds (Nigerian Dwarf, Pygmy) tend to kid slightly earlier at **143 to 147 days**. Standard dairy and meat breeds (Nubian, Alpine, Boer, Saanen) average **150 to 152 days**."
+  - q: "When should I contact a veterinarian during kidding?"
+    a: "Contact a vet immediately if: a doe has been in hard straining labor for more than 30 minutes without producing a kid, if dark red/foul discharge appears without labor, or if a pregnancy extends past **155 days**."
 references:
   - "https://extension.uga.edu/"
-  - "https://goats.extension.org/"
+  - "https://extension.usu.edu/"
 ---
 
-# Goat Gestation Calculator – Estimate Expected Kidding Dates
+# Goat Gestation Calculator – Estimate Kidding Due Dates
 
-Managing a successful goat breeding program requires accurate delivery date forecasting. Knowing when a doe is expected to kid allows herd managers to move pregnant does into clean kidding stalls, adjust late-gestation grain nutrition, and prepare birthing supplies.
+Managing a successful caprine breeding program requires accurate delivery projections to schedule kidding pen preparation, transition dairy does onto dry-off feeds, and ensure natal monitoring.
 
-This calculator computes your doe's **Expected Kidding Date**, **Normal Delivery Window (145–155 Days)**, and **Countdown Days Remaining** from her breeding date.
-
----
-
-### Caprine Gestation Biology & Calculation Engine
-
-The calculator projects delivery schedules based on caprine reproductive biology:
-
-#### 1. Expected Kidding Date ($D_{\text{kidding}}$)
-Goat gestation averages 150 days (5 calendar months):
-
-$$D_{\text{kidding}} = \text{Breeding Date} + 150 \text{ Days}$$
-
-#### 2. Normal Delivery Window Range
-Biological gestation varies by breed, doe age, and litter size. A normal, full-term birth can occur anywhere within a 10-day window:
-
-$$\text{Window Start} = \text{Breeding Date} + 145 \text{ Days}$$
-$$\text{Window End} = \text{Breeding Date} + 155 \text{ Days}$$
-
-#### 3. Days Remaining Countdown
-$$\text{Days Remaining} = \max\left(0, \left\lceil \frac{D_{\text{kidding}} - \text{Today}}{86,400,000 \text{ ms}} \right\rceil \right)$$
+This calculator computes **Expected Kidding Date**, **Expected Delivery Range (145–155 Days)**, and **Days Remaining** based on your recorded breeding date.
 
 ---
 
-### Goat Breed Gestation Variation Matrix
+### Caprine Gestation Timeline & Equations
 
-While 150 days is the universal average, actual gestation lengths vary across breeds and litter sizes:
+Goat pregnancy timelines are calculated using fixed calendar day offsets:
 
-| Goat Breed / Category | Breed Size | Average Gestation Length | Expected Birthing Window | Typical Litter Size |
-| :--- | :---: | :---: | :---: | :---: |
-| **Nigerian Dwarf** | Miniature | **145 days** | 143 to 147 days | 2 to 4 kids (Twins/Triplets common) |
-| **Pygmy Goat** | Miniature | **145 days** | 143 to 148 days | 1 to 3 kids |
-| **Boer Goat** | Large Meat Breed | **150 days** | 147 to 153 days | 1 to 2 kids |
-| **Nubian Goat** | Large Dairy Breed | **150 days** | 148 to 154 days | 2 kids |
-| **Saanen / Alpine** | Large Dairy Breed | **151 days** | 148 to 155 days | 2 kids |
+#### 1. Target Kidding Date ($D_{\text{kidding}}$)
+Standard caprine gestation averages **150 calendar days** (5 months):
 
-*Note: Does carrying multiples (triplets or quadruplets) often kid 2 to 3 days earlier than does carrying a single kid.*
+$$\mathbf{D_{\text{kidding}} = \text{Breeding Date} + 150 \text{ Days}}$$
 
----
+#### 2. Normal Delivery Range ($D_{\text{range}}$)
+Normal healthy kidding occurs between **Day 145** and **Day 155**:
 
-### Verified Step-by-Step Worked Example
-
-Let's calculate the expected kidding timeline for a doe bred on **October 1st, 2026**:
-
-#### Step 1: Compute Expected Kidding Date (150 Days)
-* October (31 days) $\rightarrow$ 30 days remaining
-* November (30 days) $\rightarrow$ 60 total
-* December (31 days) $\rightarrow$ 91 total
-* January (31 days) $\rightarrow$ 122 total
-* February (28 days) $\rightarrow$ 150 total
-$$\mathbf{\text{Expected Kidding Date} = \text{February 28, 2027}}$$
-
-#### Step 2: Compute Normal Delivery Window (145 to 155 Days)
-* Day 145 (Window Start) = $\mathbf{\text{February 23, 2027}}$
-* Day 155 (Window End) = $\mathbf{\text{March 5, 2027}}$
-
----
-
-### Authoritative Physical Signs of Impending Labor
-
-As your doe approaches her calculated delivery window (Day 145+), monitor her closely for these university-backed physical indicators:
+$$D_{\text{start}} = \text{Breeding Date} + 145 \text{ Days}$$
+$$D_{\text{end}} = \text{Breeding Date} + 155 \text{ Days}$$
 
 ```
-                      Physical Signs of Labor
-                      
-   [ Udder Expansion ]     [ Ligament Softening ]     [ Behavioral Changes ]
-   "Bagging Up" with       Tailhead ligaments         Nesting, pawing ground,
-   colostrum production    become loose & soft        pawing bedding, isolation
+                       Caprine Pregnancy Timeline
+                       
+     Breeding Date     Day 100-135        Day 145       Day 150       Day 155
+     +-----------------+------------------+-------------+-------------+
+     | Mating Recorded | Rapid Fetal Growth| Early Window| TARGET DUE  | Late Window |
+     +-----------------+------------------+-------------+-------------+
 ```
-
-1. **"Bagging Up" (Udder Expansion)**: The doe's udder fills with colostrum, appearing tight, shiny, and full 1 to 7 days before kidding.
-2. **Softening of Tailhead Ligaments**: The double ligaments running from the spine to the pin bones on either side of the tailhead soften completely, feeling like soft string rather than pencil-hard cords.
-3. **Behavioral Restlessness & Nesting**: The doe isolates herself from the herd, paws at bedding to create a nest, talks (vocalizes) to her belly, and alternates between lying down and standing up.
-4. **Vaginal Discharge**: A thick, amber or clear stringy discharge appears from the vulva, signaling that the cervical mucus plug has dissolved.
 
 ---
 
-### Veterinary Caution & Limitations
+### Breed & Litter Size Gestation Variations
 
-> [!CAUTION]
-> - **Not a Pregnancy Confirmation**: Entering a mating date into this calculator assumes that successful conception occurred. It does not confirm pregnancy. Confirm pregnancy via blood testing (BioPRNT at Day 30+) or ultrasound.
-> - **Overdue Does (>155 Days)**: If a doe passes **155 days** without showing signs of labor, or exhibits dark red/foul discharge or continuous hard straining without producing a kid within 30 minutes, contact a licensed livestock veterinarian immediately to assist with potential fetal malpresentation or dystocia.
+While 150 days is the standard average, actual delivery dates vary based on breed size and litter count:
 
-To plan pasture perimeter fencing for your newborn kids, check out our [Livestock Fence Calculator](file:///d:/Project-Calculator/src/data/calculators/livestock-fence.md) or manage pet life stages with the [Hamster Age Calculator](file:///d:/Project-Calculator/src/data/calculators/hamster-age.md).
+| Goat Breed Category | Typical Breed Examples | Average Gestation (Days) | Normal Kidding Window |
+| :--- | :--- | :---: | :---: |
+| **Miniature Breeds** | Nigerian Dwarf, Pygmy, Pygora | **145 – 148 Days** | Days 143 – 150 |
+| **Standard Dairy Breeds** | Nubian, Alpine, Saanen, LaMancha | **150 – 152 Days** | Days 146 – 155 |
+| **Meat & Fiber Breeds** | Boer, Kiko, Spanish, Angora | **149 – 151 Days** | Days 145 – 154 |
+| **Multiple Litters (Triplets/Quadruplets)** | Any Breed | **145 – 148 Days** | Kids tend to arrive 2-4 days earlier |
+
+---
+
+### Verified Step-by-Step Worked Calendar Example
+
+Let's calculate the expected kidding due date for a doe bred on **October 1st**:
+
+#### Step 1: Calculate Target Kidding Date (150 Days)
+Adding 150 days to October 1st:
+* October (30 remaining days)
+* November (30 days)
+* December (31 days)
+* January (31 days)
+* February (28 days) $\rightarrow$ **Target Kidding Date = February 28th**
+
+#### Step 2: Calculate Delivery Window (145 to 155 Days)
+* **Range Start (Day 145)** = October 1st + 145 days = **February 23rd**
+* **Range End (Day 155)** = October 1st + 155 days = **March 7th**
+
+---
+
+### Key Physical Signs of Impending Kidding (24 to 48 Hours Before Delivery)
+
+> [!NOTE]
+> - **Udder Expansion ("Bagging Up")**: The doe's udder becomes firm, tight, and shiny as milk fills the teats.
+> - **Softening Tailhead Ligaments**: The ligaments running alongside the spine to the tailhead soften and feel squishy or disappear completely, allowing the pelvic bones to widen.
+> - **Behavioral Nesting & Pawing**: The doe isolates herself from the herd, paws repeatedly at bedding, sits down and stands up frequently, and vocalizes softly.
+
+To calculate fencing material requirements for goat enclosures, check out our [Livestock Fence Calculator](file:///d:/Project-Calculator/src/data/calculators/livestock-fence.md).
 
 ---
 
 ### Frequently Asked Questions (FAQ)
 
-* **Q1: What should I feed a pregnant doe in late gestation?**
-  * A1: During the final 4 weeks of pregnancy (Days 120–150), kids grow rapidly. Slowly introduce high-quality alfalfa hay and grain to meet energy demands and prevent pregnancy toxemia (ketosis).
-* **Q2: How long should stage-two labor take?**
-  * A2: Once hard active contractions begin and the water bag ruptures, the first kid should be delivered within **30 to 45 minutes**. If straining produces no progress after 30 minutes, intervene or call a vet.
+* **Q1: Can kids survived if born before Day 142?**
+  * A1: Kids born before **Day 142** are considered premature and frequently lack sufficient lung surfactant to breathe independently. Veterinary intervention and heat lamps are vital.
+* **Q2: Should I change the doe's diet during late gestation?**
+  * A2: Yes. During the last 4 to 6 weeks of gestation (Days 100–150), fetuses experience 70% of their physical growth. Gradually increase high-quality alfalfa hay and grain to prevent pregnancy toxemia (ketosis).
