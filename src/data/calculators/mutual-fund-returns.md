@@ -72,51 +72,51 @@ This calculator supports both modes, projecting your **total invested capital, e
 #### 1. SIP Mode (Monthly Contributions)
 SIP investments compound monthly. The calculator assumes deposits occur at the beginning of each month:
 
-$$M = P \times \left[\frac{(1 + i)^n - 1}{i}\right] \times (1 + i)$$
+Maturity Value = P × [ ((1 + i)^n − 1) / i ] × (1 + i)
 
-$$\text{Total Invested} = P \times n$$
+Total Invested = P × n
 
-$$\text{Estimated Returns} = M - \text{Total Invested}$$
+Estimated Returns = Maturity Value − Total Invested
 
 Where:
-- **$P$**: Monthly contribution amount.
-- **$i$**: Monthly return rate ($\text{Expected Annual Return \%} \div 12 \div 100$).
-- **$n$**: Total number of months ($\text{Duration in Years} \times 12$).
+- **P**: Monthly contribution amount.
+- **i**: Monthly return rate (Expected Annual Return % / 12 / 100).
+- **n**: Total number of months (Duration in Years × 12).
 
 #### 2. Lumpsum Mode (One-Time Deposit)
 Lumpsum investments compound annually over the full holding period:
 
-$$M = P \times (1 + r)^t$$
+Maturity Value = P × (1 + r)^t
 
-$$\text{Total Invested} = P$$
+Total Invested = P
 
-$$\text{Estimated Returns} = M - P$$
+Estimated Returns = Maturity Value − P
 
 Where:
-- **$P$**: One-time principal investment.
-- **$r$**: Annual return rate in decimal ($\text{Expected Return \%} \div 100$).
-- **$t$**: Duration in years.
+- **P**: One-time principal investment.
+- **r**: Annual return rate in decimal (Expected Return % / 100).
+- **t**: Duration in years.
 
 ---
 
 ### Step-by-Step Worked Numerical Examples (Verified against Code)
 
 #### Example 1: SIP Mode ($5,000/month for 10 years at 12% p.a.)
-1. **Inputs**: Monthly Deposit $P = \$5,000$, Rate $= 12\%$ ($i = 0.01$), Months $n = 120$.
-2. **Calculate Maturity Value ($M$)**:
-   $$M = 5,000 \times \left[\frac{(1.01)^{120} - 1}{0.01}\right] \times 1.01 \approx \mathbf{\$1,161,695.38}$$
+1. **Inputs**: Monthly Deposit P = $5,000, Rate = 12% (monthly i = 0.01), Months n = 120.
+2. **Calculate Maturity Value (M)**:
+   Maturity Value = 5,000 × [ ((1.01)^120 − 1) / 0.01 ] × 1.01 = **$1,161,695.38**
 3. **Summary**:
-   - **Total Principal Invested ($5,000 \times 120$)**: **$600,000**
-   - **Estimated Returns Earned**: $\$1,161,695 - \$600,000 = \mathbf{\$561,695}$
+   - **Total Principal Invested ($5,000 × 120)**: **$600,000**
+   - **Estimated Returns Earned**: $1,161,695 − $600,000 = **$561,695**
    - **Expected Maturity Value**: **$1,161,695**
 
 #### Example 2: Lumpsum Mode ($50,000 one-time for 10 years at 12% p.a.)
-1. **Inputs**: Principal $P = \$50,000$, Rate $r = 0.12$, Years $t = 10$.
-2. **Calculate Maturity Value ($M$)**:
-   $$M = 50,000 \times (1.12)^{10} = 50,000 \times 3.105848 \approx \mathbf{\$155,292.41}$$
+1. **Inputs**: Principal P = $50,000, Rate r = 0.12, Years t = 10.
+2. **Calculate Maturity Value (M)**:
+   Maturity Value = 50,000 × (1.12)^10 = 50,000 × 3.105848 = **$155,292.41**
 3. **Summary**:
    - **Total Principal Invested**: **$50,000**
-   - **Estimated Returns Earned**: $\$155,292 - \$50,000 = \mathbf{\$105,292}$
+   - **Estimated Returns Earned**: $155,292 − $50,000 = **$105,292**
    - **Expected Maturity Value**: **$155,292**
 
 ---

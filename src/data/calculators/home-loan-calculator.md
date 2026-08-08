@@ -46,7 +46,7 @@ examples:
     result: "Financed Principal = $320,000 | Monthly Mortgage EMI = $2,022.62 | Total Interest Payable = $408,143"
 faqs:
   - q: "How is the loan principal amount calculated in this tool?"
-    a: "The calculator subtracts your entered down payment amount from your total property purchase price ($\text{Loan Principal} = \text{Property Price} - \text{Down Payment}$). Interest is calculated exclusively on this net financed principal."
+    a: "The calculator subtracts your entered down payment amount from your total property purchase price (Loan Principal = Property Price − Down Payment). Interest is calculated exclusively on this net financed principal."
   - q: "Does the monthly EMI result include taxes or homeowners insurance?"
     a: "No. This calculator computes core principal and interest payments. Lenders may add monthly escrow charges for property taxes, home insurance, or mortgage insurance to your final bank invoice."
 references:
@@ -63,16 +63,16 @@ This calculator computes your **net financed loan principal, monthly EMI install
 
 ### How the Mortgage Calculation Engine Works
 
-1. **Net Loan Principal ($P$)**:
-   $$P = \text{Property Purchase Price} - \text{Down Payment Amount}$$
-2. **Monthly Interest Rate ($r$)**:
-   $$r = \frac{\text{Annual Interest Rate}}{12 \times 100}$$
-3. **Total Repayment Duration ($N$)**:
-   $$N = \text{Tenure in Years} \times 12$$
+1. **Net Loan Principal (P)**:
+   P = Property Purchase Price − Down Payment Amount
+2. **Monthly Interest Rate (r)**:
+   r = Annual Interest Rate / (12 × 100)
+3. **Total Repayment Duration (N)**:
+   N = Tenure in Years × 12
 4. **Reducing-Balance Monthly EMI Formula**:
-   $$EMI = P \times r \times \left[\frac{(1 + r)^N}{(1 + r)^N - 1}\right]$$
+   EMI = P × r × [ (1 + r)^N / ((1 + r)^N − 1) ]
 5. **Total Interest Cost**:
-   $$\text{Total Interest} = (EMI \times N) - P$$
+   Total Interest = (EMI × N) − P
 
 ---
 
@@ -80,15 +80,15 @@ This calculator computes your **net financed loan principal, monthly EMI install
 
 Suppose you purchase a property for **$400,000**, put down **$80,000 as a down payment (20%)**, and secure a **30-year loan (360 months)** at an annual interest rate of **6.5%**:
 
-1. **Calculate Financed Principal ($P$)**:
-   $$P = \$400,000 - \$80,000 = \mathbf{\$320,000}$$
-2. **Calculate Monthly Interest Rate ($r$)**:
-   $$r = \frac{6.5}{12 \times 100} = 0.00541667$$
+1. **Calculate Financed Principal (P)**:
+   P = $400,000 − $80,000 = **$320,000**
+2. **Calculate Monthly Interest Rate (r)**:
+   r = 6.5 / (12 × 100) = 0.00541667
 3. **Calculate Monthly Mortgage EMI**:
-   $$EMI = 320,000 \times 0.00541667 \times \left[\frac{(1.00541667)^{360}}{(1.00541667)^{360} - 1}\right] \approx \mathbf{\$2,022.62\text{ / month}}$$
+   EMI = 320,000 × 0.00541667 × [ (1.00541667)^360 / ((1.00541667)^360 − 1) ] = **$2,022.62 / month**
 4. **Calculate Total Repayment & Interest Paid**:
-   - Total Payments ($2,022.62 \times 360$): **$728,143.20**
-   - Total Interest Cost ($\$728,143.20 - \$320,000$): **$408,143.20**
+   - Total Payments ($2,022.62 × 360): **$728,143.20**
+   - Total Interest Cost ($728,143.20 − $320,000): **$408,143.20**
 5. **Summary**:
    - **Property Price**: **$400,000**
    - **Down Payment**: **$80,000 (20%)**
@@ -101,4 +101,4 @@ Suppose you purchase a property for **$400,000**, put down **$80,000 as a down p
 ### Frequently Asked Questions (FAQ)
 
 * **Q1: How does increasing my down payment lower overall loan costs?**
-  * A1: A larger down payment reduces the net loan principal ($P$). Because interest compounds on a smaller principal balance, your monthly EMI decreases and total interest paid over 30 years drops significantly.
+  * A1: A larger down payment reduces the net loan principal (P). Because interest compounds on a smaller principal balance, your monthly EMI decreases and total interest paid over 30 years drops significantly.

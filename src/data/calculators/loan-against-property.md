@@ -46,9 +46,9 @@ examples:
     result: "Approved Loan Principal = $300,000 | Monthly EMI = $2,954.21 | Total Interest Payable = $231,758"
 faqs:
   - q: "What is Loan-to-Value (LTV) in Loan Against Property?"
-    a: "LTV is the percentage cap lenders apply to your property's evaluated market value to determine maximum borrowing limits ($\text{Loan Principal} = \text{Property Value} \times \frac{\text{LTV}}{100}$). Lenders cap LTV at 40%–75% to maintain a safety cushion against real estate market fluctuations."
+    a: "LTV is the percentage cap lenders apply to your property's evaluated market value to determine maximum borrowing limits: Loan Principal = Property Value × (LTV % / 100). Lenders cap LTV at 40%–75% to maintain a safety cushion against real estate market fluctuations."
   - q: "How does LAP differ from a home purchase loan?"
-    a: "A home purchase loan is taken to buy a new residential property (financing up to 80%–90% of purchase price). A Loan Against Property (LAP) is taken by pledging a property you *already own* to unlock liquid capital for business expansion or personal uses (financing 40%–70% of market value)."
+    a: "A home purchase loan is taken to buy a new residential property (financing up to 80%–90% of purchase price). A Loan Against Property (LAP) is taken by pledging a property you already own to unlock liquid capital for business expansion or personal uses (financing 40%–70% of market value)."
 references:
   - "https://www.bankbazaar.com/loan-against-property.html"
 ---
@@ -63,16 +63,16 @@ This calculator computes your **approved loan principal, monthly EMI installment
 
 ### How the Loan Against Property Calculation Works
 
-1. **Approved Loan Principal ($P$)**:
-   $$P = \text{Property Market Value} \times \left(\frac{\text{LTV \%}}{100}\right)$$
-2. **Monthly Interest Rate ($r$)**:
-   $$r = \frac{\text{Annual Interest Rate}}{12 \times 100}$$
-3. **Repayment Months ($N$)**:
-   $$N = \text{Tenure in Years} \times 12$$
+1. **Approved Loan Principal (P)**:
+   P = Property Market Value × (LTV % / 100)
+2. **Monthly Interest Rate (r)**:
+   r = Annual Interest Rate / (12 × 100)
+3. **Repayment Months (N)**:
+   N = Tenure in Years × 12
 4. **Reducing-Balance Monthly EMI Formula**:
-   $$EMI = P \times r \times \left[\frac{(1 + r)^N}{(1 + r)^N - 1}\right]$$
+   EMI = P × r × [ (1 + r)^N / ((1 + r)^N − 1) ]
 5. **Total Interest Cost**:
-   $$\text{Total Interest} = (EMI \times N) - P$$
+   Total Interest = (EMI × N) − P
 
 ---
 
@@ -80,15 +80,15 @@ This calculator computes your **approved loan principal, monthly EMI installment
 
 Suppose you pledge a property evaluated at **$500,000 market value**, with a bank **LTV ratio limit of 60%**, at an annual interest rate of **8.5%** over a **15-year tenure (180 months)**:
 
-1. **Calculate Approved Loan Principal ($P$)**:
-   $$P = \$500,000 \times 60\% = \mathbf{\$300,000}$$
-2. **Calculate Monthly Interest Rate ($r$)**:
-   $$r = \frac{8.5}{12 \times 100} = 0.00708333$$
+1. **Calculate Approved Loan Principal (P)**:
+   P = $500,000 × 60% = **$300,000**
+2. **Calculate Monthly Interest Rate (r)**:
+   r = 8.5 / (12 × 100) = 0.00708333
 3. **Calculate Monthly EMI**:
-   $$EMI = 300,000 \times 0.00708333 \times \left[\frac{(1.00708333)^{180}}{(1.00708333)^{180} - 1}\right] \approx \mathbf{\$2,954.21\text{ / month}}$$
+   EMI = 300,000 × 0.00708333 × [ (1.00708333)^180 / ((1.00708333)^180 − 1) ] = **$2,954.21 / month**
 4. **Calculate Total Repayment & Interest Paid**:
-   - Total Payments ($2,954.21 \times 180$): **$531,757.80**
-   - Total Interest Cost ($\$531,757.80 - \$300,000$): **$231,757.80**
+   - Total Payments ($2,954.21 × 180): **$531,757.80**
+   - Total Interest Cost ($531,757.80 − $300,000): **$231,757.80**
 5. **Summary**:
    - **Property Value**: **$500,000**
    - **LTV Ratio**: **60%**

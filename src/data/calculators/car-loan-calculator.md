@@ -46,7 +46,7 @@ examples:
     result: "Financed Principal = $28,000 | Monthly Car EMI = $528.40 | Total Interest Payable = $3,704"
 faqs:
   - q: "How does a vehicle trade-in reduce my car loan EMI?"
-    a: "The agreed trade-in value of your old car is subtracted directly from the new vehicle's purchase price, acting as a cash down payment ($\text{Principal} = \text{Price} - \text{Trade-In}$). Financing a smaller principal reduces your monthly EMI."
+    a: "The agreed trade-in value of your old car is subtracted directly from the new vehicle's purchase price, acting as a cash down payment (Principal = Price − Trade-In). Financing a smaller principal reduces your monthly EMI."
   - q: "What is a standard tenure for auto loans?"
     a: "Auto loan tenures typically range from 3 to 7 years (36 to 84 months). While 6-year or 7-year loans offer lower monthly payments, they significantly increase your total interest costs over the life of the loan."
 references:
@@ -63,16 +63,16 @@ This calculator computes your **financed principal amount, monthly vehicle EMI, 
 
 ### How the Car Financing Calculation Works
 
-1. **Financed Principal ($P$)**:
-   $$P = \text{Vehicle Purchase Price} - \text{Down Payment / Trade-In Amount}$$
-2. **Monthly Interest Rate ($r$)**:
-   $$r = \frac{\text{Annual Interest Rate}}{12 \times 100}$$
-3. **Repayment Months ($N$)**:
-   $$N = \text{Tenure in Years} \times 12$$
+1. **Financed Principal (P)**:
+   P = Vehicle Purchase Price − Down Payment / Trade-In Amount
+2. **Monthly Interest Rate (r)**:
+   r = Annual Interest Rate / (12 × 100)
+3. **Repayment Months (N)**:
+   N = Tenure in Years × 12
 4. **Reducing-Balance Monthly EMI Formula**:
-   $$EMI = P \times r \times \left[\frac{(1 + r)^N}{(1 + r)^N - 1}\right]$$
+   EMI = P × r × [ (1 + r)^N / ((1 + r)^N − 1) ]
 5. **Total Interest Cost**:
-   $$\text{Total Interest} = (EMI \times N) - P$$
+   Total Interest = (EMI × N) − P
 
 ---
 
@@ -80,15 +80,15 @@ This calculator computes your **financed principal amount, monthly vehicle EMI, 
 
 Suppose you choose a vehicle priced at **$35,000**, trade in your old vehicle for **$7,000 (20% down payment equivalent)**, and finance the rest at an annual interest rate of **5%** over **5 years (60 months)**:
 
-1. **Calculate Net Financed Principal ($P$)**:
-   $$P = \$35,000 - \$7,000 = \mathbf{\$28,000}$$
-2. **Calculate Monthly Interest Rate ($r$)**:
-   $$r = \frac{5}{12 \times 100} = 0.00416667$$
+1. **Calculate Net Financed Principal (P)**:
+   P = $35,000 − $7,000 = **$28,000**
+2. **Calculate Monthly Interest Rate (r)**:
+   r = 5 / (12 × 100) = 0.00416667
 3. **Calculate Monthly Vehicle EMI**:
-   $$EMI = 28,000 \times 0.00416667 \times \left[\frac{(1.00416667)^{60}}{(1.00416667)^{60} - 1}\right] \approx \mathbf{\$528.40\text{ / month}}$$
+   EMI = 28,000 × 0.00416667 × [ (1.00416667)^60 / ((1.00416667)^60 − 1) ] = **$528.40 / month**
 4. **Calculate Total Repayment & Interest Paid**:
-   - Total Payments ($528.40 \times 60$): **$31,704.00**
-   - Total Interest Cost ($\$31,704.00 - \$28,000$): **$3,704.00**
+   - Total Payments ($528.40 × 60): **$31,704.00**
+   - Total Interest Cost ($31,704.00 − $28,000): **$3,704.00**
 5. **Summary**:
    - **Vehicle Price**: **$35,000**
    - **Down Payment / Trade-In**: **$7,000 (20%)**

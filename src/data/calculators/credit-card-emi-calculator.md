@@ -31,7 +31,7 @@ aiSummary:
   whoShouldUse: "Credit card holders, shoppers, budgeters, and personal finance planners."
   limitations: "Calculates conversion costs based on entered transaction amounts, interest rates, tenures, and processing fee percentages."
   keyTakeaways:
-    - "Upfront processing fees are calculated as a percentage of the converted transaction amount ($P \times F / 100$)."
+    - "Upfront processing fees are calculated as a percentage of the converted transaction amount."
     - "Monthly EMI payments are calculated using reducing-balance interest on the transaction amount."
     - "Total conversion cost equals total EMI interest plus upfront processing fee."
 peopleAlsoAsk:
@@ -46,7 +46,7 @@ examples:
     result: "Monthly EMI = $451.29 | Upfront Processing Fee = $75.00 | Total Interest = $415.48 | Total Cost = $5,490.48"
 faqs:
   - q: "How is the upfront processing fee added in this calculator?"
-    a: "The processing fee is calculated as a percentage of the transaction amount ($\text{Fee} = P \times \frac{F}{100}$) and added to the total cost summary ($\text{Total Cost} = \text{Total EMIs} + \text{Processing Fee}$)."
+    a: "The processing fee is calculated as a percentage of the transaction amount: Fee = Principal × (Processing Fee % / 100). It is added to the total cost summary: Total Cost = Total EMIs + Processing Fee."
   - q: "Do credit card EMI conversions work identically across all card issuers?"
     a: "No. Individual card issuers apply different interest rates, processing fees, foreclosure penalties, and GST/tax treatments. This calculator provides an accurate baseline estimate based on your entered rates."
 references:
@@ -63,16 +63,16 @@ This calculator computes your **monthly EMI installment, upfront processing fee,
 
 ### How Credit Card EMI Calculations Work
 
-1. **Monthly Interest Rate ($r$)**:
-   $$r = \frac{\text{Annual Interest Rate}}{12 \times 100}$$
+1. **Monthly Interest Rate (r)**:
+   r = Annual Interest Rate / (12 × 100)
 2. **Monthly EMI Formula**:
-   $$EMI = P \times r \times \left[\frac{(1 + r)^N}{(1 + r)^N - 1}\right]$$
+   EMI = P × r × [ (1 + r)^N / ((1 + r)^N − 1) ]
 3. **Upfront Processing Fee Amount**:
-   $$\text{Processing Fee Amount} = P \times \left(\frac{\text{Processing Fee \%}}{100}\right)$$
+   Processing Fee Amount = P × (Processing Fee % / 100)
 4. **Total Repayment Cost**:
-   $$\text{Total Cost} = (EMI \times N) + \text{Processing Fee Amount}$$
+   Total Cost = (EMI × N) + Processing Fee Amount
 
-Where $P$ is the transaction amount and $N$ is the tenure in months.
+Where P is the transaction amount and N is the tenure in months.
 
 ---
 
@@ -80,16 +80,16 @@ Where $P$ is the transaction amount and $N$ is the tenure in months.
 
 Suppose you convert a **$5,000 credit card transaction** into a **12-month EMI** at an annual interest rate of **15%**, with an **upfront processing fee of 1.5%**:
 
-1. **Calculate Monthly Interest Rate ($r$)**:
-   $$r = \frac{15}{12 \times 100} = 0.0125$$
-2. **Calculate Monthly Installment ($EMI$)**:
-   $$EMI = 5,000 \times 0.0125 \times \left[\frac{(1.0125)^{12}}{(1.0125)^{12} - 1}\right] \approx \mathbf{\$451.29\text{ / month}}$$
+1. **Calculate Monthly Interest Rate (r)**:
+   r = 15 / (12 × 100) = 0.0125
+2. **Calculate Monthly Installment (EMI)**:
+   EMI = 5,000 × 0.0125 × [ (1.0125)^12 / ((1.0125)^12 − 1) ] = **$451.29 / month**
 3. **Calculate Upfront Processing Fee**:
-   $$\text{Processing Fee} = \$5,000 \times 1.5\% = \mathbf{\$75.00}$$
+   Processing Fee = $5,000 × 1.5% = **$75.00**
 4. **Calculate Total Interest & Total Cost**:
-   - Total EMI Payments ($451.29 \times 12$): **$5,415.48**
-   - Total Interest Cost ($\$5,415.48 - \$5,000$): **$415.48**
-   - **Total Overall Cost ($5,415.48 + 75.00$)**: **$5,490.48**
+   - Total EMI Payments ($451.29 × 12): **$5,415.48**
+   - Total Interest Cost ($5,415.48 − $5,000): **$415.48**
+   - **Total Overall Cost ($5,415.48 + 75.00)**: **$5,490.48**
 5. **Summary**:
    - **Transaction Amount**: **$5,000**
    - **Monthly EMI**: **$451.29**

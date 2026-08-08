@@ -32,7 +32,7 @@ aiSummary:
   limitations: "Calculates retirement requirements using a two-stage compound interest and annuity-due model based on user-entered inflation and return rate assumptions."
   keyTakeaways:
     - "Adjusts current monthly living expenses forward to retirement age using compound inflation."
-    - "Calculates post-retirement real return ($r_{\text{real}} = \frac{1 + r_{\text{post}}}{1 + f} - 1$) to account for ongoing inflation during retirement."
+    - "Calculates post-retirement real return to account for ongoing inflation during retirement."
     - "Determines the exact monthly savings required today to accumulate the target corpus by retirement age."
 peopleAlsoAsk:
   - "What is the formula for calculating a retirement corpus target?"
@@ -48,7 +48,7 @@ faqs:
   - q: "Why does the post-retirement return rate differ from the pre-retirement return rate?"
     a: "During pre-retirement years, your portfolio can afford higher exposure to growth assets like equities (e.g. 12% return). After retiring, portfolios shift toward safer fixed-income instruments (e.g. 8% return) to preserve capital, lowering the expected annual yield."
   - q: "How is inflation factored into the post-retirement corpus calculation?"
-    a: "The calculator computes an inflation-adjusted real return rate ($r_{\text{real}} = \frac{1 + r_{\text{post}}}{1 + f} - 1$). This ensures your accumulated corpus continues to sustain your living expenses even as prices rise throughout your retirement years."
+    a: "The calculator computes an inflation-adjusted real return rate: Real Return = (1 + Post-Return) / (1 + Inflation) - 1. This ensures your accumulated corpus continues to sustain your living expenses even as prices rise throughout your retirement years."
 references:
   - "https://www.sec.gov/investor/pubs/inwstors.htm"
 ---
@@ -66,20 +66,20 @@ This calculator uses a **two-stage financial model** that accounts for inflation
 ### How the Two-Stage Retirement Model Works
 
 #### Stage 1: Pre-Retirement Accumulation (Age to Retirement)
-- **Years Remaining ($Y_{\text{pre}}$)**: $\text{Retirement Age} - \text{Current Age}$.
-- **Inflation-Adjusted Future Expense ($E_{\text{retire}}$)**: Your current monthly expenses ($E_{\text{current}}$) compound forward at expected inflation ($f$):
-  $$E_{\text{retire}} = E_{\text{current}} \times (1 + f)^{Y_{\text{pre}}}$$
+- **Years Remaining to Retire**: Retirement Age − Current Age
+- **Inflation-Adjusted Future Monthly Expense**:
+  Future Monthly Expense = Current Monthly Expense × (1 + Inflation Rate)^Years
 
 #### Stage 2: Post-Retirement Annuity (Retirement to Life Expectancy)
-- **Years in Retirement ($Y_{\text{post}}$)**: $\text{Life Expectancy} - \text{Retirement Age}$.
-- **Real Return Rate ($r_{\text{real}}$)**: Adjusts post-retirement investment returns ($r_{\text{post}}$) for ongoing inflation ($f$):
-  $$r_{\text{real}} = \frac{1 + r_{\text{post}}}{1 + f} - 1$$
-- **Target Retirement Corpus**: Present value of an annuity due paying annual expenses ($E_{\text{retire}} \times 12$) over $Y_{\text{post}}$ years at rate $r_{\text{real}}$:
-  $$\text{Corpus} = (E_{\text{retire}} \times 12) \times \left[\frac{1 - (1 + r_{\text{real}})^{-Y_{\text{post}}}}{r_{\text{real}}}\right] \times (1 + r_{\text{real}})$$
+- **Years in Retirement**: Life Expectancy − Retirement Age
+- **Real Post-Retirement Return Rate**: Adjusts post-retirement investment returns for ongoing inflation:
+  Real Return = (1 + Post-Retirement Return) / (1 + Inflation) − 1
+- **Target Retirement Corpus**: Present value of an annuity due paying inflation-adjusted annual expenses over retirement years:
+  Target Corpus = (Future Monthly Expense × 12) × [ (1 − (1 + Real Return)^(−Years in Retirement)) / Real Return ] × (1 + Real Return)
 
 #### Stage 3: Required Monthly Savings Today
-- Calculates the monthly deposit required over $n_{\text{pre}} = Y_{\text{pre}} \times 12$ months at pre-retirement monthly return rate ($i_{\text{pre}} = r_{\text{pre}} \div 12 \div 100$) to reach the target corpus:
-  $$\text{Monthly Savings} = \frac{\text{Corpus} \times i_{\text{pre}}}{(1 + i_{\text{pre}})^{n_{\text{pre}}} - 1}$$
+- Calculates the monthly deposit required over pre-retirement months at your pre-retirement monthly return rate to reach the target corpus:
+  Required Monthly Savings = Target Corpus × Monthly Return Rate / [ (1 + Monthly Return Rate)^Total Months − 1 ]
 
 ---
 
@@ -88,15 +88,15 @@ This calculator uses a **two-stage financial model** that accounts for inflation
 Suppose a **30-year-old investor** spends **$4,000 monthly**, plans to retire at **age 60** with a **life expectancy of 85** (30 years to retirement, 25 years in retirement), assuming **6% inflation**, **12% pre-retirement return**, and **8% post-retirement return**:
 
 1. **Calculate Future Monthly Expenses at Age 60**:
-   $$E_{\text{retire}} = \$4,000 \times (1 + 0.06)^{30} = \$4,000 \times 5.74349 \approx \mathbf{\$22,973.96\text{ / month}}\text{ (\$275,687.52 / year)}$$
-2. **Calculate Real Post-Retirement Return ($r_{\text{real}}$)**:
-   $$r_{\text{real}} = \frac{1 + 0.08}{1 + 0.06} - 1 = \frac{1.08}{1.06} - 1 \approx \mathbf{0.0188679\text{ (1.887\% per year)}}$$
+   Future Monthly Expense = $4,000 × (1 + 0.06)^30 = $4,000 × 5.74349 = **$22,973.96 / month** ($275,687.52 / year)
+2. **Calculate Real Post-Retirement Return**:
+   Real Return = (1 + 0.08) / (1 + 0.06) − 1 = 1.08 / 1.06 − 1 = **0.0188679 (1.887% per year)**
 3. **Calculate Target Corpus Required at Age 60**:
-   $$\text{Corpus} = 275,687.52 \times \left[\frac{1 - (1.0188679)^{-25}}{0.0188679}\right] \times 1.0188679 \approx \mathbf{\$5,655,000}$$
+   Target Corpus = $275,687.52 × [ (1 − (1.0188679)^(−25)) / 0.0188679 ] × 1.0188679 = **$5,655,000**
 4. **Calculate Required Monthly Savings Starting Today**:
-   - Monthly pre-retirement return rate ($i_{\text{pre}}$): $12\% \div 12 = 1\% = 0.01\text{ per month}$.
-   - Total pre-retirement months ($n_{\text{pre}}$): $30 \times 12 = 360\text{ months}$.
-   $$\text{Monthly Savings} = \frac{\$5,655,000 \times 0.01}{(1 + 0.01)^{360} - 1} = \frac{\$56,550}{34.94964} \approx \mathbf{\$1,610.00\text{ / month}}$$
+   - Pre-retirement monthly return rate = 12% / 12 = 1% = 0.01 per month
+   - Pre-retirement total months = 30 × 12 = 360 months
+   Required Monthly Savings = ($5,655,000 × 0.01) / [ (1.01)^360 − 1 ] = $56,550 / 34.94964 = **$1,610.00 / month**
 
 ---
 

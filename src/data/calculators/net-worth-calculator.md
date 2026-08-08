@@ -46,7 +46,7 @@ examples:
     result: "Total Assets = $480,000 | Total Liabilities = $213,000 | Total Net Worth = $267,000"
 faqs:
   - q: "What is the mathematical equation for net worth?"
-    a: "Your net worth is calculated as: $\text{Net Worth} = \sum \text{Assets} - \sum \text{Liabilities}$. If your asset valuations exceed your active debt obligations, you have a positive net worth."
+    a: "Your net worth is calculated as: Net Worth = Total Assets − Total Liabilities. If your asset valuations exceed your active debt obligations, you have a positive net worth."
   - q: "Should I include my primary home in my net worth calculation?"
     a: "Yes. Your home is a physical asset with market value. Enter its current market valuation under Real Estate Assets and enter your remaining mortgage balance under Liabilities. The difference represents your net home equity."
 references:
@@ -63,7 +63,7 @@ This calculator computes your **total assets, total liabilities, net worth total
 
 ### How the Net Worth Calculation Engine Works
 
-$$\text{Net Worth} = \sum \text{Total Assets} - \sum \text{Total Liabilities}$$
+Net Worth = Total Assets − Total Liabilities
 
 #### 1. Asset Categories (+)
 - **Cash & Savings**: Checking accounts, emergency funds, certificates of deposit.
@@ -72,7 +72,7 @@ $$\text{Net Worth} = \sum \text{Total Assets} - \sum \text{Total Liabilities}$$
 - **Vehicles Valuation**: Resale value of owned cars or vehicles.
 - **Retirement Accounts**: 401(k), IRA, provident funds, pension accounts.
 
-$$\text{Total Assets} = \text{Cash} + \text{Investments} + \text{Property} + \text{Vehicles} + \text{Retirement}$$
+Total Assets = Cash + Investments + Property + Vehicles + Retirement
 
 #### 2. Liability Categories (-)
 - **Home Mortgage**: Remaining principal owed on property loans.
@@ -80,7 +80,7 @@ $$\text{Total Assets} = \text{Cash} + \text{Investments} + \text{Property} + \te
 - **Credit Card Balance**: Revolving credit card debts owed.
 - **Student Loans**: Active educational loan balances.
 
-$$\text{Total Liabilities} = \text{Mortgage} + \text{Car Loan} + \text{Credit Card} + \text{Student Loans}$$
+Total Liabilities = Mortgage + Car Loan + Credit Card + Student Loans
 
 ---
 
@@ -94,17 +94,17 @@ Suppose you evaluate your financial balance sheet with the following figures:
 - Real Estate Valuation: **$300,000**
 - Vehicles Valuation: **$25,000**
 - Retirement Accounts: **$55,000**
-- **Total Assets**: $\$20,000 + \$80,000 + \$300,000 + \$25,000 + \$55,000 = \mathbf{\$480,000}$
+- **Total Assets**: $20,000 + $80,000 + $300,000 + $25,000 + $55,000 = **$480,000**
 
 #### 2. Liabilities Column:
 - Home Mortgage: **$180,000**
 - Car Loan Balance: **$20,000**
 - Credit Card Debt: **$5,000**
 - Student Loans: **$8,000**
-- **Total Liabilities**: $\$180,000 + \$20,000 + \$5,000 + \$8,000 = \mathbf{\$213,000}$
+- **Total Liabilities**: $180,000 + $20,000 + $5,000 + $8,000 = **$213,000**
 
 #### 3. Net Worth Calculation:
-$$\text{Net Worth} = \$480,000 - \$213,000 = \mathbf{\$267,000}$$
+Net Worth = $480,000 − $213,000 = **$267,000**
 
 ---
 

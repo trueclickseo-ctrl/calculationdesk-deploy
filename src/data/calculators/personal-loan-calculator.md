@@ -63,16 +63,16 @@ This calculator computes your **monthly EMI installment, total interest payable,
 
 ### How the Personal Loan Calculation Engine Works
 
-1. **Monthly Interest Rate ($r$)**:
-   $$r = \frac{\text{Annual Interest Rate}}{12 \times 100}$$
-2. **Total Repayment Months ($N$)**:
-   $$N = \text{Tenure in Years} \times 12$$
+1. **Monthly Interest Rate (r)**:
+   r = Annual Interest Rate / (12 × 100)
+2. **Total Repayment Months (N)**:
+   N = Tenure in Years × 12
 3. **Reducing-Balance Monthly EMI Formula**:
-   $$EMI = P \times r \times \left[\frac{(1 + r)^N}{(1 + r)^N - 1}\right]$$
+   EMI = P × r × [ (1 + r)^N / ((1 + r)^N − 1) ]
 4. **Total Interest Cost**:
-   $$\text{Total Interest} = (EMI \times N) - P$$
+   Total Interest = (EMI × N) − P
 
-Where $P$ is your requested loan principal amount.
+Where P is your requested loan principal amount.
 
 ---
 
@@ -80,13 +80,13 @@ Where $P$ is your requested loan principal amount.
 
 Suppose you borrow a personal loan of **$15,000** at an annual interest rate of **10.5%** for **3 years (36 months)**:
 
-1. **Calculate Monthly Interest Rate ($r$)**:
-   $$r = \frac{10.5}{12 \times 100} = 0.00875$$
+1. **Calculate Monthly Interest Rate (r)**:
+   r = 10.5 / (12 × 100) = 0.00875
 2. **Calculate Monthly EMI**:
-   $$EMI = 15,000 \times 0.00875 \times \left[\frac{(1.00875)^{36}}{(1.00875)^{36} - 1}\right] \approx \mathbf{\$487.52\text{ / month}}$$
+   EMI = 15,000 × 0.00875 × [ (1.00875)^36 / ((1.00875)^36 − 1) ] = **$487.52 / month**
 3. **Calculate Total Repayment & Interest Paid**:
-   - Total Repayment ($487.52 \times 36$): **$17,550.72**
-   - Total Interest Cost ($\$17,550.72 - \$15,000$): **$2,550.72**
+   - Total Repayment ($487.52 × 36): **$17,550.72**
+   - Total Interest Cost ($17,550.72 − $15,000): **$2,550.72**
 4. **Summary**:
    - **Loan Principal**: **$15,000**
    - **Monthly EMI**: **$487.52**

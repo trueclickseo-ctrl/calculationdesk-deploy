@@ -32,7 +32,7 @@ aiSummary:
   limitations: "Calculates maximum borrowing eligibility using standard FOIR debt capacity rules and reducing-balance present value equations."
   keyTakeaways:
     - "FOIR (Fixed Obligations to Income Ratio) caps the maximum proportion of monthly income allocated to debts (calculator default is 50%)."
-    - "Calculates Max Allowed EMI as $(\text{Income} \times \text{FOIR} / 100) - \text{Existing EMIs}$."
+    - "Calculates Max Allowed EMI as (Income × FOIR / 100) − Existing EMIs."
     - "Reverses reducing-balance EMI math to derive the maximum loan principal approved."
 peopleAlsoAsk:
   - "What is FOIR in loan eligibility calculations?"
@@ -66,18 +66,18 @@ This calculator computes your **maximum allowed monthly EMI, maximum eligible lo
 ### How the Eligibility Calculation Engine Works
 
 #### Step 1: Maximum Monthly EMI Capability
-$$\text{Max EMI Allowed} = \left(\text{Net Monthly Income} \times \frac{\text{FOIR \%}}{100}\right) - \text{Existing Monthly EMIs}$$
+Max EMI Allowed = (Net Monthly Income × FOIR % / 100) − Existing Monthly EMIs
 
 Where FOIR (Fixed Obligations to Income Ratio) represents the percentage cap set by lenders (typically 50%).
 
-#### Step 2: Maximum Approved Loan Principal ($P_{\text{max}}$)
+#### Step 2: Maximum Approved Loan Principal (Max Principal)
 By reversing the standard reducing-balance EMI formula, the calculator converts your Max Monthly EMI capability into total principal:
 
-$$P_{\text{max}} = \text{Max EMI Allowed} \times \left[\frac{(1 + r)^N - 1}{r \times (1 + r)^N}\right]$$
+Max Principal = Max EMI Allowed × [ ((1 + r)^N − 1) / (r × (1 + r)^N) ]
 
 Where:
-- **$r$**: Monthly interest rate ($\text{Annual Rate \%} \div 12 \div 100$).
-- **$N$**: Total loan duration in months ($\text{Tenure in Years} \times 12$).
+- **r**: Monthly interest rate (Annual Rate % / 12 / 100).
+- **N**: Total loan duration in months (Tenure in Years × 12).
 
 ---
 
@@ -86,11 +86,11 @@ Where:
 Suppose an applicant earns a **net monthly income of $10,000**, pays **$1,500 in existing monthly EMIs**, has a bank **FOIR cap of 50%**, and seeks a **20-year loan (240 months)** at an interest rate of **7.5%**:
 
 1. **Calculate Maximum Monthly EMI Capability**:
-   $$\text{Max EMI} = (\$10,000 \times 0.50) - \$1,500 = \$5,000 - \$1,500 = \mathbf{\$3,500.00\text{ / month}}$$
-2. **Calculate Monthly Interest Rate ($r$)**:
-   $$r = \frac{7.5}{12 \times 100} = 0.00625$$
-3. **Calculate Maximum Eligible Loan Principal ($P_{\text{max}}$)**:
-   $$P_{\text{max}} = 3,500 \times \left[\frac{(1.00625)^{240} - 1}{0.00625 \times (1.00625)^{240}}\right] \approx \mathbf{\$434,166}$$
+   Max EMI = ($10,000 × 0.50) − $1,500 = $5,000 − $1,500 = **$3,500.00 / month**
+2. **Calculate Monthly Interest Rate (r)**:
+   r = 7.5 / (12 × 100) = 0.00625
+3. **Calculate Maximum Eligible Loan Principal (Max Principal)**:
+   Max Principal = 3,500 × [ ((1.00625)^240 − 1) / (0.00625 × (1.00625)^240) ] = **$434,166**
 4. **Summary**:
    - **Net Monthly Salary**: **$10,000**
    - **Existing Debts**: **$1,500 (15% of income)**
