@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Adults tracking weight trends, health educators, fitness enthusiasts, and dietitians."
   limitations: "BMI is an indirect population screening metric. It does not measure body fat directly and can misclassify muscular athletes, pregnant women, and elderly individuals. Applies adult cutoffs (ages 20+)."
   keyTakeaways:
- - "Calculates BMI score, adult screening category, BMI-based reference weight range, and BMR."
- - "Supports both Metric (kg/cm) and Imperial (lbs/ft/in) unit systems."
- - "Uses the clinical Mifflin-St Jeor equation for BMR estimation."
- - "Explicitly notes that adult BMI cutoffs do not apply to children and teens under 20 (who require CDC growth percentiles)."
+    - "Calculates BMI score, adult screening category, BMI-based reference weight range, and BMR."
+    - "Supports both Metric (kg/cm) and Imperial (lbs/ft/in) unit systems."
+    - "Uses the clinical Mifflin-St Jeor equation for BMR estimation."
+    - "Explicitly notes that adult BMI cutoffs do not apply to children and teens under 20 (who require CDC growth percentiles)."
 peopleAlsoAsk:
   - "How is BMI calculated?"
   - "What is a healthy BMI range for adults?"
@@ -63,6 +63,22 @@ references:
   - "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html"
   - "https://www.niddk.nih.gov/"
   - "https://pubmed.ncbi.nlm.nih.gov/2305711/"
+formulaDescription: "BMI divides weight by the square of height, so it's a ratio rather than a direct measurement of body fat. The metric and imperial versions of the formula give identical results — the 703 multiplier in the imperial formula exists purely to correct for using pounds and inches instead of kilograms and meters."
+variablesExplained:
+  - name: "Weight"
+    description: "Body weight in kilograms (metric) or pounds (imperial)."
+  - name: "Height"
+    description: "Height in meters (metric) or feet/inches (imperial). Centimeter entries are converted to meters before squaring."
+  - name: "Age"
+    description: "Used only for the BMR calculation, not for BMI itself."
+  - name: "Biological sex"
+    description: "Used only for the BMR calculation — the Mifflin-St Jeor equation uses a different constant for men and women."
+stepByStep: "Enter your weight and height, choosing metric or imperial units. Add your age and biological sex if you also want a BMR estimate. The calculator squares your height, divides your weight by that figure, and matches the result against the WHO/CDC adult category table. If you supplied age and sex, it separately runs the Mifflin-St Jeor equation to estimate your resting calorie burn."
+realWorldUses: "Clinicians use BMI as a fast first-pass screening number before ordering more detailed body-composition tests. Individuals use it to track long-term weight trends, and the BMR figure is commonly used as the starting point for setting a daily calorie target for weight loss, maintenance, or gain."
+commonMistakes:
+  - "Entering height in centimeters but forgetting the calculator needs it converted to meters for the metric formula (this calculator does that conversion for you, but manual recalculations often get it wrong)."
+  - "Treating a single BMI reading as a health verdict rather than one data point among several."
+  - "Applying the adult category table to a child or teenager instead of using age-and-sex-adjusted growth percentiles."
 ---
 
 # BMI Calculator – Body Mass Index & BMR Estimator
@@ -117,18 +133,6 @@ The World Health Organization (WHO) and the Centers for Disease Control and Prev
 ### What BMI Can and Cannot Tell You (Limitations)
 
 While BMI is useful for epidemiological population tracking, it has notable physiological limitations when applied to individuals:
-
-```
-                            What BMI Evaluates
-                            
-     [ Weight (kg) ] / [ Height (m) ]²  --->  Statistical Ratio
-     
-     What BMI DOES Measure:             What BMI DOES NOT Measure:
-     - Weight-to-height proportion      - Body fat percentage
-     - Population-level risk trends     - Muscle mass density
-                                        - Abdominal / visceral fat
-                                        - Bone density or hydration
-```
 
 1. **High Muscle Density (Athletes)**: Dense skeletal muscle weighs more than fat volume. A muscular athlete or weightlifter may register a BMI over 25.0 or 30.0 despite having low body fat.
 2. **Fat Distribution**: BMI cannot distinguish between **subcutaneous fat** (under the skin) and **visceral abdominal fat** (surrounding internal organs), which poses greater metabolic health risks.
@@ -207,16 +211,3 @@ $$\text{BMR} = 700 + 1093.75 - 125 + 5 = \mathbf{1,674 \text{ kcal / day}}$$
 * **Light Activity ($1.375\text{x}$)**: $1,673.75 \times 1.375 = \mathbf{2,301 \text{ kcal/day}}$
 * **Moderate Sport ($1.550\text{x}$)**: $1,673.75 \times 1.55 = \mathbf{2,594 \text{ kcal/day}}$
 * **Very Active ($1.725\text{x}$)**: $1,673.75 \times 1.725 = \mathbf{2,887 \text{ kcal/day}}$
-
----
-
-### Frequently Asked Questions (FAQ)
-
-* **Q1: What is a healthy BMI for adults?**
-  * A1: For adults aged 20 and older, a healthy BMI score is defined by WHO and CDC guidelines as falling between **18.5 and 24.9**.
-* **Q2: Does BMI account for age or biological sex in adults?**
-  * A2: In adults (20+), standard BMI cutoffs are identical for men and women of all ages. However, biological sex and age are used when calculating **BMR** (metabolic rate) and when evaluating **child/teen BMI percentiles**.
-* **Q3: How accurate is a BMI calculator?**
-  * A3: BMI is highly accurate as a mathematical height-to-weight ratio, but it is a rough proxy for body composition. It should be combined with waist circumference measurements, blood pressure, and lab panels for clinical evaluation.
-* **Q4: Can I use this calculator for a child or teenager?**
-  * A4: No. This tool displays adult BMI cutoffs. Children and adolescents (ages 2 to 19) must be evaluated using **CDC BMI-for-age growth charts**, which compare a child's BMI against peers of the same age and sex.

@@ -1,4 +1,5 @@
 import React from 'react';
+import { InlineMarkdown } from '@/components/MarkdownContent';
 
 interface ComparisonTableProps {
   config: {
@@ -32,11 +33,11 @@ export default function ComparisonTable({ config }: ComparisonTableProps) {
               className="border-b border-border/40 last:border-b-0 hover:bg-muted/10 transition-colors"
             >
               {row.map((cell, cellIdx) => (
-                <td 
-                  key={cellIdx} 
+                <td
+                  key={cellIdx}
                   className="p-3 text-foreground/70 border-r border-border/40 last:border-r-0"
                 >
-                  {cell}
+                  <InlineMarkdown text={cell} />
                 </td>
               ))}
             </tr>

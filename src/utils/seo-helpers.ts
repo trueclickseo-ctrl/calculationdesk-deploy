@@ -87,75 +87,118 @@ export interface CalculatorSeoData {
   };
 }
 
-// Simple YAML frontmatter parser
+// Minimal indentation-aware YAML-subset parser for calculator frontmatter.
+//
+// The previous version of this parser only handled flat `key: value` pairs and
+// one level of nesting (a single-level object, or an array of plain strings for
+// a hardcoded key whitelist). It could NOT parse an array of objects — which is
+// exactly the shape `examples:` and `faqs:` use (a list of `- title: ... / inputs:
+// ... / result: ...` entries) and the shape `aiSummary.keyTakeaways` uses (a list
+// nested inside an object). Both silently produced garbage (a single mangled
+// object with literal "- title" as a key, or an empty string) instead of an
+// array, which made the Worked Examples cards and FAQ boxes render as nothing on
+// every calculator page, even when the frontmatter contained real data.
+//
+// This version tracks indentation depth and recursively builds nested
+// objects/arrays, so `examples:`, `faqs:`, and `aiSummary.keyTakeaways` all parse
+// into real arrays. It's still a deliberately small subset of YAML (no anchors,
+// multi-line block scalars, or flow mappings) — just enough for the patterns
+// actually used in these frontmatter blocks.
 function parseYaml(yamlStr: string): Record<string, any> {
-  const result: Record<string, any> = {};
-  const lines = yamlStr.split('\n');
-  let currentKey = '';
-  let currentArray: any[] = [];
-  let isInsideArray = false;
-  let isInsideObject = false;
-  let objectKey = '';
+  const rawLines = yamlStr.split('\n');
+  const lines: { indent: number; content: string }[] = [];
+  for (const raw of rawLines) {
+    if (!raw.trim() || raw.trim().startsWith('#')) continue;
+    const indent = raw.length - raw.trimStart().length;
+    lines.push({ indent, content: raw.trim() });
+  }
 
-  for (let line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith('#')) continue;
+  let pos = 0;
 
-    // Detect indented object/list entries
-    const isIndented = line.startsWith('  ');
-
-    if (isIndented) {
-      if (isInsideArray) {
-        if (trimmed.startsWith('-')) {
-          currentArray.push(trimmed.substring(1).trim().replace(/^['"]|['"]$/g, ''));
-        } else {
-          // Multiline or subkey
-        }
-      } else if (isInsideObject && currentKey) {
-        const colonIdx = trimmed.indexOf(':');
-        if (colonIdx > 0) {
-          const subK = trimmed.substring(0, colonIdx).trim();
-          const subVal = trimmed.substring(colonIdx + 1).trim().replace(/^['"]|['"]$/g, '');
-          if (!result[currentKey]) result[currentKey] = {};
-          result[currentKey][subK] = subVal;
-        }
-      }
-      continue;
+  const stripQuotes = (s: string): string => {
+    const t = s.trim();
+    if ((t.startsWith('"') && t.endsWith('"')) || (t.startsWith("'") && t.endsWith("'"))) {
+      return t.slice(1, -1);
     }
+    return t;
+  };
 
-    isInsideArray = false;
-    isInsideObject = false;
+  const parseInlineArray = (s: string): string[] => {
+    const inner = s.slice(1, -1).trim();
+    if (!inner) return [];
+    return inner.split(',').map((x) => stripQuotes(x.trim()));
+  };
 
-    const colonIdx = trimmed.indexOf(':');
-    if (colonIdx > 0) {
-      const key = trimmed.substring(0, colonIdx).trim();
-      const value = trimmed.substring(colonIdx + 1).trim();
+  const scalarOrInlineArray = (value: string): any => {
+    if (value.startsWith('[') && value.endsWith(']')) return parseInlineArray(value);
+    return stripQuotes(value);
+  };
+
+  function parseArray(baseIndent: number): any[] {
+    const arr: any[] = [];
+    while (pos < lines.length && lines[pos].indent === baseIndent && lines[pos].content.startsWith('- ')) {
+      const itemContent = lines[pos].content.slice(2).trim();
+      const colonIdx = itemContent.indexOf(':');
+      const looksLikeKeyValue = colonIdx > 0 && !itemContent.startsWith('"') && !itemContent.startsWith("'");
+
+      if (looksLikeKeyValue) {
+        const firstKey = itemContent.slice(0, colonIdx).trim();
+        const firstVal = itemContent.slice(colonIdx + 1).trim();
+        pos++;
+        const itemObj: Record<string, any> = {};
+        if (firstVal !== '') {
+          itemObj[firstKey] = scalarOrInlineArray(firstVal);
+        }
+        // Consume further lines indented deeper than this list item's dash — they belong to the same object.
+        while (pos < lines.length && lines[pos].indent > baseIndent) {
+          const sub = lines[pos].content;
+          const subColon = sub.indexOf(':');
+          if (subColon > 0 && !sub.startsWith('- ')) {
+            const subKey = sub.slice(0, subColon).trim();
+            const subVal = sub.slice(subColon + 1).trim();
+            itemObj[subKey] = scalarOrInlineArray(subVal);
+            pos++;
+          } else {
+            break;
+          }
+        }
+        arr.push(itemObj);
+      } else {
+        arr.push(stripQuotes(itemContent));
+        pos++;
+      }
+    }
+    return arr;
+  }
+
+  function parseObject(baseIndent: number): Record<string, any> {
+    const obj: Record<string, any> = {};
+    while (pos < lines.length && lines[pos].indent === baseIndent && !lines[pos].content.startsWith('- ')) {
+      const { content } = lines[pos];
+      const colonIdx = content.indexOf(':');
+      if (colonIdx < 0) {
+        pos++;
+        continue;
+      }
+      const key = content.slice(0, colonIdx).trim();
+      const value = content.slice(colonIdx + 1).trim();
+      pos++;
 
       if (value === '') {
-        // Could be start of object or array
-        currentKey = key;
-        if (key === 'tags' || key === 'peopleAlsoAsk' || key === 'references' || key === 'commonMistakes') {
-          isInsideArray = true;
-          currentArray = [];
-          result[key] = currentArray;
+        if (pos < lines.length && lines[pos].indent > baseIndent) {
+          const childIndent = lines[pos].indent;
+          obj[key] = lines[pos].content.startsWith('- ') ? parseArray(childIndent) : parseObject(childIndent);
         } else {
-          isInsideObject = true;
-          result[key] = {};
+          obj[key] = '';
         }
       } else {
-        const cleanVal = value.replace(/^['"]|['"]$/g, '');
-        if (cleanVal.startsWith('[') && cleanVal.endsWith(']')) {
-          result[key] = cleanVal
-            .substring(1, cleanVal.length - 1)
-            .split(',')
-            .map(s => s.trim().replace(/^['"]|['"]$/g, ''));
-        } else {
-          result[key] = cleanVal;
-        }
+        obj[key] = scalarOrInlineArray(value);
       }
     }
+    return obj;
   }
-  return result;
+
+  return parseObject(0);
 }
 
 export function parseMarkdownFile(filePath: string): { metadata: Record<string, any>; content: string } {

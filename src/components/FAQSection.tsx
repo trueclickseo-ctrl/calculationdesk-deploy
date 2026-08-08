@@ -1,4 +1,5 @@
 import React from 'react';
+import { InlineMarkdown } from '@/components/MarkdownContent';
 
 interface FAQItem {
   q: string;
@@ -20,10 +21,10 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
         >
           <h3 className="text-sm md:text-base font-bold text-foreground mb-2 flex gap-2">
             <span className="text-primary font-extrabold">Q:</span>
-            {faq.q}
+            <InlineMarkdown text={faq.q} />
           </h3>
           <p className="text-xs md:text-sm text-foreground/75 leading-relaxed pl-5">
-            {faq.a}
+            <InlineMarkdown text={faq.a} />
           </p>
         </div>
       ))}

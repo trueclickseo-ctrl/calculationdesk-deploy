@@ -1,4 +1,5 @@
 import React from 'react';
+import { InlineMarkdown } from '@/components/MarkdownContent';
 
 interface ExampleItem {
   title: string;
@@ -21,20 +22,20 @@ export default function CalculatorExamples({ examples }: CalculatorExamplesProps
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-black">
               {index + 1}
             </span>
-            {item.title}
+            <InlineMarkdown text={item.title} />
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs md:text-sm pt-2 border-t border-border/40">
             <div>
               <span className="font-bold text-foreground/50 uppercase tracking-wider text-[10px]">Inputs Given:</span>
-              <p className="mt-1 text-foreground/80 font-medium">{item.inputs}</p>
+              <p className="mt-1 text-foreground/80 font-medium"><InlineMarkdown text={item.inputs} /></p>
             </div>
             <div>
               <span className="font-bold text-foreground/50 uppercase tracking-wider text-[10px]">Step-by-Step Calculation:</span>
-              <p className="mt-1 text-foreground/80 font-medium">{item.calculation}</p>
+              <p className="mt-1 text-foreground/80 font-medium"><InlineMarkdown text={item.calculation} /></p>
             </div>
             <div>
               <span className="font-bold text-foreground/50 uppercase tracking-wider text-[10px]">Result Obtained:</span>
-              <p className="mt-1 text-primary font-bold">{item.result}</p>
+              <p className="mt-1 text-primary font-bold"><InlineMarkdown text={item.result} /></p>
             </div>
           </div>
         </div>

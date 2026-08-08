@@ -18,39 +18,10 @@ import Link from 'next/link';
 import { getCalculatorSeoData } from '@/utils/seo-helpers';
 import { getCalculatorSchema } from '@/utils/schema-generator';
 import { getSemanticLinks } from '@/utils/internal-linking';
+import MarkdownContent, { InlineMarkdown } from '@/components/MarkdownContent';
 
 interface Props {
   params: Promise<{ slug: string }>;
-}
-
-function parseMarkdownLinks(text: string) {
-  if (!text) return '';
-  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
-  const parts: (string | React.ReactNode)[] = [];
-  let lastIdx = 0;
-  let match;
-  
-  while ((match = regex.exec(text)) !== null) {
-    if (match.index > lastIdx) {
-      parts.push(text.substring(lastIdx, match.index));
-    }
-    parts.push(
-      <a 
-        key={match.index} 
-        href={match[2]} 
-        className="text-primary hover:underline font-semibold"
-      >
-        {match[1]}
-      </a>
-    );
-    lastIdx = regex.lastIndex;
-  }
-  
-  if (lastIdx < text.length) {
-    parts.push(text.substring(lastIdx));
-  }
-  
-  return parts.length > 0 ? parts : text;
 }
 
 export async function generateStaticParams() {
@@ -150,16 +121,16 @@ export default async function CalculatorPage({ params }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-foreground/80 leading-relaxed">
               <div>
                 <p className="font-bold text-foreground mb-1">Definition & Purpose:</p>
-                <p className="text-xs md:text-sm">{seoData.aiSummary.definition}</p>
+                <p className="text-xs md:text-sm"><InlineMarkdown text={seoData.aiSummary.definition} /></p>
                 <p className="font-bold text-foreground mt-3 mb-1">When to Use:</p>
-                <p className="text-xs md:text-sm">{seoData.aiSummary.whenToUse}</p>
+                <p className="text-xs md:text-sm"><InlineMarkdown text={seoData.aiSummary.whenToUse} /></p>
               </div>
               <div>
                 <p className="font-bold text-foreground mb-1">Key Takeaway Insights:</p>
                 <ul className="list-disc pl-4 space-y-1 text-xs md:text-sm">
                   {Array.isArray(seoData.aiSummary.keyTakeaways) ? (
                     seoData.aiSummary.keyTakeaways.map((takeaway, idx) => (
-                      <li key={idx}>{takeaway}</li>
+                      <li key={idx}><InlineMarkdown text={takeaway} /></li>
                     ))
                   ) : (
                     <li>{typeof seoData.aiSummary?.keyTakeaways === 'string' ? seoData.aiSummary.keyTakeaways : 'Check loan repayment details.'}</li>
@@ -221,11 +192,9 @@ export default async function CalculatorPage({ params }: Props) {
                 <h2 className="text-xl md:text-2xl font-black text-foreground mb-4">
                   Introduction
                 </h2>
-                <p className="text-sm text-foreground/75 leading-relaxed whitespace-pre-line">
-                  {parseMarkdownLinks(seoData.introduction)}
-                </p>
+                <MarkdownContent text={seoData.introduction} />
               </div>
- 
+
               {/* Formula explanation */}
               <div className="border-t border-border/60 pt-8">
                 <h2 className="text-xl md:text-2xl font-black text-foreground mb-4">
@@ -235,14 +204,14 @@ export default async function CalculatorPage({ params }: Props) {
                   {seoData.aiSummary.formulaSummary}
                 </div>
                 <p className="text-sm text-foreground/75 leading-relaxed mb-4">
-                  {seoData.formulaDescription}
+                  <InlineMarkdown text={seoData.formulaDescription} />
                 </p>
                 <div className="space-y-2">
                   <h4 className="text-xs font-bold text-foreground/50 uppercase tracking-wider">Variables:</h4>
                   <ul className="list-disc pl-5 space-y-1 text-sm text-foreground/70">
                     {Array.isArray(seoData.variablesExplained) && seoData.variablesExplained.map((v, i) => (
                       <li key={i}>
-                        <strong className="text-foreground">{v.name}</strong>: {v.description}
+                        <strong className="text-foreground">{v.name}</strong>: <InlineMarkdown text={v.description} />
                       </li>
                     ))}
                   </ul>
@@ -254,9 +223,7 @@ export default async function CalculatorPage({ params }: Props) {
                 <h2 className="text-xl md:text-2xl font-black text-foreground mb-4">
                   How to Calculate (Step-by-Step)
                 </h2>
-                <p className="text-sm text-foreground/75 leading-relaxed whitespace-pre-line">
-                  {seoData.stepByStep}
-                </p>
+                <MarkdownContent text={seoData.stepByStep} />
               </div>
 
               {/* Worked Examples */}
@@ -282,9 +249,7 @@ export default async function CalculatorPage({ params }: Props) {
                 <h2 className="text-xl md:text-2xl font-black text-foreground mb-4">
                   Real-World Applications
                 </h2>
-                <p className="text-sm text-foreground/75 leading-relaxed whitespace-pre-line">
-                  {seoData.realWorldUses}
-                </p>
+                <MarkdownContent text={seoData.realWorldUses} />
               </div>
 
               {/* Limitations & Mistakes */}
@@ -299,7 +264,7 @@ export default async function CalculatorPage({ params }: Props) {
                       <span className="font-bold">Caution & Mistakes:</span>
                       <ul className="list-disc pl-4 mt-1 space-y-1">
                         {Array.isArray(seoData.commonMistakes) && seoData.commonMistakes.map((m, idx) => (
-                          <li key={idx}>{m}</li>
+                          <li key={idx}><InlineMarkdown text={m} /></li>
                         ))}
                       </ul>
                     </div>
@@ -308,7 +273,7 @@ export default async function CalculatorPage({ params }: Props) {
                     <Info className="h-5 w-5 shrink-0 text-blue-500" />
                     <div>
                       <span className="font-bold">Limitations:</span>
-                      <p className="mt-1">{seoData.aiSummary.limitations}</p>
+                      <p className="mt-1"><InlineMarkdown text={seoData.aiSummary.limitations} /></p>
                     </div>
                   </div>
                 </div>
