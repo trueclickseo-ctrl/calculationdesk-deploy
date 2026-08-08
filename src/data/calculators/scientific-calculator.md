@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Students, engineers, scientists, and researchers."
   limitations: "Evaluates standard mathematical expressions and function calls. Trigonometric functions operate in radians."
   keyTakeaways:
-    - "Supports basic arithmetic (+, -, ×, ÷), parentheses, powers (^), and square roots (sqrt)."
-    - "Evaluates trigonometric functions (sin, cos, tan) in radians."
-    - "Evaluates common logarithms (log) and natural logarithms (ln)."
-    - "Includes a digital tape records panel that logs past equations and results."
+ - "Supports basic arithmetic (+, -, ×, ÷), parentheses, powers (^), and square roots (sqrt)."
+ - "Evaluates trigonometric functions (sin, cos, tan) in radians."
+ - "Evaluates common logarithms (log) and natural logarithms (ln)."
+ - "Includes a digital tape records panel that logs past equations and results."
 peopleAlsoAsk:
   - "Does this scientific calculator use degrees or radians for trigonometry?"
   - "How do you calculate powers and square roots on this calculator?"
@@ -42,20 +42,20 @@ peopleAlsoAsk:
   - "How do I clear or copy calculation history?"
 examples:
   - title: "Trigonometric and Exponential Expression (sin(0.5) and 2^5)"
-    inputs: "Expressions = sin(0.5), 2^5"
-    calculation: "sin(0.5 radians) = 0.47942554. 2^5 = 32."
-    result: "sin(0.5) = 0.47942554 | 2^5 = 32"
+ inputs: "Expressions = sin(0.5), 2^5"
+ calculation: "sin(0.5 radians) = 0.47942554. 2^5 = 32."
+ result: "sin(0.5) = 0.47942554 | 2^5 = 32"
   - title: "Logarithmic and Root Calculations (sqrt(49) and ln(e))"
-    inputs: "Expressions = sqrt(49), ln(e)"
-    calculation: "sqrt(49) = 7. ln(e) = 1."
-    result: "sqrt(49) = 7 | ln(e) = 1"
+ inputs: "Expressions = sqrt(49), ln(e)"
+ calculation: "sqrt(49) = 7. ln(e) = 1."
+ result: "sqrt(49) = 7 | ln(e) = 1"
 faqs:
   - q: "Does this scientific calculator use degrees or radians for trigonometry?"
-    a: "Trigonometric functions (sin, cos, tan) in this calculator default to using radians, which is the standard mathematical convention in calculus and analysis."
+ a: "Trigonometric functions (sin, cos, tan) in this calculator default to using radians, which is the standard mathematical convention in calculus and analysis."
   - q: "What mathematical functions are supported?"
-    a: "Supported operations include addition (+), subtraction (-), multiplication (×), division (÷), exponents (^), square roots (sqrt), factorials (!), trigonometry (sin, cos, tan), logarithms (log base 10, natural log ln), and mathematical constants (π, e)."
+ a: "Supported operations include addition (+), subtraction (-), multiplication (×), division (÷), exponents (^), square roots (sqrt), factorials (!), trigonometry (sin, cos, tan), logarithms (log base 10, natural log ln), and mathematical constants (π, e)."
   - q: "How do I view or save past calculations?"
-    a: "Every completed calculation is automatically logged in the Tape Records side panel. You can copy individual results, download the tape history as a text file, or print the calculation history directly."
+ a: "Every completed calculation is automatically logged in the Tape Records side panel. You can copy individual results, download the tape history as a text file, or print the calculation history directly."
 references:
   - "https://www.mathsisfun.com/scientific-calculator.html"
 ---
@@ -86,28 +86,28 @@ The **Scientific Calculator** provides a digital mathematical workspace styled a
 
 #### 3. Logarithms & Constants
 - **`log`**: Common logarithm (base 10). For example, `log(100) = 2`.
-- **`ln`**: Natural logarithm (base $e$). For example, `ln(e) = 1`.
-- **Mathematical Constants**: Supports `π` ($\approx 3.14159265$) and `e` ($\approx 2.71828183$).
+- **`ln`**: Natural logarithm (base e). For example, `ln(e) = 1`.
+- **Mathematical Constants**: Supports `π` ($≈ 3.14159265$) and `e` ($≈ 2.71828183$).
 
 ---
 
 ### Step-by-Step Worked Numerical Examples (Verified against Code)
 
 1. **Power Calculation (`2^5`)**:
-   - Keypress sequence: `2`, `^`, `5`, `enter`.
-   - Result = **32**
+ - Keypress sequence: `2`, `^`, `5`, `enter`.
+ - Result = **32**
 
 2. **Square Root (`sqrt(49)`)**:
-   - Keypress sequence: `√`, `49`, `)`, `enter`.
-   - Result = **7**
+ - Keypress sequence: `√`, `49`, `)`, `enter`.
+ - Result = **7**
 
 3. **Trigonometric Sine in Radians (`sin(0.5)`)**:
-   - Keypress sequence: `sin`, `0.5`, `)`, `enter`.
-   - Result = **0.47942554**
+ - Keypress sequence: `sin`, `0.5`, `)`, `enter`.
+ - Result = **0.47942554**
 
-4. **Natural Logarithm of $e$ (`ln(e)`)**:
-   - Keypress sequence: `ln`, `e`, `)`, `enter`.
-   - Result = **1**
+4. **Natural Logarithm of e (`ln(e)`)**:
+ - Keypress sequence: `ln`, `e`, `)`, `enter`.
+ - Result = **1**
 
 ---
 

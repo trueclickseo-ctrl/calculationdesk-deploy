@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Event planners, students, project managers, couples, travelers, and marketers."
   limitations: "Calculates live remaining time based on your browser's local timezone timestamp."
   keyTakeaways:
-    - "Calculates remaining Days, Hours, Minutes, and Seconds dynamically."
-    - "Updates automatically every 1,000 milliseconds (1 second) via client-side interval timer."
-    - "Displays a celebratory arrival alert when the target date and time is reached."
-    - "Uses browser local time to evaluate target timestamps."
+ - "Calculates remaining Days, Hours, Minutes, and Seconds dynamically."
+ - "Updates automatically every 1,000 milliseconds (1 second) via client-side interval timer."
+ - "Displays a celebratory arrival alert when the target date and time is reached."
+ - "Uses browser local time to evaluate target timestamps."
 peopleAlsoAsk:
   - "How does a countdown timer work?"
   - "What happens when the countdown hits zero?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "Why does setting the exact target time matter?"
 examples:
   - title: "Worked Event Countdown Example (Target: Jan 1, 2027 00:00:00)"
-    inputs: "Event Title = New Year, Target Date = 2027-01-01, Target Time = 00:00"
-    calculation: "Target Timestamp = 2027-01-01T00:00:00. Evaluates difference = Target - Current Time. Converts remaining ms into Days, Hours, Minutes, and Seconds. Updates every second."
-    result: "Live Ticker Breakdown = Days | Hours | Minutes | Seconds"
+ inputs: "Event Title = New Year, Target Date = 2027-01-01, Target Time = 00:00"
+ calculation: "Target Timestamp = 2027-01-01T00:00:00. Evaluates difference = Target - Current Time. Converts remaining ms into Days, Hours, Minutes, and Seconds. Updates every second."
+ result: "Live Ticker Breakdown = Days | Hours | Minutes | Seconds"
 faqs:
   - q: "Does the countdown update automatically in real time?"
-    a: "Yes. The timer uses a 1-second interval loop that re-evaluates the remaining time every 1,000 milliseconds."
+ a: "Yes. The timer uses a 1-second interval loop that re-evaluates the remaining time every 1,000 milliseconds."
   - q: "What happens when the target date and time arrives?"
-    a: "Once the remaining time reaches zero (or negative), the timer stops the countdown loop and displays an alert indicating that the event has arrived."
+ a: "Once the remaining time reaches zero (or negative), the timer stops the countdown loop and displays an alert indicating that the event has arrived."
   - q: "Does time zone affect the countdown?"
-    a: "The countdown evaluates dates using your computer or smartphone's local time zone, ensuring that the timer matches your local clock."
+ a: "The countdown evaluates dates using your computer or smartphone's local time zone, ensuring that the timer matches your local clock."
 references:
   - "https://www.timeanddate.com/counters/"
 ---
@@ -70,13 +70,13 @@ The countdown timer relies on real-time epoch timestamp evaluation:
 
 1. **Construct Target Timestamp**: Combines your chosen **Target Date** and **Target Time** into an ISO timestamp (e.g. `2027-01-01T00:00:00`).
 2. **Evaluate Time Difference**: Subtracts the current system time (`Date.now()`) from the target timestamp:
-   $$\text{Remaining Time (ms)} = T_{\text{Target}} - T_{\text{Current}}$$
+ Remaining Time (ms) = T_{Target} - T_{Current}
 3. **Unit Breakdown**:
-   - $\text{Days} = \text{floor}\left(\frac{\text{Diff}}{86,400,000}\right)$
-   - $\text{Hours} = \text{floor}\left(\frac{\text{Diff} \pmod{86,400,000}}{3,600,000}\right)$
-   - $\text{Minutes} = \text{floor}\left(\frac{\text{Diff} \pmod{3,600,000}}{60,000}\right)$
-   - $\text{Seconds} = \text{floor}\left(\frac{\text{Diff} \pmod{60,000}}{1,000}\right)$
-4. **Live Ticker Loop**: A client-side interval timer executes this calculation every $1,000\text{ ms}$ ($1\text{ second}$), updating the displayed values dynamically.
+ - Days = floorfrac(Diff){86,400,000}
+ - Hours = floorfrac(Diff ±od{86,400,000)}{3,600,000}
+ - Minutes = floorfrac(Diff ±od{3,600,000)}{60,000}
+ - Seconds = floorfrac(Diff ±od{60,000)}{1,000}
+4. **Live Ticker Loop**: A client-side interval timer executes this calculation every 1,000 ms ($1 second), updating the displayed values dynamically.
 
 ---
 
@@ -90,7 +90,7 @@ Suppose today is **July 15, 2026** and you set a countdown for **New Year's Day 
 #### Calculation Process
 - **Target Timestamp**: `2027-01-01T00:00:00`
 - The system evaluates remaining milliseconds and outputs a live 4-card ticker:
-  $$\mathbf{169\text{ Days}} \quad | \quad \mathbf{22\text{ Hours}} \quad | \quad \mathbf{10\text{ Minutes}} \quad | \quad \mathbf{45\text{ Seconds}}$$
+  169 Days | 22 Hours | 10 Minutes | 45 Seconds
 - Every second, the **Seconds** counter decrements. When seconds reach 0, **Minutes** decrement by 1, and so on.
 
 ---

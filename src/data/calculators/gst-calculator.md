@@ -25,36 +25,36 @@ titleVariants:
   - "GST Calculator - Calculate Exclusive & Inclusive GST Rates | CalculationDesk"
 aiSummary:
   definition: "Goods and Services Tax (GST) is an indirect consumption tax levied on goods and services. It is added to tax-exclusive prices or extracted from tax-inclusive prices."
-  quickAnswer: "Adding 18% GST to a $1,000 base cost yields $180.00 GST ($1,180.00 total). Removing 18% GST from a $1,000 inclusive bill yields $847.46 base cost ($152.54 GST)."
+  quickAnswer: "Adding 18% GST to a 1,000 base cost yields 180.00 GST ($1,180.00 total). Removing 18% GST from a 1,000 inclusive bill yields 847.46 base cost ($152.54 GST)."
   formulaSummary: "Add GST: Total = Base × (1 + Rate / 100) | Remove GST: Base = Total / (1 + Rate / 100)"
   whenToUse: "Use this calculator to add tax to a wholesale price or extract pre-tax product costs from inclusive retail invoices."
   whoShouldUse: "Business owners, consumers, accountants, and freelancers."
   limitations: "Calculates mathematical GST splits based on user-entered percentages."
   keyTakeaways:
-    - "Add GST (Tax Exclusive): Tax is added on top of the net base price."
-    - "Remove GST (Tax Inclusive): Tax is already embedded inside the final gross bill."
-    - "Dividing an inclusive price by (1 + Tax Rate) extracts the exact pre-tax net cost."
+ - "Add GST (Tax Exclusive): Tax is added on top of the net base price."
+ - "Remove GST (Tax Inclusive): Tax is already embedded inside the final gross bill."
+ - "Dividing an inclusive price by (1 + Tax Rate) extracts the exact pre-tax net cost."
 peopleAlsoAsk:
   - "How do I calculate GST inclusive and exclusive prices?"
   - "What is the formula to remove GST from a total price?"
   - "Why can't I just subtract the GST percentage from an inclusive total?"
   - "What is the difference between tax inclusive and tax exclusive?"
 examples:
-  - title: "Add 18% GST to a $1,000 Base Cost (Tax Exclusive)"
-    inputs: "Base Amount = $1,000, GST Rate = 18%, Calculation = Add GST"
-    calculation: "GST Amount = $1,000 × 0.18 = $180.00; Total Price = $1,000 + $180 = $1,180.00"
-    result: "Net Price = $1,000.00 | GST Amount = $180.00 | Gross Total = $1,180.00"
-  - title: "Remove 18% GST from a $1,000 Total Bill (Tax Inclusive)"
-    inputs: "Total Amount = $1,000, GST Rate = 18%, Calculation = Remove GST"
-    calculation: "Base Price = $1,000 / (1 + 0.18) = $1,000 / 1.18 = $847.46; GST Amount = $1,000 - $847.46 = $152.54"
-    result: "Net Base Price = $847.46 | GST Amount = $152.54 | Gross Total = $1,000.00"
+  - title: "Add 18% GST to a 1,000 Base Cost (Tax Exclusive)"
+ inputs: "Base Amount = 1,000, GST Rate = 18%, Calculation = Add GST"
+ calculation: "GST Amount = 1,000 × 0.18 = 180.00; Total Price = 1,000 + 180 = 1,180.00"
+ result: "Net Price = 1,000.00 | GST Amount = 180.00 | Gross Total = 1,180.00"
+  - title: "Remove 18% GST from a 1,000 Total Bill (Tax Inclusive)"
+ inputs: "Total Amount = 1,000, GST Rate = 18%, Calculation = Remove GST"
+ calculation: "Base Price = 1,000 / (1 + 0.18) = 1,000 / 1.18 = 847.46; GST Amount = 1,000 - 847.46 = 152.54"
+ result: "Net Base Price = 847.46 | GST Amount = 152.54 | Gross Total = 1,000.00"
 faqs:
   - q: "What is the difference between GST Exclusive and GST Inclusive?"
-    a: "GST Exclusive means the listed price does not include tax yet; you must calculate and add tax to get the final bill. GST Inclusive means the listed price already contains the tax portion."
+ a: "GST Exclusive means the listed price does not include tax yet; you must calculate and add tax to get the final bill. GST Inclusive means the listed price already contains the tax portion."
   - q: "What is the mathematical formula to remove GST from an inclusive price?"
-    a: "To remove GST, divide the total inclusive price by (1 + Tax Rate / 100). For an 18% tax rate, divide the total price by 1.18 to isolate the net pre-tax price."
+ a: "To remove GST, divide the total inclusive price by (1 + Tax Rate / 100). For an 18% tax rate, divide the total price by 1.18 to isolate the net pre-tax price."
   - q: "Why is subtracting 18% from an inclusive price mathematically incorrect?"
-    a: "Subtracting 18% from $1,000 gives $820, which is wrong because the 18% tax was originally added to the smaller pre-tax base price ($847.46), not the $1,000 total. Dividing by 1.18 correctly reverses the tax addition."
+ a: "Subtracting 18% from 1,000 gives 820, which is wrong because the 18% tax was originally added to the smaller pre-tax base price ($847.46), not the 1,000 total. Dividing by 1.18 correctly reverses the tax addition."
 references:
   - "https://www.gst.gov.in"
   - "https://en.wikipedia.org/wiki/Goods_and_Services_Tax"
@@ -79,32 +79,29 @@ Our calculator supports two distinct calculation modes:
 
 #### 1. Adding GST (Tax-Exclusive Mode)
 
-$$\text{GST Amount} = \text{Base Price} \times \left(\frac{\text{GST Rate}}{100}\right)$$
+GST Amount = Base Price × frac(GST Rate){100}
 
-$$\text{Total Price (Gross)} = \text{Base Price} + \text{GST Amount}$$
+Total Price (Gross) = Base Price + GST Amount
 
 #### 2. Removing GST (Tax-Inclusive Mode)
 
-$$\text{Base Price (Pre-Tax)} = \frac{\text{Total Price}}{1 + \left(\frac{\text{GST Rate}}{100}\right)}$$
+Base Price (Pre-Tax) = frac(Total Price){1 + frac(GST Rate){100}}
 
-$$\text{GST Amount} = \text{Total Price} - \text{Base Price (Pre-Tax)}$$
+GST Amount = Total Price - Base Price (Pre-Tax)
 
 ---
 
 ### Worked Numerical Examples (Verified against Code)
 
-#### Example 1: Add 18% GST to a $1,000 Base Product (Tax Exclusive)
+#### Example 1: Add 18% GST to a 1,000 Base Product (Tax Exclusive)
 1. **Inputs**: Base Price = **$1,000**, GST Rate = **18%**.
-2. **GST Amount**: $\$1,000 \times \left(\frac{18}{100}\right) = \mathbf{\$180.00}$
-3. **Gross Total Price**: $\$1,000 + \$180.00 = \mathbf{\$1,180.00}$
+2. **GST Amount**: \1,000 × (18 / 100) = $180.00
+3. **Gross Total Price**: \1,000 + $180.00 = $1,180.00
 
-#### Example 2: Remove 18% GST from a $1,000 Final Bill (Tax Inclusive)
+#### Example 2: Remove 18% GST from a 1,000 Final Bill (Tax Inclusive)
 1. **Inputs**: Total Price = **$1,000**, GST Rate = **18%**.
 2. **Pre-Tax Net Price**:
-   $$\text{Base Price} = \frac{1,000}{1 + 0.18} = \frac{1,000}{1.18} \approx \mathbf{\$847.46}$$
-3. **GST Amount Extracted**:
-   $$\text{GST Amount} = 1,000 - 847.46 = \mathbf{\$152.54}$$
-
+ Base Price = (1,000 / 1 + 0.18) = (1,000 / 1.18) ≈ \847.463. **GST Amount Extracted**:GST Amount = 1,000 - 847.46 = $152.54 
 ---
 
 ### Frequently Asked Questions (FAQ)

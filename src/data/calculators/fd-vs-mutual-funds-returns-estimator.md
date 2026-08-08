@@ -31,9 +31,9 @@ aiSummary:
   whoShouldUse: "Individual investors, tax planners, and financial advisors."
   limitations: "Calculates post-tax maturity projections based on user-entered interest rates, expected returns, tax slabs, and statutory exemptions."
   keyTakeaways:
-    - "FD interest is taxed annually at your marginal income tax slab rate."
-    - "Mutual funds compound untaxed until redemption, benefiting from tax-deferred growth."
-    - "For INR (₹) investments, the calculator applies the statutory ₹1,25,000 LTCG annual exemption on equity mutual fund gains."
+ - "FD interest is taxed annually at your marginal income tax slab rate."
+ - "Mutual funds compound untaxed until redemption, benefiting from tax-deferred growth."
+ - "For INR (₹) investments, the calculator applies the statutory ₹1,25,000 LTCG annual exemption on equity mutual fund gains."
 peopleAlsoAsk:
   - "How are Fixed Deposits taxed compared to Mutual Funds?"
   - "What is the LTCG tax rate on equity mutual funds in India?"
@@ -41,16 +41,16 @@ peopleAlsoAsk:
   - "How does quarterly compounding affect Fixed Deposit returns?"
 examples:
   - title: "5-Year ₹10,00,000 Investment (7% FD @ 30% tax slab vs. 12% MF @ 12.5% LTCG tax)"
-    inputs: "Principal = ₹10,00,000, Tenure = 5 Years, FD Rate = 7%, Tax Slab = 30%, MF Rate = 12%, LTCG Tax = 12.5%"
-    calculation: "FD Post-tax rate = 7 × (1 - 0.30) = 4.9%; FD Post-tax = 1,000,000 × (1 + 4.9/400)^20 = ₹12,75,424. MF Pre-tax = 1,000,000 × (1.12)^5 = ₹17,62,342; Gain = ₹7,62,342; Taxable Gain = 7,62,342 - 1,25,000 = ₹6,37,342; LTCG Tax = 6,37,342 × 12.5% = ₹79,668; MF Post-tax = ₹16,82,674."
-    result: "FD Post-Tax = ₹12,75,424 | MF Post-Tax = ₹16,82,674 | MF Outperformance = ₹4,07,250"
+ inputs: "Principal = ₹10,00,000, Tenure = 5 Years, FD Rate = 7%, Tax Slab = 30%, MF Rate = 12%, LTCG Tax = 12.5%"
+ calculation: "FD Post-tax rate = 7 × (1 - 0.30) = 4.9%; FD Post-tax = 1,000,000 × (1 + 4.9/400)^20 = ₹12,75,424. MF Pre-tax = 1,000,000 × (1.12)^5 = ₹17,62,342; Gain = ₹7,62,342; Taxable Gain = 7,62,342 - 1,25,000 = ₹6,37,342; LTCG Tax = 6,37,342 × 12.5% = ₹79,668; MF Post-tax = ₹16,82,674."
+ result: "FD Post-Tax = ₹12,75,424 | MF Post-Tax = ₹16,82,674 | MF Outperformance = ₹4,07,250"
 faqs:
   - q: "How is FD post-tax interest calculated in this tool?"
-    a: "FD interest is taxed at your income slab rate. The calculator adjusts your annual FD interest rate down by your tax slab percentage ($R_{\text{post}} = R_{\text{FD}} \times (1 - \text{Tax Slab}/100)$) and compounds quarterly."
+ a: "FD interest is taxed at your income slab rate. The calculator adjusts your annual FD interest rate down by your tax slab percentage (R_{post} = R_{FD} × (1 - Tax Slab/100)) and compounds quarterly."
   - q: "How is Mutual Fund capital gains tax calculated?"
-    a: "Mutual fund gains compound untaxed during the tenure. Upon redemption, total capital gains ($\text{Maturity} - \text{Principal}$) are calculated. For INR (₹) investments, a statutory ₹1,25,000 exemption is subtracted before applying your entered LTCG tax rate."
+ a: "Mutual fund gains compound untaxed during the tenure. Upon redemption, total capital gains (Maturity - Principal) are calculated. For INR (₹) investments, a statutory ₹1,25,000 exemption is subtracted before applying your entered LTCG tax rate."
   - q: "Are mutual fund returns guaranteed?"
-    a: "No. Fixed deposits offer guaranteed interest returns, whereas mutual funds are market-linked investments subject to market volatility. The expected return rate is an assumption used for comparative projections."
+ a: "No. Fixed deposits offer guaranteed interest returns, whereas mutual funds are market-linked investments subject to market volatility. The expected return rate is an assumption used for comparative projections."
 references:
   - "https://incometaxindia.gov.in"
 ---
@@ -66,32 +66,32 @@ This calculator compares **pre-tax maturity, tax paid, and final post-tax yields
 ### How the Comparison Model Works
 
 1. **Fixed Deposit (FD)**:
-   - **Quarterly Compounding**: FDs compound interest quarterly.
-   - **Annual Income Slab Taxation**: Interest is taxed as regular income at your marginal tax slab rate (e.g. 30%). The calculator adjusts your effective interest rate ($R_{\text{FD, post}} = R_{\text{FD}} \times (1 - \text{Slab}/100)$).
+ - **Quarterly Compounding**: FDs compound interest quarterly.
+ - **Annual Income Slab Taxation**: Interest is taxed as regular income at your marginal tax slab rate (e.g. 30%). The calculator adjusts your effective interest rate (R_{FD, post} = R_{FD} × (1 - Slab/100)).
 2. **Mutual Funds (MF)**:
-   - **Annual Compounding**: Mutual funds compound annually.
-   - **Tax-Deferred Capital Gains**: Returns compound untaxed until redemption.
-   - **LTCG Exemption & Taxation**: Upon redemption, total gains are computed. For INR (₹) investments, a statutory **₹1,25,000 exemption** is subtracted before applying the Long-Term Capital Gains (LTCG) tax rate (e.g. 12.5%).
+ - **Annual Compounding**: Mutual funds compound annually.
+ - **Tax-Deferred Capital Gains**: Returns compound untaxed until redemption.
+ - **LTCG Exemption & Taxation**: Upon redemption, total gains are computed. For INR (₹) investments, a statutory **₹1,25,000 exemption** is subtracted before applying the Long-Term Capital Gains (LTCG) tax rate (e.g. 12.5%).
 
 ---
 
 ### Mathematical Methodology Used by the Calculator
 
 #### 1. Fixed Deposit Post-Tax Formula
-$$R_{\text{post}} = R_{\text{FD}} \times \left(1 - \frac{\text{Tax Slab}}{100}\right)$$
+R_{post} = R_{FD} × 1 - frac(Tax Slab){100}
 
-$$\text{Post-Tax FD Value} = P \times \left(1 + \frac{R_{\text{post}}}{4 \times 100}\right)^{4t}$$
+Post-Tax FD Value = P × 1 + frac(R_{post)}{4 × 100}^4t
 
 #### 2. Mutual Fund Post-Tax Formula
-$$\text{Pre-Tax MF Value} = P \times \left(1 + \frac{R_{\text{MF}}}{100}\right)^t$$
+Pre-Tax MF Value = P × 1 + frac(R_{MF)}{100}^t
 
-$$\text{Pre-Tax Gain} = \text{Pre-Tax MF Value} - P$$
+Pre-Tax Gain = Pre-Tax MF Value - P
 
-$$\text{Taxable Gain} = \max(0, \text{Pre-Tax Gain} - \text{Exemption})$$
+Taxable Gain = max(0, Pre-Tax Gain - Exemption)
 
-$$\text{MF Tax Paid} = \text{Taxable Gain} \times \left(\frac{\text{LTCG Tax Rate}}{100}\right)$$
+MF Tax Paid = Taxable Gain × frac(LTCG Tax Rate){100}
 
-$$\text{Post-Tax MF Value} = \text{Pre-Tax MF Value} - \text{MF Tax Paid}$$
+Post-Tax MF Value = Pre-Tax MF Value - MF Tax Paid
 
 ---
 
@@ -100,17 +100,17 @@ $$\text{Post-Tax MF Value} = \text{Pre-Tax MF Value} - \text{MF Tax Paid}$$
 Suppose you invest **₹10,00,000** for **5 years**, getting **7% on FD** (in a **30% tax slab**) vs. **12% expected MF return** (with **12.5% LTCG tax**):
 
 #### 1. Fixed Deposit Calculation:
-- Post-tax FD interest rate: $7\% \times (1 - 0.30) = \mathbf{4.9\%}$
-- Pre-Tax FD Maturity: $10,00,000 \times (1 + 7/400)^{20} = \mathbf{₹14,14,778}$
-- **Post-Tax FD Maturity**: $10,00,000 \times (1 + 4.9/400)^{20} = \mathbf{₹12,75,424}$
-- Tax Deducted: $14,14,778 - 12,75,424 = \mathbf{₹1,39,354}$
+- Post-tax FD interest rate: 7% × (1 - 0.30) = 4.9%$
+- Pre-Tax FD Maturity: 10,00,000 × (1 + 7/400)^20 = ₹14,14,778$
+- **Post-Tax FD Maturity**: 10,00,000 × (1 + 4.9/400)^20 = ₹12,75,424$
+- Tax Deducted: 14,14,778 - 12,75,424 = ₹1,39,354$
 
 #### 2. Mutual Fund Calculation:
-- Pre-Tax MF Maturity: $10,00,000 \times (1 + 0.12)^5 = \mathbf{₹17,62,342}$
-- Capital Gain: $17,62,342 - 10,00,000 = \mathbf{₹7,62,342}$
-- Taxable Gain (subtraction of ₹1.25L exemption): $7,62,342 - 1,25,000 = \mathbf{₹6,37,342}$
-- LTCG Tax Paid (12.5%): $6,37,342 \times 12.5\% = \mathbf{₹79,668}$
-- **Post-Tax MF Maturity**: $17,62,342 - 79,668 = \mathbf{₹16,82,674}$
+- Pre-Tax MF Maturity: 10,00,000 × (1 + 0.12)^5 = ₹17,62,342$
+- Capital Gain: 17,62,342 - 10,00,000 = ₹7,62,342$
+- Taxable Gain (subtraction of ₹1.25L exemption): 7,62,342 - 1,25,000 = ₹6,37,342$
+- LTCG Tax Paid (12.5%): 6,37,342 × 12.5% = ₹79,668$
+- **Post-Tax MF Maturity**: 17,62,342 - 79,668 = ₹16,82,674$
 
 **Comparison Summary**: Mutual funds yield **₹16,82,674** post-tax vs. **₹12,75,424** for FD, creating a net wealth advantage of **₹4,07,250**.
 

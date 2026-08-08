@@ -25,15 +25,15 @@ titleVariants:
   - "Mutual Fund Returns Calculator - Calculate SIP & Lumpsum Returns | CalculationDesk"
 aiSummary:
   definition: "The Mutual Fund Returns Calculator estimates projected wealth accumulation for both monthly SIP contributions and one-time lumpsum mutual fund investments based on expected annual return rates."
-  quickAnswer: "A $5,000 monthly SIP at 12% annual return for 10 years yields $1,161,695 ($600,000 invested | $561,695 returns). A $50,000 one-time lumpsum at 12% for 10 years yields $155,292 ($50,000 invested | $105,292 returns)."
+  quickAnswer: "A 5,000 monthly SIP at 12% annual return for 10 years yields 1,161,695 ($600,000 invested | 561,695 returns). A 50,000 one-time lumpsum at 12% for 10 years yields 155,292 ($50,000 invested | 105,292 returns)."
   formulaSummary: "SIP Mode: M = P × [((1+i)^n - 1) / i] × (1+i) | Lumpsum Mode: M = P × (1 + r)^t"
   whenToUse: "Use this calculator to compare projected returns between monthly SIP plans and lump-sum mutual fund deposits."
   whoShouldUse: "Individual investors, retirement planners, and mutual fund investors."
   limitations: "Calculates projections based on user-entered expected return rates. Mutual fund market returns fluctuate in real life."
   keyTakeaways:
-    - "SIP Mode models monthly compounding annuity payments deposited at the start of each month."
-    - "Lumpsum Mode models one-time initial principal compounding annually over the duration."
-    - "Distinguishes between total invested capital and estimated return gains."
+ - "SIP Mode models monthly compounding annuity payments deposited at the start of each month."
+ - "Lumpsum Mode models one-time initial principal compounding annually over the duration."
+ - "Distinguishes between total invested capital and estimated return gains."
 peopleAlsoAsk:
   - "What is the formula for calculating SIP mutual fund returns?"
   - "What is the formula for calculating lumpsum mutual fund returns?"
@@ -41,18 +41,18 @@ peopleAlsoAsk:
   - "Are mutual fund returns guaranteed?"
 examples:
   - title: "10-Year SIP Investment ($5,000/month at 12% p.a. expected return)"
-    inputs: "Investment Type = SIP, Monthly Savings = $5,000, Expected Return = 12% p.a., Duration = 10 Years"
-    calculation: "Monthly i = 12 / 12 / 100 = 0.01; n = 120 months. M = 5,000 × [((1.01)^120 - 1) / 0.01] × 1.01 = $1,161,695. Total Invested = $600,000; Returns = $561,695."
-    result: "Total Invested = $600,000 | Est. Returns = $561,695 | Expected Maturity Value = $1,161,695"
+ inputs: "Investment Type = SIP, Monthly Savings = 5,000, Expected Return = 12% p.a., Duration = 10 Years"
+ calculation: "Monthly i = 12 / 12 / 100 = 0.01; n = 120 months. M = 5,000 × [((1.01)^120 - 1) / 0.01] × 1.01 = 1,161,695. Total Invested = 600,000; Returns = 561,695."
+ result: "Total Invested = 600,000 | Est. Returns = 561,695 | Expected Maturity Value = 1,161,695"
   - title: "10-Year Lumpsum Investment ($50,000 one-time at 12% p.a. expected return)"
-    inputs: "Investment Type = Lumpsum, One-time Deposit = $50,000, Expected Return = 12% p.a., Duration = 10 Years"
-    calculation: "P = 50,000; r = 0.12; t = 10. M = 50,000 × (1.12)^10 = $155,292. Total Invested = $50,000; Returns = $105,292."
-    result: "Total Invested = $50,000 | Est. Returns = $105,292 | Expected Maturity Value = $155,292"
+ inputs: "Investment Type = Lumpsum, One-time Deposit = 50,000, Expected Return = 12% p.a., Duration = 10 Years"
+ calculation: "P = 50,000; r = 0.12; t = 10. M = 50,000 × (1.12)^10 = 155,292. Total Invested = 50,000; Returns = 105,292."
+ result: "Total Invested = 50,000 | Est. Returns = 105,292 | Expected Maturity Value = 155,292"
 faqs:
   - q: "What is the difference between SIP and Lumpsum investment modes in this calculator?"
-    a: "In SIP mode, you deposit a fixed sum every month over the tenure, and each monthly installment compounds for its remaining months. In Lumpsum mode, you deposit a single lump-sum amount up front on day one, compounding the entire principal for the full tenure."
+ a: "In SIP mode, you deposit a fixed sum every month over the tenure, and each monthly installment compounds for its remaining months. In Lumpsum mode, you deposit a single lump-sum amount up front on day one, compounding the entire principal for the full tenure."
   - q: "Are the return figures guaranteed by mutual fund companies?"
-    a: "No. Mutual funds invest in market securities (stocks, bonds, or commodities), and actual returns fluctuate based on market movements. The rate entered in the calculator represents an assumed average return rate."
+ a: "No. Mutual funds invest in market securities (stocks, bonds, or commodities), and actual returns fluctuate based on market movements. The rate entered in the calculator represents an assumed average return rate."
 references:
   - "https://www.sec.gov/investor/pubs/inwstors.htm"
 ---
@@ -102,22 +102,22 @@ Where:
 ### Step-by-Step Worked Numerical Examples (Verified against Code)
 
 #### Example 1: SIP Mode ($5,000/month for 10 years at 12% p.a.)
-1. **Inputs**: Monthly Deposit P = $5,000, Rate = 12% (monthly i = 0.01), Months n = 120.
+1. **Inputs**: Monthly Deposit P = 5,000, Rate = 12% (monthly i = 0.01), Months n = 120.
 2. **Calculate Maturity Value (M)**:
-   Maturity Value = 5,000 × [ ((1.01)^120 − 1) / 0.01 ] × 1.01 = **$1,161,695.38**
+ Maturity Value = 5,000 × [ ((1.01)^120 − 1) / 0.01 ] × 1.01 = **$1,161,695.38**
 3. **Summary**:
-   - **Total Principal Invested ($5,000 × 120)**: **$600,000**
-   - **Estimated Returns Earned**: $1,161,695 − $600,000 = **$561,695**
-   - **Expected Maturity Value**: **$1,161,695**
+ - **Total Principal Invested ($5,000 × 120)**: **$600,000**
+ - **Estimated Returns Earned**: 1,161,695 − 600,000 = **$561,695**
+ - **Expected Maturity Value**: **$1,161,695**
 
 #### Example 2: Lumpsum Mode ($50,000 one-time for 10 years at 12% p.a.)
-1. **Inputs**: Principal P = $50,000, Rate r = 0.12, Years t = 10.
+1. **Inputs**: Principal P = 50,000, Rate r = 0.12, Years t = 10.
 2. **Calculate Maturity Value (M)**:
-   Maturity Value = 50,000 × (1.12)^10 = 50,000 × 3.105848 = **$155,292.41**
+ Maturity Value = 50,000 × (1.12)^10 = 50,000 × 3.105848 = **$155,292.41**
 3. **Summary**:
-   - **Total Principal Invested**: **$50,000**
-   - **Estimated Returns Earned**: $155,292 − $50,000 = **$105,292**
-   - **Expected Maturity Value**: **$155,292**
+ - **Total Principal Invested**: **$50,000**
+ - **Estimated Returns Earned**: 155,292 − 50,000 = **$105,292**
+ - **Expected Maturity Value**: **$155,292**
 
 ---
 

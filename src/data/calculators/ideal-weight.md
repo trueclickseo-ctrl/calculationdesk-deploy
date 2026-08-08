@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Individuals, healthcare professionals, dietitians, and researchers."
   limitations: "Ideal Body Weight (IBW) formulas are population estimations based on height and biological sex. They do not account for muscle mass, frame size, or age."
   keyTakeaways:
-    - "Calculates four recognized clinical formulas: Devine, Robinson, Miller, and Hamwi."
-    - "Displays the World Health Organization (WHO) healthy BMI weight range (18.5 to 25.0)."
-    - "Emphasizes that there is no single 'perfect' weight target for any individual."
-    - "Supports both Metric (cm/kg) and Imperial (ft/in/lbs) unit systems."
+ - "Calculates four recognized clinical formulas: Devine, Robinson, Miller, and Hamwi."
+ - "Displays the World Health Organization (WHO) healthy BMI weight range (18.5 to 25.0)."
+ - "Emphasizes that there is no single 'perfect' weight target for any individual."
+ - "Supports both Metric (cm/kg) and Imperial (ft/in/lbs) unit systems."
 peopleAlsoAsk:
   - "What is Ideal Body Weight (IBW)?"
   - "Why are there multiple formulas for calculating ideal weight?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "How does ideal weight differ from a healthy BMI range?"
 examples:
   - title: "Worked Ideal Weight Example (Male, 175 cm / 5 ft 9 in)"
-    inputs: "Gender = Male, Height = 175 cm (5 ft 9 in = 69 inches)"
-    calculation: "1. Inches over 5 ft (60 in) = 69 - 60 = 9 inches. 2. Devine: 50 + 2.3(9) = 70.7 kg (155.9 lbs). 3. Robinson: 52 + 1.9(9) = 69.1 kg (152.3 lbs). 4. Miller: 56.2 + 1.41(9) = 68.9 kg (151.9 lbs). 5. Hamwi: 48 + 2.7(9) = 72.3 kg (159.4 lbs). 6. Healthy BMI (18.5-25.0): 56.7 kg to 76.6 kg."
-    result: "Devine = 70.7 kg | Robinson = 69.1 kg | Miller = 68.9 kg | Hamwi = 72.3 kg | Healthy BMI Range = 56.7 - 76.6 kg"
+ inputs: "Gender = Male, Height = 175 cm (5 ft 9 in = 69 inches)"
+ calculation: "1. Inches over 5 ft (60 in) = 69 - 60 = 9 inches. 2. Devine: 50 + 2.3(9) = 70.7 kg (155.9 lbs). 3. Robinson: 52 + 1.9(9) = 69.1 kg (152.3 lbs). 4. Miller: 56.2 + 1.41(9) = 68.9 kg (151.9 lbs). 5. Hamwi: 48 + 2.7(9) = 72.3 kg (159.4 lbs). 6. Healthy BMI (18.5-25.0): 56.7 kg to 76.6 kg."
+ result: "Devine = 70.7 kg | Robinson = 69.1 kg | Miller = 68.9 kg | Hamwi = 72.3 kg | Healthy BMI Range = 56.7 - 76.6 kg"
 faqs:
   - q: "Is 'ideal weight' a mandatory medical target?"
-    a: "No. The term 'ideal body weight' originated as a pharmacological baseline for calculating medication dosages. It represents a statistical reference range, not a strict medical requirement for individual health."
+ a: "No. The term 'ideal body weight' originated as a pharmacological baseline for calculating medication dosages. It represents a statistical reference range, not a strict medical requirement for individual health."
   - q: "Why do different formulas produce different weight numbers?"
-    a: "Each formula was published by different clinical researchers in different decades (Hamwi 1964, Devine 1974, Robinson 1983, Miller 1983) using slightly different population datasets and height multipliers."
+ a: "Each formula was published by different clinical researchers in different decades (Hamwi 1964, Devine 1974, Robinson 1983, Miller 1983) using slightly different population datasets and height multipliers."
   - q: "What happens if someone is under 5 feet tall?"
-    a: "For heights under 60 inches (5 feet), the calculator applies a proportional reduction per inch under 5 feet to maintain anatomically consistent estimations."
+ a: "For heights under 60 inches (5 feet), the calculator applies a proportional reduction per inch under 5 feet to maintain anatomically consistent estimations."
 references:
   - "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4893886/"
 ---
@@ -73,55 +73,55 @@ This calculator computes your weight benchmarks using **four classic clinical fo
 
 ### The Four Clinical Ideal Weight Formulas
 
-Most IBW formulas establish a baseline weight for a person measuring $5\text{ feet}$ ($60\text{ inches}$) tall, adding a set weight increment for every inch over 5 feet ($x = \text{Height in inches} - 60$):
+Most IBW formulas establish a baseline weight for a person measuring 5 feet ($60 inches) tall, adding a set weight increment for every inch over 5 feet (x = Height in inches - 60):
 
 #### 1. Devine Formula (1974)
 Originally created to standardize drug clearance dosages, Devine is the most widely used formula in clinical settings:
-- **Men**: $\text{IBW} = 50.0 + 2.3 \times x \text{ (kg)}$
-- **Women**: $\text{IBW} = 45.5 + 2.3 \times x \text{ (kg)}$
+- **Men**: IBW = 50.0 + 2.3 × x  (kg)
+- **Women**: IBW = 45.5 + 2.3 × x  (kg)
 
 #### 2. Robinson Formula (1983)
 A modification of Devine's work based on empirical population data:
-- **Men**: $\text{IBW} = 52.0 + 1.9 \times x \text{ (kg)}$
-- **Women**: $\text{IBW} = 49.0 + 1.7 \times x \text{ (kg)}$
+- **Men**: IBW = 52.0 + 1.9 × x  (kg)
+- **Women**: IBW = 49.0 + 1.7 × x  (kg)
 
 #### 3. Miller Formula (1983)
 Designed to provide smoother weight transitions across varying height brackets:
-- **Men**: $\text{IBW} = 56.2 + 1.41 \times x \text{ (kg)}$
-- **Women**: $\text{IBW} = 53.1 + 1.36 \times x \text{ (kg)}$
+- **Men**: IBW = 56.2 + 1.41 × x  (kg)
+- **Women**: IBW = 53.1 + 1.36 × x  (kg)
 
 #### 4. Hamwi Formula (1964)
 One of the earliest rules of thumb created for diabetic meal planning:
-- **Men**: $\text{IBW} = 48.0 + 2.7 \times x \text{ (kg)}$
-- **Women**: $\text{IBW} = 45.5 + 2.2 \times x \text{ (kg)}$
+- **Men**: IBW = 48.0 + 2.7 × x  (kg)
+- **Women**: IBW = 45.5 + 2.2 × x  (kg)
 
 ---
 
 ### Ideal Weight vs. Healthy BMI Range
 
-While IBW formulas output a single number for each equation, the **World Health Organization (WHO)** defines healthy weight as a broad range (BMI $18.5\text{ to } 25.0$):
+While IBW formulas output a single number for each equation, the **World Health Organization (WHO)** defines healthy weight as a broad range (BMI 18.5 to  25.0$):
 
-$$\text{Min Healthy Weight} = 18.5 \times [\text{Height (m)}]^2$$
-$$\text{Max Healthy Weight} = 25.0 \times [\text{Height (m)}]^2$$
+Min Healthy Weight = 18.5 × [Height (m)]^2
+Max Healthy Weight = 25.0 × [Height (m)]^2
 
-This range acknowledges that two people of the exact same height can differ by $15\text{ to } 20\text{ kg}$ ($30\text{ to } 45\text{ lbs}$) and both remain in optimal health.
+This range acknowledges that two people of the exact same height can differ by 15 to  20 kg ($30 to  45 lbs) and both remain in optimal health.
 
 ---
 
 ### Step-by-Step Worked Numerical Example (Verified against Code)
 
-Let's calculate ideal weight for a **male** measuring **$175\text{ cm}$** ($5\text{ ft } 9\text{ in} = 69\text{ inches}$):
+Let's calculate ideal weight for a **male** measuring **$175 cm** ($5 ft  9 in = 69 inches):
 
-1. **Calculate Inches Over 5 Feet ($60\text{ in}$)**:
-   $$x = 69 - 60 = \mathbf{9\text{ inches}}$$
+1. **Calculate Inches Over 5 Feet ($60 in)**:
+ x = 69 - 60 = 9 inches
 2. **Apply Clinical Formulas**:
-   - **Devine**: $50.0 + 2.3(9) = \mathbf{70.7\text{ kg}}$ ($155.9\text{ lbs}$).
-   - **Robinson**: $52.0 + 1.9(9) = \mathbf{69.1\text{ kg}}$ ($152.3\text{ lbs}$).
-   - **Miller**: $56.2 + 1.41(9) = \mathbf{68.9\text{ kg}}$ ($151.9\text{ lbs}$).
-   - **Hamwi**: $48.0 + 2.7(9) = \mathbf{72.3\text{ kg}}$ ($159.4\text{ lbs}$).
-3. **Calculate WHO Healthy BMI Range ($1.75\text{ m}$)**:
-   - Min ($18.5$): $18.5 \times 1.75^2 = \mathbf{56.7\text{ kg}}$ ($125.0\text{ lbs}$).
-   - Max ($25.0$): $25.0 \times 1.75^2 = \mathbf{76.6\text{ kg}}$ ($168.8\text{ lbs}$).
+ - **Devine**: 50.0 + 2.3(9) = 70.7 kg ($155.9 lbs).
+ - **Robinson**: 52.0 + 1.9(9) = 69.1 kg ($152.3 lbs).
+ - **Miller**: 56.2 + 1.41(9) = 68.9 kg ($151.9 lbs).
+ - **Hamwi**: 48.0 + 2.7(9) = 72.3 kg ($159.4 lbs).
+3. **Calculate WHO Healthy BMI Range ($1.75 m)**:
+ - Min ($18.5$): 18.5 × 1.75^2 = 56.7 kg ($125.0 lbs).
+ - Max ($25.0$): 25.0 × 1.75^2 = 76.6 kg ($168.8 lbs).
 
 *Verification Result: Devine = **70.7 kg**, Robinson = **69.1 kg**, Miller = **68.9 kg**, Hamwi = **72.3 kg**, Healthy BMI Range = **56.7 kg to 76.6 kg**.*
 

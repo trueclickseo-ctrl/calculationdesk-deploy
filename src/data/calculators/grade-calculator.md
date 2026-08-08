@@ -31,9 +31,9 @@ aiSummary:
   whoShouldUse: "High school students, college undergraduates, and teachers."
   limitations: "Calculates the exact required exam percentage using standard weighted average equations."
   keyTakeaways:
-    - "Calculates the required final exam score based on your current grade, desired course grade, and final exam weight."
-    - "If the required score exceeds 100%, bonus points or extra credit are needed to reach the desired target grade."
-    - "Increasing the final exam weight expands the impact of the final exam on your overall grade."
+ - "Calculates the required final exam score based on your current grade, desired course grade, and final exam weight."
+ - "If the required score exceeds 100%, bonus points or extra credit are needed to reach the desired target grade."
+ - "Increasing the final exam weight expands the impact of the final exam on your overall grade."
 peopleAlsoAsk:
   - "How is the required final exam score calculated?"
   - "What does a required exam score above 100% mean?"
@@ -41,22 +41,22 @@ peopleAlsoAsk:
   - "Can extra credit change the required score?"
 examples:
   - title: "Achievable Goal Example (82% Current, 88% Desired, 30% Exam Weight)"
-    inputs: "Current Grade = 82%, Desired Final Grade = 88%, Final Exam Weight = 30%"
-    calculation: "Exam Weight w = 30% = 0.30; Coursework portion = 1 - 0.30 = 0.70. Current coursework contribution = 82 × 0.70 = 57.4%. Remaining required contribution = 88 - 57.4 = 30.6%. Required exam score = 30.6 / 0.30 = 102.0%."
-    result: "Current Coursework Contribution = 57.4% | Required Exam Score = 102.0% (Extra Credit Needed)"
+ inputs: "Current Grade = 82%, Desired Final Grade = 88%, Final Exam Weight = 30%"
+ calculation: "Exam Weight w = 30% = 0.30; Coursework portion = 1 - 0.30 = 0.70. Current coursework contribution = 82 × 0.70 = 57.4%. Remaining required contribution = 88 - 57.4 = 30.6%. Required exam score = 30.6 / 0.30 = 102.0%."
+ result: "Current Coursework Contribution = 57.4% | Required Exam Score = 102.0% (Extra Credit Needed)"
   - title: "Standard Target Case (85% Current, 90% Desired, 20% Exam Weight)"
-    inputs: "Current Grade = 85%, Desired Final Grade = 90%, Final Exam Weight = 20%"
-    calculation: "w = 0.20; 1 - w = 0.80. Coursework contribution = 85 × 0.80 = 68.0%. Remaining required = 90 - 68 = 22.0%. Required exam score = 22.0 / 0.20 = 110.0%."
-    result: "Required Exam Score = 110.0% | Goal Status = Extra Credit Needed"
+ inputs: "Current Grade = 85%, Desired Final Grade = 90%, Final Exam Weight = 20%"
+ calculation: "w = 0.20; 1 - w = 0.80. Coursework contribution = 85 × 0.80 = 68.0%. Remaining required = 90 - 68 = 22.0%. Required exam score = 22.0 / 0.20 = 110.0%."
+ result: "Required Exam Score = 110.0% | Goal Status = Extra Credit Needed"
 faqs:
   - q: "How is the required final-exam score calculated?"
-    a: "The calculator uses the weighted grade equation: Required Score = [Desired Grade − Current Grade × (1 − Exam Weight)] / Exam Weight, where Exam Weight is entered as a decimal (e.g. 20% = 0.20)."
+ a: "The calculator uses the weighted grade equation: Required Score = [Desired Grade − Current Grade × (1 − Exam Weight)] / Exam Weight, where Exam Weight is entered as a decimal (e.g. 20% = 0.20)."
   - q: "What does a result above 100% mean?"
-    a: "A result above 100% means that under standard exam scoring (100% maximum), your current coursework average is not high enough to reach your target grade. You would need extra credit or bonus marks on the exam."
+ a: "A result above 100% means that under standard exam scoring (100% maximum), your current coursework average is not high enough to reach your target grade. You would need extra credit or bonus marks on the exam."
   - q: "Does a higher final-exam weight reduce the required score?"
-    a: "If your desired grade is higher than your current grade, a higher final exam weight lowers the required exam score needed to lift your average. Conversely, if your current grade is already higher than your target, a higher weight provides more cushion."
+ a: "If your desired grade is higher than your current grade, a higher final exam weight lowers the required exam score needed to lift your average. Conversely, if your current grade is already higher than your target, a higher weight provides more cushion."
   - q: "Does the calculator assume the current grade represents the completed portion of the course?"
-    a: "Yes. The tool assumes your current grade represents 100% of all pre-final coursework, which accounts for the remaining (100% − Exam Weight) portion of your overall grade."
+ a: "Yes. The tool assumes your current grade represents 100% of all pre-final coursework, which accounts for the remaining (100% − Exam Weight) portion of your overall grade."
 references:
   - "https://www.collegeboard.org/"
 ---
@@ -89,14 +89,14 @@ Where:
 Suppose your current grade is **85%**, your desired final grade is **90%**, and the final exam is worth **20%** of your total course grade:
 
 1. **Convert Final Exam Weight to Decimal**:
-   Exam Weight (w) = 20% / 100 = 0.20
-   Coursework Weight (1 − w) = 1 − 0.20 = 0.80
+ Exam Weight (w) = 20% / 100 = 0.20
+ Coursework Weight (1 − w) = 1 − 0.20 = 0.80
 2. **Calculate Current Coursework Contribution**:
-   Contribution = 85 × 0.80 = **68.0%**
+ Contribution = 85 × 0.80 = **68.0%**
 3. **Calculate Remaining Score Needed**:
-   Remaining Needed = 90 − 68.0 = **22.0%**
+ Remaining Needed = 90 − 68.0 = **22.0%**
 4. **Calculate Required Final Exam Score**:
-   Required Score = 22.0 / 0.20 = **110.0%**
+ Required Score = 22.0 / 0.20 = **110.0%**
 5. **Result Interpretation**: You need a **110.0%** on the final exam. Because 110.0% exceeds 100%, reaching a 90% overall grade requires extra credit or bonus points.
 
 #### Example 2: Exactly 100% Required Exam Score Case

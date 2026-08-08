@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Athletes, fitness enthusiasts, military personnel, and individuals tracking body composition."
   limitations: "Provides a mathematical estimate based on tape measurements. Tape technique, fluid retention, and anatomical shape variations affect precision."
   keyTakeaways:
-    - "Implements the official U.S. Navy Circumference Method using logarithmic formulas."
-    - "Requires Height, Neck, and Waist for males; adds Hip circumference for females."
-    - "Differentiates body fat percentage (proportion of fat tissue) from BMI (weight-to-height ratio)."
-    - "Displays fitness categories (Essential Fat, Athletes, Fitness, Acceptable, Obese)."
+ - "Implements the official U.S. Navy Circumference Method using logarithmic formulas."
+ - "Requires Height, Neck, and Waist for males; adds Hip circumference for females."
+ - "Differentiates body fat percentage (proportion of fat tissue) from BMI (weight-to-height ratio)."
+ - "Displays fitness categories (Essential Fat, Athletes, Fitness, Acceptable, Obese)."
 peopleAlsoAsk:
   - "How does body fat percentage differ from BMI?"
   - "How accurate is the U.S. Navy tape measure method?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "What are healthy body fat percentage ranges for men and women?"
 examples:
   - title: "Worked Male Body Fat Example (Height 70 in, Neck 15 in, Waist 35 in)"
-    inputs: "Gender = Male, Height = 70 in, Neck = 15 in, Waist = 35 in"
-    calculation: "1. Waist - Neck = 35 - 15 = 20 in. Log10(20) = 1.30103. 2. Log10(70) = 1.84510. 3. BF% = 86.010(1.30103) - 70.041(1.84510) + 36.76 = 111.90 - 129.23 + 36.76 = 19.43%."
-    result: "Body Fat = ~19.4% | Fitness Classification = Acceptable (18-24%)"
+ inputs: "Gender = Male, Height = 70 in, Neck = 15 in, Waist = 35 in"
+ calculation: "1. Waist - Neck = 35 - 15 = 20 in. Log10(20) = 1.30103. 2. Log10(70) = 1.84510. 3. BF% = 86.010(1.30103) - 70.041(1.84510) + 36.76 = 111.90 - 129.23 + 36.76 = 19.43%."
+ result: "Body Fat = ~19.4% | Fitness Classification = Acceptable (18-24%)"
 faqs:
   - q: "What is the difference between BMI and Body Fat Percentage?"
-    a: "BMI measures total body mass relative to height, but cannot tell muscle from fat. Body Fat Percentage estimates the actual proportion of total body weight that consists of fat tissue versus lean tissue."
+ a: "BMI measures total body mass relative to height, but cannot tell muscle from fat. Body Fat Percentage estimates the actual proportion of total body weight that consists of fat tissue versus lean tissue."
   - q: "How accurate is the U.S. Navy tape method?"
-    a: "When measurements are taken carefully with a flexible tape measure, the U.S. Navy method typically correlates within 3% to 4% of clinical DEXA scan measurements."
+ a: "When measurements are taken carefully with a flexible tape measure, the U.S. Navy method typically correlates within 3% to 4% of clinical DEXA scan measurements."
   - q: "Why is a hip measurement required for women but not men?"
-    a: "Women naturally store fat in the gynoid pattern (hips, thighs, and lower torso), whereas men store fat in the android pattern (abdominal region). Including hip circumference accounts for female body shape distribution."
+ a: "Women naturally store fat in the gynoid pattern (hips, thighs, and lower torso), whereas men store fat in the android pattern (abdominal region). Including hip circumference accounts for female body shape distribution."
 references:
   - "https://www.navyfitness.org/fitness/body-composition-assessment"
 ---
@@ -73,7 +73,7 @@ This calculator estimates your body fat percentage using the official **U.S. Nav
 
 ### Body Fat Percentage vs. BMI
 
-* **Body Mass Index (BMI)**: Evaluates total body weight relative to height ($\text{kg}/\text{m}^2$). It does not distinguish muscle from fat.
+* **Body Mass Index (BMI)**: Evaluates total body weight relative to height (kg/m^2). It does not distinguish muscle from fat.
 * **Body Fat Percentage**: Estimates actual body composition. A muscular athlete and an inactive individual might have the exact same BMI score, but vastly different body fat percentages.
 
 ---
@@ -83,10 +83,10 @@ This calculator estimates your body fat percentage using the official **U.S. Nav
 The U.S. Navy method uses logarithmic equations based on tape measurements converted to **inches**:
 
 #### 1. Male Formula
-$$\text{BF}\% = 86.010 \times \log_{10}(\text{Waist} - \text{Neck}) - 70.041 \times \log_{10}(\text{Height}) + 36.76$$
+BF% = 86.010 × log_{10}(Waist - Neck) - 70.041 × log_{10}(Height) + 36.76
 
 #### 2. Female Formula
-$$\text{BF}\% = 163.205 \times \log_{10}(\text{Waist} + \text{Hip} - \text{Neck}) - 97.684 \times \log_{10}(\text{Height}) - 78.387$$
+BF% = 163.205 × log_{10}(Waist + Hip - Neck) - 97.684 × log_{10}(Height) - 78.387
 
 ---
 
@@ -94,11 +94,11 @@ $$\text{BF}\% = 163.205 \times \log_{10}(\text{Waist} + \text{Hip} - \text{Neck}
 
 | Classification | Male Body Fat Range | Female Body Fat Range |
 | :--- | :--- | :--- |
-| **Essential Fat** | $2\% - 5\%$ | $10\% - 13\%$ |
-| **Athletes** | $6\% - 13\%$ | $14\% - 20\%$ |
-| **Fitness** | $14\% - 17\%$ | $21\% - 24\%$ |
-| **Acceptable** | $18\% - 24\%$ | $25\% - 31\%$ |
-| **Obese** | $25\%+$ | $32\%+$ |
+| **Essential Fat** | 2% - 5%$ | 10% - 13%$ |
+| **Athletes** | 6% - 13%$ | 14% - 20%$ |
+| **Fitness** | 14% - 17%$ | 21% - 24%$ |
+| **Acceptable** | 18% - 24%$ | 25% - 31%$ |
+| **Obese** | 25%+$ | 32%+$ |
 
 ---
 
@@ -116,19 +116,19 @@ For reliable tracking:
 ### Step-by-Step Worked Numerical Example (Verified against Code)
 
 Let's calculate body fat for a **male** with:
-- **Height**: $70\text{ inches}$ ($177.8\text{ cm}$)
-- **Neck**: $15\text{ inches}$ ($38.1\text{ cm}$)
-- **Waist**: $35\text{ inches}$ ($88.9\text{ cm}$)
+- **Height**: 70 inches ($177.8 cm)
+- **Neck**: 15 inches ($38.1 cm)
+- **Waist**: 35 inches ($88.9 cm)
 
 #### Calculation Steps
-1. **Waist minus Neck**: $35 - 15 = \mathbf{20\text{ inches}}$.
+1. **Waist minus Neck**: 35 - 15 = 20 inches.
 2. **Evaluate Logarithms**:
-   - $\log_{10}(20) \approx 1.30103$
-   - $\log_{10}(70) \approx 1.84510$
+ - log_{10}(20) ≈ 1.30103
+ - log_{10}(70) ≈ 1.84510
 3. **Apply Male Formula**:
-   $$\text{BF}\% = 86.010(1.30103) - 70.041(1.84510) + 36.76$$
-   $$\text{BF}\% = 111.901 - 129.233 + 36.76 = \mathbf{19.428\%} \quad (\approx 19.4\%)$$
-4. **Classification**: $19.4\%$ falls within the **Acceptable (18–24%)** category.
+ BF% = 86.010(1.30103) - 70.041(1.84510) + 36.76
+ BF% = 111.901 - 129.233 + 36.76 = 19.428% (≈ 19.4%)
+4. **Classification**: 19.4%$ falls within the **Acceptable (18–24%)** category.
 
 ---
 

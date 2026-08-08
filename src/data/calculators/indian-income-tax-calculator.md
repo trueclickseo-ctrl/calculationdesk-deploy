@@ -31,9 +31,9 @@ aiSummary:
   whoShouldUse: "Salaried employees, freelancers, business owners, and tax consultants in India."
   limitations: "Calculates personal income tax for individuals under 60 years. Does not calculate capital gains tax or corporate business tax."
   keyTakeaways:
-    - "New Tax Regime standard deduction is ₹75,000 for salaried individuals in FY 2024-25."
-    - "Section 87A rebate makes taxable income up to ₹7,00,000 completely tax-free under the New Regime."
-    - "Old Tax Regime remains beneficial for individuals claiming high deductions (HRA, 80C, 80D, Section 24b home loan interest)."
+ - "New Tax Regime standard deduction is ₹75,000 for salaried individuals in FY 2024-25."
+ - "Section 87A rebate makes taxable income up to ₹7,00,000 completely tax-free under the New Regime."
+ - "Old Tax Regime remains beneficial for individuals claiming high deductions (HRA, 80C, 80D, Section 24b home loan interest)."
 peopleAlsoAsk:
   - "What is the standard deduction for FY 2024-25 (AY 2025-26)?"
   - "Is income up to ₹7 Lakhs tax-free under the New Tax Regime?"
@@ -41,18 +41,18 @@ peopleAlsoAsk:
   - "What deductions are allowed under the New Tax Regime?"
 examples:
   - title: "Salaried Income of ₹12,00,000 (Comparing New vs. Old Regime)"
-    inputs: "Gross Salary = ₹12,00,000, 80C = ₹1,50,000, 80D = ₹25,000, Salaried = Yes"
-    calculation: "New Regime: Taxable = 12L - 75k = 11.25L -> Slab Tax = 68,750 + 4% Cess = ₹71,500 | Old Regime: Taxable = 12L - 50k - 1.75L = 9.75L -> Slab Tax = 1,07,500 + 4% Cess = ₹1,11,800"
-    result: "New Regime Tax = ₹71,500 | Old Regime Tax = ₹1,11,800 | Net Savings = ₹40,300 under New Regime"
+ inputs: "Gross Salary = ₹12,00,000, 80C = ₹1,50,000, 80D = ₹25,000, Salaried = Yes"
+ calculation: "New Regime: Taxable = 12L - 75k = 11.25L -> Slab Tax = 68,750 + 4% Cess = ₹71,500 | Old Regime: Taxable = 12L - 50k - 1.75L = 9.75L -> Slab Tax = 1,07,500 + 4% Cess = ₹1,11,800"
+ result: "New Regime Tax = ₹71,500 | Old Regime Tax = ₹1,11,800 | Net Savings = ₹40,300 under New Regime"
 faqs:
   - q: "Which Financial Year (FY) and Assessment Year (AY) does this calculator support?"
-    a: "This calculator specifically supports Financial Year 2024-25 (Assessment Year 2025-26), reflecting the updated ₹75,000 salaried standard deduction announced in the Union Budget."
+ a: "This calculator specifically supports Financial Year 2024-25 (Assessment Year 2025-26), reflecting the updated ₹75,000 salaried standard deduction announced in the Union Budget."
   - q: "What is the difference between Financial Year (FY) and Assessment Year (AY)?"
-    a: "Financial Year (FY) is the year in which you earn your income (April 1 to March 31). Assessment Year (AY) is the following year in which your earned income is evaluated and taxed."
+ a: "Financial Year (FY) is the year in which you earn your income (April 1 to March 31). Assessment Year (AY) is the following year in which your earned income is evaluated and taxed."
   - q: "What is the Section 87A tax rebate?"
-    a: "Under the New Tax Regime, if your net taxable income (after the ₹75,000 standard deduction) does not exceed ₹7,00,000, you receive a full tax rebate under Section 87A, making your tax liability ₹0."
+ a: "Under the New Tax Regime, if your net taxable income (after the ₹75,000 standard deduction) does not exceed ₹7,00,000, you receive a full tax rebate under Section 87A, making your tax liability ₹0."
   - q: "Can I claim 80C, 80D, and HRA under the New Tax Regime?"
-    a: "No. The New Tax Regime offers lower tax slab rates in exchange for removing most deductions, including Section 80C, Section 80D, HRA, and Section 24b home loan interest. Only the salaried standard deduction (₹75,000) and employer NPS contribution (Section 80CCD(2)) are permitted."
+ a: "No. The New Tax Regime offers lower tax slab rates in exchange for removing most deductions, including Section 80C, Section 80D, HRA, and Section 24b home loan interest. Only the salaried standard deduction (₹75,000) and employer NPS contribution (Section 80CCD(2)) are permitted."
 references:
   - "https://incometaxindia.gov.in"
   - "https://www.indiabudget.gov.in"
@@ -109,10 +109,10 @@ Consider a salaried individual with a **Gross Annual Income of ₹12,00,000** wh
 2. Less Standard Deduction = ₹75,000
 3. **Net Taxable Income** = **₹11,25,000**
 4. Slab Tax Computation:
-   - Up to ₹3,00,000 @ 0% = ₹0
-   - ₹3,00,001 to ₹7,00,000 (₹4,00,000 @ 5%) = ₹20,000
-   - ₹7,00,001 to ₹10,00,000 (₹3,00,000 @ 10%) = ₹30,000
-   - ₹10,00,001 to ₹11,25,000 (₹1,25,000 @ 15%) = ₹18,750
+ - Up to ₹3,00,000 @ 0% = ₹0
+ - ₹3,00,001 to ₹7,00,000 (₹4,00,000 @ 5%) = ₹20,000
+ - ₹7,00,001 to ₹10,00,000 (₹3,00,000 @ 10%) = ₹30,000
+ - ₹10,00,001 to ₹11,25,000 (₹1,25,000 @ 15%) = ₹18,750
 5. Total Basic Tax = ₹68,750
 6. Add 4% Cess = ₹2,750
 7. **Total New Regime Tax Payable**: **₹71,500**
@@ -123,9 +123,9 @@ Consider a salaried individual with a **Gross Annual Income of ₹12,00,000** wh
 3. Less Deductions (80C + 80D) = ₹1,75,000
 4. **Net Taxable Income** = **₹9,75,000**
 5. Slab Tax Computation:
-   - Up to ₹2,50,000 @ 0% = ₹0
-   - ₹2,50,001 to ₹5,00,000 (₹2,50,000 @ 5%) = ₹12,500
-   - ₹5,00,001 to ₹9,75,000 (₹4,75,000 @ 20%) = ₹95,000
+ - Up to ₹2,50,000 @ 0% = ₹0
+ - ₹2,50,001 to ₹5,00,000 (₹2,50,000 @ 5%) = ₹12,500
+ - ₹5,00,001 to ₹9,75,000 (₹4,75,000 @ 20%) = ₹95,000
 6. Total Basic Tax = ₹1,07,500
 7. Add 4% Cess = ₹4,300
 8. **Total Old Regime Tax Payable**: **₹1,11,800**

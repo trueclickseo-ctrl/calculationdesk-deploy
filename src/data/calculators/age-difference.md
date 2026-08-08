@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Individuals, parents, genealogists, researchers, and event planners."
   limitations: "Calculates calendar age differences and exact elapsed days using standard Gregorian date arithmetic."
   keyTakeaways:
-    - "Automatically determines which individual is older based on timestamp comparison."
-    - "Computes calendar age difference in exact Years, Months, and Days."
-    - "Provides absolute time metrics: Total Days Difference and Total Weeks + Remaining Days."
-    - "Accounts for variable month lengths (28, 29, 30, 31 days) and leap year adjustments."
+ - "Automatically determines which individual is older based on timestamp comparison."
+ - "Computes calendar age difference in exact Years, Months, and Days."
+ - "Provides absolute time metrics: Total Days Difference and Total Weeks + Remaining Days."
+ - "Accounts for variable month lengths (28, 29, 30, 31 days) and leap year adjustments."
 peopleAlsoAsk:
   - "How is age difference calculated between two birth dates?"
   - "Why is subtracting birth years not enough to calculate age gap?"
@@ -42,18 +42,18 @@ peopleAlsoAsk:
   - "What is the difference between calendar age difference and total days difference?"
 examples:
   - title: "Worked Birthday Comparison Example (Jan 15, 1995 vs. Mar 20, 1998)"
-    inputs: "Person 1 DOB = 1995-01-15, Person 2 DOB = 1998-03-20"
-    calculation: "1. Timestamp comparison: 1995-01-15 is earlier -> Person 1 is older. 2. Days: 20 (Younger) - 15 (Older) = 5 days. 3. Months: Mar (3) - Jan (1) = 2 months. 4. Years: 1998 - 1995 = 3 years. Total Days = 1,160 days (165 weeks and 5 days)."
-    result: "Older Person = Person 1 | Calendar Gap = 3 Years, 2 Months, 5 Days | Total Days = 1,160 days (165 weeks)"
+ inputs: "Person 1 DOB = 1995-01-15, Person 2 DOB = 1998-03-20"
+ calculation: "1. Timestamp comparison: 1995-01-15 is earlier -> Person 1 is older. 2. Days: 20 (Younger) - 15 (Older) = 5 days. 3. Months: Mar (3) - Jan (1) = 2 months. 4. Years: 1998 - 1995 = 3 years. Total Days = 1,160 days (165 weeks and 5 days)."
+ result: "Older Person = Person 1 | Calendar Gap = 3 Years, 2 Months, 5 Days | Total Days = 1,160 days (165 weeks)"
 faqs:
   - q: "How does the calculator determine who is older?"
-    a: "The calculator compares the millisecond epoch timestamps of both birth dates. The individual with the earlier calendar birth date is the older person."
+ a: "The calculator compares the millisecond epoch timestamps of both birth dates. The individual with the earlier calendar birth date is the older person."
   - q: "Why is simply subtracting birth years inaccurate?"
-    a: "Subtracting birth years ignores whether the younger person's birthday has passed relative to the older person's birthday in the calendar year. For instance, someone born in Dec 1995 and someone born in Jan 1996 are only 1 month apart, not 1 year apart."
+ a: "Subtracting birth years ignores whether the younger person's birthday has passed relative to the older person's birthday in the calendar year. For instance, someone born in Dec 1995 and someone born in Jan 1996 are only 1 month apart, not 1 year apart."
   - q: "What is the difference between calendar age difference and total days difference?"
-    a: "Calendar age difference expresses the gap in human terms (years, months, days), accounting for fluctuating month lengths. Total days difference expresses the exact physical count of 24-hour days elapsed between the two dates."
+ a: "Calendar age difference expresses the gap in human terms (years, months, days), accounting for fluctuating month lengths. Total days difference expresses the exact physical count of 24-hour days elapsed between the two dates."
   - q: "Does the calculator handle identical birthdays?"
-    a: "Yes. If both birth dates are identical, the calculator reports an age difference of 0 years, 0 months, and 0 days."
+ a: "Yes. If both birth dates are identical, the calculator reports an age difference of 0 years, 0 months, and 0 days."
 references:
   - "https://www.timeanddate.com/date/duration.html"
 ---
@@ -62,7 +62,7 @@ references:
 
 Whether you are comparing the age gap between partners, calculating the spacing between siblings, comparing ages of coworkers, or researching historical figures, calculating the **exact time gap between two birthdays** requires careful date arithmetic.
 
-Simply taking the difference between two birth years (e.g. $1998 - 1995 = 3\text{ years}$) can lead to incorrect results if the months and days have not yet aligned in the calendar.
+Simply taking the difference between two birth years (e.g. 1998 - 1995 = 3 years) can lead to incorrect results if the months and days have not yet aligned in the calendar.
 
 This calculator compares **two birth dates** and displays:
 1. **Who is older** (Person 1 or Person 2).
@@ -77,9 +77,9 @@ This calculator compares **two birth dates** and displays:
 The calculation follows strict calendar logic rather than simple year subtraction:
 
 1. **Identify the Older Individual**: The birth date with the earlier calendar timestamp represents the older person.
-2. **Day Boundary Comparison**: Subtract the older person's birth day from the younger person's birth day ($D_{\text{younger}} - D_{\text{older}}$). If negative, borrow the exact number of days from the previous month of the younger person's birth date and subtract 1 from the months difference.
-3. **Month Boundary Comparison**: Subtract the older person's birth month from the younger person's birth month ($M_{\text{younger}} - M_{\text{older}}$). If negative, add 12 months and subtract 1 from the years difference.
-4. **Year Boundary Comparison**: Subtract the older person's birth year from the younger person's birth year ($Y_{\text{younger}} - Y_{\text{older}}$).
+2. **Day Boundary Comparison**: Subtract the older person's birth day from the younger person's birth day (D_{younger} - D_{older}). If negative, borrow the exact number of days from the previous month of the younger person's birth date and subtract 1 from the months difference.
+3. **Month Boundary Comparison**: Subtract the older person's birth month from the younger person's birth month (M_{younger} - M_{older}). If negative, add 12 months and subtract 1 from the years difference.
+4. **Year Boundary Comparison**: Subtract the older person's birth year from the younger person's birth year (Y_{younger} - Y_{older}).
 
 ---
 
@@ -93,18 +93,18 @@ Suppose we want to compare two birth dates:
 Comparing timestamps shows that January 15, 1995 is earlier than March 20, 1998. **Person 1 is older**.
 
 #### Step 2: Calculate Days Difference
-$$D_{\text{younger}} - D_{\text{older}} = 20 - 15 = \mathbf{5\text{ days}}$$
+D_{younger} - D_{older} = 20 - 15 = 5 days
 
 #### Step 3: Calculate Months Difference
-March is month $3$, January is month $1$:
-$$M_{\text{younger}} - M_{\text{older}} = 3 - 1 = \mathbf{2\text{ months}}$$
+March is month 3$, January is month 1$:
+M_{younger} - M_{older} = 3 - 1 = 2 months
 
 #### Step 4: Calculate Years Difference
-$$Y_{\text{younger}} - Y_{\text{older}} = 1998 - 1995 = \mathbf{3\text{ years}}$$
+Y_{younger} - Y_{older} = 1998 - 1995 = 3 years
 
 #### Step 5: Absolute Time Metrics
-- **Total Days Difference**: $\frac{|T_2 - T_1|}{86,400,000\text{ ms/day}} = \mathbf{1,160\text{ days}}$.
-- **Total Weeks**: $\text{trunc}(1160 / 7) = \mathbf{165\text{ weeks}}$ with $1160 \pmod 7 = \mathbf{5\text{ remaining days}}$.
+- **Total Days Difference**: (|T_2 - T_1| / 86,400,000 ms/day) = 1,160 days.
+- **Total Weeks**: trunc(1160 / 7) = 165 weeks with 1160 ±od 7 = 5 remaining days.
 
 *Verification Result: Person 1 is older by **3 years, 2 months, and 5 days** (1,160 total days / 165 weeks).*
 

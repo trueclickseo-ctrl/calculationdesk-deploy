@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Freelancers, employees, payroll managers, small business owners, and students."
   limitations: "Calculates time differences and converts base-60 minutes to base-10 decimal hours."
   keyTakeaways:
-    - "Calculates exact shift time between Clock In and Clock Out."
-    - "Subtracts unpaid Break Minutes directly from the daily shift."
-    - "Converts standard time (7h 45m) into base-10 Decimal Hours (7.75h) for accurate payroll arithmetic."
-    - "Multiplies total decimal hours by Hourly Rate to calculate total earnings."
+ - "Calculates exact shift time between Clock In and Clock Out."
+ - "Subtracts unpaid Break Minutes directly from the daily shift."
+ - "Converts standard time (7h 45m) into base-10 Decimal Hours (7.75h) for accurate payroll arithmetic."
+ - "Multiplies total decimal hours by Hourly Rate to calculate total earnings."
 peopleAlsoAsk:
   - "How do you convert minutes to decimal hours for payroll?"
   - "Why does 7 hours 30 minutes equal 7.5 hours and not 7.3 hours?"
@@ -42,20 +42,20 @@ peopleAlsoAsk:
   - "How are break deductions subtracted from total work time?"
 examples:
   - title: "Single Day Shift Worked Example"
-    inputs: "Clock In = 08:30, Clock Out = 17:00, Break = 45 mins, Hourly Rate = $25"
-    calculation: "Elapsed time: 8.5 hours (510 mins). Subtract 45 mins break -> 465 mins. Standard = 7h 45m. Decimal = 465 / 60 = 7.75h. Earnings = 7.75 * $25 = $193.75."
-    result: "Work Time = 7h 45m (7.75 decimal hours) | Earnings = $193.75"
+ inputs: "Clock In = 08:30, Clock Out = 17:00, Break = 45 mins, Hourly Rate = 25"
+ calculation: "Elapsed time: 8.5 hours (510 mins). Subtract 45 mins break -> 465 mins. Standard = 7h 45m. Decimal = 465 / 60 = 7.75h. Earnings = 7.75 * 25 = 193.75."
+ result: "Work Time = 7h 45m (7.75 decimal hours) | Earnings = 193.75"
   - title: "Duration Addition Worked Example"
-    inputs: "Duration 1 = 2h 45m, Duration 2 = 1h 35m"
-    calculation: "Hours: 2 + 1 = 3h. Minutes: 45 + 35 = 80 mins. Since 80 >= 60, carry 1 hour: 3 + 1 = 4h, remaining mins = 80 - 60 = 20 mins."
-    result: "Total Duration = 4 hours 20 minutes (4.33 decimal hours)"
+ inputs: "Duration 1 = 2h 45m, Duration 2 = 1h 35m"
+ calculation: "Hours: 2 + 1 = 3h. Minutes: 45 + 35 = 80 mins. Since 80 >= 60, carry 1 hour: 3 + 1 = 4h, remaining mins = 80 - 60 = 20 mins."
+ result: "Total Duration = 4 hours 20 minutes (4.33 decimal hours)"
 faqs:
   - q: "Why is 1 hour 30 minutes written as 1.5 hours in decimal format?"
-    a: "Decimal hours operate in base-10, where 30 minutes represents half of a 60-minute hour (30 / 60 = 0.5). Therefore, 1 hour 30 minutes is 1.5 decimal hours."
+ a: "Decimal hours operate in base-10, where 30 minutes represents half of a 60-minute hour (30 / 60 = 0.5). Therefore, 1 hour 30 minutes is 1.5 decimal hours."
   - q: "What is the most common mistake when calculating payroll hours?"
-    a: "The most common mistake is directly multiplying minutes as if they were decimals (e.g. treating 7 hours 45 minutes as 7.45 hours). Multiplying $7.45 \times \$20 = \$149.00$, whereas the true calculation is $7.75 \times \$20 = \$155.00$."
+ a: "The most common mistake is directly multiplying minutes as if they were decimals (e.g. treating 7 hours 45 minutes as 7.45 hours). Multiplying 7.45 × $20 = $149.00, whereas the true calculation is 7.75 × $20 = $155.00."
   - q: "How does the calculator handle overnight shifts?"
-    a: "If Clock Out is earlier than Clock In (e.g., In at 10:00 PM, Out at 06:00 AM), the calculator recognizes that the shift crossed midnight and adds 24 hours (1,440 minutes) to compute total elapsed time."
+ a: "If Clock Out is earlier than Clock In (e.g., In at 10:00 PM, Out at 06:00 AM), the calculator recognizes that the shift crossed midnight and adds 24 hours (1,440 minutes) to compute total elapsed time."
 references:
   - "https://www.timeanddate.com/date/duration.html"
 ---
@@ -64,7 +64,7 @@ references:
 
 Whether you are a **freelancer** billing client projects, an **employee** filling out weekly timesheets, a **manager** processing payroll, or a **student** tracking study hours, adding and subtracting hours and minutes requires handling **base-60 time arithmetic**.
 
-Simply adding numbers like standard decimals leads to errors because **60 minutes make 1 full hour**, not 100 minutes. Furthermore, payroll systems require converting minutes into **base-10 decimal hours** (e.g. 30 minutes $= 0.5\text{ hours}$).
+Simply adding numbers like standard decimals leads to errors because **60 minutes make 1 full hour**, not 100 minutes. Furthermore, payroll systems require converting minutes into **base-10 decimal hours** (e.g. 30 minutes = 0.5 hours).
 
 This calculator provides a dynamic **Timesheet Ledger** to enter daily **Clock In**, **Clock Out**, and **Break Minutes**, automatically outputting total hours/minutes, decimal hours, and calculated **earnings**.
 
@@ -74,16 +74,16 @@ This calculator provides a dynamic **Timesheet Ledger** to enter daily **Clock I
 
 Understanding the difference between standard hours/minutes and decimal hours is essential for payroll:
 
-* **Standard Time (Base-60)**: Time expressed in hours and minutes (e.g. $7\text{ hours } 45\text{ minutes}$).
-* **Decimal Hours (Base-10)**: Time expressed as a single decimal number by dividing minutes by 60 ($\text{Minutes} / 60$).
-  - $15\text{ minutes} = 15 / 60 = \mathbf{0.25\text{ hours}}$
-  - $30\text{ minutes} = 30 / 60 = \mathbf{0.50\text{ hours}}$
-  - $45\text{ minutes} = 45 / 60 = \mathbf{0.75\text{ hours}}$
+* **Standard Time (Base-60)**: Time expressed in hours and minutes (e.g. 7 hours  45 minutes).
+* **Decimal Hours (Base-10)**: Time expressed as a single decimal number by dividing minutes by 60 (Minutes / 60).
+  - 15 minutes = 15 / 60 = 0.25 hours
+  - 30 minutes = 30 / 60 = 0.50 hours
+  - 45 minutes = 45 / 60 = 0.75 hours
 
-#### The $7.45$ vs. $7.75$ Payroll Mistake
-A very common accounting mistake is entering $7\text{ hours } 45\text{ minutes}$ into a paycheck multiplier as $7.45$:
-- **Incorrect**: $7.45 \times \$20/\text{hr} = \mathbf{\$149.00}$ (Underpays the worker!).
-- **Correct**: $7.75 \times \$20/\text{hr} = \mathbf{\$155.00}$.
+#### The 7.45 vs. 7.75 Payroll Mistake
+A very common accounting mistake is entering 7 hours  45 minutes into a paycheck multiplier as 7.45:
+- **Incorrect**: 7.45 × $20/hr = $149.00 (Underpays the worker!).
+- **Correct**: 7.75 × $20/hr = $155.00.
 
 ---
 
@@ -91,18 +91,18 @@ A very common accounting mistake is entering $7\text{ hours } 45\text{ minutes}$
 
 #### 1. Adding Durations Across Hour Boundaries
 When adding durations like **2 hours 45 minutes** and **1 hour 35 minutes**:
-1. **Sum Hours**: $2 + 1 = 3\text{ hours}$.
-2. **Sum Minutes**: $45 + 35 = 80\text{ minutes}$.
-3. **Carry Over**: Since $80 \ge 60$, subtract 60 minutes and carry 1 hour to total hours:
-   - Hours: $3 + 1 = \mathbf{4\text{ hours}}$.
-   - Minutes: $80 - 60 = \mathbf{20\text{ minutes}}$.
-4. **Total**: **4 hours 20 minutes** ($4.33\text{ decimal hours}$).
+1. **Sum Hours**: 2 + 1 = 3 hours.
+2. **Sum Minutes**: 45 + 35 = 80 minutes.
+3. **Carry Over**: Since 80 ge 60, subtract 60 minutes and carry 1 hour to total hours:
+ - Hours: 3 + 1 = 4 hours.
+ - Minutes: 80 - 60 = 20 minutes.
+4. **Total**: **4 hours 20 minutes** ($4.33 decimal hours).
 
 #### 2. Clock-In / Clock-Out Shift Calculation
 For a single shift row:
-$$\text{Shift Minutes} = (\text{Clock Out Minutes from midnight}) - (\text{Clock In Minutes from midnight})$$
-$$\text{Net Work Minutes} = \text{Shift Minutes} - \text{Break Minutes}$$
-$$\text{Decimal Hours} = \frac{\text{Net Work Minutes}}{60}$$
+Shift Minutes = (Clock Out Minutes from midnight) - (Clock In Minutes from midnight)
+Net Work Minutes = Shift Minutes - Break Minutes
+Decimal Hours = frac(Net Work Minutes){60}
 
 ---
 
@@ -112,21 +112,21 @@ Let's evaluate a standard work day entry:
 - **Clock In**: 08:30 AM (`08:30`)
 - **Clock Out**: 05:00 PM (`17:00`)
 - **Unpaid Break**: 45 minutes
-- **Hourly Rate**: $25.00 / hour
+- **Hourly Rate**: 25.00 / hour
 
 #### Calculation Process
 1. **Convert Clock Times to Minutes from Midnight**:
-   - Clock In ($08:30$) $= 8 \times 60 + 30 = \mathbf{510\text{ minutes}}$.
-   - Clock Out ($17:00$) $= 17 \times 60 + 0 = \mathbf{1,020\text{ minutes}}$.
+ - Clock In ($08:30) = 8 × 60 + 30 = 510 minutes.
+ - Clock Out ($17:00) = 17 × 60 + 0 = 1,020 minutes.
 2. **Calculate Raw Elapsed Time**:
-   - $1020 - 510 = \mathbf{510\text{ minutes}}$ ($8\text{ hours } 30\text{ minutes}$).
+ - 1020 - 510 = 510 minutes ($8 hours  30 minutes).
 3. **Deduct Unpaid Break**:
-   - $510\text{ mins} - 45\text{ mins break} = \mathbf{465\text{ net work minutes}}$.
+ - 510 mins - 45 mins break = 465 net work minutes.
 4. **Convert to Standard & Decimal Hours**:
-   - Standard: $465 / 60 = 7\text{ with } 45\text{ remainder} \implies \mathbf{7\text{h } 45\text{m}}$.
-   - Decimal: $465 / 60 = \mathbf{7.75\text{ decimal hours}}$.
+ - Standard: 465 / 60 = 7 with  45 remainder implies 7h  45m.
+ - Decimal: 465 / 60 = 7.75 decimal hours.
 5. **Calculate Earnings**:
-   - $7.75\text{ hours} \times \$25.00/\text{hr} = \mathbf{\$193.75}$.
+ - 7.75 hours × $25.00/hr = $193.75.
 
 ---
 
@@ -152,6 +152,6 @@ Let's evaluate a standard work day entry:
 * **Q1: Why is 1 hour 30 minutes written as 1.5 hours in decimal format?**
   * A1: Decimal hours operate in base-10, where 30 minutes represents half of a 60-minute hour (30 / 60 = 0.5). Therefore, 1 hour 30 minutes is 1.5 decimal hours.
 * **Q2: What is the most common mistake when calculating payroll hours?**
-  * A2: The most common mistake is directly multiplying minutes as if they were decimals (e.g. treating 7 hours 45 minutes as 7.45 hours). Multiplying $7.45 \times \$20 = \$149.00$, whereas the true calculation is $7.75 \times \$20 = \$155.00$.
+  * A2: The most common mistake is directly multiplying minutes as if they were decimals (e.g. treating 7 hours 45 minutes as 7.45 hours). Multiplying 7.45 × $20 = $149.00, whereas the true calculation is 7.75 × $20 = $155.00.
 * **Q3: How does the calculator handle overnight shifts?**
   * A3: If Clock Out is earlier than Clock In (e.g., In at 10:00 PM, Out at 06:00 AM), the calculator recognizes that the shift crossed midnight and adds 24 hours (1,440 minutes) to compute total elapsed time.

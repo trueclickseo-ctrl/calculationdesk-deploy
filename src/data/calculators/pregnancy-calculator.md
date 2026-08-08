@@ -31,11 +31,11 @@ aiSummary:
   whoShouldUse: "Expecting mothers, partners, family members, and prenatal health educators."
   limitations: "Provides clinical estimations based on standard 280-day gestational timelines. Clinical ultrasound assessments provide definitive dating."
   keyTakeaways:
-    - "Calculates Gestational Age (weeks and days elapsed since first day of LMP)."
-    - "Calculates Estimated Due Date (EDD) by adding 280 days (40 weeks) to LMP."
-    - "Estimates Conception Date by adding 14 days to LMP."
-    - "Features educational baby size comparison analogies (Poppy Seed to Pumpkin)."
-    - "Includes a clear medical disclaimer emphasising ultrasound dating superiority."
+ - "Calculates Gestational Age (weeks and days elapsed since first day of LMP)."
+ - "Calculates Estimated Due Date (EDD) by adding 280 days (40 weeks) to LMP."
+ - "Estimates Conception Date by adding 14 days to LMP."
+ - "Features educational baby size comparison analogies (Poppy Seed to Pumpkin)."
+ - "Includes a clear medical disclaimer emphasising ultrasound dating superiority."
 peopleAlsoAsk:
   - "Why is gestational age calculated from the last period instead of conception?"
   - "How are pregnancy weeks divided into trimesters?"
@@ -43,16 +43,16 @@ peopleAlsoAsk:
   - "What does the baby size comparison scale mean?"
 examples:
   - title: "Worked Gestational Timeline Example (LMP: January 1, 2026)"
-    inputs: "First Day of LMP = 2026-01-01"
-    calculation: "1. EDD = Jan 1, 2026 + 280 days = October 8, 2026. 2. Estimated Conception = Jan 1 + 14 days = January 15, 2026. 3. Evaluates current progress relative to today's date."
-    result: "Estimated Due Date = Thu Oct 08 2026 | Estimated Conception = Thu Jan 15 2026 | Full 40-Week Timeline Mapped"
+ inputs: "First Day of LMP = 2026-01-01"
+ calculation: "1. EDD = Jan 1, 2026 + 280 days = October 8, 2026. 2. Estimated Conception = Jan 1 + 14 days = January 15, 2026. 3. Evaluates current progress relative to today's date."
+ result: "Estimated Due Date = Thu Oct 08 2026 | Estimated Conception = Thu Jan 15 2026 | Full 40-Week Timeline Mapped"
 faqs:
   - q: "Why does pregnancy age start 2 weeks before conception occurs?"
-    a: "Because the exact day of ovulation and fertilization is difficult to pinpoint in natural conception, obstetricians worldwide use the first day of your Last Menstrual Period (LMP) as a reliable standardized starting marker."
+ a: "Because the exact day of ovulation and fertilization is difficult to pinpoint in natural conception, obstetricians worldwide use the first day of your Last Menstrual Period (LMP) as a reliable standardized starting marker."
   - q: "What is the difference between an LMP due date and an ultrasound due date?"
-    a: "An LMP calculator assumes a standard 28-day cycle with ovulation on day 14. A first-trimester dating ultrasound measures the embryo's crown-rump length (CRL) directly, which can adjust the due date if your cycle was shorter or longer than average."
+ a: "An LMP calculator assumes a standard 28-day cycle with ovulation on day 14. A first-trimester dating ultrasound measures the embryo's crown-rump length (CRL) directly, which can adjust the due date if your cycle was shorter or longer than average."
   - q: "How are pregnancy trimesters divided?"
-    a: "First Trimester: Weeks 1 through 12. Second Trimester: Weeks 13 through 26. Third Trimester: Weeks 27 through 40."
+ a: "First Trimester: Weeks 1 through 12. Second Trimester: Weeks 13 through 26. Third Trimester: Weeks 27 through 40."
 references:
   - "https://www.acog.org/womens-health/faqs/methods-for-estimating-due-date"
 ---
@@ -64,7 +64,7 @@ Preparing for a new arrival is an extraordinary journey. From the moment you rec
 This calculator inputs the **first day of your Last Menstrual Period (LMP)** and generates your complete gestational timeline:
 1. **Gestational Age**: Progress displayed in **weeks and days**.
 2. **Estimated Due Date (EDD)**: Calculated at **40 weeks (280 days)**.
-3. **Estimated Conception Date**: Estimated at **LMP $+ 14\text{ days}$**.
+3. **Estimated Conception Date**: Estimated at **LMP + 14 days**.
 4. **Trimester Stage**: First, Second, or Third Trimester.
 5. **Baby Size Analogy**: Educational comparison of baby growth to familiar fruits and vegetables.
 
@@ -84,10 +84,10 @@ In clinical obstetrics, pregnancy is dated from the **first day of your Last Men
 - **Weeks 3 to 4**: Implantation occurs in the uterine lining.
 
 #### Calculation Formulas Used by the Code
-$$\text{Gestational Days Elapsed} = \text{Current Date} - \text{LMP Date}$$
-$$\text{Gestational Age} = \lfloor \text{Total Days} / 7 \rfloor \text{ weeks and } (\text{Total Days} \pmod 7) \text{ days}$$
-$$\text{Estimated Due Date (EDD)} = \text{LMP Date} + 280 \text{ days}$$
-$$\text{Estimated Conception Date} = \text{LMP Date} + 14 \text{ days}$$
+Gestational Days Elapsed = Current Date - LMP Date
+Gestational Age = lfloor Total Days / 7 rfloor  weeks and  (Total Days ±od 7)  days
+Estimated Due Date (EDD) = LMP Date + 280  days
+Estimated Conception Date = LMP Date + 14  days
 
 ---
 
@@ -123,13 +123,13 @@ The calculator maps key developmental milestones:
 Let's calculate the timeline for an **LMP date of January 1, 2026** (`2026-01-01`):
 
 1. **Calculate Estimated Due Date (EDD)**:
-   $$\text{EDD} = \text{Jan 1, 2026} + 280 \text{ days} = \mathbf{\text{Thu Oct 08 2026}}$$
+ EDD = Jan 1, 2026 + 280  days = Thu Oct 08 2026
 2. **Calculate Estimated Conception Date**:
-   $$\text{Conception} = \text{Jan 1, 2026} + 14 \text{ days} = \mathbf{\text{Thu Jan 15 2026}}$$
+ Conception = Jan 1, 2026 + 14  days = Thu Jan 15 2026
 3. **Weekly Progress Mapping**:
-   - Week 12 (Lime) $\implies$ March 26, 2026.
-   - Week 20 (Banana) $\implies$ May 21, 2026.
-   - Week 40 (Pumpkin) $\implies$ October 8, 2026.
+ - Week 12 (Lime) implies March 26, 2026.
+ - Week 20 (Banana) implies May 21, 2026.
+ - Week 40 (Pumpkin) implies October 8, 2026.
 
 ---
 

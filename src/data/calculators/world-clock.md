@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Remote workers, international business teams, travelers, expatriates, and global traders."
   limitations: "Displays live real-time local clocks for major global financial hub cities."
   keyTakeaways:
-    - "Displays live real-time local clocks for major international financial and cultural centers."
-    - "Uses IANA time zone identifiers (e.g. America/New_York, Asia/Tokyo) for exact local accuracy."
-    - "Automatically accounts for Daylight Saving Time (DST) changes in observing cities."
-    - "Updates dynamically every 1 second."
+ - "Displays live real-time local clocks for major international financial and cultural centers."
+ - "Uses IANA time zone identifiers (e.g. America/New_York, Asia/Tokyo) for exact local accuracy."
+ - "Automatically accounts for Daylight Saving Time (DST) changes in observing cities."
+ - "Updates dynamically every 1 second."
 peopleAlsoAsk:
   - "How does a world clock calculate live local time in different cities?"
   - "Why do two cities have different local dates at the same moment?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "How does Daylight Saving Time affect world clock times?"
 examples:
   - title: "Live Global Time Snapshot Example"
-    inputs: "System Time = Live Browser Clock"
-    calculation: "Queries IANA time zone engine for Europe/London, America/New_York, Asia/Tokyo, Australia/Sydney, and Asia/Kolkata. Updates clock values every second."
-    result: "Live Clocks = London (GMT) | New York (EST) | Tokyo (JST) | Sydney (AEST) | New Delhi (IST)"
+ inputs: "System Time = Live Browser Clock"
+ calculation: "Queries IANA time zone engine for Europe/London, America/New_York, Asia/Tokyo, Australia/Sydney, and Asia/Kolkata. Updates clock values every second."
+ result: "Live Clocks = London (GMT) | New York (EST) | Tokyo (JST) | Sydney (AEST) | New Delhi (IST)"
 faqs:
   - q: "Is the displayed world clock time live and accurate?"
-    a: "Yes. The clock updates dynamically every second using your device's browser engine and standard IANA global time zone database definitions."
+ a: "Yes. The clock updates dynamically every second using your device's browser engine and standard IANA global time zone database definitions."
   - q: "Why can the calendar date differ between cities at the exact same moment?"
-    a: "Earth spans 24 hours of time zones. When it is 8:00 PM on Tuesday in New York, it is 9:00 AM on Wednesday in Tokyo because Tokyo is 13 hours ahead."
+ a: "Earth spans 24 hours of time zones. When it is 8:00 PM on Tuesday in New York, it is 9:00 AM on Wednesday in Tokyo because Tokyo is 13 hours ahead."
   - q: "Does the world clock account for Daylight Saving Time?"
-    a: "Yes. Using IANA time zone identifiers (like America/New_York) ensures that clocks automatically transition when cities enter or exit Daylight Saving Time."
+ a: "Yes. Using IANA time zone identifiers (like America/New_York) ensures that clocks automatically transition when cities enter or exit Daylight Saving Time."
 references:
   - "https://www.timeanddate.com/worldclock/"
 ---
@@ -79,14 +79,14 @@ This **World Clock** displays live, real-time local clocks for major global cent
 Unlike static offset calculators that require manual arithmetic, a true **World Clock** relies on live time zone data:
 
 1. **IANA Time Zone Database**: Operating systems and modern browsers maintain the international **IANA Time Zone Database** (Olson database). This database tracks historical, current, and future time zone offsets and Daylight Saving Time (DST) transition dates for every city on Earth.
-2. **Live Ticker Loop**: A client-side JavaScript interval (`setInterval`) runs every $1,000\text{ milliseconds}$ ($1\text{ second}$), querying the browser's native `toLocaleTimeString()` formatter with specific IANA time zone identifiers (such as `Asia/Tokyo` or `America/New_York`).
+2. **Live Ticker Loop**: A client-side JavaScript interval (`setInterval`) runs every 1,000 milliseconds ($1 second), querying the browser's native `toLocaleTimeString()` formatter with specific IANA time zone identifiers (such as `Asia/Tokyo` or `America/New_York`).
 3. **Automatic DST Adjustments**: Because the clock uses IANA identifiers rather than hardcoded fixed numbers, cities that observe Daylight Saving Time (like London or New York) automatically adjust their displayed clocks on official spring and autumn transition dates.
 
 ---
 
 ### Why Cities Have Different Dates at the Same Moment
 
-Because the Earth is a rotating sphere, the sun illuminates different longitudes at different times. The Earth is divided into time zones spanning roughly $15^\circ$ of longitude each.
+Because the Earth is a rotating sphere, the sun illuminates different longitudes at different times. The Earth is divided into time zones spanning roughly 15^° of longitude each.
 
 When it is **11:00 PM on Tuesday in New York**, it is already **4:00 AM on Wednesday in London** and **12:00 PM (Noon) on Wednesday in Tokyo**. Two people speaking on the phone at that exact moment are in different calendar days!
 

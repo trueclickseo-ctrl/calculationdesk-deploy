@@ -30,7 +30,7 @@ titleVariants:
 The Percentage Decrease Calculator is a specialized digital utility designed to solve calculations involving arithmetic operations and algebra variables. Manual calculations are prone to errors. By automating this process, users ensure absolute precision.
 
 ### Mathematical Derivations & Formulas
-$$\text{Formula}: A = B \times C$$
+Formula: A = B × C
 Each variable is defined specifically within the education category context.
 
 ### Detailed Calculations and Explanations

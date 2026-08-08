@@ -31,9 +31,9 @@ aiSummary:
   whoShouldUse: "Students, teachers, carpenters, engineers, and programmers."
   limitations: "Calculates the highest common factor for positive integers up to 1,000,000."
   keyTakeaways:
-    - "HCF (Highest Common Factor) and GCD (Greatest Common Divisor) refer to the exact same mathematical value."
-    - "Uses the Euclidean algorithm (repeated modulus division) to efficiently compute common factors."
-    - "If HCF/GCD equals 1, the numbers are classified as coprime (relatively prime)."
+ - "HCF (Highest Common Factor) and GCD (Greatest Common Divisor) refer to the exact same mathematical value."
+ - "Uses the Euclidean algorithm (repeated modulus division) to efficiently compute common factors."
+ - "If HCF/GCD equals 1, the numbers are classified as coprime (relatively prime)."
 peopleAlsoAsk:
   - "What is the difference between HCF and GCD?"
   - "How does the Euclidean algorithm calculate GCD?"
@@ -41,20 +41,20 @@ peopleAlsoAsk:
   - "What are coprime numbers?"
 examples:
   - title: "Three Integer Factor Worked Example (12, 18, 30)"
-    inputs: "Integers = 12, 18, 30"
-    calculation: "Factors of 12: 1, 2, 3, 4, 6, 12. Factors of 18: 1, 2, 3, 6, 9, 18. Factors of 30: 1, 2, 3, 5, 6, 10, 15, 30. Shared common factors: 1, 2, 3, 6. Highest common factor = 6."
-    result: "Highest Common Factor (HCF / GCD) = 6"
+ inputs: "Integers = 12, 18, 30"
+ calculation: "Factors of 12: 1, 2, 3, 4, 6, 12. Factors of 18: 1, 2, 3, 6, 9, 18. Factors of 30: 1, 2, 3, 5, 6, 10, 15, 30. Shared common factors: 1, 2, 3, 6. Highest common factor = 6."
+ result: "Highest Common Factor (HCF / GCD) = 6"
   - title: "Two Integer Euclidean Algorithm Example (48, 18)"
-    inputs: "Integers = 48, 18"
-    calculation: "Step 1: 48 mod 18 = 12 (48 = 18 × 2 + 12). Step 2: 18 mod 12 = 6 (18 = 12 × 1 + 6). Step 3: 12 mod 6 = 0 (12 = 6 × 2 + 0). Last non-zero remainder = 6."
-    result: "Highest Common Factor (HCF / GCD) = 6"
+ inputs: "Integers = 48, 18"
+ calculation: "Step 1: 48 mod 18 = 12 (48 = 18 × 2 + 12). Step 2: 18 mod 12 = 6 (18 = 12 × 1 + 6). Step 3: 12 mod 6 = 0 (12 = 6 × 2 + 0). Last non-zero remainder = 6."
+ result: "Highest Common Factor (HCF / GCD) = 6"
 faqs:
   - q: "Are HCF and GCD the same thing?"
-    a: "Yes. Highest Common Factor (HCF) and Greatest Common Divisor (GCD) are two names for the exact same concept: the largest positive integer that divides all input numbers without leaving a remainder."
+ a: "Yes. Highest Common Factor (HCF) and Greatest Common Divisor (GCD) are two names for the exact same concept: the largest positive integer that divides all input numbers without leaving a remainder."
   - q: "How does the Euclidean algorithm work?"
-    a: "The Euclidean algorithm divides the larger number by the smaller number and replaces the larger number with the remainder. This process repeats until the remainder is 0; the last non-zero divisor is the GCD."
+ a: "The Euclidean algorithm divides the larger number by the smaller number and replaces the larger number with the remainder. This process repeats until the remainder is 0; the last non-zero divisor is the GCD."
   - q: "What does it mean if the HCF is 1?"
-    a: "If the HCF of two numbers is 1, they are coprime (or relatively prime). They share no common factors other than 1 (e.g. 8 and 15)."
+ a: "If the HCF of two numbers is 1, they are coprime (or relatively prime). They share no common factors other than 1 (e.g. 8 and 15)."
 references:
   - "https://www.mathsisfun.com/greatest-common-factor.html"
 ---
@@ -84,22 +84,22 @@ List all positive factors for each number and pick the largest shared factor.
 - Factors of 12: 1, 2, 3, 4, **6**, 12
 - Factors of 18: 1, 2, 3, **6**, 9, 18
 - Factors of 30: 1, 2, 3, 5, **6**, 10, 15, 30
-- Common factors: 1, 2, 3, 6 $\implies$ **HCF = 6**.
+- Common factors: 1, 2, 3, 6 implies **HCF = 6**.
 
 #### Method 2: Prime Factorization
 1. Break down each number into prime factors.
 2. Identify prime factors common to all numbers.
 3. Multiply the lowest exponent powers of these shared prime factors.
-   - $12 = 2^2 \times 3^1$
-   - $18 = 2^1 \times 3^2$
-   - $30 = 2^1 \times 3^1 \times 5^1$
-   - Shared primes: $2^1 \times 3^1 = \mathbf{6}$.
+ - 12 = 2^2 × 3^1$
+ - 18 = 2^1 × 3^2$
+ - 30 = 2^1 × 3^1 × 5^1$
+ - Shared primes: 2^1 × 3^1 = 6$.
 
 #### Method 3: The Euclidean Algorithm (Used by the Calculator)
 The Euclidean algorithm is the fastest method for computing GCD without factoring:
-1. Divide larger number $A$ by smaller number $B$ to get remainder $R$ ($A \pmod B$).
-2. Replace $A$ with $B$, and replace $B$ with $R$.
-3. Repeat until remainder $R = 0$. The last non-zero divisor is the GCD.
+1. Divide larger number A by smaller number B to get remainder R (A ±od B).
+2. Replace A with B, and replace B with R.
+3. Repeat until remainder R = 0. The last non-zero divisor is the GCD.
 
 ---
 
@@ -107,24 +107,24 @@ The Euclidean algorithm is the fastest method for computing GCD without factorin
 
 #### Example 1: Three Integers (12, 18, 30)
 1. **Find HCF of 12 and 18**:
-   - $18 \pmod{12} = 6$
-   - $12 \pmod 6 = 0 \implies \text{HCF}(12, 18) = \mathbf{6}$.
+ - 18 ±od(12) = 6$
+ - 12 ±od 6 = 0 implies HCF(12, 18) = 6$.
 2. **Find HCF of result (6) and 30**:
-   - $30 \pmod 6 = 0 \implies \text{HCF}(6, 30) = \mathbf{6}$.
+ - 30 ±od 6 = 0 implies HCF(6, 30) = 6$.
 3. **Final HCF / GCD** = **6**.
 
 #### Example 2: Euclidean Algorithm Demonstration (48 and 18)
-1. **Step 1**: $48 \div 18 = 2$ with remainder **12** ($48 = 18 \times 2 + 12$).
-2. **Step 2**: $18 \div 12 = 1$ with remainder **6** ($18 = 12 \times 1 + 6$).
-3. **Step 3**: $12 \div 6 = 2$ with remainder **0** ($12 = 6 \times 2 + 0$).
-4. **Result**: The last non-zero divisor is **6**. Therefore, $\text{HCF}(48, 18) = \mathbf{6}$.
+1. **Step 1**: 48 ÷ 18 = 2$ with remainder **12** ($48 = 18 × 2 + 12$).
+2. **Step 2**: 18 ÷ 12 = 1$ with remainder **6** ($18 = 12 × 1 + 6$).
+3. **Step 3**: 12 ÷ 6 = 2$ with remainder **0** ($12 = 6 × 2 + 0$).
+4. **Result**: The last non-zero divisor is **6**. Therefore, HCF(48, 18) = 6.
 
 ---
 
 ### Real-World Applications
 
-* **Simplifying Fractions**: To reduce $\frac{18}{27}$, divide numerator and denominator by their HCF ($9$) to get $\frac{2}{3}$.
-* **Tile Fitting & Wood Cutting**: If you have a board measuring $48\text{ cm} \times 18\text{ cm}$ and want to cut it into equal square pieces without waste, the maximum square size is $6\text{ cm} \times 6\text{ cm}$.
+* **Simplifying Fractions**: To reduce (18 / 27), divide numerator and denominator by their HCF ($9$) to get (2 / 3).
+* **Tile Fitting & Wood Cutting**: If you have a board measuring 48 cm × 18 cm and want to cut it into equal square pieces without waste, the maximum square size is 6 cm × 6 cm.
 
 ---
 

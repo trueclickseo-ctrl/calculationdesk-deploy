@@ -29,11 +29,11 @@ aiSummary:
   formulaSummary: "CGPA to Percentage: Percentage = CGPA × Multiplier | Percentage to CGPA: CGPA = Percentage / Multiplier"
   whenToUse: "Use this tool to convert academic CGPA scores for job applications, university admissions, or competitive exam forms."
   whoShouldUse: "Students, university applicants, job seekers, and academic evaluators."
-  limitations: "Converts scores using linear multipliers ($9.5$, $10.0$, or custom user-entered factors)."
+  limitations: "Converts scores using linear multipliers ($9.5$, 10.0$, or custom user-entered factors)."
   keyTakeaways:
-    - "Supports dual conversion modes: CGPA to Percentage and Percentage to CGPA."
-    - "Includes preset options for standard CBSE (9.5) and 10.0 scale multipliers."
-    - "Allows entering custom multipliers defined by specific university boards."
+ - "Supports dual conversion modes: CGPA to Percentage and Percentage to CGPA."
+ - "Includes preset options for standard CBSE (9.5) and 10.0 scale multipliers."
+ - "Allows entering custom multipliers defined by specific university boards."
 peopleAlsoAsk:
   - "What is the formula to convert CGPA to percentage?"
   - "Why does CBSE use a 9.5 multiplier for CGPA conversion?"
@@ -41,18 +41,18 @@ peopleAlsoAsk:
   - "Can you use different multipliers for university CGPA conversions?"
 examples:
   - title: "CGPA to Percentage Conversion (8.8 CGPA, CBSE 9.5 Multiplier)"
-    inputs: "Conversion Type = CGPA to Percentage, CGPA Score = 8.8, Multiplier = 9.5"
-    calculation: "Percentage = 8.8 × 9.5 = 83.60%."
-    result: "Equivalent Percentage = 83.60% | Formula = CGPA (8.8) × Multiplier (9.5)"
+ inputs: "Conversion Type = CGPA to Percentage, CGPA Score = 8.8, Multiplier = 9.5"
+ calculation: "Percentage = 8.8 × 9.5 = 83.60%."
+ result: "Equivalent Percentage = 83.60% | Formula = CGPA (8.8) × Multiplier (9.5)"
   - title: "Percentage to CGPA Reverse Conversion (80% Mark, CBSE 9.5 Multiplier)"
-    inputs: "Conversion Type = Percentage to CGPA, Percentage Value = 80%, Multiplier = 9.5"
-    calculation: "CGPA = 80 / 9.5 = 8.421 -> 8.42 / 10.0."
-    result: "Equivalent CGPA = 8.42 / 10.0 | Formula = Percentage (80%) ÷ Multiplier (9.5)"
+ inputs: "Conversion Type = Percentage to CGPA, Percentage Value = 80%, Multiplier = 9.5"
+ calculation: "CGPA = 80 / 9.5 = 8.421 -> 8.42 / 10.0."
+ result: "Equivalent CGPA = 8.42 / 10.0 | Formula = Percentage (80%) ÷ Multiplier (9.5)"
 faqs:
   - q: "Why is the CBSE multiplier 9.5 instead of 10?"
-    a: "CBSE derived the 9.5 conversion multiplier by analyzing historical examination results and mapping percentage distributions onto 10-point CGPA bands."
+ a: "CBSE derived the 9.5 conversion multiplier by analyzing historical examination results and mapping percentage distributions onto 10-point CGPA bands."
   - q: "Can I use a custom multiplier for my university?"
-    a: "Yes. While 9.5 is standard for CBSE, some universities specify 10.0, 9.3, or custom scaling factors. Enter your institution's multiplier directly into the multiplier field."
+ a: "Yes. While 9.5 is standard for CBSE, some universities specify 10.0, 9.3, or custom scaling factors. Enter your institution's multiplier directly into the multiplier field."
 references:
   - "https://www.cbse.gov.in/"
 ---
@@ -68,10 +68,10 @@ This calculator performs **forward and reverse conversions** using customizable 
 ### How the Score Conversion Formulas Work
 
 #### Mode 1: CGPA to Percentage
-$$\text{Percentage (\%)} = \text{CGPA Score} \times \text{Multiplier}$$
+Percentage (%) = CGPA Score × Multiplier
 
 #### Mode 2: Percentage to CGPA (Reverse Conversion)
-$$\text{CGPA} = \frac{\text{Percentage (\%)}}{\text{Multiplier}}$$
+CGPA = frac(Percentage (%)){Multiplier}
 
 Where **Multiplier** is the conversion factor specified by your educational board (e.g. CBSE standard multiplier is 9.5; some technical universities use 10.0).
 
@@ -80,14 +80,14 @@ Where **Multiplier** is the conversion factor specified by your educational boar
 ### Step-by-Step Worked Numerical Examples (Verified against Code)
 
 #### Example 1: CGPA to Percentage (8.8 CGPA under CBSE 9.5 scale)
-1. **Inputs**: CGPA $= 8.8$, Multiplier $= 9.5$.
+1. **Inputs**: CGPA = 8.8$, Multiplier = 9.5$.
 2. **Calculate Percentage**:
-   $$\text{Percentage} = 8.8 \times 9.5 = \mathbf{83.60\%}$$
+ Percentage = 8.8 × 9.5 = 83.60%
 
 #### Example 2: Percentage to CGPA (80% Mark under CBSE 9.5 scale)
-1. **Inputs**: Percentage $= 80\%$, Multiplier $= 9.5$.
+1. **Inputs**: Percentage = 80%$, Multiplier = 9.5$.
 2. **Calculate CGPA**:
-   $$\text{CGPA} = \frac{80}{9.5} = 8.421 \approx \mathbf{8.42\text{ / 10.0}}$$
+ CGPA = (80 / 9.5) = 8.421 ≈ 8.42 / 10.0
 
 ---
 

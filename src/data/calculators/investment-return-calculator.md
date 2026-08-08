@@ -25,30 +25,30 @@ titleVariants:
   - "Investment Return Calculator - Calculate ROI, CAGR & Gains | CalculationDesk"
 aiSummary:
   definition: "The Investment Return Calculator evaluates investment performance by computing absolute profit, Return on Investment (ROI), and Compound Annual Growth Rate (CAGR), including dividends or cash distributions."
-  quickAnswer: "Buying an asset for $20,000, holding it for 3 years, selling it for $26,000, and earning $1,000 in dividends yields a total profit of $7,000, an ROI of 35.00%, and a CAGR of 10.52%."
+  quickAnswer: "Buying an asset for 20,000, holding it for 3 years, selling it for 26,000, and earning 1,000 in dividends yields a total profit of 7,000, an ROI of 35.00%, and a CAGR of 10.52%."
   formulaSummary: "Profit = Ending Value + Dividends - Initial Cost | ROI = (Profit / Initial Cost) × 100 | CAGR = ((Ending Value + Dividends) / Initial Cost)^(1/t) - 1"
   whenToUse: "Use this calculator to evaluate asset returns across stocks, real estate, mutual funds, or business investments."
   whoShouldUse: "Investors, traders, portfolio managers, and financial analysts."
   limitations: "Calculates performance metrics based on user-entered purchase prices, ending market values, dividends, and holding periods."
   keyTakeaways:
-    - "Calculates Total Profit as Ending Value + Dividends Received - Initial Purchase Cost."
-    - "Differentiates between absolute percentage return (ROI) and annualized growth rate (CAGR)."
-    - "Factors in interim cash flows such as stock dividends or rental income."
+ - "Calculates Total Profit as Ending Value + Dividends Received - Initial Purchase Cost."
+ - "Differentiates between absolute percentage return (ROI) and annualized growth rate (CAGR)."
+ - "Factors in interim cash flows such as stock dividends or rental income."
 peopleAlsoAsk:
   - "What is the difference between ROI and CAGR?"
   - "How do dividends affect overall investment return calculations?"
   - "What is the formula for calculating Compound Annual Growth Rate (CAGR)?"
   - "Can ROI be negative?"
 examples:
-  - title: "3-Year Stock Investment ($20,000 Purchase, $26,000 Sale Price, $1,000 Dividends)"
-    inputs: "Initial Purchase Cost = $20,000, Ending Market Value = $26,000, Dividends/Income = $1,000, Holding Tenure = 3 Years"
-    calculation: "Total Realized Value = 26,000 + 1,000 = $27,000. Total Profit = 27,000 - 20,000 = $7,000. ROI = (7,000 / 20,000) × 100 = 35.00%. CAGR = (27,000 / 20,000)^(1/3) - 1 = (1.35)^0.3333 - 1 = 10.52%."
-    result: "Total Profit = $7,000 | Absolute ROI = 35.00% | Annualized CAGR = 10.52% | Value Multiplier = x1.35"
+  - title: "3-Year Stock Investment ($20,000 Purchase, 26,000 Sale Price, 1,000 Dividends)"
+ inputs: "Initial Purchase Cost = 20,000, Ending Market Value = 26,000, Dividends/Income = 1,000, Holding Tenure = 3 Years"
+ calculation: "Total Realized Value = 26,000 + 1,000 = 27,000. Total Profit = 27,000 - 20,000 = 7,000. ROI = (7,000 / 20,000) × 100 = 35.00%. CAGR = (27,000 / 20,000)^(1/3) - 1 = (1.35)^0.3333 - 1 = 10.52%."
+ result: "Total Profit = 7,000 | Absolute ROI = 35.00% | Annualized CAGR = 10.52% | Value Multiplier = x1.35"
 faqs:
   - q: "What is the difference between ROI and CAGR?"
-    a: "ROI (Return on Investment) measures total cumulative return from start to finish as a percentage of initial cost, regardless of how many years elapsed. CAGR (Compound Annual Growth Rate) measures the annualized growth rate required for the investment to grow from initial value to final value over the holding period."
+ a: "ROI (Return on Investment) measures total cumulative return from start to finish as a percentage of initial cost, regardless of how many years elapsed. CAGR (Compound Annual Growth Rate) measures the annualized growth rate required for the investment to grow from initial value to final value over the holding period."
   - q: "How are dividends included in return calculations?"
-    a: "Dividends or cash distributions are added directly to the ending asset value ($\text{Total Realized Value} = \text{Ending Market Value} + \text{Dividends}$). This ensures total return metrics accurately reflect both capital appreciation and cash yield."
+ a: "Dividends or cash distributions are added directly to the ending asset value (Total Realized Value = Ending Market Value + Dividends). This ensures total return metrics accurately reflect both capital appreciation and cash yield."
 references:
   - "https://www.sec.gov/investor/pubs/inwstors.htm"
 ---
@@ -64,15 +64,15 @@ This calculator computes your **total profit gain, absolute Return on Investment
 ### How Investment Return Calculations Work
 
 1. **Total Profit Gain**:
-   $$\text{Total Profit} = \text{Ending Value} + \text{Dividends / Income Received} - \text{Initial Cost}$$
+ Total Profit = Ending Value + Dividends / Income Received - Initial Cost
 2. **Absolute Return on Investment (ROI %)**:
-   $$\text{ROI} = \left(\frac{\text{Total Profit}}{\text{Initial Cost}}\right) \times 100$$
+ ROI = frac(Total Profit){Initial Cost} × 100
 3. **Compound Annual Growth Rate (CAGR %)**:
-   $$\text{CAGR} = \left[\left(\frac{\text{Ending Value} + \text{Dividends}}{\text{Initial Cost}}\right)^{\frac{1}{t}} - 1\right] \times 100$$
+ CAGR = frac(Ending Value + Dividends){Initial Cost}^(1 / t) - 1 × 100
 4. **Value Multiplier**:
-   $$\text{Multiplier} = \frac{\text{Ending Value} + \text{Dividends}}{\text{Initial Cost}}$$
+ Multiplier = frac(Ending Value + Dividends){Initial Cost}
 
-Where $t$ is the holding tenure in years.
+Where t is the holding tenure in years.
 
 ---
 
@@ -81,20 +81,17 @@ Where $t$ is the holding tenure in years.
 Suppose you purchase shares for an initial cost of **$20,000**, hold them for **3 years**, sell them for an ending market value of **$26,000**, and receive **$1,000 in dividends** over the holding period:
 
 1. **Calculate Total Realized Value**:
-   $$\text{Total Realized Value} = \$26,000 + \$1,000 = \mathbf{\$27,000}$$
-2. **Calculate Total Profit Gain**:
-   $$\text{Total Profit} = \$27,000 - \$20,000 = \mathbf{\$7,000}$$
-3. **Calculate Absolute Return on Investment (ROI)**:
-   $$\text{ROI} = \left(\frac{\$7,000}{\$20,000}\right) \times 100 = \mathbf{35.00\%}$$
-4. **Calculate Compound Annual Growth Rate (CAGR)**:
-   $$\text{CAGR} = \left[\left(\frac{\$27,000}{\$20,000}\right)^{\frac{1}{3}} - 1\right] \times 100 = \left[(1.35)^{0.33333} - 1\right] \times 100 \approx \mathbf{10.52\%}$$
+ Total Realized Value = $26,000 + $1,000 = $27,000
+2. **Calculate Total Profit Gain**: Total Profit = $27,000 - $20,000 = $7,000
+3. **Calculate Absolute Return on Investment (ROI)**: ROI = ($7,000 / $20,000) × 100 = 35.00%
+4. **Calculate Compound Annual Growth Rate (CAGR)**: CAGR = ($27,000 / $20,000)^(1/3) - 1 × 100 = (1.35)^0.333 - 1 × 100 ≈ 10.52%
 5. **Summary**:
-   - **Initial Investment**: **$20,000**
-   - **Ending Value + Dividends**: **$27,000**
-   - **Total Profit**: **$7,000**
-   - **Absolute ROI**: **35.00%**
-   - **Annualized CAGR**: **10.52%**
-   - **Asset Multiplier**: **x1.35**
+ - **Initial Investment**: **$20,000**
+ - **Ending Value + Dividends**: **$27,000**
+ - **Total Profit**: **$7,000**
+ - **Absolute ROI**: **35.00%**
+ - **Annualized CAGR**: **10.52%**
+ - **Asset Multiplier**: **x1.35**
 
 ---
 

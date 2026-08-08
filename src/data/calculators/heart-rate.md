@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Runners, cyclists, athletes, fitness trainers, and individuals starting cardiorespiratory exercise routines."
   limitations: "Formula-based heart rate limits are statistical estimations. Individual MHR varies by 10-15 bpm. Beta-blockers, caffeine, stress, and heat affect heart rate."
   keyTakeaways:
-    - "Differentiates the simple Standard Method (MHR * %) from the personalized Karvonen Method (RHR + HRR * %)."
-    - "Calculates Heart Rate Reserve (HRR = Maximum Heart Rate - Resting Heart Rate)."
-    - "Maps 5 heart rate training zones: Warm Up (50-60%), Fat Burn (60-70%), Aerobic (70-80%), Anaerobic (80-90%), and Maximum (90-100%)."
-    - "Includes important health limitations and guidance on when to seek medical advice."
+ - "Differentiates the simple Standard Method (MHR * %) from the personalized Karvonen Method (RHR + HRR * %)."
+ - "Calculates Heart Rate Reserve (HRR = Maximum Heart Rate - Resting Heart Rate)."
+ - "Maps 5 heart rate training zones: Warm Up (50-60%), Fat Burn (60-70%), Aerobic (70-80%), Anaerobic (80-90%), and Maximum (90-100%)."
+ - "Includes important health limitations and guidance on when to seek medical advice."
 peopleAlsoAsk:
   - "What is the difference between the Karvonen method and the Standard method?"
   - "How do you calculate Heart Rate Reserve (HRR)?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "Why do the Standard and Karvonen methods give different heart rates?"
 examples:
   - title: "Worked Karvonen Zone Example (Age 30, RHR 60 bpm)"
-    inputs: "Age = 30, Resting Heart Rate = 60 bpm, Method = Karvonen"
-    calculation: "1. MHR = 220 - 30 = 190 bpm. 2. HRR = 190 - 60 = 130 bpm. 3. Zone 3 Aerobic (70%-80%): Lower = 60 + (130 * 0.70) = 151 bpm. Upper = 60 + (130 * 0.80) = 164 bpm."
-    result: "Max HR = 190 bpm | HRR = 130 bpm | Zone 3 Aerobic Range = 151 to 164 bpm"
+ inputs: "Age = 30, Resting Heart Rate = 60 bpm, Method = Karvonen"
+ calculation: "1. MHR = 220 - 30 = 190 bpm. 2. HRR = 190 - 60 = 130 bpm. 3. Zone 3 Aerobic (70%-80%): Lower = 60 + (130 * 0.70) = 151 bpm. Upper = 60 + (130 * 0.80) = 164 bpm."
+ result: "Max HR = 190 bpm | HRR = 130 bpm | Zone 3 Aerobic Range = 151 to 164 bpm"
 faqs:
   - q: "Why is the Karvonen method preferred by fitness trainers?"
-    a: "The Karvonen formula incorporates your Resting Heart Rate (RHR), which reflects your personal cardiorespiratory fitness level. A fitter person with a lower resting heart rate has a larger Heart Rate Reserve, shifting training boundaries to match their actual aerobic capacity."
+ a: "The Karvonen formula incorporates your Resting Heart Rate (RHR), which reflects your personal cardiorespiratory fitness level. A fitter person with a lower resting heart rate has a larger Heart Rate Reserve, shifting training boundaries to match their actual aerobic capacity."
   - q: "What is the 'Fat Burn' zone and does it burn more total fat?"
-    a: "Zone 2 (60% to 70% intensity) relies primarily on fat oxidation for fuel. While fat provides a higher percentage of calories in Zone 2, higher-intensity workouts in Zone 3 and Zone 4 burn more total calories per minute."
+ a: "Zone 2 (60% to 70% intensity) relies primarily on fat oxidation for fuel. While fat provides a higher percentage of calories in Zone 2, higher-intensity workouts in Zone 3 and Zone 4 burn more total calories per minute."
   - q: "Can medications affect target heart rate zones?"
-    a: "Yes. Medications such as beta-blockers, blood pressure drugs, and thyroid treatments significantly suppress or elevate heart rates. If taking cardiac medication, consult your doctor for personalized heart rate guidelines."
+ a: "Yes. Medications such as beta-blockers, blood pressure drugs, and thyroid treatments significantly suppress or elevate heart rates. If taking cardiac medication, consult your doctor for personalized heart rate guidelines."
 references:
   - "https://www.acsm.org/docs/default-source/files-for-resource-library/target-heart-rate-calculator.pdf"
 ---
@@ -67,7 +67,7 @@ This calculator computes your **Maximum Heart Rate (MHR)**, **Heart Rate Reserve
 ---
 
 > [!IMPORTANT]
-> **Exercise Safety Disclaimer**: Heart rate formulas provide general population estimates. Individual maximum heart rates can vary by $\pm 10 \text{ to } 15 \text{ bpm}$. If you experience chest pain, severe shortness of breath, dizziness, or take heart medications (such as beta-blockers), stop exercising immediately and consult a physician.
+> **Exercise Safety Disclaimer**: Heart rate formulas provide general population estimates. Individual maximum heart rates can vary by ± 10  to  15  bpm. If you experience chest pain, severe shortness of breath, dizziness, or take heart medications (such as beta-blockers), stop exercising immediately and consult a physician.
 
 ---
 
@@ -75,21 +75,21 @@ This calculator computes your **Maximum Heart Rate (MHR)**, **Heart Rate Reserve
 
 #### 1. The Standard Method (Simple Percentage of MHR)
 The Standard method relies solely on age to estimate Maximum Heart Rate (MHR) using the classic Åstrand formula:
-$$\text{MHR} = 220 - \text{Age}$$
-$$\text{Target Heart Rate} = \text{MHR} \times \text{Intensity Percentage}$$
+MHR = 220 - Age
+Target Heart Rate = MHR × Intensity Percentage
 
-*Example*: For a 30-year-old ($\text{MHR} = 190 \text{ bpm}$), Zone 3 ($70\% \text{ to } 80\%$) equals:
-- Lower: $190 \times 0.70 = \mathbf{133 \text{ bpm}}$
-- Upper: $190 \times 0.80 = \mathbf{152 \text{ bpm}}$
+*Example*: For a 30-year-old (MHR = 190  bpm), Zone 3 ($70%  to  80%$) equals:
+- Lower: 190 × 0.70 = 133  bpm
+- Upper: 190 × 0.80 = 152  bpm
 
 #### 2. The Karvonen Method (Incorporating Resting Heart Rate)
 The Karvonen formula accounts for your **Resting Heart Rate (RHR)**—the beats per minute your heart pumps when completely relaxed. This establishes your **Heart Rate Reserve (HRR)**:
 
-$$\text{HRR} = \text{Maximum Heart Rate (MHR)} - \text{Resting Heart Rate (RHR)}$$
-$$\text{Target Heart Rate} = \text{RHR} + (\text{HRR} \times \text{Intensity Percentage})$$
+HRR = Maximum Heart Rate (MHR) - Resting Heart Rate (RHR)
+Target Heart Rate = RHR + (HRR × Intensity Percentage)
 
 #### Why Do the Methods Give Different Numbers?
-The Standard method assumes everyone of the same age has the same fitness baseline. The Karvonen method recognizes that a fit runner with an RHR of $50 \text{ bpm}$ has a larger usable heart rate reserve ($140 \text{ bpm}$) than an inactive individual of the same age with an RHR of $80 \text{ bpm}$ ($110 \text{ bpm}$ reserve). Karvonen shifts the zones higher for fitter individuals to reflect their true physiological conditioning.
+The Standard method assumes everyone of the same age has the same fitness baseline. The Karvonen method recognizes that a fit runner with an RHR of 50  bpm has a larger usable heart rate reserve ($140  bpm) than an inactive individual of the same age with an RHR of 80  bpm ($110  bpm reserve). Karvonen shifts the zones higher for fitter individuals to reflect their true physiological conditioning.
 
 ---
 
@@ -97,26 +97,26 @@ The Standard method assumes everyone of the same age has the same fitness baseli
 
 | Training Zone | Intensity | Primary Physiology & Purpose | How It Feels |
 | :--- | :--- | :--- | :--- |
-| **Zone 1: Warm Up** | $50\% - 60\%$ | Active recovery, warming up muscles, blood circulation | Very light effort, easy breathing |
-| **Zone 2: Fat Burn** | $60\% - 70\%$ | Building aerobic base, fat oxidation, endurance foundation | Comfortable, full conversations possible |
-| **Zone 3: Aerobic** | $70\% - 80\%$ | Expanding cardiovascular capacity, strengthening heart muscles | Moderate effort, deeper breathing |
-| **Zone 4: Anaerobic** | $80\% - 90\%$ | Raising lactate threshold, improving high-speed performance | Hard effort, muscular fatigue, short sentences |
-| **Zone 5: Maximum** | $90\% - 100\%$ | Maximal anaerobic sprinting, VO2 max capacity development | All-out effort, impossible to speak |
+| **Zone 1: Warm Up** | 50% - 60%$ | Active recovery, warming up muscles, blood circulation | Very light effort, easy breathing |
+| **Zone 2: Fat Burn** | 60% - 70%$ | Building aerobic base, fat oxidation, endurance foundation | Comfortable, full conversations possible |
+| **Zone 3: Aerobic** | 70% - 80%$ | Expanding cardiovascular capacity, strengthening heart muscles | Moderate effort, deeper breathing |
+| **Zone 4: Anaerobic** | 80% - 90%$ | Raising lactate threshold, improving high-speed performance | Hard effort, muscular fatigue, short sentences |
+| **Zone 5: Maximum** | 90% - 100%$ | Maximal anaerobic sprinting, VO2 max capacity development | All-out effort, impossible to speak |
 
 ---
 
 ### Step-by-Step Worked Numerical Example (Verified against Code)
 
-Let's calculate the **Zone 3 Aerobic range ($70\% \text{ to } 80\%$)** for a **30-year-old** with a **Resting Heart Rate of 60 bpm** using the **Karvonen Method**:
+Let's calculate the **Zone 3 Aerobic range ($70%  to  80%$)** for a **30-year-old** with a **Resting Heart Rate of 60 bpm** using the **Karvonen Method**:
 
 1. **Calculate Maximum Heart Rate (MHR)**:
-   $$\text{MHR} = 220 - 30 = \mathbf{190 \text{ bpm}}$$
+ MHR = 220 - 30 = 190  bpm
 2. **Calculate Heart Rate Reserve (HRR)**:
-   $$\text{HRR} = 190 - 60 = \mathbf{130 \text{ bpm}}$$
-3. **Calculate Lower Bound ($70\%$ Intensity)**:
-   $$\text{Lower HR} = 60 + (130 \times 0.70) = 60 + 91 = \mathbf{151 \text{ bpm}}$$
-4. **Calculate Upper Bound ($80\%$ Intensity)**:
-   $$\text{Upper HR} = 60 + (130 \times 0.80) = 60 + 104 = \mathbf{164 \text{ bpm}}$$
+ HRR = 190 - 60 = 130  bpm
+3. **Calculate Lower Bound ($70%$ Intensity)**:
+ Lower HR = 60 + (130 × 0.70) = 60 + 91 = 151  bpm
+4. **Calculate Upper Bound ($80%$ Intensity)**:
+ Upper HR = 60 + (130 × 0.80) = 60 + 104 = 164  bpm
 
 *Verification Result: Zone 3 Aerobic Range = **151 to 164 bpm** (compared to 133–152 bpm on the Standard method).*
 
@@ -125,8 +125,8 @@ Let's calculate the **Zone 3 Aerobic range ($70\% \text{ to } 80\%$)** for a **3
 ### Practical Workout Guidance
 
 * **Heart Rate Monitors**: Wear a chest strap or optical smartwatch monitor during runs or workouts to maintain your target bpm.
-* **Base Building**: Spend $80\%$ of your weekly cardio volume in Zone 2 to build mitochondrial density without burning out.
-* **HIIT & Sprints**: Reserve Zone 4 and Zone 5 for short interval sessions ($1 \text{ to } 2$ times per week).
+* **Base Building**: Spend 80%$ of your weekly cardio volume in Zone 2 to build mitochondrial density without burning out.
+* **HIIT & Sprints**: Reserve Zone 4 and Zone 5 for short interval sessions ($1  to  2$ times per week).
 
 ---
 

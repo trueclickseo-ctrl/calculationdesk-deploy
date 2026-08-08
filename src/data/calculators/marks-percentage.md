@@ -31,9 +31,9 @@ aiSummary:
   whoShouldUse: "Students, parents, teachers, and academic evaluators."
   limitations: "Calculates percentages based on user-entered marks obtained and total maximum marks."
   keyTakeaways:
-    - "Calculates Percentage Obtained as (Marks Obtained / Total Marks) × 100."
-    - "Calculates Marks Lost as Total Marks − Marks Obtained."
-    - "Calculates Marks Lost Percentage as (Marks Lost / Total Marks) × 100."
+ - "Calculates Percentage Obtained as (Marks Obtained / Total Marks) × 100."
+ - "Calculates Marks Lost as Total Marks − Marks Obtained."
+ - "Calculates Marks Lost Percentage as (Marks Lost / Total Marks) × 100."
 peopleAlsoAsk:
   - "How do you calculate percentage from marks obtained and total marks?"
   - "How are marks lost calculated in an exam?"
@@ -41,22 +41,22 @@ peopleAlsoAsk:
   - "Can obtained marks be zero?"
 examples:
   - title: "Standard Test Score (425 Marks Obtained out of 500 Total Marks)"
-    inputs: "Marks Obtained = 425, Total Marks = 500"
-    calculation: "Percentage = (425 / 500) × 100 = 0.85 × 100 = 85.00%. Marks Lost = 500 - 425 = 75. Marks Lost Percentage = (75 / 500) × 100 = 15.0%."
-    result: "Score Percentage = 85.00% | Marks Lost = 75 marks (15.0%)"
+ inputs: "Marks Obtained = 425, Total Marks = 500"
+ calculation: "Percentage = (425 / 500) × 100 = 0.85 × 100 = 85.00%. Marks Lost = 500 - 425 = 75. Marks Lost Percentage = (75 / 500) × 100 = 15.0%."
+ result: "Score Percentage = 85.00% | Marks Lost = 75 marks (15.0%)"
   - title: "Non-Round Fraction Score (73 Marks Obtained out of 87 Total Marks)"
-    inputs: "Marks Obtained = 73, Total Marks = 87"
-    calculation: "Percentage = (73 / 87) × 100 = 0.839080 × 100 = 83.91%. Marks Lost = 87 - 73 = 14 marks. Marks Lost Percentage = (14 / 87) × 100 = 16.09%."
-    result: "Score Percentage = 83.91% | Marks Lost = 14 marks (16.09%)"
+ inputs: "Marks Obtained = 73, Total Marks = 87"
+ calculation: "Percentage = (73 / 87) × 100 = 0.839080 × 100 = 83.91%. Marks Lost = 87 - 73 = 14 marks. Marks Lost Percentage = (14 / 87) × 100 = 16.09%."
+ result: "Score Percentage = 83.91% | Marks Lost = 14 marks (16.09%)"
 faqs:
   - q: "How is the marks percentage calculated?"
-    a: "Divide your obtained marks by the total maximum marks and multiply by 100: Percentage = (Marks Obtained / Total Marks) × 100."
+ a: "Divide your obtained marks by the total maximum marks and multiply by 100: Percentage = (Marks Obtained / Total Marks) × 100."
   - q: "How are marks lost calculated?"
-    a: "Marks lost is the difference between total maximum marks and marks obtained: Marks Lost = Total Marks − Marks Obtained. The lost percentage is (Marks Lost / Total Marks) × 100."
+ a: "Marks lost is the difference between total maximum marks and marks obtained: Marks Lost = Total Marks − Marks Obtained. The lost percentage is (Marks Lost / Total Marks) × 100."
   - q: "What happens when obtained marks equal total marks?"
-    a: "When obtained marks equal total marks (e.g. 500 out of 500), your score percentage is 100.00% and marks lost is 0."
+ a: "When obtained marks equal total marks (e.g. 500 out of 500), your score percentage is 100.00% and marks lost is 0."
   - q: "What happens if obtained marks are zero?"
-    a: "If obtained marks are 0 out of 500, your score percentage is 0.00% and marks lost is equal to total marks (500 marks lost, 100% lost)."
+ a: "If obtained marks are 0 out of 500, your score percentage is 0.00% and marks lost is equal to total marks (500 marks lost, 100% lost)."
 references:
   - "https://www.mathsisfun.com/percentage.html"
 ---
@@ -72,13 +72,13 @@ This calculator computes your **obtained score percentage, marks lost, and perce
 ### How the Marks Percentage Formulas Work
 
 1. **Obtained Score Percentage**:
-   Percentage (%) = (Marks Obtained / Total Marks) × 100
+ Percentage (%) = (Marks Obtained / Total Marks) × 100
 
 2. **Marks Lost**:
-   Marks Lost = Total Marks − Marks Obtained
+ Marks Lost = Total Marks − Marks Obtained
 
 3. **Marks Lost Percentage**:
-   Marks Lost (%) = (Marks Lost / Total Marks) × 100
+ Marks Lost (%) = (Marks Lost / Total Marks) × 100
 
 ---
 
@@ -87,18 +87,18 @@ This calculator computes your **obtained score percentage, marks lost, and perce
 #### Example 1: Standard Score (425 out of 500)
 1. **Inputs**: Marks Obtained = 425, Total Marks = 500.
 2. **Calculate Percentage**:
-   Percentage = (425 / 500) × 100 = 0.85 × 100 = **85.00%**
+ Percentage = (425 / 500) × 100 = 0.85 × 100 = **85.00%**
 3. **Calculate Marks Lost**:
-   Marks Lost = 500 − 425 = **75 marks**
+ Marks Lost = 500 − 425 = **75 marks**
 4. **Calculate Marks Lost Percentage**:
-   Marks Lost % = (75 / 500) × 100 = **15.0%**
+ Marks Lost % = (75 / 500) × 100 = **15.0%**
 
 #### Example 2: Non-Round Fraction Score (73 out of 87)
 1. **Inputs**: Marks Obtained = 73, Total Marks = 87.
 2. **Calculate Percentage**:
-   Percentage = (73 / 87) × 100 = 0.839080 × 100 = **83.91%**
+ Percentage = (73 / 87) × 100 = 0.839080 × 100 = **83.91%**
 3. **Calculate Marks Lost**:
-   Marks Lost = 87 − 73 = **14 marks** (16.09%)
+ Marks Lost = 87 − 73 = **14 marks** (16.09%)
 
 ---
 

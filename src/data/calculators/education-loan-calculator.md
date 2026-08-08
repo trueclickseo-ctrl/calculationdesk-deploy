@@ -25,15 +25,15 @@ titleVariants:
   - "Education Loan Calculator - Calculate Moratorium Interest & EMI | CalculationDesk"
 aiSummary:
   definition: "The Education Loan Calculator models a two-stage student loan calculation: interest compounding during the course moratorium grace period, followed by monthly EMI repayments on the adjusted principal balance."
-  quickAnswer: "Borrowing $40,000 for a course with a 2-year moratorium at 8.5% interest and 5-year repayment tenure accumulates $7,381 in moratorium interest ($47,381 adjusted principal), resulting in a post-study monthly EMI of $971.97."
+  quickAnswer: "Borrowing 40,000 for a course with a 2-year moratorium at 8.5% interest and 5-year repayment tenure accumulates 7,381 in moratorium interest ($47,381 adjusted principal), resulting in a post-study monthly EMI of 971.97."
   formulaSummary: "1. Moratorium Interest: P_adjusted = P × (1 + r)^n_mor | 2. Monthly EMI: EMI = P_adjusted × r × (1 + r)^N_rep / ((1 + r)^N_rep - 1)"
   whenToUse: "Use this tool to plan student loan repayments that incorporate course study moratorium periods."
   whoShouldUse: "Students, parents, study abroad applicants, and educational planners."
   limitations: "Calculates interest accumulation during moratorium assuming unpaid interest is added to the principal balance before EMI repayments begin."
   keyTakeaways:
-    - "Models moratorium (grace period) during course studies where EMIs are paused."
-    - "Interest accrues during the moratorium and is added to the initial principal to form the adjusted principal."
-    - "Active monthly EMI payments begin after the moratorium period ends."
+ - "Models moratorium (grace period) during course studies where EMIs are paused."
+ - "Interest accrues during the moratorium and is added to the initial principal to form the adjusted principal."
+ - "Active monthly EMI payments begin after the moratorium period ends."
 peopleAlsoAsk:
   - "What is a moratorium period in an education loan?"
   - "Does interest accumulate during the student loan moratorium?"
@@ -41,14 +41,14 @@ peopleAlsoAsk:
   - "What is the formula for education loan EMI?"
 examples:
   - title: "Education Loan ($40,000 Tuition, 2-Year Moratorium, 8.5% p.a., 5-Year Repayment)"
-    inputs: "Course Fee Loan = $40,000, Interest Rate = 8.5% p.a., Moratorium = 2 Years, Repayment Tenure = 5 Years"
-    calculation: "Monthly rate r = 8.5 / 12 / 100 = 0.00708333. Moratorium months = 24. P_adjusted = 40,000 × (1.00708333)^24 = $47,381.18. Moratorium Interest = $7,381.18. Repayment months = 60. EMI = 47,381.18 × 0.00708333 × [(1.00708333)^60 / ((1.00708333)^60 - 1)] = $971.97/month."
-    result: "Accumulated Moratorium Interest = $7,381 | Adjusted Principal = $47,381 | Monthly Post-Study EMI = $971.97"
+ inputs: "Course Fee Loan = 40,000, Interest Rate = 8.5% p.a., Moratorium = 2 Years, Repayment Tenure = 5 Years"
+ calculation: "Monthly rate r = 8.5 / 12 / 100 = 0.00708333. Moratorium months = 24. P_adjusted = 40,000 × (1.00708333)^24 = 47,381.18. Moratorium Interest = 7,381.18. Repayment months = 60. EMI = 47,381.18 × 0.00708333 × [(1.00708333)^60 / ((1.00708333)^60 - 1)] = 971.97/month."
+ result: "Accumulated Moratorium Interest = 7,381 | Adjusted Principal = 47,381 | Monthly Post-Study EMI = 971.97"
 faqs:
   - q: "What is the moratorium period in an education loan?"
-    a: "The moratorium (or grace period) is the time during your academic studies (plus an optional 6 to 12 months after graduation) when you are not required to make monthly EMI payments."
+ a: "The moratorium (or grace period) is the time during your academic studies (plus an optional 6 to 12 months after graduation) when you are not required to make monthly EMI payments."
   - q: "Does interest accrue while I am studying during the moratorium?"
-    a: "Yes. In this calculator's model, interest accrues monthly during the moratorium and is added to your original loan principal: Adjusted Principal = P × (1 + r)^Moratorium Months. Your post-study EMI is then calculated on this larger adjusted principal balance."
+ a: "Yes. In this calculator's model, interest accrues monthly during the moratorium and is added to your original loan principal: Adjusted Principal = P × (1 + r)^Moratorium Months. Your post-study EMI is then calculated on this larger adjusted principal balance."
 references:
   - "https://www.bankbazaar.com/education-loan.html"
 ---
@@ -85,18 +85,18 @@ Where N is the active repayment duration in months (Repayment Years × 12).
 Suppose you borrow **$40,000** for a course, with a **2-year moratorium (24 months)** at an annual interest rate of **8.5%**, followed by a **5-year active repayment tenure (60 months)**:
 
 1. **Calculate Monthly Interest Rate (r)**:
-   r = 8.5 / (12 × 100) = 0.00708333
+ r = 8.5 / (12 × 100) = 0.00708333
 2. **Calculate Adjusted Principal after Moratorium**:
-   Adjusted Principal = $40,000 × (1 + 0.00708333)^24 = $40,000 × 1.184529 = **$47,381.18**
-   - Moratorium Interest Accrued: $47,381.18 − $40,000 = **$7,381.18**
+ Adjusted Principal = 40,000 × (1 + 0.00708333)^24 = 40,000 × 1.184529 = **$47,381.18**
+ - Moratorium Interest Accrued: 47,381.18 − 40,000 = **$7,381.18**
 3. **Calculate Monthly Post-Study EMI**:
-   EMI = 47,381.18 × 0.00708333 × [ (1.00708333)^60 / ((1.00708333)^60 − 1) ] = **$971.97 / month**
+ EMI = 47,381.18 × 0.00708333 × [ (1.00708333)^60 / ((1.00708333)^60 − 1) ] = **$971.97 / month**
 4. **Summary**:
-   - **Original Course Fee Loan**: **$40,000**
-   - **Moratorium Interest Accrued**: **$7,381**
-   - **Adjusted Principal Balance**: **$47,381**
-   - **Monthly Post-Study EMI**: **$971.97**
-   - **Total Repayment Cost**: $971.97 × 60 = **$58,318**
+ - **Original Course Fee Loan**: **$40,000**
+ - **Moratorium Interest Accrued**: **$7,381**
+ - **Adjusted Principal Balance**: **$47,381**
+ - **Monthly Post-Study EMI**: **$971.97**
+ - **Total Repayment Cost**: 971.97 × 60 = **$58,318**
 
 ---
 

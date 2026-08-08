@@ -25,15 +25,15 @@ titleVariants:
   - "Lumpsum Calculator - Calculate One-Time Investment Returns | CalculationDesk"
 aiSummary:
   definition: "A Lumpsum Investment is a one-time allocation of capital into a financial asset (such as mutual funds, equities, or bonds) where the entire initial principal compounds over a selected holding period."
-  quickAnswer: "A $50,000 one-time lumpsum investment compounded at an expected annual rate of 12% over 10 years grows to a total maturity value of $155,292 ($105,292 wealth gain)."
+  quickAnswer: "A 50,000 one-time lumpsum investment compounded at an expected annual rate of 12% over 10 years grows to a total maturity value of 155,292 ($105,292 wealth gain)."
   formulaSummary: "A = P × (1 + r)^t"
   whenToUse: "Use this calculator to estimate the long-term future value of one-time capital deposits."
   whoShouldUse: "Individual investors, bonus earners, inheritance recipients, and wealth planners."
   limitations: "Assumes annual compounding returns at a fixed expected rate. Equity market returns fluctuate in practice."
   keyTakeaways:
-    - "Calculates annual compound growth ($A = P(1+r)^t$) for one-time capital deposits."
-    - "The entire principal compounds from day one, maximizing compound growth during bull markets."
-    - "Longer investment tenures produce exponential capital gains due to compounding interest."
+ - "Calculates annual compound growth (A = P(1+r)^t) for one-time capital deposits."
+ - "The entire principal compounds from day one, maximizing compound growth during bull markets."
+ - "Longer investment tenures produce exponential capital gains due to compounding interest."
 peopleAlsoAsk:
   - "What is the formula for calculating lumpsum investment returns?"
   - "How does a lumpsum investment differ from a Systematic Investment Plan (SIP)?"
@@ -41,16 +41,16 @@ peopleAlsoAsk:
   - "Are mutual fund lumpsum returns guaranteed?"
 examples:
   - title: "10-Year Lumpsum Investment ($50,000 at 12% p.a. expected return)"
-    inputs: "Initial Principal = $50,000, Expected Return Rate = 12% p.a., Tenure = 10 Years"
-    calculation: "P = 50,000; r = 0.12; t = 10; A = 50,000 × (1 + 0.12)^10 = 50,000 × 3.105848"
-    result: "Invested Principal = $50,000 | Est. Wealth Gain = $105,292 | Maturity Value = $155,292"
+ inputs: "Initial Principal = 50,000, Expected Return Rate = 12% p.a., Tenure = 10 Years"
+ calculation: "P = 50,000; r = 0.12; t = 10; A = 50,000 × (1 + 0.12)^10 = 50,000 × 3.105848"
+ result: "Invested Principal = 50,000 | Est. Wealth Gain = 105,292 | Maturity Value = 155,292"
 faqs:
   - q: "What is the mathematical formula for lumpsum investment compounding?"
-    a: "Lumpsum investments compound annually using the formula: $A = P \times (1 + r)^t$, where $P$ is the principal amount, $r$ is the annual return rate in decimal, and $t$ is the number of years."
+ a: "Lumpsum investments compound annually using the formula: A = P × (1 + r)^t, where P is the principal amount, r is the annual return rate in decimal, and t is the number of years."
   - q: "When is a lumpsum investment better than an SIP?"
-    a: "A lumpsum investment generally yields higher returns than an SIP when markets are trending upward because 100% of your capital is invested on day one, compounding over the entire tenure."
+ a: "A lumpsum investment generally yields higher returns than an SIP when markets are trending upward because 100% of your capital is invested on day one, compounding over the entire tenure."
   - q: "Are mutual fund lumpsum returns tax-free?"
-    a: "Capital gains on mutual fund investments are subject to capital gains tax depending on the asset class (equity vs. debt) and holding period (short-term vs. long-term)."
+ a: "Capital gains on mutual fund investments are subject to capital gains tax depending on the asset class (equity vs. debt) and holding period (short-term vs. long-term)."
 references:
   - "https://www.sec.gov/investor/pubs/inwstors.htm"
 ---
@@ -67,13 +67,13 @@ When you invest a lump sum, your entire capital starts earning returns immediate
 
 #### The Mathematical Lumpsum Formula
 
-$$A = P \times (1 + r)^t$$
+A = P × (1 + r)^t
 
 Where:
-- **$A$ (Maturity Amount)**: Expected future value of your investment.
-- **$P$ (Principal Amount)**: The initial one-time deposit.
-- **$r$ (Annual Expected Return Rate)**: Quoted annual return percentage divided by 100 ($r = \text{Return \%} \div 100$).
-- **$t$ (Tenure in Years)**: Investment period in years.
+- **A (Maturity Amount)**: Expected future value of your investment.
+- **P (Principal Amount)**: The initial one-time deposit.
+- **r (Annual Expected Return Rate)**: Quoted annual return percentage divided by 100 (r = Return % ÷ 100).
+- **t (Tenure in Years)**: Investment period in years.
 
 ---
 
@@ -81,16 +81,15 @@ Where:
 
 Suppose you make a one-time deposit of **$50,000** for **10 years** at an expected annual return rate of **12%**:
 
-1. **Convert Rate to Decimal ($r$)**:
-   $$r = \frac{12}{100} = 0.12$$
+1. **Convert Rate to Decimal (r)**:
+ r = (12 / 100) = 0.12
 2. **Apply the Lumpsum Formula**:
-   $$A = 50,000 \times (1 + 0.12)^{10}$$
-   $$A = 50,000 \times (1.12)^{10}$$
-   $$A = 50,000 \times 3.105848 \approx \mathbf{\$155,292.41}$$
-3. **Summary (Verified against Code)**:
-   - **Invested Principal**: **$50,000**
-   - **Estimated Wealth Gain**: $\$155,292.41 - \$50,000 = \mathbf{\$105,292.41}$
-   - **Total Maturity Value**: **$155,292**
+ A = 50,000 × (1 + 0.12)^10
+ A = 50,000 × (1.12)^10
+ A = 50,000 × 3.105848 ≈ \155,292.41 3. **Summary (Verified against Code)**:
+ - **Invested Principal**: **$50,000**
+ - **Estimated Wealth Gain**: \155,292.41 - $50,000 = $105,292.41
+ - **Total Maturity Value**: **$155,292**
 
 ---
 

@@ -25,32 +25,32 @@ titleVariants:
   - "CAGR Calculator - Calculate Compound Annual Growth Rate | CalculationDesk"
 aiSummary:
   definition: "Compound Annual Growth Rate (CAGR) measures the geometric annualized growth rate required for an investment to grow from its initial value to its final value over a specified holding period."
-  quickAnswer: "An investment growing from $10,000 to $20,000 over 5 years yields a CAGR of 14.87% (a 100% absolute return and 2.00x return multiple)."
+  quickAnswer: "An investment growing from 10,000 to 20,000 over 5 years yields a CAGR of 14.87% (a 100% absolute return and 2.00x return multiple)."
   formulaSummary: "CAGR = ((Final Value / Initial Value)^(1 / t) - 1) × 100 | Absolute Return = ((Final Value - Initial Value) / Initial Value) × 100"
   whenToUse: "Use this calculator to evaluate annualized performance across stocks, mutual funds, real estate, and business assets."
   whoShouldUse: "Investors, portfolio managers, financial analysts, and business owners."
   limitations: "Calculates a geometric smoothed annual growth rate between starting and ending values, ignoring interim price volatility."
   keyTakeaways:
-    - "CAGR provides a smoothed annualized rate of return over a multi-year period."
-    - "Differs from Absolute Return by accounting for the time duration of the investment."
-    - "Ignores short-term market volatility and interim cash deposits/withdrawals."
+ - "CAGR provides a smoothed annualized rate of return over a multi-year period."
+ - "Differs from Absolute Return by accounting for the time duration of the investment."
+ - "Ignores short-term market volatility and interim cash deposits/withdrawals."
 peopleAlsoAsk:
   - "What is the formula for calculating CAGR?"
   - "How does CAGR differ from Absolute Return?"
   - "Why is CAGR preferred over average annual returns?"
   - "Can CAGR be negative?"
 examples:
-  - title: "5-Year Investment Growth ($10,000 initial value to $20,000 final value)"
-    inputs: "Initial Value = $10,000, Final Value = $20,000, Holding Period = 5 Years"
-    calculation: "CAGR = (20,000 / 10,000)^(1/5) - 1 = (2)^0.2 - 1 = 1.148698 - 1 = 14.87%. Absolute Return = (10,000 / 10,000) × 100 = 100% (2.00x multiple)."
-    result: "CAGR = 14.87% | Absolute Return = 100.00% | Return Multiple = x2.00 | Total Profit = $10,000"
+  - title: "5-Year Investment Growth ($10,000 initial value to 20,000 final value)"
+ inputs: "Initial Value = 10,000, Final Value = 20,000, Holding Period = 5 Years"
+ calculation: "CAGR = (20,000 / 10,000)^(1/5) - 1 = (2)^0.2 - 1 = 1.148698 - 1 = 14.87%. Absolute Return = (10,000 / 10,000) × 100 = 100% (2.00x multiple)."
+ result: "CAGR = 14.87% | Absolute Return = 100.00% | Return Multiple = x2.00 | Total Profit = 10,000"
 faqs:
   - q: "What does CAGR actually tell an investor?"
-    a: "CAGR tells you the constant annual rate at which your investment would have grown if it had compounded at a steady rate each year from start to finish. It smooths out annual fluctuations to provide an accurate benchmark rate."
+ a: "CAGR tells you the constant annual rate at which your investment would have grown if it had compounded at a steady rate each year from start to finish. It smooths out annual fluctuations to provide an accurate benchmark rate."
   - q: "What is the difference between CAGR and Absolute Return?"
-    a: "Absolute Return measures total percentage gain regardless of how long it took (e.g. doubling your money is a 100% absolute return whether it takes 2 years or 20 years). CAGR incorporates time, showing that doubling in 2 years is a 41.4% CAGR, while doubling in 20 years is a 3.5% CAGR."
+ a: "Absolute Return measures total percentage gain regardless of how long it took (e.g. doubling your money is a 100% absolute return whether it takes 2 years or 20 years). CAGR incorporates time, showing that doubling in 2 years is a 41.4% CAGR, while doubling in 20 years is a 3.5% CAGR."
   - q: "Why can't I just take a simple arithmetic average of yearly returns?"
-    a: "Simple arithmetic averages give misleading results due to compounding. If a portfolio drops 50% in Year 1 and gains 50% in Year 2, the arithmetic average is 0%, but your actual money dropped from $100 to $50 to $75 (a real loss of 25%). CAGR accurately reflects this loss as a -13.4% compound annual return."
+ a: "Simple arithmetic averages give misleading results due to compounding. If a portfolio drops 50% in Year 1 and gains 50% in Year 2, the arithmetic average is 0%, but your actual money dropped from 100 to 50 to 75 (a real loss of 25%). CAGR accurately reflects this loss as a -13.4% compound annual return."
 references:
   - "https://www.sec.gov/investor/pubs/inwstors.htm"
   - "https://en.wikipedia.org/wiki/Compound_annual_growth_rate"
@@ -60,7 +60,7 @@ references:
 
 The **Compound Annual Growth Rate (CAGR)** is one of the most useful metrics in finance for measuring investment performance over time. It represents the constant annual rate at which an investment would have grown if it compounded at a steady rate from its initial value to its final valuation.
 
-This calculator computes **CAGR percentage, absolute return percentage, return multiple ($x$), and total profit**.
+This calculator computes **CAGR percentage, absolute return percentage, return multiple (x), and total profit**.
 
 ---
 
@@ -71,20 +71,20 @@ Unlike simple average returns, CAGR accounts for compound growth over multi-year
 #### Mathematical Calculation Formulas
 
 #### 1. Compound Annual Growth Rate (CAGR)
-$$\text{CAGR} = \left[\left(\frac{\text{Final Value}}{\text{Initial Value}}\right)^{\frac{1}{t}} - 1\right] \times 100$$
+CAGR = frac(Final Value){Initial Value}^(1 / t) - 1 × 100
 
 #### 2. Absolute Return Rate
-$$\text{Absolute Return \%} = \left(\frac{\text{Final Value} - \text{Initial Value}}{\text{Initial Value}}\right) \times 100$$
+Absolute Return % = frac(Final Value - Initial Value){Initial Value} × 100
 
-#### 3. Return Multiple ($x$) & Total Profit
-$$\text{Return Multiple} = \frac{\text{Final Value}}{\text{Initial Value}}$$
+#### 3. Return Multiple (x) & Total Profit
+Return Multiple = frac(Final Value){Initial Value}
 
-$$\text{Total Absolute Profit} = \text{Final Value} - \text{Initial Value}$$
+Total Absolute Profit = Final Value - Initial Value
 
 Where:
 - **Final Value**: Current or ending valuation of the investment.
 - **Initial Value**: Starting purchase price or initial deposit.
-- **$t$**: Total holding period in years.
+- **t**: Total holding period in years.
 
 ---
 
@@ -93,14 +93,13 @@ Where:
 Suppose you invest **$10,000** in a fund that grows to **$20,000** over **5 years**:
 
 1. **Calculate CAGR**:
-   $$\text{CAGR} = \left(\frac{20,000}{10,000}\right)^{\frac{1}{5}} - 1 = (2)^{0.2} - 1 = 1.148698 - 1 \approx \mathbf{14.87\%}$$
+ CAGR = (20,000 / 10,000)^(1 / 5) - 1 = (2)^0.2 - 1 = 1.148698 - 1 ≈ 14.87%
 2. **Calculate Absolute Return**:
-   $$\text{Absolute Return} = \left(\frac{20,000 - 10,000}{10,000}\right) \times 100 = \mathbf{100.00\%}$$
+ Absolute Return = (20,000 - 10,000 / 10,000) × 100 = 100.00%
 3. **Calculate Return Multiple**:
-   $$\text{Return Multiple} = \frac{20,000}{10,000} = \mathbf{2.00x}$$
+ Return Multiple = (20,000 / 10,000) = 2.00x
 4. **Calculate Total Profit**:
-   $$\text{Profit} = 20,000 - 10,000 = \mathbf{\$10,000}$$
-
+ Profit = 20,000 - 10,000 = \10,000 
 ---
 
 ### Frequently Asked Questions (FAQ)

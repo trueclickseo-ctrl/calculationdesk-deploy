@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Students, teachers, researchers, analysts, and business professionals."
   limitations: "Calculates descriptive statistics for raw user-entered numeric arrays."
   keyTakeaways:
-    - "Calculates Arithmetic Mean as total sum divided by data count ($N$)."
-    - "Identifies Median as the physical middle value when data is ordered."
-    - "Identifies Mode as the most frequently occurring value(s)."
-    - "Parses raw text separated by commas, spaces, semicolons, or newlines."
+ - "Calculates Arithmetic Mean as total sum divided by data count (N)."
+ - "Identifies Median as the physical middle value when data is ordered."
+ - "Identifies Mode as the most frequently occurring value(s)."
+ - "Parses raw text separated by commas, spaces, semicolons, or newlines."
 peopleAlsoAsk:
   - "What is the formula for calculating arithmetic mean?"
   - "What is the difference between mean, median, and mode?"
@@ -42,14 +42,14 @@ peopleAlsoAsk:
   - "How does an outlier affect the mean versus the median?"
 examples:
   - title: "Statistical Analysis of Dataset (10, 15, 10, 20, 25)"
-    inputs: "Numeric Dataset = 10, 15, 10, 20, 25"
-    calculation: "Count N = 5. Sorted Dataset = 10, 10, 15, 20, 25. Sum = 10 + 10 + 15 + 20 + 25 = 80. Mean = 80 / 5 = 16.00. Median = 15.00. Mode = 10 (appears twice). Min = 10, Max = 25. Range = 25 - 10 = 15."
-    result: "Arithmetic Mean = 16.00 | Median = 15.00 | Mode = 10 | Range = 15 | Total Sum = 80"
+ inputs: "Numeric Dataset = 10, 15, 10, 20, 25"
+ calculation: "Count N = 5. Sorted Dataset = 10, 10, 15, 20, 25. Sum = 10 + 10 + 15 + 20 + 25 = 80. Mean = 80 / 5 = 16.00. Median = 15.00. Mode = 10 (appears twice). Min = 10, Max = 25. Range = 25 - 10 = 15."
+ result: "Arithmetic Mean = 16.00 | Median = 15.00 | Mode = 10 | Range = 15 | Total Sum = 80"
 faqs:
   - q: "What is the difference between Mean and Median?"
-    a: "The Mean is the mathematical average (sum divided by count). The Median is the physical middle number in a sorted dataset. Extreme values (outliers) skew the mean significantly, whereas the median remains resistant to outliers."
+ a: "The Mean is the mathematical average (sum divided by count). The Median is the physical middle number in a sorted dataset. Extreme values (outliers) skew the mean significantly, whereas the median remains resistant to outliers."
   - q: "What input formats are supported?"
-    a: "You can paste or enter numbers separated by commas, spaces, semicolons, or line breaks (newlines). The calculator automatically parses all valid numeric inputs."
+ a: "You can paste or enter numbers separated by commas, spaces, semicolons, or line breaks (newlines). The calculator automatically parses all valid numeric inputs."
 references:
   - "https://www.mathsisfun.com/mean.html"
 ---
@@ -58,24 +58,24 @@ references:
 
 Calculating the **average (arithmetic mean)** of a dataset provides a central summary metric representing a group of numbers.
 
-This calculator parses any numeric dataset and computes the **arithmetic mean, median, mode(s), minimum, maximum, data range, total sum, and count ($N$)**.
+This calculator parses any numeric dataset and computes the **arithmetic mean, median, mode(s), minimum, maximum, data range, total sum, and count (N)**.
 
 ---
 
 ### How Statistical Calculations Work
 
-1. **Data Count ($N$)**: Total number of valid numeric values in the dataset.
-2. **Total Sum ($\sum x$)**:
-   $$\text{Sum} = \sum_{k=1}^{N} x_k$$
+1. **Data Count (N)**: Total number of valid numeric values in the dataset.
+2. **Total Sum (sum x)**:
+ Sum = sum_{k=1}^N x_k
 3. **Arithmetic Mean**:
-   $$\text{Mean} = \frac{\sum_{k=1}^{N} x_k}{N}$$
+ Mean = frac(sum_{k=1)^N x_k}{N}
 4. **Median**:
-   - Sort dataset in ascending order ($x_1 \le x_2 \le \dots \le x_N$).
-   - If $N$ is odd: $\text{Median} = x_{\frac{N+1}{2}}$.
-   - If $N$ is even: $\text{Median} = \frac{x_{\frac{N}{2}} + x_{\frac{N}{2}+1}}{2}$.
-5. **Mode**: The value(s) that appear with the highest frequency (if frequency $> 1$).
+ - Sort dataset in ascending order (x_1 le x_2 le dots le x_N).
+ - If N is odd: Median = x_{(N+1 / 2)}.
+ - If N is even: Median = (x_{frac(N / 2)) + x_{(N / 2)+1}}{2}.
+5. **Mode**: The value(s) that appear with the highest frequency (if frequency > 1$).
 6. **Data Range**:
-   $$\text{Range} = \text{Maximum Value} - \text{Minimum Value}$$
+ Range = Maximum Value - Minimum Value
 
 ---
 
@@ -84,18 +84,18 @@ This calculator parses any numeric dataset and computes the **arithmetic mean, m
 Suppose you enter the following dataset: **10, 15, 10, 20, 25**:
 
 1. **Parse & Sort Dataset**:
-   - Count ($N$): **5 numbers**
-   - Sorted Array: **10, 10, 15, 20, 25**
+ - Count (N): **5 numbers**
+ - Sorted Array: **10, 10, 15, 20, 25**
 2. **Calculate Total Sum**:
-   $$\text{Sum} = 10 + 10 + 15 + 20 + 25 = \mathbf{80}$$
+ Sum = 10 + 10 + 15 + 20 + 25 = 80
 3. **Calculate Arithmetic Mean**:
-   $$\text{Mean} = \frac{80}{5} = \mathbf{16.00}$$
+ Mean = (80 / 5) = 16.00
 4. **Determine Median**:
-   - Middle value at position 3 ($x_3$): **15.00**
+ - Middle value at position 3 (x_3): **15.00**
 5. **Determine Mode & Range**:
-   - Mode: **10** (appears 2 times)
-   - Min = **10**, Max = **25**
-   - Range: $25 - 10 = \mathbf{15.00}$
+ - Mode: **10** (appears 2 times)
+ - Min = **10**, Max = **25**
+ - Range: 25 - 10 = 15.00$
 
 ---
 

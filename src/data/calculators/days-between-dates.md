@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Project managers, employees, students, event planners, legal staff, and travelers."
   limitations: "Calculates total calendar day spans with optional inclusive end-date toggle."
   keyTakeaways:
-    - "Calculates Total Days difference and Weeks + Remaining Days breakdown."
-    - "Features an 'Include end date in calculation (+1 day)' checkbox."
-    - "Exclusive counting measures midnight-to-midnight elapsed intervals."
-    - "Inclusive counting includes both the start day and the end day in the total count."
+ - "Calculates Total Days difference and Weeks + Remaining Days breakdown."
+ - "Features an 'Include end date in calculation (+1 day)' checkbox."
+ - "Exclusive counting measures midnight-to-midnight elapsed intervals."
+ - "Inclusive counting includes both the start day and the end day in the total count."
 peopleAlsoAsk:
   - "What is the difference between inclusive and exclusive date counting?"
   - "Why does including the end date add 1 day to the total?"
@@ -42,20 +42,20 @@ peopleAlsoAsk:
   - "How are weeks and remaining days calculated from total days?"
 examples:
   - title: "Worked Date Span Example (June 1, 2026 to June 10, 2026)"
-    inputs: "Start Date = 2026-06-01, End Date = 2026-06-10, Include End Date = False"
-    calculation: "Epoch timestamp difference = 9 days. Weeks breakdown = 1 week and 2 remaining days."
-    result: "Exclusive Total Days = 9 days | Weekly Breakdown = 1 week 2 days"
+ inputs: "Start Date = 2026-06-01, End Date = 2026-06-10, Include End Date = False"
+ calculation: "Epoch timestamp difference = 9 days. Weeks breakdown = 1 week and 2 remaining days."
+ result: "Exclusive Total Days = 9 days | Weekly Breakdown = 1 week 2 days"
   - title: "Inclusive Date Span Example (June 1, 2026 to June 10, 2026)"
-    inputs: "Start Date = 2026-06-01, End Date = 2026-06-10, Include End Date = True"
-    calculation: "Exclusive count = 9 days + 1 inclusive day = 10 total calendar days. Weeks breakdown = 1 week and 3 remaining days."
-    result: "Inclusive Total Days = 10 days | Weekly Breakdown = 1 week 3 days"
+ inputs: "Start Date = 2026-06-01, End Date = 2026-06-10, Include End Date = True"
+ calculation: "Exclusive count = 9 days + 1 inclusive day = 10 total calendar days. Weeks breakdown = 1 week and 3 remaining days."
+ result: "Inclusive Total Days = 10 days | Weekly Breakdown = 1 week 3 days"
 faqs:
   - q: "What is the difference between exclusive and inclusive date counting?"
-    a: "Exclusive counting measures elapsed midnight-to-midnight intervals (e.g. June 1 to June 10 is 9 elapsed days). Inclusive counting includes both the starting day and ending day (e.g. June 1 to June 10 is 10 calendar days)."
+ a: "Exclusive counting measures elapsed midnight-to-midnight intervals (e.g. June 1 to June 10 is 9 elapsed days). Inclusive counting includes both the starting day and ending day (e.g. June 1 to June 10 is 10 calendar days)."
   - q: "When should I check 'Include end date in calculation (+1 day)'?"
-    a: "Check inclusive counting when calculating active work periods, event durations, or hotel stays where both the arrival day and departure day count towards the total."
+ a: "Check inclusive counting when calculating active work periods, event durations, or hotel stays where both the arrival day and departure day count towards the total."
   - q: "Does the calculator account for leap years?"
-    a: "Yes. Epoch timestamp calculations automatically account for 366-day leap years (including February 29)."
+ a: "Yes. Epoch timestamp calculations automatically account for 366-day leap years (including February 29)."
 references:
   - "https://www.timeanddate.com/date/duration.html"
 ---
@@ -65,8 +65,8 @@ references:
 When calculating the duration between two dates, one crucial detail often determines the correct answer: **are you counting elapsed time, or are you counting inclusive calendar days?**
 
 For example, if a conference runs from **June 1 to June 10**:
-- **Elapsed Days (Exclusive)**: $10 - 1 = \mathbf{9\text{ days}}$ (9 full 24-hour periods elapsed between midnight June 1 and midnight June 10).
-- **Calendar Days (Inclusive)**: $10 - 1 + 1 = \mathbf{10\text{ days}}$ (both June 1 and June 10 are active conference days).
+- **Elapsed Days (Exclusive)**: 10 - 1 = 9 days (9 full 24-hour periods elapsed between midnight June 1 and midnight June 10).
+- **Calendar Days (Inclusive)**: 10 - 1 + 1 = 10 days (both June 1 and June 10 are active conference days).
 
 This calculator computes exact day spans between any two dates and features a checkbox toggle for **"Include end date in calculation (+1 day)"**.
 
@@ -76,14 +76,14 @@ This calculator computes exact day spans between any two dates and features a ch
 
 #### 1. Exclusive Day Count (Default)
 Evaluates the millisecond difference between the end date timestamp and start date timestamp:
-$$\text{Total Days} = \frac{T_{\text{End}} - T_{\text{Start}}}{1000 \times 60 \times 60 \times 24} = \frac{T_{\text{End}} - T_{\text{Start}}}{86,400,000}$$
+Total Days = frac(T_{End) - T_{Start}}{1000 × 60 × 60 × 24} = frac(T_{End) - T_{Start}}{86,400,000}
 
 #### 2. Inclusive Day Count (+1 Day)
 When the **"Include end date (+1 day)"** checkbox is enabled:
-$$\text{Inclusive Days} = \text{Total Days} + 1$$
+Inclusive Days = Total Days + 1
 
 #### 3. Weekly Breakdown
-$$\text{Weeks} = \text{trunc}\left(\frac{|\text{Total Days}|}{7}\right), \quad \text{Remaining Days} = |\text{Total Days}| \pmod 7$$
+Weeks = truncfrac(|Total Days|){7}, Remaining Days = |Total Days| ±od 7
 
 ---
 
@@ -93,12 +93,12 @@ Let's evaluate the date span between **June 1, 2026** (`2026-06-01`) and **June 
 
 #### Scenario A: Exclusive Count (Checkbox Unchecked)
 1. **Timestamp Difference**: June 10 minus June 1 = **9 elapsed days**.
-2. **Weekly Breakdown**: $9 / 7 = \mathbf{1\text{ week}}$ with $9 \pmod 7 = \mathbf{2\text{ remaining days}}$.
+2. **Weekly Breakdown**: 9 / 7 = 1 week with 9 ±od 7 = 2 remaining days.
 3. **Output**: **9 days** (1 week and 2 days).
 
 #### Scenario B: Inclusive Count (Checkbox Checked)
-1. **Apply Inclusive Rule**: $9\text{ elapsed days} + 1\text{ day} = \mathbf{10\text{ calendar days}}$.
-2. **Weekly Breakdown**: $10 / 7 = \mathbf{1\text{ week}}$ with $10 \pmod 7 = \mathbf{3\text{ remaining days}}$.
+1. **Apply Inclusive Rule**: 9 elapsed days + 1 day = 10 calendar days.
+2. **Weekly Breakdown**: 10 / 7 = 1 week with 10 ±od 7 = 3 remaining days.
 3. **Output**: **10 days** (1 week and 3 days).
 
 ---

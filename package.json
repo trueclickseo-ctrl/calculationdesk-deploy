@@ -9,7 +9,8 @@
     "build": "next build",
     "submit-indexnow": "node scripts/submit-indexnow.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate:content": "node scripts/validate-content.js"
   },
 
   "dependencies": {

@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Athletes, runners, outdoor workers, and individuals seeking general hydration guidance."
   limitations: "Provides fluid intake guidelines based on metabolic mass, sweat loss, and ambient heat. Individual hydration needs vary with medical conditions, diet, and humidity."
   keyTakeaways:
-    - "Calculates baseline water needs proportional to body weight (35 ml per kg / 0.5 oz per lb)."
-    - "Adds fluid for exercise duration (350 ml / 12 oz per 30 minutes of physical workout)."
-    - "Adds fluid for hot/humid climate temperatures (500 ml / 17 oz)."
-    - "Displays outputs in Milliliters (ml), Liters (L), Fluid Ounces (fl oz), and Standard Cups."
+ - "Calculates baseline water needs proportional to body weight (35 ml per kg / 0.5 oz per lb)."
+ - "Adds fluid for exercise duration (350 ml / 12 oz per 30 minutes of physical workout)."
+ - "Adds fluid for hot/humid climate temperatures (500 ml / 17 oz)."
+ - "Displays outputs in Milliliters (ml), Liters (L), Fluid Ounces (fl oz), and Standard Cups."
 peopleAlsoAsk:
   - "How much water should I drink per day based on my weight?"
   - "Does tea, coffee, or food count toward daily fluid intake?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "Can you drink too much water?"
 examples:
   - title: "Worked Hydration Example (80 kg, 60 mins exercise, Hot Climate)"
-    inputs: "Weight = 80 kg, Exercise = 60 mins, Climate = Hot"
-    calculation: "1. Base water = 80 kg * 35 ml = 2,800 ml. 2. Exercise addition = (60 / 30) * 350 ml = 700 ml. 3. Climate addition = 500 ml. 4. Total = 2,800 + 700 + 500 = 4,000 ml (4.0 Liters / 17 cups)."
-    result: "Recommended Daily Water = 4,000 ml (4.0 Liters | 135 fl oz | ~17 cups)"
+ inputs: "Weight = 80 kg, Exercise = 60 mins, Climate = Hot"
+ calculation: "1. Base water = 80 kg * 35 ml = 2,800 ml. 2. Exercise addition = (60 / 30) * 350 ml = 700 ml. 3. Climate addition = 500 ml. 4. Total = 2,800 + 700 + 500 = 4,000 ml (4.0 Liters / 17 cups)."
+ result: "Recommended Daily Water = 4,000 ml (4.0 Liters | 135 fl oz | ~17 cups)"
 faqs:
   - q: "Is the '8 glasses of water a day' rule accurate for everyone?"
-    a: "No. The '8x8 rule' (8 glasses of 8 ounces, or ~1.9 Liters) is a simple mnemonic, but actual fluid needs vary significantly depending on body size, sweat rate, physical activity, and ambient temperature."
+ a: "No. The '8x8 rule' (8 glasses of 8 ounces, or ~1.9 Liters) is a simple mnemonic, but actual fluid needs vary significantly depending on body size, sweat rate, physical activity, and ambient temperature."
   - q: "Do beverages like tea, coffee, and water-rich foods count toward fluid intake?"
-    a: "Yes. Caffeinated beverages (in moderate amounts), herbal teas, soups, fruits (like watermelon and oranges), and vegetables contribute toward your total daily fluid intake."
+ a: "Yes. Caffeinated beverages (in moderate amounts), herbal teas, soups, fruits (like watermelon and oranges), and vegetables contribute toward your total daily fluid intake."
   - q: "Can drinking too much water be dangerous?"
-    a: "Yes. Consuming extreme amounts of plain water faster than the kidneys can excrete it can lead to hyponatremia (abnormally low blood sodium levels). Listen to your body's thirst cues."
+ a: "Yes. Consuming extreme amounts of plain water faster than the kidneys can excrete it can lead to hyponatremia (abnormally low blood sodium levels). Listen to your body's thirst cues."
 references:
   - "https://www.nap.edu/read/10925/chapter/6"
 ---
@@ -77,17 +77,17 @@ The calculator builds your fluid target in 3 steps:
 
 #### 1. Baseline Requirement (Metabolic Mass)
 Your baseline water need scales directly with body weight:
-- **Metric System**: $\text{Base (ml)} = \text{Weight (kg)} \times 35\text{ ml/kg}$
-- **Imperial System**: $\text{Base (fl oz)} = \text{Weight (lbs)} \times 0.5\text{ oz/lb}$
+- **Metric System**: Base (ml) = Weight (kg) × 35 ml/kg
+- **Imperial System**: Base (fl oz) = Weight (lbs) × 0.5 oz/lb
 
 #### 2. Physical Exercise Adjustment
 Physical activity increases body heat and sweat rate. The calculator adds fluid for workout duration:
-- **Metric**: $+350\text{ ml}$ for every 30 minutes of physical workout ($\frac{\text{Exercise Mins}}{30} \times 350$).
-- **Imperial**: $+12\text{ fl oz}$ for every 30 minutes of physical workout ($\frac{\text{Exercise Mins}}{30} \times 12$).
+- **Metric**: +350 ml for every 30 minutes of physical workout (frac(Exercise Mins){30} × 350).
+- **Imperial**: +12 fl oz for every 30 minutes of physical workout (frac(Exercise Mins){30} × 12).
 
 #### 3. Climate Temperature Adjustment
 Hot or humid weather accelerates perspiration and respiratory evaporation:
-- **Hot Climate**: Adds $+500\text{ ml}$ ($+17\text{ fl oz}$).
+- **Hot Climate**: Adds +500 ml (+17 fl oz).
 - **Moderate / Cold Climate**: No additional adjustment.
 
 ---
@@ -97,16 +97,16 @@ Hot or humid weather accelerates perspiration and respiratory evaporation:
 Let's calculate the water target for an **80 kg individual** who performs **60 minutes of exercise** in a **hot climate**:
 
 1. **Calculate Baseline Fluid**:
-   $$\text{Base} = 80\text{ kg} \times 35\text{ ml/kg} = \mathbf{2,800\text{ ml}}$$
+ Base = 80 kg × 35 ml/kg = 2,800 ml
 2. **Calculate Exercise Fluid**:
-   $$\text{Exercise} = \frac{60\text{ mins}}{30} \times 350\text{ ml} = 2 \times 350 = \mathbf{700\text{ ml}}$$
+ Exercise = frac(60 mins){30} × 350 ml = 2 × 350 = 700 ml
 3. **Calculate Climate Fluid**:
-   $$\text{Hot Climate} = \mathbf{500\text{ ml}}$$
+ Hot Climate = 500 ml
 4. **Total Daily Fluid Target**:
-   $$\text{Total} = 2800 + 700 + 500 = \mathbf{4,000\text{ ml}} \quad (\mathbf{4.0\text{ Liters}})$$
+ Total = 2800 + 700 + 500 = 4,000 ml (4.0 Liters)
 5. **Convert to Cups and Fluid Ounces**:
-   - Fluid Ounces: $4000 / 29.5735 \approx \mathbf{135.3\text{ fl oz}}$.
-   - Standard 8-oz Cups: $135.3 / 8 \approx \mathbf{16.9\text{ cups}} \quad (\approx 17\text{ cups})$.
+ - Fluid Ounces: 4000 / 29.5735 ≈ 135.3 fl oz.
+ - Standard 8-oz Cups: 135.3 / 8 ≈ 16.9 cups (≈ 17 cups)$.
 
 *Verification Result: Total Water = **4,000 ml** (4.0 L / 135 fl oz / ~17 cups).*
 

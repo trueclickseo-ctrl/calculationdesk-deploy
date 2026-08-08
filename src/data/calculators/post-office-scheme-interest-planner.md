@@ -31,11 +31,11 @@ aiSummary:
   whoShouldUse: "Retirees, conservative savers, senior citizens, and low-risk investors."
   limitations: "Calculates returns based on official scheme interest rates and statutory deposit limits loaded in the planner."
   keyTakeaways:
-    - "POMIS pays monthly income (₹9 Lakh single / ₹15 Lakh joint statutory account limit)."
-    - "NSC compounds annually over a fixed 5-year tenure."
-    - "KVP doubles initial principal over a statutory 115-month holding period."
-    - "SCSS pays quarterly interest for senior citizens (up to ₹30 Lakh deposit limit)."
-    - "POTD compounds quarterly for 1, 2, 3, or 5-year term deposits."
+ - "POMIS pays monthly income (₹9 Lakh single / ₹15 Lakh joint statutory account limit)."
+ - "NSC compounds annually over a fixed 5-year tenure."
+ - "KVP doubles initial principal over a statutory 115-month holding period."
+ - "SCSS pays quarterly interest for senior citizens (up to ₹30 Lakh deposit limit)."
+ - "POTD compounds quarterly for 1, 2, 3, or 5-year term deposits."
 peopleAlsoAsk:
   - "What is the monthly income on a ₹9 Lakh POMIS deposit?"
   - "What is the interest rate for Senior Citizen Savings Scheme (SCSS)?"
@@ -43,16 +43,16 @@ peopleAlsoAsk:
   - "Which Post Office deposits qualify for Section 80C tax benefits?"
 examples:
   - title: "5-Year POMIS ($900,000 at 7.4% p.a. interest rate)"
-    inputs: "Scheme = POMIS, Principal = ₹9,00,000, Rate = 7.4% p.a., Tenure = 5 Years"
-    calculation: "Monthly Payout = (9,00,000 × 7.4) / 1200 = ₹5,550. Total Interest = 5,550 × 60 = ₹3,33,000. Maturity Principal = ₹9,00,000."
-    result: "Monthly Income = ₹5,550 | Total Interest Earned = ₹3,33,000 | Principal Returned = ₹9,00,000"
+ inputs: "Scheme = POMIS, Principal = ₹9,00,000, Rate = 7.4% p.a., Tenure = 5 Years"
+ calculation: "Monthly Payout = (9,00,000 × 7.4) / 1200 = ₹5,550. Total Interest = 5,550 × 60 = ₹3,33,000. Maturity Principal = ₹9,00,000."
+ result: "Monthly Income = ₹5,550 | Total Interest Earned = ₹3,33,000 | Principal Returned = ₹9,00,000"
 faqs:
   - q: "What is the single account deposit limit for POMIS?"
-    a: "The statutory deposit limit under the Post Office Monthly Income Scheme (POMIS) is ₹9,00,000 for a single account and ₹15,00,000 for a joint account."
+ a: "The statutory deposit limit under the Post Office Monthly Income Scheme (POMIS) is ₹9,00,000 for a single account and ₹15,00,000 for a joint account."
   - q: "How are SCSS quarterly interest payments calculated?"
-    a: "SCSS interest is calculated as $\text{Quarterly Payout} = \frac{P \times R}{4 \times 100}$ and paid out at the end of each financial quarter over its 5-year tenure."
+ a: "SCSS interest is calculated as Quarterly Payout = (P × R / 4 × 100) and paid out at the end of each financial quarter over its 5-year tenure."
   - q: "Does Post Office Time Deposit (POTD) offer tax savings?"
-    a: "Only the 5-year Post Office Time Deposit (POTD) qualifies for income tax deduction under Section 80C. 1, 2, and 3-year term deposits do not offer 80C benefits."
+ a: "Only the 5-year Post Office Time Deposit (POTD) qualifies for income tax deduction under Section 80C. 1, 2, and 3-year term deposits do not offer 80C benefits."
 references:
   - "https://www.indiapost.gov.in"
 ---
@@ -72,31 +72,31 @@ This planner supports five major Post Office schemes: **POMIS, NSC, KVP, SCSS, a
 - **Current Planner Rate**: **7.4% p.a.**
 - **Statutory Limit**: ₹9,00,000 (Single) / ₹15,00,000 (Joint)
 - **Formula**:
-  $$\text{Monthly Payout} = \frac{P \times R}{12 \times 100}$$
+  Monthly Payout = (P × R / 12 × 100)
 
 #### 2. National Savings Certificate (NSC)
 - **Tenure**: 5 Years (Compounded Annually)
 - **Current Planner Rate**: **7.7% p.a.**
 - **Formula**:
-  $$\text{Maturity Amount} = P \times \left(1 + \frac{R}{100}\right)^5$$
+  Maturity Amount = P × 1 + (R / 100)^5
 
 #### 3. Kisan Vikas Patra (KVP)
 - **Tenure**: 115 Months (~9.6 Years)
 - **Current Planner Rate**: **7.5% p.a.**
-- **Formula**: Doubles principal capital ($\text{Maturity Amount} = P \times 2$).
+- **Formula**: Doubles principal capital (Maturity Amount = P × 2).
 
 #### 4. Senior Citizen Savings Scheme (SCSS)
 - **Tenure**: 5 Years (Quarterly Payout)
 - **Current Planner Rate**: **8.2% p.a.**
 - **Statutory Limit**: ₹30,00,000
 - **Formula**:
-  $$\text{Quarterly Payout} = \frac{P \times R}{4 \times 100}$$
+  Quarterly Payout = (P × R / 4 × 100)
 
 #### 5. Post Office Time Deposit (POTD)
 - **Tenure**: 1, 2, 3, or 5 Years (Compounded Quarterly)
 - **Planner Rates**: 1-Yr: 6.9%, 2-Yr: 7.0%, 3-Yr: 7.1%, 5-Yr: 7.5%
 - **Formula**:
-  $$\text{Maturity Amount} = P \times \left(1 + \frac{R}{4 \times 100}\right)^{4t}$$
+  Maturity Amount = P × 1 + (R / 4 × 100)^4t
 
 ---
 
@@ -105,13 +105,13 @@ This planner supports five major Post Office schemes: **POMIS, NSC, KVP, SCSS, a
 Suppose you deposit **₹9,00,000** (maximum single account limit) into the **Post Office Monthly Income Scheme (POMIS)** at **7.4% p.a.** for **5 years (60 months)**:
 
 1. **Calculate Monthly Income Payout**:
-   $$\text{Monthly Income} = \frac{9,00,000 \times 7.4}{12 \times 100} = \frac{66,600}{12} = \mathbf{₹5,550\text{ / month}}$$
+ Monthly Income = (9,00,000 × 7.4 / 12 × 100) = (66,600 / 12) = ₹5,550 / month
 2. **Calculate Total Cumulative Interest (60 Months)**:
-   $$\text{Total Interest} = ₹5,550 \times 60 = \mathbf{₹3,33,000}$$
+ Total Interest = ₹5,550 × 60 = ₹3,33,000
 3. **Maturity Summary**:
-   - **Monthly Income Received**: **₹5,550**
-   - **Total Interest Collected**: **₹3,33,000**
-   - **Principal Returned at Maturity**: **₹9,00,000**
+ - **Monthly Income Received**: **₹5,550**
+ - **Total Interest Collected**: **₹3,33,000**
+ - **Principal Returned at Maturity**: **₹9,00,000**
 
 ---
 

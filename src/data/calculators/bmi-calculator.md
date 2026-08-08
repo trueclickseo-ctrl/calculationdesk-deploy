@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Adults seeking a general weight indicator, healthcare educators, and fitness tracking enthusiasts."
   limitations: "BMI is a general screening tool, not a direct measure of body fat or individual health status. Muscular individuals, athletes, pregnant women, and older adults may receive inaccurate classifications."
   keyTakeaways:
-    - "Calculates BMI in both Metric (kg/cm) and Imperial (lbs/ft/in) unit systems."
-    - "Displays general adult screening categories: Underweight (<18.5), Normal weight (18.5-24.9), Overweight (25-29.9), and Obese (30+)."
-    - "Integrates BMR (Basal Metabolic Rate) estimates via the Mifflin-St Jeor equation."
-    - "Emphasizes that BMI does not directly measure body fat or diagnose health conditions."
+ - "Calculates BMI in both Metric (kg/cm) and Imperial (lbs/ft/in) unit systems."
+ - "Displays general adult screening categories: Underweight (<18.5), Normal weight (18.5-24.9), Overweight (25-29.9), and Obese (30+)."
+ - "Integrates BMR (Basal Metabolic Rate) estimates via the Mifflin-St Jeor equation."
+ - "Emphasizes that BMI does not directly measure body fat or diagnose health conditions."
 peopleAlsoAsk:
   - "How is BMI calculated?"
   - "What is a healthy BMI range for adults?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "Does BMI apply the same way to children and teenagers?"
 examples:
   - title: "Worked Metric BMI Example (70 kg, 175 cm)"
-    inputs: "Weight = 70 kg, Height = 175 cm (1.75 m), Age = 25, Gender = Male"
-    calculation: "1. Height squared = 1.75 * 1.75 = 3.0625 m². 2. BMI = 70 / 3.0625 = 22.86. 3. Category: Normal weight (18.5 - 24.9). 4. BMR (Mifflin-St Jeor) = 10(70) + 6.25(175) - 5(25) + 5 = 1,674 kcal/day."
-    result: "BMI Score = 22.9 | Category = Normal weight | Healthy Weight Range = 56.7 kg to 76.3 kg | BMR = 1,674 kcal/day"
+ inputs: "Weight = 70 kg, Height = 175 cm (1.75 m), Age = 25, Gender = Male"
+ calculation: "1. Height squared = 1.75 * 1.75 = 3.0625 m². 2. BMI = 70 / 3.0625 = 22.86. 3. Category: Normal weight (18.5 - 24.9). 4. BMR (Mifflin-St Jeor) = 10(70) + 6.25(175) - 5(25) + 5 = 1,674 kcal/day."
+ result: "BMI Score = 22.9 | Category = Normal weight | Healthy Weight Range = 56.7 kg to 76.3 kg | BMR = 1,674 kcal/day"
 faqs:
   - q: "Is BMI a diagnostic tool for personal health?"
-    a: "No. BMI is an indirect statistical screening ratio that compares weight to height. It does not measure body fat directly, nor does it diagnose illness, cardiovascular risk, or metabolic health."
+ a: "No. BMI is an indirect statistical screening ratio that compares weight to height. It does not measure body fat directly, nor does it diagnose illness, cardiovascular risk, or metabolic health."
   - q: "Why might BMI classify an athlete as overweight?"
-    a: "BMI cannot distinguish between muscle mass and fat mass. Dense muscle weighs more than fat per unit volume, causing muscular individuals to have a high BMI despite having very low body fat."
+ a: "BMI cannot distinguish between muscle mass and fat mass. Dense muscle weighs more than fat per unit volume, causing muscular individuals to have a high BMI despite having very low body fat."
   - q: "How does adult BMI differ from child and teenager BMI?"
-    a: "Adult BMI categories use fixed cutoffs (e.g. 18.5 to 24.9). Children and teenagers (ages 2 to 19) must be evaluated using BMI-for-age percentiles that account for ongoing growth and developmental changes."
+ a: "Adult BMI categories use fixed cutoffs (e.g. 18.5 to 24.9). Children and teenagers (ages 2 to 19) must be evaluated using BMI-for-age percentiles that account for ongoing growth and developmental changes."
 references:
   - "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html"
 ---
@@ -74,11 +74,11 @@ This calculator computes your **BMI score** in both **Metric** and **Imperial** 
 BMI is calculated by dividing body weight by the square of body height.
 
 #### 1. Metric Formula (Kilograms and Meters)
-$$\text{BMI} = \frac{\text{Weight (kg)}}{[\text{Height (m)}]^2}$$
+BMI = frac(Weight (kg)){[Height (m)]^2}
 *(If height is in centimeters, divide by 100 first to get meters).*
 
 #### 2. Imperial Formula (Pounds and Inches)
-$$\text{BMI} = 703 \times \frac{\text{Weight (lbs)}}{[\text{Height (inches)}]^2}$$
+BMI = 703 × frac(Weight (lbs)){[Height (inches)]^2}
 
 ---
 
@@ -100,24 +100,24 @@ The World Health Organization (WHO) and the Centers for Disease Control and Prev
 ### Step-by-Step Worked Numerical Example (Verified against Code)
 
 Let's calculate the BMI for a **25-year-old male** with the following measurements:
-- **Height**: $175\text{ cm}$ ($1.75\text{ meters}$)
-- **Weight**: $70\text{ kg}$
+- **Height**: 175 cm ($1.75 meters)
+- **Weight**: 70 kg
 
 #### 1. Calculate Height Squared
-$$\text{Height}^2 = 1.75 \times 1.75 = \mathbf{3.0625\text{ m}^2}$$
+Height^2 = 1.75 × 1.75 = 3.0625 m^2
 
 #### 2. Calculate BMI Score
-$$\text{BMI} = \frac{70}{3.0625} = 22.857 \approx \mathbf{22.9}$$
+BMI = (70 / 3.0625) = 22.857 ≈ 22.9
 
 #### 3. Evaluate Screening Category
-A score of $22.9$ falls within the **Normal weight** range ($18.5\text{ to } 24.9$).
+A score of 22.9$ falls within the **Normal weight** range ($18.5 to  24.9$).
 
-#### 4. Calculate Healthy Weight Boundaries for $1.75\text{ m}$
-- **Min Healthy Weight ($18.5$)**: $18.5 \times 3.0625 = \mathbf{56.7\text{ kg}}$.
-- **Max Healthy Weight ($24.9$)**: $24.9 \times 3.0625 = \mathbf{76.3\text{ kg}}$.
+#### 4. Calculate Healthy Weight Boundaries for 1.75 m
+- **Min Healthy Weight ($18.5$)**: 18.5 × 3.0625 = 56.7 kg.
+- **Max Healthy Weight ($24.9$)**: 24.9 × 3.0625 = 76.3 kg.
 
 #### 5. Calculate BMR (Mifflin-St Jeor Equation)
-$$\text{BMR} = 10(70) + 6.25(175) - 5(25) + 5 = 700 + 1093.75 - 125 + 5 = \mathbf{1,674\text{ kcal/day}}$$
+BMR = 10(70) + 6.25(175) - 5(25) + 5 = 700 + 1093.75 - 125 + 5 = 1,674 kcal/day
 
 ---
 

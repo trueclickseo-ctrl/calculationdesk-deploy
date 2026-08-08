@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "HR managers, payroll administrators, project managers, employees, and logistics coordinators."
   limitations: "Excludes selected weekend days (Saturdays and/or Sundays). Public holidays vary by location and are not automatically subtracted."
   keyTakeaways:
-    - "Calculates exact Working / Business Days, Total Calendar Days, and Excluded Weekend Days."
-    - "Provides checkbox controls to toggle Saturday and Sunday exclusions independently."
-    - "Inclusive calculation: includes both the start date and end date in the calendar evaluation."
-    - "Differentiates working days from calendar days."
+ - "Calculates exact Working / Business Days, Total Calendar Days, and Excluded Weekend Days."
+ - "Provides checkbox controls to toggle Saturday and Sunday exclusions independently."
+ - "Inclusive calculation: includes both the start date and end date in the calendar evaluation."
+ - "Differentiates working days from calendar days."
 peopleAlsoAsk:
   - "What is the difference between working days and calendar days?"
   - "Are both start and end dates included in the working days count?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "How do Saturday and Sunday exclusions affect the working days count?"
 examples:
   - title: "Worked Schedule Example (June 1, 2026 to June 10, 2026)"
-    inputs: "Start Date = 2026-06-01, End Date = 2026-06-10, Exclude Sat = True, Exclude Sun = True"
-    calculation: "10 inclusive calendar days. Sat June 6 = weekend (1). Sun June 7 = weekend (1). Total weekend days = 2. Working days = 10 - 2 = 8 days."
-    result: "Working Days = 8 days | Total Calendar Days = 10 days | Weekend Days Excluded = 2 days"
+ inputs: "Start Date = 2026-06-01, End Date = 2026-06-10, Exclude Sat = True, Exclude Sun = True"
+ calculation: "10 inclusive calendar days. Sat June 6 = weekend (1). Sun June 7 = weekend (1). Total weekend days = 2. Working days = 10 - 2 = 8 days."
+ result: "Working Days = 8 days | Total Calendar Days = 10 days | Weekend Days Excluded = 2 days"
 faqs:
   - q: "What is the difference between working days and calendar days?"
-    a: "Calendar days include every day of the week (Monday through Sunday). Working days include only active business days, excluding non-working weekend days (Saturdays and Sundays)."
+ a: "Calendar days include every day of the week (Monday through Sunday). Working days include only active business days, excluding non-working weekend days (Saturdays and Sundays)."
   - q: "Is the start date included in the calculation?"
-    a: "Yes. The calculator evaluates working days inclusively, counting both the starting date and ending date in the range."
+ a: "Yes. The calculator evaluates working days inclusively, counting both the starting date and ending date in the range."
   - q: "Does the calculator automatically subtract public holidays?"
-    a: "No. Public holidays vary by country, state, and company policy. The calculator excludes standard weekends; you should manually subtract any local public holidays from the result."
+ a: "No. Public holidays vary by country, state, and company policy. The calculator excludes standard weekends; you should manually subtract any local public holidays from the result."
 references:
   - "https://www.timeanddate.com/date/workdays.html"
 ---
@@ -79,10 +79,10 @@ This calculator computes the exact number of **working days** between two dates,
 The calculator evaluates every date in the range from **Start Date** to **End Date (inclusive)**:
 
 1. **Date Range Loop**: Starts on `startDate` and steps forward 1 day at a time until `endDate` is reached.
-2. **Weekend Check**: Evaluates the day of the week for each date ($0 = \text{Sunday}, 6 = \text{Saturday}$).
-   - If Saturday and `excludeSat` is checked $\implies$ Increments `satCount` and skips adding to working days.
-   - If Sunday and `excludeSun` is checked $\implies$ Increments `sunCount` and skips adding to working days.
-   - Otherwise $\implies$ Increments `workDays`.
+2. **Weekend Check**: Evaluates the day of the week for each date ($0 = Sunday, 6 = Saturday).
+ - If Saturday and `excludeSat` is checked implies Increments `satCount` and skips adding to working days.
+ - If Sunday and `excludeSun` is checked implies Increments `sunCount` and skips adding to working days.
+ - Otherwise implies Increments `workDays`.
 
 ---
 
@@ -106,9 +106,9 @@ Let's evaluate the working days between **June 1, 2026** (`2026-06-01`) and **Ju
 | **June 10, 2026** | Wednesday | Weekday | Yes |
 
 #### 2. Calculation Totals
-- **Total Calendar Days**: $10\text{ days}$.
-- **Excluded Weekend Days**: $1\text{ Saturday} + 1\text{ Sunday} = \mathbf{2\text{ days}}$.
-- **Working Days**: $10 - 2 = \mathbf{8\text{ working days}}$.
+- **Total Calendar Days**: 10 days.
+- **Excluded Weekend Days**: 1 Saturday + 1 Sunday = 2 days.
+- **Working Days**: 10 - 2 = 8 working days.
 
 *Verification Result: Working Days = **8 days**, Total Calendar Days = **10 days**, Weekend Days Excluded = **2 days**.*
 

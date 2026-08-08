@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Logistics coordinators, banking staff, legal assistants, project managers, and online shoppers."
   limitations: "Steps business days forward or backward. Skips selected weekend days. Local public holidays must be accounted for separately."
   keyTakeaways:
-    - "Supports both Add (+) and Subtract (-) operations."
-    - "Steps day-by-day, skipping Saturday and Sunday weekend days."
-    - "Displays the calculated Target End Date and total Calendar Days Traversed."
-    - "Explains why 10 business days equals 14 calendar days when bridging two weekends."
+ - "Supports both Add (+) and Subtract (-) operations."
+ - "Steps day-by-day, skipping Saturday and Sunday weekend days."
+ - "Displays the calculated Target End Date and total Calendar Days Traversed."
+ - "Explains why 10 business days equals 14 calendar days when bridging two weekends."
 peopleAlsoAsk:
   - "Why does adding 5 business days to Friday take 7 calendar days?"
   - "How does the calculator move forward or backward through dates?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "How are public holidays handled when adding business days?"
 examples:
   - title: "Worked Add Business Days Example (Friday June 5, 2026 + 5 Business Days)"
-    inputs: "Start Date = 2026-06-05, Action = Add, Business Days = 5, Exclude Sat = True, Exclude Sun = True"
-    calculation: "Start: Fri Jun 5. Step 1: Sat Jun 6 (Weekend -> Skip). Step 2: Sun Jun 7 (Weekend -> Skip). Business Day 1: Mon Jun 8. Business Day 2: Tue Jun 9. Business Day 3: Wed Jun 10. Business Day 4: Thu Jun 11. Business Day 5: Fri Jun 12. Target Date = Friday, June 12, 2026 (7 calendar days traversed)."
-    result: "Calculated End Date = Fri Jun 12 2026 | Calendar Days Traversed = 7 days"
+ inputs: "Start Date = 2026-06-05, Action = Add, Business Days = 5, Exclude Sat = True, Exclude Sun = True"
+ calculation: "Start: Fri Jun 5. Step 1: Sat Jun 6 (Weekend -> Skip). Step 2: Sun Jun 7 (Weekend -> Skip). Business Day 1: Mon Jun 8. Business Day 2: Tue Jun 9. Business Day 3: Wed Jun 10. Business Day 4: Thu Jun 11. Business Day 5: Fri Jun 12. Target Date = Friday, June 12, 2026 (7 calendar days traversed)."
+ result: "Calculated End Date = Fri Jun 12 2026 | Calendar Days Traversed = 7 days"
 faqs:
   - q: "Why does 5 business days equal 7 calendar days when starting on Friday?"
-    a: "Starting on Friday means the immediate next two days are Saturday and Sunday. The calculator skips both weekend days, consuming 7 total calendar days to achieve 5 actual business days."
+ a: "Starting on Friday means the immediate next two days are Saturday and Sunday. The calculator skips both weekend days, consuming 7 total calendar days to achieve 5 actual business days."
   - q: "Does the start date itself count as one of the business days?"
-    a: "No. The calculator steps forward (or backward) starting from the next day, treating the start date as the baseline timestamp (Day 0)."
+ a: "No. The calculator steps forward (or backward) starting from the next day, treating the start date as the baseline timestamp (Day 0)."
   - q: "How should I handle public holidays?"
-    a: "Because public holidays vary by country and region, the calculator skips standard weekends only. If a holiday falls within your timeframe, add 1 additional calendar day to your target date for each holiday."
+ a: "Because public holidays vary by country and region, the calculator skips standard weekends only. If a holiday falls within your timeframe, add 1 additional calendar day to your target date for each holiday."
 references:
   - "https://www.timeanddate.com/date/workdays.html"
 ---
@@ -72,7 +72,7 @@ This calculator takes a **Start Date**, a number of **Business Days**, and an **
 * **Business Days**: Active working days (typically Monday through Friday). Weekends (Saturday and Sunday) are paused.
 
 #### Why 10 Business Days Equals 14 Calendar Days
-When bridging two full weekends, a 10-business-day span includes 4 weekend days ($2 \text{ Saturdays} + 2 \text{ Sundays}$). Therefore, $10 \text{ business days} = 14 \text{ calendar days}$.
+When bridging two full weekends, a 10-business-day span includes 4 weekend days ($2  Saturdays + 2  Sundays). Therefore, 10  business days = 14  calendar days.
 
 ---
 
@@ -82,10 +82,10 @@ The calculator evaluates target dates iteratively:
 
 1. **Set Baseline Date**: Initializes target date to `startDate` (Day 0).
 2. **Iterative Step Loop**: While `remainingDays > 0`:
-   - Increments target date by $+1$ day (for Add) or decrements by $-1$ day (for Subtract).
-   - Increments `calendarDaysChecked` by 1.
-   - Evaluates weekday index ($0 = \text{Sunday}, 6 = \text{Saturday}$).
-   - If day is NOT an excluded weekend $\implies$ Decrements `remainingDays` by 1.
+ - Increments target date by +1 day (for Add) or decrements by -1 day (for Subtract).
+ - Increments `calendarDaysChecked` by 1.
+ - Evaluates weekday index ($0 = Sunday, 6 = Saturday).
+ - If day is NOT an excluded weekend implies Decrements `remainingDays` by 1.
 3. **Return Output**: Outputs the final target date and total calendar days traversed.
 
 ---

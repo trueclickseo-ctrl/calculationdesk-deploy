@@ -31,9 +31,9 @@ aiSummary:
   whoShouldUse: "College students, university undergraduates, high school students, and academic counselors."
   limitations: "Calculates CGPA using the unweighted arithmetic average of semester GPAs."
   keyTakeaways:
-    - "Calculates CGPA as the equal-weighted arithmetic average of entered semester GPAs."
-    - "Provides an estimated percentage equivalent using the standard CBSE 9.5 multiplier scale."
-    - "Allows adding or removing custom semester rows."
+ - "Calculates CGPA as the equal-weighted arithmetic average of entered semester GPAs."
+ - "Provides an estimated percentage equivalent using the standard CBSE 9.5 multiplier scale."
+ - "Allows adding or removing custom semester rows."
 peopleAlsoAsk:
   - "What is the formula for calculating CGPA from semester GPAs?"
   - "Is CGPA calculated as a simple average or credit-weighted average in this tool?"
@@ -41,16 +41,16 @@ peopleAlsoAsk:
   - "What is the difference between SGPA and CGPA?"
 examples:
   - title: "4-Semester Academic Performance (GPAs: 8.5, 7.8, 8.2, 9.0)"
-    inputs: "Semester 1 GPA = 8.5, Semester 2 GPA = 7.8, Semester 3 GPA = 8.2, Semester 4 GPA = 9.0"
-    calculation: "Total GPAs = 8.5 + 7.8 + 8.2 + 9.0 = 33.5. Total Semesters n = 4. CGPA = 33.5 / 4 = 8.375 -> 8.38 / 10.0. Equivalent Percentage = 8.375 × 9.5 = 79.5625% -> 79.61%."
-    result: "Cumulative CGPA = 8.38 / 10.0 | Equivalent Percentage (CBSE Scale) = 79.61% | Semesters Evaluated = 4"
+ inputs: "Semester 1 GPA = 8.5, Semester 2 GPA = 7.8, Semester 3 GPA = 8.2, Semester 4 GPA = 9.0"
+ calculation: "Total GPAs = 8.5 + 7.8 + 8.2 + 9.0 = 33.5. Total Semesters n = 4. CGPA = 33.5 / 4 = 8.375 -> 8.38 / 10.0. Equivalent Percentage = 8.375 × 9.5 = 79.5625% -> 79.61%."
+ result: "Cumulative CGPA = 8.38 / 10.0 | Equivalent Percentage (CBSE Scale) = 79.61% | Semesters Evaluated = 4"
 faqs:
   - q: "Is CGPA calculated as a simple average or credit-weighted average in this calculator?"
-    a: "This calculator computes an unweighted arithmetic average of entered semester GPAs ($\text{CGPA} = \frac{\sum \text{GPA}}{n}$). If all semesters carry identical total credit requirements, this equals the credit-weighted result."
+ a: "This calculator computes an unweighted arithmetic average of entered semester GPAs (CGPA = frac(sum GPA){n}). If all semesters carry identical total credit requirements, this equals the credit-weighted result."
   - q: "How is the equivalent percentage calculated?"
-    a: "The calculator converts CGPA to percentage using the standard CBSE formula: $\text{Percentage} = \text{CGPA} \times 9.5$. Note that specific universities may use different multipliers (e.g. 10.0 or 9.3)."
+ a: "The calculator converts CGPA to percentage using the standard CBSE formula: Percentage = CGPA × 9.5. Note that specific universities may use different multipliers (e.g. 10.0 or 9.3)."
   - q: "What is the difference between SGPA and CGPA?"
-    a: "SGPA (Semester Grade Point Average) measures academic performance within a single semester. CGPA (Cumulative Grade Point Average) represents the overall cumulative performance across all completed semesters."
+ a: "SGPA (Semester Grade Point Average) measures academic performance within a single semester. CGPA (Cumulative Grade Point Average) represents the overall cumulative performance across all completed semesters."
 references:
   - "https://www.cbse.gov.in/"
 ---
@@ -66,14 +66,14 @@ This calculator computes your **overall cumulative CGPA, total semesters evaluat
 ### How the CGPA Calculation Works
 
 #### 1. Cumulative CGPA (Arithmetic Average)
-$$\text{CGPA} = \frac{\sum_{k=1}^{n} \text{GPA}_k}{n}$$
+CGPA = frac(sum_{k=1)^n GPA_k}{n}
 
 Where:
-- **$\text{GPA}_k$**: Grade point average achieved in semester $k$.
-- **$n$**: Total number of semesters evaluated.
+- **GPA_k**: Grade point average achieved in semester k.
+- **n**: Total number of semesters evaluated.
 
 #### 2. Equivalent Percentage Conversion (CBSE Scale)
-$$\text{Percentage (\%)} = \text{CGPA} \times 9.5$$
+Percentage (%) = CGPA × 9.5
 
 *Note: The 9.5 multiplier is the standard benchmark established by educational boards like CBSE. Institutional rules may vary.*
 
@@ -88,15 +88,15 @@ Suppose a student completes **4 semesters** with the following semester GPAs:
 - **Semester 4**: **9.0**
 
 1. **Calculate Total GPA Sum**:
-   $$\text{Sum} = 8.5 + 7.8 + 8.2 + 9.0 = \mathbf{33.5}$$
+ Sum = 8.5 + 7.8 + 8.2 + 9.0 = 33.5
 2. **Calculate Cumulative CGPA**:
-   $$\text{CGPA} = \frac{33.5}{4} = \mathbf{8.38\text{ / 10.0}}$$
+ CGPA = (33.5 / 4) = 8.38 / 10.0
 3. **Calculate Equivalent Percentage (CBSE 9.5 Multiplier)**:
-   $$\text{Percentage} = 8.375 \times 9.5 = \mathbf{79.61\%}$$
+ Percentage = 8.375 × 9.5 = 79.61%
 4. **Summary**:
-   - **Semesters Evaluated**: **4**
-   - **Cumulative CGPA**: **8.38 / 10.0**
-   - **Estimated Percentage**: **79.61%**
+ - **Semesters Evaluated**: **4**
+ - **Cumulative CGPA**: **8.38 / 10.0**
+ - **Estimated Percentage**: **79.61%**
 
 ---
 

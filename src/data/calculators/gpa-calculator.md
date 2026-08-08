@@ -31,9 +31,9 @@ aiSummary:
   whoShouldUse: "College undergraduates, university students, high school students, and academic advisors."
   limitations: "Calculates weighted GPA based on course letter grades and positive integer credit weights."
   keyTakeaways:
-    - "Uses exact credit-weighted GPA equation ($\frac{\sum \text{Grade Point} \times \text{Credits}}{\sum \text{Credits}}$)."
-    - "Maps letter grades onto the standard 4.3 scale ($A+ = 4.3, A = 4.0, B+ = 3.3, B = 3.0$, etc.)."
-    - "Higher-credit courses exert a proportionally larger impact on your term GPA."
+ - "Uses exact credit-weighted GPA equation (frac(sum Grade Point × Credits){sum Credits})."
+ - "Maps letter grades onto the standard 4.3 scale (A+ = 4.3, A = 4.0, B+ = 3.3, B = 3.0, etc.)."
+ - "Higher-credit courses exert a proportionally larger impact on your term GPA."
 peopleAlsoAsk:
   - "How is credit-weighted GPA calculated?"
   - "What are the numerical values for letter grades in a 4.0/4.3 GPA scale?"
@@ -41,16 +41,16 @@ peopleAlsoAsk:
   - "Does an F grade affect total credit hours in GPA calculations?"
 examples:
   - title: "3-Course Semester GPA Calculation (10 Total Credit Hours)"
-    inputs: "Course 1 (4 credits, Grade A = 4.0), Course 2 (3 credits, Grade B+ = 3.3), Course 3 (3 credits, Grade B = 3.0)"
-    calculation: "Points: Course 1 = 4 × 4.0 = 16.0; Course 2 = 3 × 3.3 = 9.9; Course 3 = 3 × 3.0 = 9.0. Total Grade Points = 16.0 + 9.9 + 9.0 = 34.9. Total Credits = 4 + 3 + 3 = 10. GPA = 34.9 / 10 = 3.490."
-    result: "Semester GPA = 3.490 / 4.3 Scale | Total Credit Hours = 10 credits | Total Grade Points = 34.9 points"
+ inputs: "Course 1 (4 credits, Grade A = 4.0), Course 2 (3 credits, Grade B+ = 3.3), Course 3 (3 credits, Grade B = 3.0)"
+ calculation: "Points: Course 1 = 4 × 4.0 = 16.0; Course 2 = 3 × 3.3 = 9.9; Course 3 = 3 × 3.0 = 9.0. Total Grade Points = 16.0 + 9.9 + 9.0 = 34.9. Total Credits = 4 + 3 + 3 = 10. GPA = 34.9 / 10 = 3.490."
+ result: "Semester GPA = 3.490 / 4.3 Scale | Total Credit Hours = 10 credits | Total Grade Points = 34.9 points"
 faqs:
   - q: "What letter grade scale is used in this calculator?"
-    a: "This calculator uses the standard college 4.3 grading scale: A+ = 4.3, A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D = 1.0, F = 0.0."
+ a: "This calculator uses the standard college 4.3 grading scale: A+ = 4.3, A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D = 1.0, F = 0.0."
   - q: "Why are credit hours important in GPA calculations?"
-    a: "Credit hours represent the weight or duration of a course. A 4-credit course carries twice the weight of a 2-credit course, meaning its grade has double the influence on your final GPA."
+ a: "Credit hours represent the weight or duration of a course. A 4-credit course carries twice the weight of a 2-credit course, meaning its grade has double the influence on your final GPA."
   - q: "What is the difference between GPA and CGPA?"
-    a: "GPA (Grade Point Average) represents your performance in a single semester or term. CGPA (Cumulative Grade Point Average) represents your aggregate cumulative performance across all completed semesters throughout your program."
+ a: "GPA (Grade Point Average) represents your performance in a single semester or term. CGPA (Cumulative Grade Point Average) represents your aggregate cumulative performance across all completed semesters throughout your program."
 references:
   - "https://www.collegeboard.org/"
 ---
@@ -65,7 +65,7 @@ This calculator computes your **weighted semester GPA, total accumulated grade p
 
 ### How Credit-Weighted GPA Calculations Work
 
-$$\text{GPA} = \frac{\sum_{k=1}^{n} (\text{Grade Point}_k \times \text{Credits}_k)}{\sum_{k=1}^{n} \text{Credits}_k}$$
+GPA = frac(sum_{k=1)^n (Grade Point_k × Credits_k)}{sum_{k=1}^n Credits_k}
 
 #### Standard Letter Grade Point Scale:
 - **A+** = 4.3 | **A** = 4.0 | **A-** = 3.7
@@ -83,23 +83,23 @@ Suppose you take **3 courses** in a semester with the following records:
 3. **Course 3**: 3 Credits, Grade **B** (3.0 points)
 
 1. **Calculate Grade Points for Each Course**:
-   - Course 1 Points: $4 \times 4.0 = \mathbf{16.0}$
-   - Course 2 Points: $3 \times 3.3 = \mathbf{9.9}$
-   - Course 3 Points: $3 \times 3.0 = \mathbf{9.0}$
+ - Course 1 Points: 4 × 4.0 = 16.0$
+ - Course 2 Points: 3 × 3.3 = 9.9$
+ - Course 3 Points: 3 × 3.0 = 9.0$
 2. **Calculate Total Grade Points & Total Credits**:
-   - Total Accumulated Grade Points: $16.0 + 9.9 + 9.0 = \mathbf{34.9\text{ points}}$
-   - Total Credit Hours: $4 + 3 + 3 = \mathbf{10\text{ credits}}$
+ - Total Accumulated Grade Points: 16.0 + 9.9 + 9.0 = 34.9 points
+ - Total Credit Hours: 4 + 3 + 3 = 10 credits
 3. **Calculate Weighted Semester GPA**:
-   $$\text{GPA} = \frac{34.9}{10} = \mathbf{3.490\text{ / 4.3 scale}}$$
+ GPA = (34.9 / 10) = 3.490 / 4.3 scale
 4. **Summary**:
-   - **Total Courses**: **3**
-   - **Total Credits**: **10**
-   - **Total Points**: **34.9**
-   - **Semester GPA**: **3.490 / 4.3**
+ - **Total Courses**: **3**
+ - **Total Credits**: **10**
+ - **Total Points**: **34.9**
+ - **Semester GPA**: **3.490 / 4.3**
 
 ---
 
 ### Frequently Asked Questions (FAQ)
 
 * **Q1: Does an F grade affect total credit hours?**
-  * A1: Yes. An F grade contributes 0.0 grade points, but the course credit hours are still added to the denominator ($\sum \text{Credits}$), which significantly lowers your overall GPA ratio.
+  * A1: Yes. An F grade contributes 0.0 grade points, but the course credit hours are still added to the denominator (sum Credits), which significantly lowers your overall GPA ratio.

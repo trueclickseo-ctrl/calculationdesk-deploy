@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Expecting mothers, partners, midwives, and healthcare professionals."
   limitations: "Provides clinical estimations. Due dates may be adjusted by healthcare providers following ultrasound scans."
   keyTakeaways:
-    - "Supports 3 clinical calculation modes: Last Menstrual Period (LMP), Conception Date, and IVF Embryo Transfer."
-    - "Uses Naegele's Rule adjusted for custom average menstrual cycle length (20 to 45 days)."
-    - "Evaluates Gestational Age (weeks and days) from LMP rather than conception."
-    - "Categorizes pregnancy into First (weeks 1-12), Second (weeks 13-26), and Third (weeks 27-40) Trimesters."
+ - "Supports 3 clinical calculation modes: Last Menstrual Period (LMP), Conception Date, and IVF Embryo Transfer."
+ - "Uses Naegele's Rule adjusted for custom average menstrual cycle length (20 to 45 days)."
+ - "Evaluates Gestational Age (weeks and days) from LMP rather than conception."
+ - "Categorizes pregnancy into First (weeks 1-12), Second (weeks 13-26), and Third (weeks 27-40) Trimesters."
 peopleAlsoAsk:
   - "How is an Estimated Due Date (EDD) calculated using LMP?"
   - "Why is gestational age counted from the last period instead of conception?"
@@ -42,20 +42,20 @@ peopleAlsoAsk:
   - "How are due dates calculated for IVF 3-day and 5-day embryo transfers?"
 examples:
   - title: "Worked LMP Due Date Example (LMP: January 1, 2026, 28-Day Cycle)"
-    inputs: "Mode = LMP, LMP Date = 2026-01-01, Average Cycle Length = 28 Days"
-    calculation: "Naegele's Rule: Jan 1, 2026 + 280 days + (28 - 28) = Jan 1, 2026 + 280 days = October 8, 2026."
-    result: "Estimated Due Date (EDD) = Thu Oct 08 2026 | Gestational Timeline = 40 weeks total"
+ inputs: "Mode = LMP, LMP Date = 2026-01-01, Average Cycle Length = 28 Days"
+ calculation: "Naegele's Rule: Jan 1, 2026 + 280 days + (28 - 28) = Jan 1, 2026 + 280 days = October 8, 2026."
+ result: "Estimated Due Date (EDD) = Thu Oct 08 2026 | Gestational Timeline = 40 weeks total"
   - title: "Conception Date Worked Example (Conception: January 15, 2026)"
-    inputs: "Mode = Conception Date, Conception Date = 2026-01-15"
-    calculation: "Conception method: Jan 15, 2026 + 266 days = October 8, 2026. Estimated LMP equivalent = Jan 15 - 14 days = Jan 1, 2026."
-    result: "Estimated Due Date (EDD) = Thu Oct 08 2026 | Gestational Baseline = 266 days from conception"
+ inputs: "Mode = Conception Date, Conception Date = 2026-01-15"
+ calculation: "Conception method: Jan 15, 2026 + 266 days = October 8, 2026. Estimated LMP equivalent = Jan 15 - 14 days = Jan 1, 2026."
+ result: "Estimated Due Date (EDD) = Thu Oct 08 2026 | Gestational Baseline = 266 days from conception"
 faqs:
   - q: "What does an Estimated Due Date (EDD) mean?"
-    a: "An Estimated Due Date (EDD) is a medical estimate marking 40 weeks (280 days) from the first day of your last menstrual period. Only about 4% of babies are born on their exact due date; most arrive within 2 weeks before or after."
+ a: "An Estimated Due Date (EDD) is a medical estimate marking 40 weeks (280 days) from the first day of your last menstrual period. Only about 4% of babies are born on their exact due date; most arrive within 2 weeks before or after."
   - q: "What is the difference between Gestational Age and Fetal Age?"
-    a: "Gestational age measures pregnancy progress starting from the first day of your last menstrual period (LMP). Fetal age measures actual developmental age starting from conception (typically 2 weeks after LMP)."
+ a: "Gestational age measures pregnancy progress starting from the first day of your last menstrual period (LMP). Fetal age measures actual developmental age starting from conception (typically 2 weeks after LMP)."
   - q: "How are pregnancy trimesters divided?"
-    a: "The First Trimester spans from week 1 to the end of week 12. The Second Trimester spans from week 13 to the end of week 26. The Third Trimester spans from week 27 until delivery."
+ a: "The First Trimester spans from week 1 to the end of week 12. The Second Trimester spans from week 13 to the end of week 26. The Third Trimester spans from week 27 until delivery."
 references:
   - "https://www.acog.org/womens-health/faqs/methods-for-estimating-due-date"
 ---
@@ -83,20 +83,20 @@ This calculator supports **3 clinical calculation modes**:
 #### 1. Last Menstrual Period (LMP) Mode (Naegele's Rule)
 Most pregnancies are dated from the **first day of your last menstrual period (LMP)** because most women know when their period started, whereas exact ovulation is harder to pinpoint.
 - **Naegele's Formula**:
-  $$\text{EDD} = \text{LMP Date} + 280 \text{ days} + (\text{Cycle Length} - 28 \text{ days})$$
+  EDD = LMP Date + 280  days + (Cycle Length - 28  days)
 - **Cycle Length Adjustment**: Standard Naegele's Rule assumes a 28-day cycle with ovulation on day 14. If your average cycle is 32 days, ovulation occurred approximately 4 days later, so 4 days are added to your due date.
 
 #### 2. Conception Date Mode
 If you know your exact ovulation or conception date (e.g. through ovulation tracking kits):
-$$\text{EDD} = \text{Conception Date} + 266 \text{ days}$$
+EDD = Conception Date + 266  days
 *(Fetal development takes approximately 266 days from actual conception).*
 
 #### 3. IVF Embryo Transfer Mode
 In In-Vitro Fertilization (IVF), the exact age of the embryo at transfer is precisely known:
 - **5-Day Blastocyst Transfer**:
-  $$\text{EDD} = \text{Transfer Date} + 261 \text{ days}$$
+  EDD = Transfer Date + 261  days
 - **3-Day Cleavage Transfer**:
-  $$\text{EDD} = \text{Transfer Date} + 263 \text{ days}$$
+  EDD = Transfer Date + 263  days
 
 ---
 
@@ -121,10 +121,10 @@ Pregnancy is divided into 3 distinct trimesters:
 Suppose the first day of your LMP was **January 1, 2026** (`2026-01-01`) with a standard **28-day cycle**:
 
 1. **Apply Naegele's Rule**:
-   $$\text{EDD} = \text{Jan 1, 2026} + 280 \text{ days} + (28 - 28) = \text{Jan 1, 2026} + 280 \text{ days}$$
+ EDD = Jan 1, 2026 + 280  days + (28 - 28) = Jan 1, 2026 + 280  days
 2. **Calculate Calendar Target**:
-   - January has 30 remaining days ($31 - 1 = 30$).
-   - Adding 280 days to Jan 1, 2026 reaches **October 8, 2026**.
+ - January has 30 remaining days ($31 - 1 = 30$).
+ - Adding 280 days to Jan 1, 2026 reaches **October 8, 2026**.
 3. **Result**: Estimated Due Date (EDD) = **Thu Oct 08 2026**.
 
 ---

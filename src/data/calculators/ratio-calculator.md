@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Students, teachers, business owners, chefs, and engineers."
   limitations: "Calculates positive ratio setups across Simplify, Scale Value, and Split Quantity modes."
   keyTakeaways:
-    - "Supports 3 modes: Simplify (reduce A:B), Scale Value (solve proportion A:B = X:Y), and Split Quantity (divide total by A:B:C)."
-    - "Simplifies ratios using the Greatest Common Divisor (GCD)."
-    - "Scales ratios using cross-multiplication."
-    - "Divides total quantities proportionally across ratio shares."
+ - "Supports 3 modes: Simplify (reduce A:B), Scale Value (solve proportion A:B = X:Y), and Split Quantity (divide total by A:B:C)."
+ - "Simplifies ratios using the Greatest Common Divisor (GCD)."
+ - "Scales ratios using cross-multiplication."
+ - "Divides total quantities proportionally across ratio shares."
 peopleAlsoAsk:
   - "What is a ratio and how is it written?"
   - "How do you simplify a ratio to lowest terms?"
@@ -42,24 +42,24 @@ peopleAlsoAsk:
   - "How do you divide an amount in a given ratio?"
 examples:
   - title: "Ratio Simplification (18 : 27)"
-    inputs: "Mode = Simplify, Value A = 18, Value B = 27"
-    calculation: "GCD of 18 and 27 is 9. Reduced A = 18 / 9 = 2. Reduced B = 27 / 9 = 3. Decimal = 18 / 27 = 0.666667."
-    result: "Simplified Ratio = 2 : 3 | Decimal Equivalent = 0.666667"
+ inputs: "Mode = Simplify, Value A = 18, Value B = 27"
+ calculation: "GCD of 18 and 27 is 9. Reduced A = 18 / 9 = 2. Reduced B = 27 / 9 = 3. Decimal = 18 / 27 = 0.666667."
+ result: "Simplified Ratio = 2 : 3 | Decimal Equivalent = 0.666667"
   - title: "Ratio Scaling / Proportion (2 : 3 = 8 : Y)"
-    inputs: "Mode = Scale Value, Value A = 2, Value B = 3, Value X = 8"
-    calculation: "Cross-multiplication: Y = (X × B) / A = (8 × 3) / 2 = 24 / 2 = 12."
-    result: "Solved Y = 12 | Proportion = 2 : 3 = 8 : 12"
+ inputs: "Mode = Scale Value, Value A = 2, Value B = 3, Value X = 8"
+ calculation: "Cross-multiplication: Y = (X × B) / A = (8 × 3) / 2 = 24 / 2 = 12."
+ result: "Solved Y = 12 | Proportion = 2 : 3 = 8 : 12"
   - title: "Split Total Quantity (₹500 in 2 : 3 Ratio)"
-    inputs: "Mode = Split Quantity, Quantity = 500, Ratio Split = 2:3"
-    calculation: "Sum of parts = 2 + 3 = 5. Share 1 = 500 × (2/5) = 200. Share 2 = 500 × (3/5) = 300."
-    result: "Part 1 (Ratio 2) = ₹200 | Part 2 (Ratio 3) = ₹300 | Total = ₹500"
+ inputs: "Mode = Split Quantity, Quantity = 500, Ratio Split = 2:3"
+ calculation: "Sum of parts = 2 + 3 = 5. Share 1 = 500 × (2/5) = 200. Share 2 = 500 × (3/5) = 300."
+ result: "Part 1 (Ratio 2) = ₹200 | Part 2 (Ratio 3) = ₹300 | Total = ₹500"
 faqs:
   - q: "What is a ratio?"
-    a: "A ratio is a mathematical comparison showing the relative size of two or more quantities. It is commonly written with a colon (e.g., 2:3) or as a fraction (2/3)."
+ a: "A ratio is a mathematical comparison showing the relative size of two or more quantities. It is commonly written with a colon (e.g., 2:3) or as a fraction (2/3)."
   - q: "What is the difference between ratio, fraction, and proportion?"
-    a: "A ratio compares two parts to each other (e.g. 2 boys to 3 girls). A fraction compares a part to the whole (e.g. 2 boys out of 5 total students = 2/5). A proportion is an equation stating that two ratios are equal (e.g. 2/3 = 4/6)."
+ a: "A ratio compares two parts to each other (e.g. 2 boys to 3 girls). A fraction compares a part to the whole (e.g. 2 boys out of 5 total students = 2/5). A proportion is an equation stating that two ratios are equal (e.g. 2/3 = 4/6)."
   - q: "How do you divide an amount in a given ratio?"
-    a: "Add the ratio parts together to find the total number of shares, divide the total quantity by that sum to find the value per share, and multiply by each part's ratio value."
+ a: "Add the ratio parts together to find the total number of shares, divide the total quantity by that sum to find the value per share, and multiply by each part's ratio value."
 references:
   - "https://www.mathsisfun.com/numbers/ratio.html"
 ---
@@ -69,9 +69,9 @@ references:
 Ratios are fundamental mathematical tools used to compare relative quantities. Whether you are scaling a baking recipe, resizing an image, dividing business profits, or calculating chemical mixtures, ratios allow you to preserve proportions.
 
 This calculator supports **3 dedicated ratio modes**:
-1. **Simplify Mode**: Reduces a ratio $A : B$ to its simplest whole-number form.
-2. **Scale Value Mode**: Solves proportions $A : B = X : Y$ to find a missing term ($Y$).
-3. **Split Quantity Mode**: Divides a total amount (e.g. ₹500) into proportional shares based on a ratio split (e.g. $2:3$).
+1. **Simplify Mode**: Reduces a ratio A : B to its simplest whole-number form.
+2. **Scale Value Mode**: Solves proportions A : B = X : Y to find a missing term (Y).
+3. **Split Quantity Mode**: Divides a total amount (e.g. ₹500) into proportional shares based on a ratio split (e.g. 2:3$).
 
 ---
 
@@ -80,59 +80,59 @@ This calculator supports **3 dedicated ratio modes**:
 A **ratio** compares the relative size of two or more values. It expresses how much of one item exists compared to another.
 
 * **Notation**: Ratios are written using a colon ($2:3$), a division slash ($2/3$), or in words ("2 to 3").
-* **Terms**: In the ratio $2:3$, the first number ($2$) is called the *antecedent* and the second number ($3$) is called the *consequent*.
+* **Terms**: In the ratio 2:3$, the first number ($2$) is called the *antecedent* and the second number ($3$) is called the *consequent*.
 
 ---
 
 ### Ratio vs. Fraction vs. Proportion
 
 * **Ratio**: Compares **part to part** (e.g., 2 cups of sugar to 3 cups of flour).
-* **Fraction**: Compares **part to whole** (e.g., sugar makes up $\frac{2}{2+3} = \frac{2}{5}$ of the total recipe mixture).
-* **Proportion**: An equation stating that **two ratios are equal** (e.g., $\frac{2}{3} = \frac{8}{12}$).
+* **Fraction**: Compares **part to whole** (e.g., sugar makes up (2 / 2+3) = (2 / 5) of the total recipe mixture).
+* **Proportion**: An equation stating that **two ratios are equal** (e.g., (2 / 3) = (8 / 12)).
 
 ---
 
 ### How the 3 Calculator Modes Work
 
 #### 1. Simplify Mode
-To simplify a ratio $A : B$:
-- Find the **Greatest Common Divisor (GCD)** of $A$ and $B$.
+To simplify a ratio A : B:
+- Find the **Greatest Common Divisor (GCD)** of A and B.
 - Divide both numbers by the GCD:
-  $$\text{Reduced Ratio} = \left(\frac{A}{\text{GCD}}\right) : \left(\frac{B}{\text{GCD}}\right)$$
+  Reduced Ratio = (A / GCD) : (B / GCD)
 
 #### 2. Scale Value Mode (Solving Proportions)
-When two ratios are proportional ($A : B = X : Y$), you can find missing value $Y$ using cross-multiplication:
-$$A \times Y = B \times X \implies Y = \frac{X \times B}{A}$$
+When two ratios are proportional (A : B = X : Y), you can find missing value Y using cross-multiplication:
+A × Y = B × X implies Y = (X × B / A)
 
 #### 3. Split Quantity Mode
-To divide a total quantity $Q$ according to a ratio split $A : B : C$:
-1. Calculate the **Sum of Ratio Parts**: $S = A + B + C$.
+To divide a total quantity Q according to a ratio split A : B : C:
+1. Calculate the **Sum of Ratio Parts**: S = A + B + C.
 2. Calculate the **Individual Share**:
-   $$\text{Share}_A = Q \times \left(\frac{A}{S}\right)$$
+ Share_A = Q × (A / S)
 
 ---
 
 ### Step-by-Step Worked Numerical Examples (Verified against Code)
 
-#### Example 1: Simplify $18 : 27$
-1. Find the GCD of $18$ and $27$: The largest integer dividing both is **9**.
+#### Example 1: Simplify 18 : 27$
+1. Find the GCD of 18$ and 27$: The largest integer dividing both is **9**.
 2. Divide both terms by 9:
-   - Reduced $A = 18 / 9 = \mathbf{2}$
-   - Reduced $B = 27 / 9 = \mathbf{3}$
-3. **Result**: Simplified Ratio = **$2 : 3$** (Decimal equivalent $= 18/27 \approx \mathbf{0.666667}$).
+ - Reduced A = 18 / 9 = 2
+ - Reduced B = 27 / 9 = 3
+3. **Result**: Simplified Ratio = **$2 : 3$** (Decimal equivalent = 18/27 ≈ 0.666667$).
 
-#### Example 2: Scale Ratio $2 : 3 = 8 : Y$
-1. Given $A = 2, B = 3, X = 8$.
+#### Example 2: Scale Ratio 2 : 3 = 8 : Y
+1. Given A = 2, B = 3, X = 8.
 2. Apply cross-multiplication:
-   $$Y = \frac{8 \times 3}{2} = \frac{24}{2} = \mathbf{12}$$
-3. **Result**: Solved $Y = \mathbf{12}$. The scaled proportion is **$2 : 3 = 8 : 12$**.
+ Y = (8 × 3 / 2) = (24 / 2) = 12
+3. **Result**: Solved Y = 12. The scaled proportion is **$2 : 3 = 8 : 12$**.
 
-#### Example 3: Divide ₹500 in a $2 : 3$ Ratio
-1. **Sum of Ratio Parts**: $S = 2 + 3 = \mathbf{5}$.
+#### Example 3: Divide ₹500 in a 2 : 3$ Ratio
+1. **Sum of Ratio Parts**: S = 2 + 3 = 5.
 2. **Calculate Shares**:
-   - Share 1 (ratio part 2): $500 \times \left(\frac{2}{5}\right) = 100 \times 2 = \mathbf{\text{₹}200}$
-   - Share 2 (ratio part 3): $500 \times \left(\frac{3}{5}\right) = 100 \times 3 = \mathbf{\text{₹}300}$
-3. **Verification**: $\text{₹}200 + \text{₹}300 = \text{₹}500$.
+ - Share 1 (ratio part 2): 500 × (2 / 5) = 100 × 2 = ₹200$
+ - Share 2 (ratio part 3): 500 × (3 / 5) = 100 × 3 = ₹300$
+3. **Verification**: ₹200 + ₹300 = ₹500$.
 
 ---
 

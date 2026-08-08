@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Couples, HR managers, employees, event planners, and individuals celebrating personal milestones."
   limitations: "Calculates milestone dates based on Gregorian calendar date arithmetic."
   keyTakeaways:
-    - "Calculates total Days Elapsed since the starting date."
-    - "Evaluates countdown to the Next Annual Anniversary."
-    - "Generates a chronological Milestones Timeline covering both Day Milestones (100, 500, 1,000, 5,000, 10,000 days) and Year Milestones (1, 5, 10, 25, 50 years)."
-    - "Categorizes milestones as 'Completed' or shows exact days remaining."
+ - "Calculates total Days Elapsed since the starting date."
+ - "Evaluates countdown to the Next Annual Anniversary."
+ - "Generates a chronological Milestones Timeline covering both Day Milestones (100, 500, 1,000, 5,000, 10,000 days) and Year Milestones (1, 5, 10, 25, 50 years)."
+ - "Categorizes milestones as 'Completed' or shows exact days remaining."
 peopleAlsoAsk:
   - "How does the calculator determine milestone dates?"
   - "Why is a 1,000-day milestone different from a 3-year anniversary?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "How does the calculator handle leap years for annual anniversaries?"
 examples:
   - title: "Worked Milestone Example (Start Date: January 1, 2025)"
-    inputs: "Anniversary Start Date = 2025-01-01, Category = Wedding"
-    calculation: "Start: Jan 1, 2025. 100-Day Milestone: Jan 1 + 100 days = April 11, 2025 (Completed). 1-Year Milestone: Jan 1, 2026 (Completed). 500-Day Milestone: Jan 1 + 500 days = May 16, 2026. 1,000-Day Milestone: Jan 1 + 1000 days = September 28, 2027."
-    result: "100 Days = Apr 11, 2025 | 1 Year = Jan 1, 2026 | 500 Days = May 16, 2026 | 1,000 Days = Sep 28, 2027"
+ inputs: "Anniversary Start Date = 2025-01-01, Category = Wedding"
+ calculation: "Start: Jan 1, 2025. 100-Day Milestone: Jan 1 + 100 days = April 11, 2025 (Completed). 1-Year Milestone: Jan 1, 2026 (Completed). 500-Day Milestone: Jan 1 + 500 days = May 16, 2026. 1,000-Day Milestone: Jan 1 + 1000 days = September 28, 2027."
+ result: "100 Days = Apr 11, 2025 | 1 Year = Jan 1, 2026 | 500 Days = May 16, 2026 | 1,000 Days = Sep 28, 2027"
 faqs:
   - q: "Why is a 1,000-day milestone different from a 3-year anniversary?"
-    a: "A 3-year calendar anniversary is exactly 3 calendar years (which includes leap years, totaling 1,095 or 1,096 days). A 1,000-day milestone occurs at exactly 1,000 elapsed 24-hour days (approx. 2 years and 9 months)."
+ a: "A 3-year calendar anniversary is exactly 3 calendar years (which includes leap years, totaling 1,095 or 1,096 days). A 1,000-day milestone occurs at exactly 1,000 elapsed 24-hour days (approx. 2 years and 9 months)."
   - q: "What is a gigasecond anniversary?"
-    a: "A gigasecond is 1 billion seconds (approximately 31.7 years). Many couples and researchers celebrate their gigasecond anniversary as a fun mathematical milestone."
+ a: "A gigasecond is 1 billion seconds (approximately 31.7 years). Many couples and researchers celebrate their gigasecond anniversary as a fun mathematical milestone."
   - q: "How does the calculator handle leap years for annual anniversaries?"
-    a: "Annual anniversaries preserve the exact calendar date (e.g. June 15 every year). The calculator automatically handles leap years when computing days remaining until annual dates."
+ a: "Annual anniversaries preserve the exact calendar date (e.g. June 15 every year). The calculator automatically handles leap years when computing days remaining until annual dates."
 references:
   - "https://www.timeanddate.com/date/duration.html"
 ---
@@ -62,27 +62,27 @@ Anniversaries mark special moments in our lives—from **wedding days** and **re
 
 While traditional anniversaries are celebrated once a year on the same calendar date, many modern couples and teams also celebrate **day-based milestones**, such as **100 days**, **500 days**, or **1,000 days**.
 
-This calculator evaluates your starting date and generates a complete **Chronological Milestones Timeline**, tracking both **Day Milestones** ($100, 500, 1000, 5000, 10000 \text{ days}$) and **Year Milestones** ($1, 5, 10, 25, 50 \text{ years}$).
+This calculator evaluates your starting date and generates a complete **Chronological Milestones Timeline**, tracking both **Day Milestones** ($100, 500, 1000, 5000, 10000  days) and **Year Milestones** ($1, 5, 10, 25, 50  years).
 
 ---
 
 ### Calendar Years vs. Day-Based Milestones
 
-* **Annual Calendar Anniversaries**: Occur on the exact same month and day each year (e.g., June 15). Because standard years have $365$ days and leap years have $366$ days, 1 calendar year is not a fixed number of days.
-* **Day-Based Milestones**: Occur after a fixed count of 24-hour days ($100, 500, 1000 \text{ days}$).
-  - *Example*: A **1,000-day milestone** occurs after $1,000$ elapsed days ($\approx 2 \text{ years and } 9 \text{ months}$), whereas a **3-year anniversary** occurs after $1,095$ or $1,096$ days.
+* **Annual Calendar Anniversaries**: Occur on the exact same month and day each year (e.g., June 15). Because standard years have 365$ days and leap years have 366$ days, 1 calendar year is not a fixed number of days.
+* **Day-Based Milestones**: Occur after a fixed count of 24-hour days ($100, 500, 1000  days).
+  - *Example*: A **1,000-day milestone** occurs after 1,000$ elapsed days ($≈ 2  years and  9  months), whereas a **3-year anniversary** occurs after 1,095$ or 1,096$ days.
 
 ---
 
 ### How the Anniversary Calculator Works
 
 1. **Calculate Days Elapsed**: Subtracts your starting date from today's date:
-   $$\text{Days Elapsed} = \text{floor}\left(\frac{\text{Current Date} - \text{Start Date}}{86,400,000}\right)$$
+ Days Elapsed = floorfrac(Current Date - Start Date){86,400,000}
 2. **Determine Next Annual Anniversary**: Identifies your next upcoming annual milestone date and evaluates the exact countdown in days remaining.
 3. **Generate Milestones Timeline**:
-   - **Day Milestones**: Adds $100, 500, 1000, 5000, \text{and } 10000$ days to your start date.
-   - **Year Milestones**: Adds $1, 5, 10, 25, \text{and } 50$ calendar years to your start date.
-   - **Sorts Chronologically**: Combines and sorts all milestones chronologically, tagging past events as **Completed** and future events with **Days Remaining**.
+ - **Day Milestones**: Adds 100, 500, 1000, 5000, and  10000$ days to your start date.
+ - **Year Milestones**: Adds 1, 5, 10, 25, and  50$ calendar years to your start date.
+ - **Sorts Chronologically**: Combines and sorts all milestones chronologically, tagging past events as **Completed** and future events with **Days Remaining**.
 
 ---
 
@@ -94,12 +94,12 @@ Let's evaluate a starting date of **January 1, 2025** (`2025-01-01`):
 
 | Milestone Label | Target Date | Status | Calculation Logic |
 | :--- | :--- | :--- | :--- |
-| **100 Days** | April 11, 2025 | Completed | Jan 1, 2025 $+ 100\text{ days}$ |
-| **1 Year** | January 1, 2026 | Completed | Jan 1, 2025 $+ 1\text{ year}$ |
-| **500 Days** | May 16, 2026 | Future / Days Left | Jan 1, 2025 $+ 500\text{ days}$ |
-| **1,000 Days** | September 28, 2027 | Future / Days Left | Jan 1, 2025 $+ 1000\text{ days}$ |
-| **5 Years** | January 1, 2030 | Future / Days Left | Jan 1, 2025 $+ 5\text{ years}$ |
-| **5,000 Days** | September 9, 2038 | Future / Days Left | Jan 1, 2025 $+ 5000\text{ days}$ |
+| **100 Days** | April 11, 2025 | Completed | Jan 1, 2025 + 100 days |
+| **1 Year** | January 1, 2026 | Completed | Jan 1, 2025 + 1 year |
+| **500 Days** | May 16, 2026 | Future / Days Left | Jan 1, 2025 + 500 days |
+| **1,000 Days** | September 28, 2027 | Future / Days Left | Jan 1, 2025 + 1000 days |
+| **5 Years** | January 1, 2030 | Future / Days Left | Jan 1, 2025 + 5 years |
+| **5,000 Days** | September 9, 2038 | Future / Days Left | Jan 1, 2025 + 5000 days |
 
 ---
 

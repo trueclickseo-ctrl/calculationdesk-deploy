@@ -25,17 +25,17 @@ titleVariants:
   - "Invoice Calculator - Calculate Itemized Totals, Discounts & Taxes | CalculationDesk"
 aiSummary:
   definition: "The Invoice Calculator computes line-item subtotals, itemized discounts, tax amounts, subtotal totals, and the final Invoice Grand Total across multi-item billing ledgers."
-  quickAnswer: "An invoice with Line 1 ($150 x 10, 5% disc, 8% tax = $1,425 net + $114 tax) and Line 2 ($1,200 x 1, 10% disc, 5% tax = $1,080 net + $54 tax) yields a Subtotal of $2,700, total Discounts of $195, Tax of $168, and a Grand Total of $2,673.00."
+  quickAnswer: "An invoice with Line 1 ($150 x 10, 5% disc, 8% tax = 1,425 net + 114 tax) and Line 2 ($1,200 x 1, 10% disc, 5% tax = 1,080 net + 54 tax) yields a Subtotal of 2,700, total Discounts of 195, Tax of 168, and a Grand Total of 2,673.00."
   formulaSummary: "Line Subtotal = Price * Qty | Line Disc = Subtotal * Disc% | Line Net = Subtotal - Disc | Line Tax = Line Net * Tax% | Grand Total = Subtotal - Total Disc + Total Tax"
   whenToUse: "Use this tool to draft client billing statements, verify contractor invoices, compute promotional item discounts, or calculate line-by-line tax burdens."
   whoShouldUse: "Freelancers, agency owners, contractors, small business operators, and accounting professionals."
   limitations: "Calculates mathematical billing totals based on user-entered percentage discounts and tax rates. Specific regional tax compliance depends on local sales tax rules."
   keyTakeaways:
-    - "Calculates line-by-line invoice subtotal, discount, tax, and total."
-    - "Applies percentage discounts to gross line subtotals before tax calculation."
-    - "Computes sales tax on the net discounted amount ($Subtotal - $Discount)."
-    - "Combines multiple line items into clear aggregate totals (Subtotal, Discounts, Tax Component, Grand Total)."
-    - "Provides practical invoicing guidance for freelancers, agencies, and retail services."
+ - "Calculates line-by-line invoice subtotal, discount, tax, and total."
+ - "Applies percentage discounts to gross line subtotals before tax calculation."
+ - "Computes sales tax on the net discounted amount (Subtotal - Discount)."
+ - "Combines multiple line items into clear aggregate totals (Subtotal, Discounts, Tax Component, Grand Total)."
+ - "Provides practical invoicing guidance for freelancers, agencies, and retail services."
 peopleAlsoAsk:
   - "How are invoice line totals calculated step by step?"
   - "Is sales tax calculated before or after applying line discounts?"
@@ -43,16 +43,16 @@ peopleAlsoAsk:
   - "Why can tax calculations vary across different invoices?"
 examples:
   - title: "Worked Multi-Line Invoice Example (Consulting Services & Server Hardware)"
-    inputs: "Line 1: $150 x 10 units, 5% disc, 8% tax | Line 2: $1,200 x 1 unit, 10% disc, 5% tax"
-    calculation: "Line 1: Subtotal = $1,500. Disc = $75. Net = $1,425. Tax (8%) = $114.00. Total = $1,539.00. Line 2: Subtotal = $1,200. Disc = $120. Net = $1,080. Tax (5%) = $54.00. Total = $1,134.00. Invoice Aggregates: Gross Subtotal = $1,500 + $1,200 = $2,700.00. Discounts = $75 + $120 = $195.00. Tax = $114 + $54 = $168.00. Grand Total = $2,700 - $195 + $168 = $2,673.00."
-    result: "Subtotal = $2,700.00 | Discounts = -$195.00 | Tax Component = $168.00 | Grand Total = $2,673.00"
+ inputs: "Line 1: 150 x 10 units, 5% disc, 8% tax | Line 2: 1,200 x 1 unit, 10% disc, 5% tax"
+ calculation: "Line 1: Subtotal = 1,500. Disc = 75. Net = 1,425. Tax (8%) = 114.00. Total = 1,539.00. Line 2: Subtotal = 1,200. Disc = 120. Net = 1,080. Tax (5%) = 54.00. Total = 1,134.00. Invoice Aggregates: Gross Subtotal = 1,500 + 1,200 = 2,700.00. Discounts = 75 + 120 = 195.00. Tax = 114 + 54 = 168.00. Grand Total = 2,700 - 195 + 168 = 2,673.00."
+ result: "Subtotal = 2,700.00 | Discounts = -$195.00 | Tax Component = 168.00 | Grand Total = 2,673.00"
 faqs:
   - q: "Is sales tax calculated before or after applying line discounts?"
-    a: "Standard accounting principles and tax regulations dictate that sales tax is assessed on the net discounted price rather than the initial gross price. Taxing the post-discount amount ensures clients are only taxed on the actual cash value transacted."
+ a: "Standard accounting principles and tax regulations dictate that sales tax is assessed on the net discounted price rather than the initial gross price. Taxing the post-discount amount ensures clients are only taxed on the actual cash value transacted."
   - q: "What is the difference between Subtotal and Grand Total?"
-    a: "Subtotal is the gross sum of all unit prices multiplied by quantities before applying any discounts or taxes. Grand Total is the final amount payable by the client after deducting all line discounts and adding all tax components."
+ a: "Subtotal is the gross sum of all unit prices multiplied by quantities before applying any discounts or taxes. Grand Total is the final amount payable by the client after deducting all line discounts and adding all tax components."
   - q: "Why might tax calculations differ across different invoices?"
-    a: "Tax rates vary because different product or service categories may carry distinct tax classifications (e.g., labor services might carry an 8% rate while physical hardware carries a 5% rate or is tax-exempt). Additionally, state and municipal tax jurisdictions enforce different taxability rules."
+ a: "Tax rates vary because different product or service categories may carry distinct tax classifications (e.g., labor services might carry an 8% rate while physical hardware carries a 5% rate or is tax-exempt). Additionally, state and municipal tax jurisdictions enforce different taxability rules."
 references:
   - "https://www.sba.gov/business-guide/manage-your-business/financial-management"
 ---
@@ -69,13 +69,13 @@ This calculator processes multi-line item ledgers step by step, computing **Line
 
 ### Core Invoice Terminology Explained
 
-* **Unit Price ($P$)**: The agreed cost per single unit of product or hour of service.
-* **Quantity ($Q$)**: The number of units or hours being billed on that specific line.
-* **Line Subtotal**: The gross un-discounted cost of the line item ($P \times Q$).
-* **Line Discount ($D$)**: The dollar savings resulting from a percentage discount applied to the line subtotal.
-* **Net Taxable Amount**: The line amount eligible for taxation after deducting the discount ($\text{Line Subtotal} - \text{Line Discount}$).
-* **Line Tax ($T$)**: The tax dollar amount calculated on the net taxable amount.
-* **Grand Total**: The final net amount owed by the client ($\text{Subtotal} - \text{Total Discounts} + \text{Total Tax}$).
+* **Unit Price (P)**: The agreed cost per single unit of product or hour of service.
+* **Quantity (Q)**: The number of units or hours being billed on that specific line.
+* **Line Subtotal**: The gross un-discounted cost of the line item (P × Q).
+* **Line Discount (D)**: The dollar savings resulting from a percentage discount applied to the line subtotal.
+* **Net Taxable Amount**: The line amount eligible for taxation after deducting the discount (Line Subtotal - Line Discount).
+* **Line Tax (T)**: The tax dollar amount calculated on the net taxable amount.
+* **Grand Total**: The final net amount owed by the client (Subtotal - Total Discounts + Total Tax).
 
 ---
 
@@ -84,21 +84,21 @@ This calculator processes multi-line item ledgers step by step, computing **Line
 The calculator processes each row using standard accounting rules:
 
 #### Step 1: Calculate Line Item Subtotal
-$$\text{Line Subtotal} = \text{Price } (P) \times \text{Quantity } (Q)$$
+Line Subtotal = Price  (P) × Quantity  (Q)
 
 #### Step 2: Calculate Line Item Discount
-$$\text{Line Discount} = \text{Line Subtotal} \times \left( \frac{\text{Discount \%}}{100} \right)$$
+Line Discount = Line Subtotal ×  frac(Discount %){100} 
 
 #### Step 3: Calculate Line Item Tax (Calculated AFTER Discount)
 Standard commercial accounting requires taxing the net discounted price:
-$$\text{Net Taxable Amount} = \text{Line Subtotal} - \text{Line Discount}$$
-$$\text{Line Tax} = \text{Net Taxable Amount} \times \left( \frac{\text{Tax \%}}{100} \right)$$
+Net Taxable Amount = Line Subtotal - Line Discount
+Line Tax = Net Taxable Amount ×  frac(Tax %){100} 
 
 #### Step 4: Aggregate Invoice Totals
-$$\text{Subtotal} = \sum \text{Line Subtotals}$$
-$$\text{Discounts Applied} = \sum \text{Line Discounts}$$
-$$\text{Tax Component} = \sum \text{Line Taxes}$$
-$$\text{Invoice Grand Total} = \text{Subtotal} - \text{Discounts Applied} + \text{Tax Component}$$
+Subtotal = sum Line Subtotals
+Discounts Applied = sum Line Discounts
+Tax Component = sum Line Taxes
+Invoice Grand Total = Subtotal - Discounts Applied + Tax Component
 
 ---
 
@@ -107,26 +107,24 @@ $$\text{Invoice Grand Total} = \text{Subtotal} - \text{Discounts Applied} + \tex
 Let's evaluate a realistic two-line agency invoice matching the calculator's default values:
 
 #### Line Item 1: "Consulting Services"
-- Price $= \$150$, Quantity $= 10 \text{ hours}$, Discount $= 5\%$, Tax $= 8\%$
-1. **Subtotal**: $\$150 \times 10 = \mathbf{\$1,500.00}$
-2. **Discount**: $\$1,500 \times 0.05 = \mathbf{\$75.00}$
-3. **Net Taxable**: $\$1,500 - \$75 = \$1,425.00$
-4. **Tax Component**: $\$1,425 \times 0.08 = \mathbf{\$114.00}$
-5. **Line Total**: $\$1,425 + \$114 = \mathbf{\$1,539.00}$
+- Price = $150, Quantity = 10  hours, Discount = 5%, Tax = 8% 1. **Subtotal**: \150 × 10 = $1,500.00
+2. **Discount**: \1,500 × 0.05 = $75.00
+3. **Net Taxable**: \1,500 - $75 = $1,425.00
+4. **Tax Component**: \1,425 × 0.08 = $114.00
+5. **Line Total**: \1,425 + $114 = $1,539.00
 
 #### Line Item 2: "Server Hardware"
-- Price $= \$1,200$, Quantity $= 1 \text{ unit}$, Discount $= 10\%$, Tax $= 5\%$
-1. **Subtotal**: $\$1,200 \times 1 = \mathbf{\$1,200.00}$
-2. **Discount**: $\$1,200 \times 0.10 = \mathbf{\$120.00}$
-3. **Net Taxable**: $\$1,200 - \$120 = \$1,080.00$
-4. **Tax Component**: $\$1,080 \times 0.05 = \mathbf{\$54.00}$
-5. **Line Total**: $\$1,080 + \$54 = \mathbf{\$1,134.00}$
+- Price = $1,200, Quantity = 1  unit, Discount = 10%, Tax = 5% 1. **Subtotal**: \1,200 × 1 = $1,200.00
+2. **Discount**: \1,200 × 0.10 = $120.00
+3. **Net Taxable**: \1,200 - $120 = $1,080.00
+4. **Tax Component**: \1,080 × 0.05 = $54.00
+5. **Line Total**: \1,080 + $54 = $1,134.00
 
 #### Summary Invoice Totals
-* **Gross Subtotal**: $\$1,500.00 + \$1,200.00 = \mathbf{\$2,700.00}$
-* **Total Discounts Applied**: $\$75.00 + \$120.00 = \mathbf{\$195.00}$
-* **Total Tax Component**: $\$114.00 + \$54.00 = \mathbf{\$168.00}$
-* **Invoice Grand Total**: $\$2,700.00 - \$195.00 + \$168.00 = \mathbf{\$2,673.00}$
+* **Gross Subtotal**: \1,500.00 + $1,200.00 = $2,700.00
+* **Total Discounts Applied**: \75.00 + $120.00 = $195.00
+* **Total Tax Component**: \114.00 + $54.00 = $168.00
+* **Invoice Grand Total**: \2,700.00 - $195.00 + $168.00 = $2,673.00
 
 *Verification Result: Subtotal = **$2,700.00**, Discounts = **-$195.00**, Tax Component = **$168.00**, Grand Total = **$2,673.00**.*
 

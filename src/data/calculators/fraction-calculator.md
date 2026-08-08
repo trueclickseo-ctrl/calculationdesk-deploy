@@ -31,9 +31,9 @@ aiSummary:
   whoShouldUse: "Students, teachers, parents, and engineers."
   limitations: "Calculates exact fraction arithmetic and simplifies results using Greatest Common Divisor (GCD) reduction."
   keyTakeaways:
-    - "Supports 4 basic operations: Addition (+), Subtraction (-), Multiplication (×), and Division (÷)."
-    - "Automatically simplifies final fractions to lowest terms using GCD reduction."
-    - "Provides 3 output formats: Reduced Fraction, Mixed Fraction (e.g. 1 1/6), and Decimal Representation."
+ - "Supports 4 basic operations: Addition (+), Subtraction (-), Multiplication (×), and Division (÷)."
+ - "Automatically simplifies final fractions to lowest terms using GCD reduction."
+ - "Provides 3 output formats: Reduced Fraction, Mixed Fraction (e.g. 1 1/6), and Decimal Representation."
 peopleAlsoAsk:
   - "How do you add two fractions with different denominators?"
   - "How do you multiply and divide fractions?"
@@ -41,20 +41,20 @@ peopleAlsoAsk:
   - "Why can a denominator never be zero?"
 examples:
   - title: "Fraction Addition (1/2 + 2/3)"
-    inputs: "Fraction 1 = 1/2, Operator = +, Fraction 2 = 2/3"
-    calculation: "Formula = (1 × 3 + 2 × 2) / (2 × 3) = (3 + 4) / 6 = 7/6. Reduced = 7/6. Mixed = 1 1/6. Decimal = 1.166667."
-    result: "Reduced Fraction = 7/6 | Mixed Fraction = 1 1/6 | Decimal = 1.166667"
+ inputs: "Fraction 1 = 1/2, Operator = +, Fraction 2 = 2/3"
+ calculation: "Formula = (1 × 3 + 2 × 2) / (2 × 3) = (3 + 4) / 6 = 7/6. Reduced = 7/6. Mixed = 1 1/6. Decimal = 1.166667."
+ result: "Reduced Fraction = 7/6 | Mixed Fraction = 1 1/6 | Decimal = 1.166667"
   - title: "Fraction Division (3/4 ÷ 2/5)"
-    inputs: "Fraction 1 = 3/4, Operator = ÷, Fraction 2 = 2/5"
-    calculation: "Formula = (3 × 5) / (4 × 2) = 15/8. Reduced = 15/8. Mixed = 1 7/8. Decimal = 1.875."
-    result: "Reduced Fraction = 15/8 | Mixed Fraction = 1 7/8 | Decimal = 1.875"
+ inputs: "Fraction 1 = 3/4, Operator = ÷, Fraction 2 = 2/5"
+ calculation: "Formula = (3 × 5) / (4 × 2) = 15/8. Reduced = 15/8. Mixed = 1 7/8. Decimal = 1.875."
+ result: "Reduced Fraction = 15/8 | Mixed Fraction = 1 7/8 | Decimal = 1.875"
 faqs:
   - q: "How do you add fractions with different denominators?"
-    a: "Cross-multiply the numerators by opposite denominators, sum them for the new numerator, and multiply the denominators together: (a/b) + (c/d) = (ad + bc) / bd."
+ a: "Cross-multiply the numerators by opposite denominators, sum them for the new numerator, and multiply the denominators together: (a/b) + (c/d) = (ad + bc) / bd."
   - q: "How does the calculator reduce fractions to lowest terms?"
-    a: "The calculator computes the Greatest Common Divisor (GCD) of the resulting numerator and denominator, then divides both numbers by that factor."
+ a: "The calculator computes the Greatest Common Divisor (GCD) of the resulting numerator and denominator, then divides both numbers by that factor."
   - q: "What happens if a denominator is entered as zero?"
-    a: "Division by zero is mathematically undefined. The calculator validates input fields and prevents calculation if any denominator is zero."
+ a: "Division by zero is mathematically undefined. The calculator validates input fields and prevents calculation if any denominator is zero."
 references:
   - "https://www.mathsisfun.com/fractions.html"
 ---
@@ -91,18 +91,18 @@ This calculator solves fractional equations, returning **reduced proper fraction
 
 #### Example 1: Addition (1/2 + 2/3)
 1. **Apply Addition Formula**:
-   (1 × 3 + 2 × 2) / (2 × 3) = (3 + 4) / 6 = **7/6**
+ (1 × 3 + 2 × 2) / (2 × 3) = (3 + 4) / 6 = **7/6**
 2. **Simplify & Convert**:
-   - GCD of 7 and 6 is 1 $\to$ **7/6**
-   - Mixed Fraction: 7 divided by 6 is 1 with remainder 1 $\to$ **1 1/6**
-   - Decimal Equivalent: 7 / 6 = **1.166667**
+ - GCD of 7 and 6 is 1 to **7/6**
+ - Mixed Fraction: 7 divided by 6 is 1 with remainder 1 to **1 1/6**
+ - Decimal Equivalent: 7 / 6 = **1.166667**
 
 #### Example 2: Division (3/4 ÷ 2/5)
 1. **Apply Division Formula**:
-   (3 × 5) / (4 × 2) = **15/8**
+ (3 × 5) / (4 × 2) = **15/8**
 2. **Simplify & Convert**:
-   - Mixed Fraction: 15 divided by 8 is 1 with remainder 7 $\to$ **1 7/8**
-   - Decimal Equivalent: 15 / 8 = **1.875**
+ - Mixed Fraction: 15 divided by 8 is 1 with remainder 7 to **1 7/8**
+ - Decimal Equivalent: 15 / 8 = **1.875**
 
 ---
 

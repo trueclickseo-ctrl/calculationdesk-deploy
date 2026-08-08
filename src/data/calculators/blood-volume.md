@@ -31,11 +31,11 @@ aiSummary:
   whoShouldUse: "Medical students, physiological researchers, blood donors, and health educators."
   limitations: "Nadler's equations provide statistical estimations for healthy adult body compositions. They do not measure acute blood loss, hemorrhage, or clinical fluid shifts."
   keyTakeaways:
-    - "Calculates estimated circulating blood volume using Nadler's anthropometric equations."
-    - "Differentiates formulas for males (0.3669*H^3 + 0.03219*W + 0.6041) and females (0.3561*H^3 + 0.03308*W + 0.1833)."
-    - "Displays outputs in Liters, Milliliters, and US Pints (1 Liter = 2.11338 US Pints)."
-    - "Explains blood donation percentages (~8% to 10% of total volume)."
-    - "Includes clear emergency safety disclaimers regarding acute blood loss."
+ - "Calculates estimated circulating blood volume using Nadler's anthropometric equations."
+ - "Differentiates formulas for males (0.3669*H^3 + 0.03219*W + 0.6041) and females (0.3561*H^3 + 0.03308*W + 0.1833)."
+ - "Displays outputs in Liters, Milliliters, and US Pints (1 Liter = 2.11338 US Pints)."
+ - "Explains blood donation percentages (~8% to 10% of total volume)."
+ - "Includes clear emergency safety disclaimers regarding acute blood loss."
 peopleAlsoAsk:
   - "How much blood is in the average human body?"
   - "Why do males have a higher blood volume than females of equal weight?"
@@ -43,16 +43,16 @@ peopleAlsoAsk:
   - "How fast does the body replace lost blood?"
 examples:
   - title: "Worked Blood Volume Example (Male: 175 cm / 1.75 m, 70 kg)"
-    inputs: "Gender = Male, Height = 175 cm (1.75 m), Weight = 70 kg"
-    calculation: "1. Height Cubed (H^3) = 1.75^3 = 5.359375 m³. 2. Height Component = 0.3669 * 5.359375 = 1.96635 L. 3. Weight Component = 0.03219 * 70 = 2.25330 L. 4. Total BV = 1.96635 + 2.25330 + 0.6041 = 4.82375 L (4.82 Liters). 5. Conversions = 4,824 ml | 10.2 US Pints."
-    result: "Total Blood Volume = 4.82 Liters (4,824 ml | 10.2 US Pints)"
+ inputs: "Gender = Male, Height = 175 cm (1.75 m), Weight = 70 kg"
+ calculation: "1. Height Cubed (H^3) = 1.75^3 = 5.359375 m³. 2. Height Component = 0.3669 * 5.359375 = 1.96635 L. 3. Weight Component = 0.03219 * 70 = 2.25330 L. 4. Total BV = 1.96635 + 2.25330 + 0.6041 = 4.82375 L (4.82 Liters). 5. Conversions = 4,824 ml | 10.2 US Pints."
+ result: "Total Blood Volume = 4.82 Liters (4,824 ml | 10.2 US Pints)"
 faqs:
   - q: "How much blood does a normal adult have?"
-    a: "The average adult human body contains approximately 4.5 to 5.5 Liters of blood (about 7% to 8% of total body weight). Males generally have slightly higher volume due to higher average stature and muscle mass."
+ a: "The average adult human body contains approximately 4.5 to 5.5 Liters of blood (about 7% to 8% of total body weight). Males generally have slightly higher volume due to higher average stature and muscle mass."
   - q: "What percentage of blood is removed during a standard blood donation?"
-    a: "A standard blood donation draws approximately 450 milliliters (0.45 Liters), which represents about 8% to 10% of an average adult's total circulating volume."
+ a: "A standard blood donation draws approximately 450 milliliters (0.45 Liters), which represents about 8% to 10% of an average adult's total circulating volume."
   - q: "How does the body replace lost blood volume?"
-    a: "The liquid plasma component is restored within 24 to 48 hours through water and fluid absorption. Red blood cells take about 4 to 6 weeks to fully regenerate in the bone marrow."
+ a: "The liquid plasma component is restored within 24 to 48 hours through water and fluid absorption. Red blood cells take about 4 to 6 weeks to fully regenerate in the bone marrow."
 references:
   - "https://pubmed.ncbi.nlm.nih.gov/13937004/"
 ---
@@ -74,23 +74,23 @@ This calculator computes your estimated **Total Blood Volume (BV)** in **Liters 
 
 ### Nadler's Equations Explained
 
-In 1962, Dr. S.B. Nadler published anthropometric equations derived from radioisotope dilution studies, establishing height cubed ($H^3$ in meters) and body weight ($W$ in kg) as the primary determinants of blood volume:
+In 1962, Dr. S.B. Nadler published anthropometric equations derived from radioisotope dilution studies, establishing height cubed (H^3 in meters) and body weight (W in kg) as the primary determinants of blood volume:
 
 #### 1. Male Nadler Formula
-$$\text{BV}_{\text{Male}} = 0.3669 \times H^3 + 0.03219 \times W + 0.6041$$
+BV_{Male} = 0.3669 × H^3 + 0.03219 × W + 0.6041
 
 #### 2. Female Nadler Formula
-$$\text{BV}_{\text{Female}} = 0.3561 \times H^3 + 0.03308 \times W + 0.1833$$
+BV_{Female} = 0.3561 × H^3 + 0.03308 × W + 0.1833
 
 #### Why Do Men and Women Have Different Formulas?
-Adult males generally have a higher percentage of skeletal muscle tissue and lower adipose fat tissue than females of equal body mass. Because skeletal muscle is highly vascularized compared to fat tissue, males average slightly higher circulating blood volume per kilogram of body weight ($70\text{--}75 \text{ ml/kg}$ vs. $65\text{--}70 \text{ ml/kg}$ in females).
+Adult males generally have a higher percentage of skeletal muscle tissue and lower adipose fat tissue than females of equal body mass. Because skeletal muscle is highly vascularized compared to fat tissue, males average slightly higher circulating blood volume per kilogram of body weight ($70--75  ml/kg vs. 65--70  ml/kg in females).
 
 ---
 
 ### Unit Conversions Used by the Calculator
 
-* **Milliliters**: $1 \text{ Liter} = 1,000 \text{ ml}$
-* **US Liquid Pints**: $1 \text{ Liter} \approx 2.11338 \text{ US Pints}$
+* **Milliliters**: 1  Liter = 1,000  ml
+* **US Liquid Pints**: 1  Liter ≈ 2.11338  US Pints
 
 ---
 
@@ -98,17 +98,17 @@ Adult males generally have a higher percentage of skeletal muscle tissue and low
 
 Let's calculate the blood volume for a **male** standing **175 cm tall (1.75 m)** and weighing **70 kg**:
 
-1. **Calculate Height Cubed ($H^3$)**:
-   $$H^3 = 1.75 \times 1.75 \times 1.75 = \mathbf{5.359375 \text{ m}^3}$$
+1. **Calculate Height Cubed (H^3)**:
+ H^3 = 1.75 × 1.75 × 1.75 = 5.359375  m^3
 2. **Calculate Height Component**:
-   $$\text{Height Term} = 0.3669 \times 5.359375 = \mathbf{1.96635 \text{ Liters}}$$
+ Height Term = 0.3669 × 5.359375 = 1.96635  Liters
 3. **Calculate Weight Component**:
-   $$\text{Weight Term} = 0.03219 \times 70 = \mathbf{2.25330 \text{ Liters}}$$
+ Weight Term = 0.03219 × 70 = 2.25330  Liters
 4. **Sum Total Blood Volume**:
-   $$\text{BV} = 1.96635 + 2.25330 + 0.6041 = \mathbf{4.82375 \text{ Liters}} \quad (\approx \mathbf{4.82 \text{ L}})$$
+ BV = 1.96635 + 2.25330 + 0.6041 = 4.82375  Liters (≈ 4.82  L)
 5. **Convert Units**:
-   - Milliliters: $4.82375 \times 1,000 \approx \mathbf{4,824 \text{ ml}}$
-   - US Pints: $4.82375 \times 2.11338 \approx \mathbf{10.2 \text{ US Pints}}$
+ - Milliliters: 4.82375 × 1,000 ≈ 4,824  ml
+ - US Pints: 4.82375 × 2.11338 ≈ 10.2  US Pints
 
 *Verification Result: Total Blood Volume = **4.82 Liters** (4,824 ml | 10.2 US Pints).*
 
@@ -117,7 +117,7 @@ Let's calculate the blood volume for a **male** standing **175 cm tall (1.75 m)*
 ### Understanding Blood Donation Volumes
 
 When you donate blood:
-* A standard whole blood donation is **450 ml** ($\approx 0.45 \text{ Liters}$ or $0.95 \text{ US Pints}$).
+* A standard whole blood donation is **450 ml** ($≈ 0.45  Liters or 0.95  US Pints).
 * For an adult with **4.82 L** of blood, a donation represents only **9.3%** of their total blood supply.
 * Your body rapidly restores the plasma fluid within 24 to 48 hours. Red blood cells replenish over 4 to 6 weeks.
 

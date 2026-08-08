@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Adults, healthcare educators, fitness coaches, and individuals managing health."
   limitations: "BMI weight ranges are population screening benchmarks. They do not account for muscle mass, bone density, age, pregnancy, or metabolic distribution."
   keyTakeaways:
-    - "Calculates healthy weight limits using height and WHO BMI bounds (18.5 to 24.9)."
-    - "Determines current BMI and weight status (Underweight, Normal Weight, Overweight, Obese)."
-    - "Calculates the target weight gain or loss required to enter the normal BMI range."
-    - "Emphasizes respectful health education without judgment or unsupported medical claims."
+ - "Calculates healthy weight limits using height and WHO BMI bounds (18.5 to 24.9)."
+ - "Determines current BMI and weight status (Underweight, Normal Weight, Overweight, Obese)."
+ - "Calculates the target weight gain or loss required to enter the normal BMI range."
+ - "Emphasizes respectful health education without judgment or unsupported medical claims."
 peopleAlsoAsk:
   - "How is a healthy weight range calculated from height?"
   - "What are the WHO BMI category boundaries?"
@@ -42,16 +42,16 @@ peopleAlsoAsk:
   - "Why does healthy weight range scale with the square of height?"
 examples:
   - title: "Worked Healthy Weight Bounds Example (Height: 180 cm / 1.80 m)"
-    inputs: "Height = 180 cm (1.80 m), Current Weight = 70 kg"
-    calculation: "1. Min Weight (BMI 18.5) = 18.5 * (1.80)^2 = 18.5 * 3.24 = 59.94 kg (59.9 kg). 2. Max Weight (BMI 24.9) = 24.9 * (1.80)^2 = 24.9 * 3.24 = 80.68 kg (80.7 kg). 3. Current BMI = 70 / 3.24 = 21.6 (Normal Weight)."
-    result: "Healthy Weight Range = 59.9 kg to 80.7 kg (132.1 to 177.9 lbs) | Current Status = Normal Weight (BMI 21.6)"
+ inputs: "Height = 180 cm (1.80 m), Current Weight = 70 kg"
+ calculation: "1. Min Weight (BMI 18.5) = 18.5 * (1.80)^2 = 18.5 * 3.24 = 59.94 kg (59.9 kg). 2. Max Weight (BMI 24.9) = 24.9 * (1.80)^2 = 24.9 * 3.24 = 80.68 kg (80.7 kg). 3. Current BMI = 70 / 3.24 = 21.6 (Normal Weight)."
+ result: "Healthy Weight Range = 59.9 kg to 80.7 kg (132.1 to 177.9 lbs) | Current Status = Normal Weight (BMI 21.6)"
 faqs:
   - q: "How is the healthy weight range derived from height?"
-    a: "The calculator takes your height in meters, squares it ($H^2$), and multiplies it by the lower WHO healthy BMI limit ($18.5$) and upper healthy limit ($24.9$) to establish your weight boundaries."
+ a: "The calculator takes your height in meters, squares it (H^2), and multiplies it by the lower WHO healthy BMI limit ($18.5$) and upper healthy limit ($24.9$) to establish your weight boundaries."
   - q: "Is BMI an absolute indicator of individual health?"
-    a: "No. BMI is an epidemiological screening tool, not a diagnostic measurement. It does not measure body fat percentage, visceral fat, muscle mass, cardiovascular fitness, or metabolic markers like blood glucose."
+ a: "No. BMI is an epidemiological screening tool, not a diagnostic measurement. It does not measure body fat percentage, visceral fat, muscle mass, cardiovascular fitness, or metabolic markers like blood glucose."
   - q: "Why do healthy weight ranges increase so quickly with height?"
-    a: "Because human volume increases proportionally to three-dimensional stature, BMI uses height squared ($H^2$) to approximate body surface and volume scaling."
+ a: "Because human volume increases proportionally to three-dimensional stature, BMI uses height squared (H^2) to approximate body surface and volume scaling."
 references:
   - "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight"
 ---
@@ -74,15 +74,15 @@ If you enter your current weight, it also evaluates your **current BMI**, **weig
 ### How Healthy Weight Ranges Are Calculated
 
 Body Mass Index (BMI) evaluates body mass relative to height squared:
-$$\text{BMI} = \frac{\text{Weight (kg)}}{\text{Height (m)}^2}$$
+BMI = frac(Weight (kg)){Height (m)^2}
 
-To find your personalized healthy weight bounds, the calculator rearranges the BMI equation using height in meters ($H$):
+To find your personalized healthy weight bounds, the calculator rearranges the BMI equation using height in meters (H):
 
-#### 1. Lower Healthy Weight Limit ($\text{BMI} = 18.5$)
-$$\text{Weight}_{\text{min}} = 18.5 \times H^2$$
+#### 1. Lower Healthy Weight Limit (BMI = 18.5)
+Weight_{min} = 18.5 × H^2
 
-#### 2. Upper Healthy Weight Limit ($\text{BMI} = 24.9$)
-$$\text{Weight}_{\text{max}} = 24.9 \times H^2$$
+#### 2. Upper Healthy Weight Limit (BMI = 24.9)
+Weight_{max} = 24.9 × H^2
 
 ---
 
@@ -101,14 +101,14 @@ $$\text{Weight}_{\text{max}} = 24.9 \times H^2$$
 
 Let's calculate the healthy weight range for an individual standing **1.80 meters tall (180 cm / 5 ft 11 in)** weighing **70 kg**:
 
-1. **Calculate Height Squared ($H^2$)**:
-   $$H^2 = 1.80 \times 1.80 = \mathbf{3.24 \text{ m}^2}$$
-2. **Calculate Lower Weight Limit ($\text{BMI} = 18.5$)**:
-   $$\text{Weight}_{\text{min}} = 18.5 \times 3.24 = \mathbf{59.94 \text{ kg}} \quad (\approx 59.9 \text{ kg / } 132.1 \text{ lbs})$$
-3. **Calculate Upper Weight Limit ($\text{BMI} = 24.9$)**:
-   $$\text{Weight}_{\text{max}} = 24.9 \times 3.24 = \mathbf{80.676 \text{ kg}} \quad (\approx 80.7 \text{ kg / } 177.9 \text{ lbs})$$
+1. **Calculate Height Squared (H^2)**:
+ H^2 = 1.80 × 1.80 = 3.24  m^2
+2. **Calculate Lower Weight Limit (BMI = 18.5)**:
+ Weight_{min} = 18.5 × 3.24 = 59.94  kg (≈ 59.9  kg /  132.1  lbs)
+3. **Calculate Upper Weight Limit (BMI = 24.9)**:
+ Weight_{max} = 24.9 × 3.24 = 80.676  kg (≈ 80.7  kg /  177.9  lbs)
 4. **Calculate Current BMI & Status**:
-   $$\text{Current BMI} = \frac{70}{3.24} = \mathbf{21.60} \quad (\mathbf{\text{Normal Weight}})$$
+ Current BMI = (70 / 3.24) = 21.60 (Normal Weight)
 
 *Verification Result: Healthy Range = **59.9 kg to 80.7 kg** (132.1 to 177.9 lbs).*
 
@@ -118,7 +118,7 @@ Let's calculate the healthy weight range for an individual standing **1.80 meter
 
 While height-based weight ranges offer a quick baseline, they have notable limitations:
 * **Muscular Athletes**: Bodybuilders and athletes with high muscle mass may have a BMI over 25.0 despite having very low body fat.
-* **Older Adults**: Slightly higher BMI ranges ($23\text{--}27$) in older adults are often associated with better bone density and health outcomes.
+* **Older Adults**: Slightly higher BMI ranges ($23--27$) in older adults are often associated with better bone density and health outcomes.
 * **Pregnancy & Children**: BMI ranges do not apply during pregnancy or to growing children (who use age-specific percentiles).
 
 ---
@@ -135,8 +135,8 @@ Consult a doctor, registered dietitian, or healthcare provider if:
 ### Frequently Asked Questions (FAQ)
 
 * **Q1: How is the healthy weight range derived from height?**
-  * A1: The calculator takes your height in meters, squares it ($H^2$), and multiplies it by the lower WHO healthy BMI limit ($18.5$) and upper healthy limit ($24.9$) to establish your weight boundaries.
+  * A1: The calculator takes your height in meters, squares it (H^2), and multiplies it by the lower WHO healthy BMI limit ($18.5$) and upper healthy limit ($24.9$) to establish your weight boundaries.
 * **Q2: Is BMI an absolute indicator of individual health?**
   * A2: No. BMI is an epidemiological screening tool, not a diagnostic measurement. It does not measure body fat percentage, visceral fat, muscle mass, cardiovascular fitness, or metabolic markers like blood glucose.
 * **Q3: Why do healthy weight ranges increase so quickly with height?**
-  * A3: Because human volume increases proportionally to three-dimensional stature, BMI uses height squared ($H^2$) to approximate body surface and volume scaling.
+  * A3: Because human volume increases proportionally to three-dimensional stature, BMI uses height squared (H^2) to approximate body surface and volume scaling.

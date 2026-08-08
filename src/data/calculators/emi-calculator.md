@@ -25,15 +25,15 @@ titleVariants:
   - "EMI Calculator - Calculate Loan EMI Online | CalculationDesk"
 aiSummary:
   definition: "An Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a bank or financial lender each month to repay both principal and interest on a reducing-balance loan."
-  quickAnswer: "For a $100,000 loan at 9.5% annual interest over 5 years (60 months), your monthly EMI is $2,100.19."
+  quickAnswer: "For a 100,000 loan at 9.5% annual interest over 5 years (60 months), your monthly EMI is 2,100.19."
   formulaSummary: "EMI = P × R × (1 + R)^N / ((1 + R)^N - 1)"
   whenToUse: "Use this calculator before taking out a home, auto, or personal loan to calculate monthly cash outflow and total borrowing costs."
   whoShouldUse: "Home buyers, car buyers, personal loan borrowers, and financial planners."
   limitations: "Calculates reducing-balance EMI assuming fixed interest rates. Floating rate loans may adjust monthly EMI or tenure when benchmark rates shift."
   keyTakeaways:
-    - "EMI covers both monthly interest charges and principal reduction."
-    - "Longer loan tenures lower monthly EMI but increase total interest paid over the life of the loan."
-    - "Early monthly payments consist mostly of interest, whereas later payments clear principal."
+ - "EMI covers both monthly interest charges and principal reduction."
+ - "Longer loan tenures lower monthly EMI but increase total interest paid over the life of the loan."
+ - "Early monthly payments consist mostly of interest, whereas later payments clear principal."
 peopleAlsoAsk:
   - "What is the formula for calculating loan EMI?"
   - "How does loan tenure affect total interest paid?"
@@ -41,18 +41,18 @@ peopleAlsoAsk:
   - "Why is interest higher during the early months of a loan?"
 examples:
   - title: "5-Year Loan ($100,000 at 9.5% p.a.)"
-    inputs: "Principal = $100,000, Interest Rate = 9.5% p.a., Tenure = 5 Years (60 Months)"
-    calculation: "Monthly Rate (R) = 9.5 / 12 / 100 = 0.00791667; N = 60; EMI = 100,000 × 0.00791667 × (1.00791667)^60 / ((1.00791667)^60 - 1)"
-    result: "Monthly EMI = $2,100.19 | Total Interest = $26,011.58 | Total Repayment = $126,011.58"
+ inputs: "Principal = 100,000, Interest Rate = 9.5% p.a., Tenure = 5 Years (60 Months)"
+ calculation: "Monthly Rate (R) = 9.5 / 12 / 100 = 0.00791667; N = 60; EMI = 100,000 × 0.00791667 × (1.00791667)^60 / ((1.00791667)^60 - 1)"
+ result: "Monthly EMI = 2,100.19 | Total Interest = 26,011.58 | Total Repayment = 126,011.58"
 faqs:
   - q: "What does EMI stand for?"
-    a: "EMI stands for Equated Monthly Installment. It is a fixed monthly payment made to a lender to pay off a loan over a set period."
+ a: "EMI stands for Equated Monthly Installment. It is a fixed monthly payment made to a lender to pay off a loan over a set period."
   - q: "How is the monthly interest rate calculated from an annual rate?"
-    a: "Divide the annual interest rate by 12 and then by 100 ($R = \text{Annual Rate} \div 12 \div 100$). For example, 9.5% per year equals 0.00791667 per month."
+ a: "Divide the annual interest rate by 12 and then by 100 (R = Annual Rate ÷ 12 ÷ 100). For example, 9.5% per year equals 0.00791667 per month."
   - q: "Why is the interest portion higher in the early months of a loan?"
-    a: "Because EMIs use the reducing-balance method. In the early months, your outstanding principal balance is at its highest, so a larger share of the monthly payment goes to cover interest. As the principal drops, more of each payment goes directly toward clearing the loan balance."
+ a: "Because EMIs use the reducing-balance method. In the early months, your outstanding principal balance is at its highest, so a larger share of the monthly payment goes to cover interest. As the principal drops, more of each payment goes directly toward clearing the loan balance."
   - q: "How does loan tenure impact overall interest costs?"
-    a: "Extending your tenure lowers your monthly payment, but increases the total interest you pay over the life of the loan because interest accrues over a longer timeframe."
+ a: "Extending your tenure lowers your monthly payment, but increases the total interest you pay over the life of the loan because interest accrues over a longer timeframe."
 references:
   - "https://en.wikipedia.org/wiki/Equated_monthly_installment"
   - "https://www.investopedia.com/terms/e/equatedmonthlyinstallment.asp"
@@ -74,12 +74,12 @@ Each EMI payment consists of two parts:
 
 #### The Reducing-Balance EMI Formula
 
-$$EMI = P \times R \times \frac{(1 + R)^N}{(1 + R)^N - 1}$$
+EMI = P × R × ((1 + R)^N / (1 + R)^N - 1)
 
 Where:
-- **$P$ (Principal)**: Total loan amount borrowed.
-- **$R$ (Monthly Interest Rate)**: $\text{Annual Interest Rate} \div 12 \div 100$.
-- **$N$ (Tenure in Months)**: $\text{Loan Tenure in Years} \times 12$.
+- **P (Principal)**: Total loan amount borrowed.
+- **R (Monthly Interest Rate)**: Annual Interest Rate ÷ 12 ÷ 100.
+- **N (Tenure in Months)**: Loan Tenure in Years × 12.
 
 ---
 
@@ -87,17 +87,16 @@ Where:
 
 Let's calculate the monthly EMI for a **$100,000 loan** at an annual interest rate of **9.5%** over **5 years (60 months)**:
 
-1. **Calculate Monthly Interest Rate ($R$)**:
-   $$R = \frac{9.5}{12 \times 100} = 0.00791667$$
-2. **Calculate Total Months ($N$)**:
-   $$N = 5 \times 12 = 60\text{ months}$$
+1. **Calculate Monthly Interest Rate (R)**:
+ R = (9.5 / 12 × 100) = 0.00791667
+2. **Calculate Total Months (N)**:
+ N = 5 × 12 = 60 months
 3. **Apply the EMI Formula**:
-   $$EMI = 100,000 \times 0.00791667 \times \frac{(1.00791667)^{60}}{(1.00791667)^{60} - 1}$$
-   $$EMI = 791.667 \times \frac{1.605009}{0.605009} \approx \mathbf{\$2,100.19}$$
-4. **Summary**:
-   - **Monthly EMI**: **$2,100.19**
-   - **Total Repayment**: $\$2,100.19 \times 60 = \mathbf{\$126,011.58}$
-   - **Total Interest Paid**: $\$126,011.58 - \$100,000 = \mathbf{\$26,011.58}$
+ EMI = 100,000 × 0.00791667 × frac((1.00791667)^60){(1.00791667)^60 - 1}
+ EMI = 791.667 × (1.605009 / 0.605009) ≈ \2,100.19 4. **Summary**:
+ - **Monthly EMI**: **$2,100.19**
+ - **Total Repayment**: \2,100.19 × 60 = $126,011.58
+ - **Total Interest Paid**: \126,011.58 - $100,000 = $26,011.58
 
 ---
 
@@ -113,7 +112,7 @@ On a reducing-balance loan, your monthly payment stays fixed, but the internal s
 
 Adjusting your loan tenure directly affects your monthly budget and long-term interest bill:
 
-*Comparison for a $100,000 loan at 9.5% p.a.*:
+*Comparison for a 100,000 loan at 9.5% p.a.*:
 - **3-Year Tenure (36 Months)**: EMI = **$3,203.79** | Total Interest = **$15,336.44**
 - **5-Year Tenure (60 Months)**: EMI = **$2,100.19** | Total Interest = **$26,011.58**
 - **10-Year Tenure (120 Months)**: EMI = **$1,293.98** | Total Interest = **$55,277.60**

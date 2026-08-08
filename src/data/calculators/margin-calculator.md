@@ -25,15 +25,15 @@ titleVariants:
   - "Margin Calculator - Calculate Gross Margin, Markup & Selling Price | CalculationDesk"
 aiSummary:
   definition: "The Margin Calculator computes selling prices, gross profit amounts, and equivalent markup or margin percentages for retail products and business services."
-  quickAnswer: "Buying an item for $80 and applying a 20% Gross Margin requires a selling price of $100 ($20 profit | 25% markup). Applying a 20% Markup requires a selling price of $96 ($16 profit | 16.67% margin)."
+  quickAnswer: "Buying an item for 80 and applying a 20% Gross Margin requires a selling price of 100 ($20 profit | 25% markup). Applying a 20% Markup requires a selling price of 96 ($16 profit | 16.67% margin)."
   formulaSummary: "Margin Mode: Selling Price = Cost / (1 - Margin/100) | Profit = Selling Price - Cost | Markup % = (Profit / Cost) × 100 | Markup Mode: Selling Price = Cost × (1 + Markup/100)"
   whenToUse: "Use this tool to set retail product prices, calculate wholesale markups, and evaluate gross profit margins."
   whoShouldUse: "Retailers, wholesalers, e-commerce sellers, business owners, and pricing analysts."
   limitations: "Calculates gross margins and markups based on cost price and target ratios."
   keyTakeaways:
-    - "Gross Margin is profit expressed as a percentage of Selling Price ($\text{Profit} \div \text{Revenue}$)."
-    - "Markup is profit expressed as a percentage of Cost Price ($\text{Profit} \div \text{Cost}$)."
-    - "A 25% markup produces an equivalent 20% gross margin."
+ - "Gross Margin is profit expressed as a percentage of Selling Price (Profit ÷ Revenue)."
+ - "Markup is profit expressed as a percentage of Cost Price (Profit ÷ Cost)."
+ - "A 25% markup produces an equivalent 20% gross margin."
 peopleAlsoAsk:
   - "What is the difference between gross margin and markup?"
   - "How do you calculate selling price from a target margin percentage?"
@@ -41,20 +41,20 @@ peopleAlsoAsk:
   - "Why can gross margin never reach or exceed 100%?"
 examples:
   - title: "Gross Margin Pricing ($80 Cost Price, 20% Target Gross Margin)"
-    inputs: "Cost Price = $80, Desired Gross Margin Ratio = 20%, Target = Gross Margin (%)"
-    calculation: "Selling Price = 80 / (1 - 0.20) = 80 / 0.80 = $100.00. Gross Profit = 100 - 80 = $20.00. Equivalent Markup % = (20 / 80) × 100 = 25.00%."
-    result: "Target Selling Price = $100.00 | Gross Profit = $20.00 | Equivalent Markup = 25.00%"
+ inputs: "Cost Price = 80, Desired Gross Margin Ratio = 20%, Target = Gross Margin (%)"
+ calculation: "Selling Price = 80 / (1 - 0.20) = 80 / 0.80 = 100.00. Gross Profit = 100 - 80 = 20.00. Equivalent Markup % = (20 / 80) × 100 = 25.00%."
+ result: "Target Selling Price = 100.00 | Gross Profit = 20.00 | Equivalent Markup = 25.00%"
   - title: "Markup Pricing ($80 Cost Price, 20% Target Markup)"
-    inputs: "Cost Price = $80, Desired Markup Ratio = 20%, Target = Markup (%)"
-    calculation: "Selling Price = 80 × (1 + 0.20) = 80 × 1.20 = $96.00. Gross Profit = 96 - 80 = $16.00. Equivalent Gross Margin % = (16 / 96) × 100 = 16.67%."
-    result: "Target Selling Price = $96.00 | Gross Profit = $16.00 | Equivalent Gross Margin = 16.67%"
+ inputs: "Cost Price = 80, Desired Markup Ratio = 20%, Target = Markup (%)"
+ calculation: "Selling Price = 80 × (1 + 0.20) = 80 × 1.20 = 96.00. Gross Profit = 96 - 80 = 16.00. Equivalent Gross Margin % = (16 / 96) × 100 = 16.67%."
+ result: "Target Selling Price = 96.00 | Gross Profit = 16.00 | Equivalent Gross Margin = 16.67%"
 faqs:
   - q: "What is the difference between Gross Margin and Markup?"
-    a: "Gross Margin measures profit relative to the selling price ($\text{Margin} = \frac{\text{Profit}}{\text{Selling Price}}$). Markup measures profit relative to the purchase cost ($\text{Markup} = \frac{\text{Profit}}{\text{Cost Price}}$). Because cost price is always smaller than selling price, markup percentage is always higher than margin percentage for the same item."
+ a: "Gross Margin measures profit relative to the selling price (Margin = frac(Profit){Selling Price}). Markup measures profit relative to the purchase cost (Markup = frac(Profit){Cost Price}). Because cost price is always smaller than selling price, markup percentage is always higher than margin percentage for the same item."
   - q: "How do I calculate selling price from a target margin?"
-    a: "To achieve a target gross margin percentage ($M$), divide your cost price by $(1 - M/100)$. For example, to get a 20% margin on an item costing $80: $\text{Selling Price} = \frac{80}{1 - 0.20} = \$100$."
+ a: "To achieve a target gross margin percentage (M), divide your cost price by (1 - M/100). For example, to get a 20% margin on an item costing 80: Selling Price = (80 / 1 - 0.20) = \100."
   - q: "Why can Gross Margin never equal 100%?"
-    a: "Since gross margin is calculated as $\frac{\text{Selling Price} - \text{Cost}}{\text{Selling Price}}$, reaching a 100% margin requires a cost price of zero. As long as a product has a non-zero purchase cost, gross margin remains strictly below 100%."
+ a: "Since gross margin is calculated as frac(Selling Price - Cost){Selling Price}, reaching a 100% margin requires a cost price of zero. As long as a product has a non-zero purchase cost, gross margin remains strictly below 100%."
 references:
   - "https://www.investopedia.com/terms/g/grossmargin.asp"
 ---
@@ -72,20 +72,20 @@ This calculator supports both pricing modes, computing your **target selling pri
 #### 1. Gross Margin Mode (Targeting Margin %)
 Gross Margin measures profit as a percentage of the final **selling price**:
 
-$$\text{Target Selling Price (Revenue)} = \frac{\text{Cost Price}}{1 - \frac{\text{Margin \%}}{100}}$$
+Target Selling Price (Revenue) = frac(Cost Price){1 - frac(Margin %){100}}
 
-$$\text{Gross Profit Amount} = \text{Selling Price} - \text{Cost Price}$$
+Gross Profit Amount = Selling Price - Cost Price
 
-$$\text{Equivalent Markup \%} = \left(\frac{\text{Gross Profit}}{\text{Cost Price}}\right) \times 100$$
+Equivalent Markup % = frac(Gross Profit){Cost Price} × 100
 
 #### 2. Markup Mode (Targeting Markup %)
 Markup measures profit as a percentage of the **cost price**:
 
-$$\text{Target Selling Price (Revenue)} = \text{Cost Price} \times \left(1 + \frac{\text{Markup \%}}{100}\right)$$
+Target Selling Price (Revenue) = Cost Price × 1 + frac(Markup %){100}
 
-$$\text{Gross Profit Amount} = \text{Selling Price} - \text{Cost Price}$$
+Gross Profit Amount = Selling Price - Cost Price
 
-$$\text{Equivalent Gross Margin \%} = \left(\frac{\text{Gross Profit}}{\text{Selling Price}}\right) \times 100$$
+Equivalent Gross Margin % = frac(Gross Profit){Selling Price} × 100
 
 ---
 
@@ -93,19 +93,15 @@ $$\text{Equivalent Gross Margin \%} = \left(\frac{\text{Gross Profit}}{\text{Sel
 
 #### Example 1: Gross Margin Target ($80 Cost Price at 20% Gross Margin)
 1. **Calculate Target Selling Price**:
-   $$\text{Selling Price} = \frac{\$80}{1 - 0.20} = \frac{\$80}{0.80} = \mathbf{\$100.00}$$
-2. **Calculate Gross Profit Amount**:
-   $$\text{Profit} = \$100.00 - \$80.00 = \mathbf{\$20.00}$$
-3. **Calculate Equivalent Markup %**:
-   $$\text{Markup} = \left(\frac{\$20.00}{\$80.00}\right) \times 100 = \mathbf{25.00\%}$$
+ Selling Price = ($80 / (1 - 0.20)) = ($80 / 0.80) = $100.00
+2. **Calculate Gross Profit Amount**: Profit = $100.00 - $80.00 = $20.00
+3. **Calculate Equivalent Markup %**: Markup = ($20.00 / $80.00) × 100 = 25.00%
 
 #### Example 2: Cost Markup Target ($80 Cost Price at 20% Markup)
 1. **Calculate Target Selling Price**:
-   $$\text{Selling Price} = \$80 \times (1 + 0.20) = \$80 \times 1.20 = \mathbf{\$96.00}$$
-2. **Calculate Gross Profit Amount**:
-   $$\text{Profit} = \$96.00 - \$80.00 = \mathbf{\$16.00}$$
-3. **Calculate Equivalent Gross Margin %**:
-   $$\text{Margin} = \left(\frac{\$16.00}{\$96.00}\right) \times 100 = \mathbf{16.67\%}$$
+ Selling Price = $80 × (1 + 0.20) = $80 × 1.20 = $96.00
+2. **Calculate Gross Profit Amount**: Profit = $96.00 - $80.00 = $16.00
+3. **Calculate Equivalent Gross Margin %**: Margin = ($16.00 / $96.00) × 100 = 16.67%
 
 ---
 
