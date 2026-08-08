@@ -188,7 +188,7 @@ export default function BandwidthCalculator() {
                     </span>
                   </div>
                   <div className="rounded-xl bg-background p-4 border border-border">
-                    <span className="block text-xs font-semibold text-foreground/50 uppercase tracking-wider">Peak Bandwidth Allowed</span>
+                    <span className="block text-xs font-semibold text-foreground/50 uppercase tracking-wider">Peak Data Transfer Allowance</span>
                     <span className="block text-base font-bold text-foreground mt-1">
                       {results.peakTransfer.toFixed(2)} GB / month
                     </span>
