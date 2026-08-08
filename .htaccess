@@ -2,25 +2,23 @@
 
 RewriteEngine On
 
-# 0. Canonical redirects (Force HTTPS, WWW, and NO Trailing Slash in a single hop)
-# Rule 1: Non-WWW or HTTP + Trailing Slash (and not a directory) -> Redirect to HTTPS + WWW + NO Trailing Slash
-RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC,OR]
-RewriteCond %{HTTPS} off
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} ^/(.*)/$
+# 0. Canonical redirects (Force HTTPS, WWW, and Trailing Slash in a single hop)
+# Exclude actual existing files, file extensions (e.g. .xml, .txt, .svg, .html, .png, etc.), and yandex verification.
 RewriteCond %{REQUEST_URI} !/yandex_[a-zA-Z0-9]+\.html$
-RewriteRule ^(.*)/$ https://www.calculationdesk.com/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,5}$
+RewriteCond %{HTTP_HOST} !^www\.calculationdesk\.com$ [NC,OR]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ https://www.calculationdesk.com/$1/ [R=301,L]
 
-# Rule 2: Non-WWW or HTTP + NO Trailing Slash (or is a file/directory) -> Redirect to HTTPS + WWW
-RewriteCond %{HTTP_HOST} ^calculationdesk\.com$ [NC,OR]
-RewriteCond %{HTTPS} off
-RewriteCond %{REQUEST_URI} !/yandex_[a-zA-Z0-9]+\.html$
-RewriteRule ^(.*)$ https://www.calculationdesk.com/$1 [R=301,L]
+# Fix trailing slash duplication for root domain if created by rule above
+RewriteCond %{HTTP_HOST} ^www\.calculationdesk\.com$ [NC]
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} ^//$
+RewriteRule ^ https://www.calculationdesk.com/ [R=301,L]
 
-# Rule 3: WWW + HTTPS + Trailing Slash (and not a directory/root) -> Strip Trailing Slash
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} ^/(.+)/$
-RewriteRule ^(.*)/$ https://www.calculationdesk.com/$1 [R=301,L]
+
 
 
 # 1. Allow direct access to real files (like .txt, .xml, .svg, images, css, js)
