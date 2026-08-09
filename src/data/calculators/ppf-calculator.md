@@ -1,104 +1,123 @@
 ---
 title: "PPF Calculator - Public Provident Fund Calculator"
-seoTitle: "PPF Calculator - Calculate Public Provident Fund Growth | CalculationDesk"
-metaDescription: "Free online PPF Calculator. Calculate Public Provident Fund (PPF) maturity returns, interest compounding, total deposits, and tax-free growth."
+seoTitle: "PPF Calculator - Public Provident Fund Maturity Calculator | CalculationDesk"
+metaDescription: "Calculate your Public Provident Fund (PPF) maturity amount, total deposits, and interest earned over the 15-year (or extended) lock-in period."
 category: "financial"
-subcategory: "retirement-calculators"
-tags: ["ppf calculator", "public provident fund", "ppf maturity calculator", "ppf interest rate", "long term savings"]
+subcategory: "investment-calculators"
+tags: ["ppf calculator", "public provident fund calculator", "ppf maturity calculator", "ppf interest calculator"]
 priority: "high"
-importance: 10
+importance: 9
 clusterPriority: "primary"
 searchIntent: "transactional"
 authorId: "editorial-team"
 reviewerId: "calculationdesk-review-team"
 lastUpdated: "2026-08-09"
 formulaVerified: true
-version: "2.0"
+version: "2.1"
 contentStatus: "published"
 lastReviewed: "2026-08-09"
 nextReviewDate: "2026-11-09"
 refreshPriority: "high"
 seoPriority:
   tier: 1
-  reason: "High organic search priority execution"
+  reason: "Primary Public Provident Fund maturity and interest projection query"
 titleVariants:
-  - "PPF Calculator - Calculate Public Provident Fund Growth | CalculationDesk"
+  - "PPF Calculator - Public Provident Fund Maturity Calculator | CalculationDesk"
 aiSummary:
-  definition: "The Public Provident Fund (PPF) is a long-term government-backed savings scheme designed to provide secure, tax-exempt returns over a statutory 15-year lock-in period."
-  quickAnswer: "Depositing 150,000 yearly for 15 years at an assumed 7.1% interest rate yields an estimated maturity corpus of 4,036,441 ($2,250,000 invested principal | 1,786,441 interest earned)."
-  formulaSummary: "M = P × [((1 + i)^n - 1) / i] × (1 + i)"
-  whenToUse: "Use this calculator to forecast long-term wealth accumulation for annual PPF deposits over 15 to 50 year horizons."
-  whoShouldUse: "Long-term savers, retirement planners, and risk-averse investors."
-  limitations: "Assumes beginning-of-year annual contributions and a constant interest rate throughout the tenure."
+  definition: "The Public Provident Fund (PPF) is a long-term, government-backed savings scheme with a minimum 15-year lock-in and annually compounded interest. This calculator projects the maturity value of yearly PPF deposits made at the start of each year."
+  quickAnswer: "Depositing 150,000 every year for the standard 15-year tenure at an annual interest rate of 7.1% grows to a maturity value of approximately 4,068,209.22, made up of 2,250,000 in total deposits and 1,818,209.22 in interest earned."
+  formulaSummary: "M = P * [((1 + i)^n - 1) / i] * (1 + i) | i = AnnualRate / 100"
+  whenToUse: "Use this calculator to project the maturity value of a PPF account over its mandatory 15-year lock-in, or over an extended tenure in blocks of 5 years."
+  whoShouldUse: "PPF account holders and anyone evaluating this scheme as part of a long-term, low-risk savings plan."
+  limitations: "Assumes a constant annual interest rate and a fixed annual deposit made at the start of each year. The actual PPF rate is set by the government and revised periodically, and real-world deposit timing may vary."
   keyTakeaways:
- - "Calculates annual compounding for beginning-of-year deposits."
- - "Requires a statutory minimum tenure of 15 years (extendable in 5-year blocks)."
- - "Interest earned and final maturity payouts are 100% tax-free under EEE rules in India."
+    - "PPF uses the same annuity-due compounding formula as a SIP, but compounds annually rather than monthly since deposits and interest crediting both happen on a yearly basis."
+    - "The mandatory minimum tenure is 15 years, after which the account can be extended indefinitely in blocks of 5 years, with or without further deposits."
+    - "Because PPF compounds annually at a government-set rate rather than a market-linked one, the projection here is far more predictable than an SIP or lumpsum equity projection."
 peopleAlsoAsk:
-  - "What is the formula for calculating PPF maturity value?"
-  - "What is the minimum lock-in period for a PPF account?"
-  - "How does annual compounding work in PPF?"
-  - "Can a PPF account be extended beyond 15 years?"
+  - "What is the lock-in period for a PPF account?"
+  - "Can I extend my PPF account after 15 years?"
+  - "Is there a limit on how much I can deposit in PPF each year?"
+  - "Is PPF interest tax-free?"
 examples:
-  - title: "15-Year PPF Investment ($150,000/year at 7.1% p.a. interest rate)"
- inputs: "Yearly Investment = 150,000, Interest Rate = 7.1% p.a., Tenure = 15 Years"
- calculation: "i = 7.1 / 100 = 0.071; n = 15; M = 150,000 × [((1.071)^15 - 1) / 0.071] × 1.071"
- result: "Total Invested = 2,250,000 | Est. Interest = 1,786,441 | Maturity Amount = 4,036,441"
+  - title: "Standard 15-Year PPF Tenure (150,000/year @ 7.1% p.a.)"
+    inputs: "Annual Deposit = 150,000, Interest Rate = 7.1% p.a., Tenure = 15 Years"
+    calculation: "i = 0.071; n = 15; M = 150,000 * [((1.071)^15 - 1) / 0.071] * 1.071 = 150,000 * 27.121395 = 4,068,209.22. Total Invested = 150,000 * 15 = 2,250,000. Interest Earned = 4,068,209.22 - 2,250,000 = 1,818,209.22."
+    result: "Maturity Amount = 4,068,209.22 | Total Invested = 2,250,000.00 | Interest Earned = 1,818,209.22"
+  - title: "Extended 25-Year PPF Tenure (150,000/year @ 7.1% p.a.)"
+    inputs: "Annual Deposit = 150,000, Interest Rate = 7.1% p.a., Tenure = 25 Years (two 5-year extensions)"
+    calculation: "i = 0.071; n = 25; M = 150,000 * [((1.071)^25 - 1) / 0.071] * 1.071 = 10,308,014.97."
+    result: "Maturity Amount = 10,308,014.97 | Total Invested = 3,750,000.00 | Interest Earned = 6,558,014.97"
 faqs:
   - q: "What is the lock-in period for a PPF account?"
- a: "A PPF account has a mandatory minimum lock-in period of 15 years. After 15 years, you can choose to withdraw the full balance or extend the account in blocks of 5 years."
-  - q: "What interest rate does this calculator assume?"
- a: "The calculator defaults to the standard 7.1% p.a. benchmark rate, but allows you to enter any interest rate to model historical or custom rate projections."
-  - q: "How are PPF deposits compounded in this calculator?"
- a: "The calculator models annual compounding assuming deposits are made at the beginning of each financial year (P × ((1+i)^n - 1 / i) × (1+i))."
+    a: "A PPF account has a mandatory minimum lock-in period of 15 years from the date it was opened. Partial withdrawals are typically permitted from the 7th year onward, subject to specific rules and limits."
+  - q: "Can I extend my PPF account after 15 years?"
+    a: "Yes. Once the initial 15-year term ends, the account can be extended indefinitely in blocks of 5 years at a time, either with continued annual deposits or without making any further contributions."
+  - q: "Is there a limit on how much I can deposit in PPF each year?"
+    a: "Yes — PPF schemes typically set both a minimum and a maximum annual deposit limit (for example, a minimum of 500 and a maximum of 150,000 in a given financial year under Indian PPF rules). Deposits above the maximum limit are generally not eligible for interest."
+  - q: "Is PPF interest tax-free?"
+    a: "In jurisdictions where PPF is offered (such as India), the scheme is often structured to be tax-exempt on contributions, interest earned, and the maturity amount, subject to the specific tax rules in effect at the time. Tax treatment can change, so this calculator focuses on the maturity math rather than tax outcomes."
 references:
-  - "https://en.wikipedia.org/wiki/Public_Provident_Fund_(India)"
+  - "https://www.nsiindia.gov.in/(S(g25krd45pnyv1zzjne3ktp45))/InternalPage.aspx?Id_Pk=53"
+formulaDescription: "PPF deposits are treated as an annuity due, just like a monthly SIP — except the period is a full year instead of a month, since PPF deposits and interest crediting both happen annually. Each year's deposit is assumed to be made at the start of that year, giving it the full year to compound before the next deposit arrives."
+variablesExplained:
+  - name: "P (Annual Deposit)"
+    description: "The amount deposited into the PPF account each year."
+  - name: "i (Annual Rate)"
+    description: "The government-declared annual PPF interest rate, converted to a decimal."
+  - name: "n (Tenure in Years)"
+    description: "The number of years the account has been active — a minimum of 15, extendable in blocks of 5."
+stepByStep: "Enter your planned annual deposit, the current PPF interest rate, and your intended tenure in years (minimum 15). The calculator compounds each year's deposit annually using the annuity-due formula and returns your projected maturity amount, total deposits, and interest earned."
+realWorldUses: "PPF account holders use calculators like this to project how much their account will be worth at the end of the mandatory 15-year term, or after extending it in 5-year blocks, and to compare that against other long-term, lower-risk savings options."
+commonMistakes:
+  - "Assuming the PPF interest rate stays fixed for the entire tenure, when in practice the government reviews and can revise the rate periodically — this calculator uses whichever single rate you enter for the full projection."
+  - "Forgetting that PPF has a mandatory minimum tenure of 15 years and cannot be withdrawn in full before then except under limited, specific circumstances."
 ---
 
-# PPF Calculator – Public Provident Fund Growth Guide
+# PPF Calculator – Public Provident Fund Maturity Projection
 
-The **Public Provident Fund (PPF)** is a government-backed long-term savings instrument. It offers guaranteed capital security, fixed interest returns, and tax-exempt benefits over a statutory minimum tenure of 15 years.
+The **Public Provident Fund (PPF)** is a long-term, government-backed savings scheme with a mandatory minimum lock-in of 15 years. Interest compounds annually at a rate set by the government and reviewed periodically, making it one of the more predictable long-term savings vehicles available to account holders.
 
----
+This calculator projects your **Maturity Amount**, **Total Invested**, and **Interest Earned** based on your planned annual deposit, the current interest rate, and your chosen tenure.
 
-### How the PPF Calculation Works
+## The PPF Maturity Formula
 
-PPF returns compound annually. When you make annual deposits at the start of each year, your capital compounds over the entire tenure.
+PPF deposits compound the same way a SIP does, except annually instead of monthly — each year's deposit is treated as though it's made at the start of the year, giving it a full year to grow before the next deposit arrives:
 
-#### The Mathematical PPF Maturity Formula
-
-M = P × ((1 + i)^n - 1 / i) × (1 + i)
+$$M = P \times \left[ \frac{(1 + i)^n - 1}{i} \right] \times (1 + i)$$
 
 Where:
-- **M (Maturity Amount)**: The total future corpus accumulated at the end of tenure.
-- **P (Annual Investment Amount)**: The deposit made at the start of each year.
-- **i (Annual Interest Rate)**: Interest Rate ÷ 100.
-- **n (Tenure in Years)**: Total investment period (minimum 15 years, up to 50 years).
+* **M**: Projected maturity amount.
+* **P**: Annual deposit amount.
+* **i**: Annual interest rate, as a decimal.
+* **n**: Tenure in years (minimum 15, extendable in blocks of 5).
 
----
+## Worked Example
 
-### Step-by-Step Worked Numerical Example
+For an annual deposit of **150,000** over the standard **15-year** tenure at **7.1%** annual interest:
 
-Let's calculate the 15-year maturity value for an annual deposit of **$150,000** at an annual interest rate of **7.1%**:
+1. $i = 0.071$, $n = 15$
+2. $(1.071)^{15} \approx 2.797964$
+3. $M = 150{,}000 \times \left[\dfrac{2.797964 - 1}{0.071}\right] \times 1.071 \approx 4{,}068{,}209.22$
+4. Total invested: $150{,}000 \times 15 = 2{,}250{,}000.00$
+5. Interest earned: $4{,}068{,}209.22 - 2{,}250{,}000.00 = 1{,}818{,}209.22$
 
-1. **Convert Rate to Decimal (i)**:
- i = (7.1 / 100) = 0.071
-2. **Set Tenure (n)**:
- n = 15 years
-3. **Apply the PPF Formula**:
- M = 150,000 × frac((1.071)^15) - 1{0.071} × 1.071
- M = 150,000 × (2.7845 - 1 / 0.071) × 1.071
- M = 150,000 × 25.1338 × 1.071 ≈ \4,036,441 4. **Summary (Verified against Code)**:
- - **Total Principal Invested**: \150,000 × 15 = $2,250,000
- - **Estimated Interest Earned**: \4,036,441 - $2,250,000 = $1,786,441
- - **Total Expected Maturity Corpus**: **$4,036,441**
+## Extending Beyond 15 Years
 
----
+PPF accounts can be extended indefinitely in 5-year blocks after the initial 15-year term, either with continued deposits or without. Extending the same 150,000/year deposit and 7.1% rate:
 
-### Frequently Asked Questions (FAQ)
+| Tenure | Maturity Amount | Total Invested | Interest Earned |
+| :--- | :---: | :---: | :---: |
+| 15 years (standard) | 4,068,209.22 | 2,250,000.00 | 1,818,209.22 |
+| 20 years | 6,658,288.17 | 3,000,000.00 | 3,658,288.17 |
+| 25 years | 10,308,014.97 | 3,750,000.00 | 6,558,014.97 |
+| 30 years | 15,450,910.59 | 4,500,000.00 | 10,950,910.59 |
 
-* **Q1: Can I extend my PPF account after the 15-year lock-in period?**
-  * A1: Yes. You can extend your PPF account indefinitely in blocks of 5 years at a time, with or without making ongoing annual contributions.
+*Each additional 5-year extension adds proportionally more to the maturity value than the last, since a larger balance is compounding for those extra years.*
 
-* **Q2: Why does the formula include an extra (1+i) multiplier?**
-  * A2: Because the calculation assumes annual deposits are made at the beginning of each financial year, allowing each year's contribution to earn full interest for that year.
+## What This Calculator Does Not Include
+
+> [!NOTE]
+> **Real-world exclusions**: This projection assumes a single fixed interest rate for the entire tenure, when the actual government-declared PPF rate can be revised from year to year. It also doesn't model partial withdrawals, which are typically allowed from the 7th year onward and would reduce the compounding balance.
+
+To compare a PPF projection against a market-linked recurring investment, see the [SIP Calculator](/calculators/sip-calculator/), or model a fixed-term bank deposit with the [FD Calculator](/calculators/fd-calculator/).

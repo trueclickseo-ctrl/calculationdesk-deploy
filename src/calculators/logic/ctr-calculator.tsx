@@ -42,7 +42,7 @@ export default function CtrCalculator() {
           {result !== null ? (
             <div className="rounded-xl bg-primary/5 p-6 border border-primary/10 text-center">
               <span className="block text-xs font-bold text-foreground/50 uppercase font-mono">Ad CTR</span>
-              <span className="block text-4xl font-extrabold text-primary mt-2">$${result.toFixed(2)}%</span>
+              <span className="block text-4xl font-extrabold text-primary mt-2">{result.toFixed(2)}%</span>
             </div>
           ) : (
             <div className="flex h-64 items-center justify-center text-foreground/40 text-sm">Enter metrics.</div>

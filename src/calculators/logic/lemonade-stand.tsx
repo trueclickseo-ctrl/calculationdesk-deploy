@@ -54,11 +54,11 @@ export default function LemonadeStand() {
             <div className="space-y-4">
               <div className="rounded-xl bg-primary/5 p-4 border border-primary/10 text-center">
                 <span className="block text-xs font-bold text-foreground/50 uppercase">Net Profit / Loss</span>
-                <span className="block text-2xl font-extrabold text-primary mt-1">\$${result.profit.toFixed(2)}</span>
+                <span className="block text-2xl font-extrabold text-primary mt-1">${result.profit.toFixed(2)}</span>
               </div>
               <div className="rounded-xl bg-background p-4 border border-border text-center">
                 <span className="block text-xs font-bold text-foreground/50 uppercase">Gross Revenue</span>
-                <span className="block text-2xl font-bold text-foreground/80 mt-1">\$${result.revenue.toFixed(2)}</span>
+                <span className="block text-2xl font-bold text-foreground/80 mt-1">${result.revenue.toFixed(2)}</span>
               </div>
             </div>
           ) : (
