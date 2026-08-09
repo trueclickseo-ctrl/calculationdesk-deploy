@@ -15,10 +15,11 @@ export default function WaterDensity() {
 
   const handleReset = () => { setTemp(20); setResult(null); };
   const handleCalculate = () => {
-    // simplified density polynomial
+    // Kell (1975) equation for the density of liquid water (kg/m^3), valid 0-100 C
     const t = temp;
-    const dens = 999.83952 + (16.945176 * t) - (7.9870401e-3 * t * t) - (46.170461e-6 * t * t * t);
-    setResult(dens / 1000 * 999.97); // normalized
+    const numerator = 999.83952 + (16.945176 * t) - (7.9870401e-3 * t * t) - (46.170461e-6 * t * t * t) + (105.56302e-9 * t * t * t * t) - (280.54253e-12 * t * t * t * t * t);
+    const denominator = 1 + (16.879850e-3 * t);
+    setResult(numerator / denominator);
   };
 
   return (
