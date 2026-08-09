@@ -200,12 +200,12 @@ export default function CattlePerAcreCalculator() {
             {results ? (
               <div className="space-y-4">
                 <div className="rounded-xl bg-primary/5 p-4 border border-primary/10 text-center">
-                  <span className="block text-xs font-bold text-foreground/50 uppercase tracking-wider font-mono">Max Safe Herd Size</span>
+                  <span className="block text-xs font-bold text-foreground/50 uppercase tracking-wider font-mono">Estimated Herd Capacity</span>
                   <span className="block text-3xl font-extrabold text-primary mt-2">
                     {results.maxCattle} Head of Cattle
                   </span>
                   <span className="block text-xs font-semibold text-foreground/50 mt-1">
-                    Allows {results.stockingRate.toFixed(2)} acres per cow (taking 50% forage)
+                    ≈ {results.stockingRate.toFixed(2)} acres per cow (using default 50% usable-forage assumption)
                   </span>
                 </div>
 
