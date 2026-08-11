@@ -20,7 +20,7 @@ nextReviewDate: "2026-11-09"
 refreshPriority: "high"
 aiSummary:
   definition: "This calculator computes how many months it will take to pay off a debt balance at a given interest rate, using a fixed monthly payment."
-  quickAnswer: "A $10,000 balance at 18% APR, paid down with a fixed $300 monthly payment, takes about 46.6 months to pay off."
+  quickAnswer: "A $10,000 balance at 18% APR, paid down with a fixed $300 monthly payment, takes about 46.6 months to pay off — the calculator rounds this up and displays 47 months."
   formulaSummary: "Months = -ln(1 - (Balance x monthly rate) / Payment) / ln(1 + monthly rate), where monthly rate = annual rate / 12."
   whenToUse: "Use it to see how long a debt will take to clear at your current payment, or to test how increasing the monthly payment shortens the payoff timeline."
   whoShouldUse: "Anyone paying down a credit card, personal loan, or other fixed-rate debt with a set monthly payment."
@@ -73,7 +73,7 @@ Enter a debt balance, its interest rate, and the fixed amount you're paying each
 
 **Months = −ln(1 − (Balance × monthly rate) / Payment) / ln(1 + monthly rate)**, where the monthly rate is the annual interest rate divided by 12. This is the loan amortization formula solved for time instead of payment amount — it accounts for the fact that as the balance shrinks, less of each payment goes toward interest and more goes toward principal, which is why payoff accelerates somewhat toward the end.
 
-For a $10,000 balance at 18% APR with a fixed $300 monthly payment, that works out to about 46.6 months — just under four years.
+For a $10,000 balance at 18% APR with a fixed $300 monthly payment, that works out to about 46.6 months — just under four years. The calculator rounds this up to a whole number of months and displays **47 months**, since a payment made partway through the final month wouldn't fully clear the balance.
 
 ## Why the payment has to clear the interest first
 
