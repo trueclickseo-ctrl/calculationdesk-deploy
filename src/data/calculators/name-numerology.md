@@ -11,12 +11,12 @@ clusterPriority: "primary"
 searchIntent: "informational"
 authorId: "editorial-team"
 reviewerId: "calculationdesk-review-team"
-lastUpdated: "2026-08-09"
+lastUpdated: "2026-08-14"
 formulaVerified: true
-version: "2.0"
+version: "2.1"
 contentStatus: "published"
-lastReviewed: "2026-08-09"
-nextReviewDate: "2026-11-09"
+lastReviewed: "2026-08-14"
+nextReviewDate: "2026-11-14"
 refreshPriority: "high"
 seoPriority:
   tier: 1
@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Enthusiasts of numerology, name symbolism, personal growth, and self-reflection."
   limitations: "Name numerology is a traditional system of letter symbolism and cultural philosophy, not an empirical psychological test."
   keyTakeaways:
- - "Uses the classic Western Pythagorean letter chart (A=1, B=2, C=3, etc.)."
- - "Automatically ignores spaces, hyphens, numbers, and capitalization."
- - "Preserves Master Numbers 11 and 22 during reduction."
- - "Provides individual letter-by-letter breakdown cards."
+    - "Uses the classic Western Pythagorean letter chart (A=1, B=2, C=3, etc.)."
+    - "Automatically ignores spaces, hyphens, numbers, and capitalization."
+    - "Preserves Master Numbers 11 and 22 during reduction."
+    - "Provides individual letter-by-letter breakdown cards."
 peopleAlsoAsk:
   - "How do I calculate my Destiny Number from my name?"
   - "Should I use my full birth name or married name for numerology?"
@@ -45,6 +45,10 @@ examples:
     inputs: "Full Name = John Doe"
     calculation: "Step 1: Clean letters -> 'johndoe'. Step 2: Map Pythagorean values -> J(1), O(6), H(8), N(5), D(4), O(6), E(5). Step 3: Sum values -> 1 + 6 + 8 + 5 + 4 + 6 + 5 = 35. Step 4: Reduce -> 3 + 5 = 8."
     result: "Destiny Number 8 (The Material Achiever)"
+  - title: "Destiny Number Calculation with a Master Number: Nikola Tesla"
+    inputs: "Full Name = Nikola Tesla"
+    calculation: "Step 1: Clean letters -> 'nikolatesla'. Step 2: Map Pythagorean values -> N(5), I(9), K(2), O(6), L(3), A(1), T(2), E(5), S(1), L(3), A(1). Step 3: Sum values -> 5+9+2+6+3+1+2+5+1+3+1 = 38. Step 4: Reduce -> 3 + 8 = 11 (Master Number, preserved)."
+    result: "Destiny Number 11 (The Inspirational Guide - Master)"
 faqs:
   - q: "What is a Destiny Number?"
     a: "In Pythagorean numerology, your Destiny Number (also called your Expression Number) represents your natural talents, capabilities, personal potential, and how you express yourself throughout your life."
@@ -56,6 +60,21 @@ faqs:
     a: "Yes. If the letter sum of your name reduces to Master Number 11 or 22, the calculator preserves it as a Master Number profile rather than reducing it further to 2 or 4."
 references:
   - "https://en.wikipedia.org/wiki/Numerology#Pythagorean_system"
+formulaDescription: "The calculator lowercases the entered name and removes every character that isn't a letter, then looks up each remaining letter's Pythagorean digit (1-9) from the classic chart. It adds all of those digit values together into one sum, then reduces that sum by repeatedly summing its own digits — stopping immediately if the running total lands exactly on Master Number 11 or 22, and otherwise continuing until a single digit (1-9) is reached."
+variablesExplained:
+  - name: "letters"
+    description: "The cleaned, lowercased array of individual letters from the input name, with spaces, hyphens, numbers, and punctuation stripped out."
+  - name: "PYTHAGOREAN_MAP"
+    description: "The fixed lookup table assigning each letter of the alphabet a digit from 1 to 9, repeating in sequential groups of nine letters (A-I get 1-9, J-R repeat 1-9, S-Z repeat 1-8)."
+  - name: "sum, destinyNumber"
+    description: "'sum' is the total of every letter's Pythagorean value added together; 'destinyNumber' is that total reduced to a single digit (1-9) or preserved as Master Number 11 or 22 if the reduction lands on one of them."
+stepByStep: "1) Type your full name into the 'Enter Full Name' field. 2) Click 'Solve Name'. 3) The calculator lowercases the name and strips out anything that isn't a letter. 4) Each remaining letter is looked up in the Pythagorean chart and assigned a value from 1 to 9. 5) All letter values are added into one running sum. 6) That sum is reduced by repeatedly summing its digits, stopping early if it lands on Master Number 11 or 22. 7) The final Destiny Number is displayed along with its traditional archetype profile and a letter-by-letter breakdown."
+realWorldUses: "Name Numerology is used for personal reflection and traditional exploration: analyzing your own birth name's Destiny archetype, comparing how a married name or nickname shifts your Expression profile, exploring the numerology of well-known historical names for fun, and pairing with the Life Path (birth-date) Numerology Calculator for a fuller traditional profile."
+commonMistakes:
+  - "Treating the Destiny Number as a scientifically validated personality assessment rather than a traditional symbolic practice based on letter mapping."
+  - "Reducing a Master Number (11 or 22) down to a single digit by mistake—Pythagorean tradition preserves these once the running sum lands on them."
+  - "Assuming every name has a unique Destiny Number—many different names can and do reduce to the exact same final digit."
+  - "Forgetting that spaces, hyphens, and punctuation are stripped out entirely, so hyphenated or multi-word names are processed as one continuous letter sequence."
 ---
 
 # Name Numerology Calculator – Pythagorean Destiny Number Guide
@@ -131,6 +150,31 @@ $$3 + 5 = \mathbf{8}$$
 * **Final Result**: **Destiny Number 8**
 * **Traditional Title**: *"The Material Achiever"*
 * **Traditional Profile**: Represents authority, goal-oriented success, practical efficiency, and business judgment.
+
+---
+
+### Second Worked Example: A Master Number Result
+
+Longer names can land exactly on a Master Number. Here's **Nikola Tesla**:
+
+#### Step 1: Filter Letters
+Name: `"nikolatesla"` (11 letters)
+
+#### Step 2: Map Pythagorean Values
+* **N** = 5, **I** = 9, **K** = 2, **O** = 6, **L** = 3, **A** = 1, **T** = 2, **E** = 5, **S** = 1, **L** = 3, **A** = 1
+
+#### Step 3: Sum the Values
+$$\text{Sum} = 5+9+2+6+3+1+2+5+1+3+1 = \mathbf{38}$$
+
+#### Step 4: Reduce the Sum
+$$3 + 8 = \mathbf{11} \quad \text{(Master Number reached — preserved rather than reduced further to 2)}$$
+
+* **Final Result**: **Destiny Number 11**
+* **Traditional Title**: *"The Inspirational Guide"* (Master Number)
+* **Traditional Profile**: Indicates spiritual leadership, high intuitive capabilities, and acting as an inspirational beacon for others.
+
+> [!NOTE]
+> Unlike the Life Path (birth-date) Numerology Calculator, this Pythagorean name system only preserves Master Numbers **11** and **22** — it does not treat 33 as a Master Number, since 33 does not naturally arise the same way from single-letter values 1-9 summing across a name.
 
 ---
 

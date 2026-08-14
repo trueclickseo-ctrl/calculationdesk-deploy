@@ -11,12 +11,12 @@ clusterPriority: "primary"
 searchIntent: "transactional"
 authorId: "editorial-team"
 reviewerId: "calculationdesk-review-team"
-lastUpdated: "2026-08-09"
+lastUpdated: "2026-08-14"
 formulaVerified: true
-version: "2.0"
+version: "2.1"
 contentStatus: "published"
-lastReviewed: "2026-08-09"
-nextReviewDate: "2026-11-09"
+lastReviewed: "2026-08-14"
+nextReviewDate: "2026-11-14"
 refreshPriority: "high"
 seoPriority:
   tier: 1
@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Homebuyers, homeowners refinancing, real estate buyers, financial planners, and mortgage applicants."
   limitations: "Provides an educational planning estimate. Does not include Private Mortgage Insurance (PMI) for down payments under 20%, upfront closing costs, or lender origination fees."
   keyTakeaways:
- - "Calculates Total Monthly Payment, Principal & Interest (P&I), Property Taxes, Home Insurance, and HOA Dues."
- - "Uses standard fixed-rate loan amortization mathematics ($M = P \frac{r(1+r)^n}{(1+r)^n - 1}$)."
- - "Demonstrates how property tax rates and home insurance impact total monthly escrow demands."
- - "Explains the financial trade-offs between 15-year and 30-year mortgage terms."
+    - "Calculates Total Monthly Payment, Principal & Interest (P&I), Property Taxes, Home Insurance, and HOA Dues."
+    - "Uses standard fixed-rate loan amortization mathematics (M = P * r(1+r)^n / ((1+r)^n - 1))."
+    - "Demonstrates how property tax rates and home insurance impact total monthly escrow demands."
+    - "Explains the financial trade-offs between 15-year and 30-year mortgage terms."
 peopleAlsoAsk:
   - "How is a monthly mortgage payment calculated?"
   - "What does PITI stand for in a mortgage?"
@@ -47,18 +47,35 @@ examples:
     result: "Total Monthly Payment = $1,838.92 | Principal & Interest = $1,438.92 | Property Taxes = $300.00 | Home Insurance = $100.00"
   - title: "$400,000 Home Purchase with 10% Down Payment (15-Year Fixed at 5.5%)"
     inputs: "Property Price = $400,000, Down Payment = $40,000 (10%), Loan Term = 15 Years, Interest Rate = 5.5%, Property Tax Rate = 1.5%, Home Insurance = $1,800/yr, HOA Dues = $150/mo"
-    calculation: "Step 1: Principal P = $360,000. Step 2: Monthly P&I (180 mos @ 5.5%) = $2,941.13. Step 3: Tax = $500.00/mo. Step 4: Insurance = $150.00/mo. Step 5: HOA = $150.00/mo. Step 6: Total = 2,941.13 + 500 + 150 + 150 = $3,741.13."
-    result: "Total Monthly Payment = $3,741.13 | Principal & Interest = $2,941.13 | Property Taxes = $500.00 | Home Insurance = $150.00 | HOA = $150.00"
+    calculation: "Step 1: Principal P = $360,000. Step 2: Monthly rate r = 5.5 / 12 / 100 = 0.00458333. Payments n = 180. Step 3: Monthly P&I = 360,000 * [0.00458333(1.00458333)^180] / [(1.00458333)^180 - 1] = $2,941.50. Step 4: Tax = (400,000 * 0.015) / 12 = $500.00/mo. Step 5: Insurance = 1,800 / 12 = $150.00/mo. Step 6: HOA = $150.00/mo. Step 7: Total = 2,941.50 + 500.00 + 150.00 + 150.00 = $3,741.50."
+    result: "Total Monthly Payment = $3,741.50 | Principal & Interest = $2,941.50 | Property Taxes = $500.00 | Home Insurance = $150.00 | HOA = $150.00"
 faqs:
   - q: "What does PITI stand for in mortgage planning?"
-    a: "PITI stands for **Principal, Interest, Taxes, and Insurance**. These four components represent the total baseline monthly housing payment collected by your lender or escrow company."
+    a: "PITI stands for Principal, Interest, Taxes, and Insurance. These four components represent the total baseline monthly housing payment collected by your lender or escrow company."
   - q: "Why is a 20% down payment beneficial?"
-    a: "Putting down 20% or more eliminates the requirement for **Private Mortgage Insurance (PMI)**—an added monthly fee that protects the lender against default. It also reduces your monthly interest charges."
+    a: "Putting down 20% or more eliminates the requirement for Private Mortgage Insurance (PMI) - an added monthly fee that protects the lender against default. It also reduces your monthly interest charges."
   - q: "What important costs are NOT included in this calculator?"
     a: "This tool does not include Private Mortgage Insurance (PMI for down payments < 20%), upfront closing costs (1% to 3% of purchase price), lender origination fees, annual home maintenance costs (1% to 2% of home value annually), or utility bills."
 references:
   - "https://www.consumerfinance.gov/"
   - "https://www.hud.gov/"
+formulaDescription: "The calculator first subtracts the down payment from the property price to get the loan Principal. It converts the annual interest rate to a monthly rate and the loan term in years to a total number of monthly payments, then applies the standard fixed-rate amortization formula to compute the Monthly Principal & Interest payment. Monthly property tax is the property price multiplied by the annual tax rate percentage, divided by 12. Monthly insurance is the annual premium divided by 12. All four components, plus any monthly HOA dues, are summed into the Total Monthly Payment."
+variablesExplained:
+  - name: "Principal (P)"
+    description: "The loan amount actually being borrowed, equal to the property price minus the down payment."
+  - name: "Monthly Interest Rate (r)"
+    description: "The annual interest rate converted to a monthly decimal rate by dividing by 12 and by 100."
+  - name: "Total Payments (n)"
+    description: "The total number of monthly payments over the life of the loan, equal to the loan term in years multiplied by 12."
+  - name: "Monthly Principal & Interest (M)"
+    description: "The fixed monthly payment amount that fully amortizes the loan principal plus interest over n payments, computed via the standard mortgage amortization formula."
+stepByStep: "1) Enter the property price, down payment, loan term in years, and annual interest rate. 2) Enter the annual property tax rate, annual home insurance premium, and any monthly HOA dues. 3) The calculator subtracts the down payment from the price to find the loan Principal, converts the rate and term into monthly terms, and applies the amortization formula to compute Monthly Principal & Interest. 4) It separately computes Monthly Property Tax and Monthly Insurance from the annual figures. 5) All components (P&I, tax, insurance, HOA) are summed into the Total Monthly Payment."
+realWorldUses: "Used to budget for a home purchase before house-hunting, to compare monthly payments across different loan terms (15-year vs. 30-year) or interest rate offers from multiple lenders, to estimate how a larger down payment reduces the monthly P&I amount, and to project how property tax rates and insurance premiums in different neighborhoods affect total monthly housing cost."
+commonMistakes:
+  - "Comparing only the Principal & Interest figure between two loan offers while ignoring differences in property tax rate, insurance premium, or HOA dues - the Total Monthly Payment is what actually hits a household budget, not P&I alone."
+  - "Forgetting that Private Mortgage Insurance (PMI) applies automatically on most conventional loans with a down payment under 20%, which this calculator does not include, so total costs for low-down-payment scenarios will be higher than shown."
+  - "Assuming the calculated payment is fixed for the full loan term - while P&I stays constant on a fixed-rate loan, property tax and insurance portions typically increase over time as assessments and premiums rise."
+  - "Using a lower down payment amount but not verifying it stays below the property price (or 0% or negative), which would make the loan calculation invalid or produce a payment on a nonsensical principal amount."
 ---
 
 # Mortgage Calculator – Estimate Monthly Mortgage Payments
@@ -153,6 +170,23 @@ $$\text{Total} = \$1,438.92 + \$300.00 + \$100.00 + \$0 = \mathbf{\$1,838.92 / m
 
 ---
 
+### Second Worked Example: 15-Year Fixed Loan with HOA Dues
+
+For a **$400,000 home** with a **10% down payment ($40,000)** on a **15-year fixed loan at 5.5% interest**, **1.5% property taxes**, **$1,800 annual insurance**, and **$150/mo HOA dues**:
+
+$$P = \$400{,}000 - \$40{,}000 = \mathbf{\$360{,}000}, \quad r = \frac{5.5}{1200} = 0.0045833, \quad n = 15 \times 12 = 180$$
+
+$$M_{\text{P\&I}} = 360{,}000 \times \frac{0.0045833 \times (1.0045833)^{180}}{(1.0045833)^{180} - 1} = \mathbf{\$2{,}941.50}$$
+
+$$\text{Monthly Tax} = \frac{400{,}000 \times 0.015}{12} = \mathbf{\$500.00}, \quad \text{Monthly Insurance} = \frac{1{,}800}{12} = \mathbf{\$150.00}$$
+
+$$\text{Total} = 2{,}941.50 + 500.00 + 150.00 + 150.00 = \mathbf{\$3{,}741.50 \text{ / month}}$$
+
+> [!IMPORTANT]
+> This second example's Monthly Principal & Interest was corrected during content review. Applying the exact amortization formula to a $360,000 principal at 5.5% over 180 months produces **$2,941.50**, not the previously published $2,941.13 - and the Total Monthly Payment is correspondingly **$3,741.50**, not $3,741.13.
+
+---
+
 ### Important Omitted Costs & Financial Disclaimers
 
 > [!IMPORTANT]
@@ -160,7 +194,7 @@ $$\text{Total} = \$1,438.92 + \$300.00 + \$100.00 + \$0 = \mathbf{\$1,838.92 / m
 > - **Private Mortgage Insurance (PMI)**: If your down payment is less than 20%, conventional lenders typically require PMI, which adds **0.5% to 1.5% of the loan amount annually** to your monthly payment until your principal balance reaches 80% of the home's value.
 > - **Closing Costs & Maintenance**: Budget an additional **2% to 5% of purchase price** for upfront closing costs (lender origination, title insurance, appraisal) and set aside **1% to 2% of home value annually** for ongoing property maintenance and repairs.
 
-To compare renting versus buying costs over time, check our [Rent vs. Buy Calculator](file:///d:/Project-Calculator/src/data/calculators/rent-vs-buy.md) or evaluate property purchasing power with the [Home Affordability Calculator](file:///d:/Project-Calculator/src/data/calculators/home-affordability.md).
+To compare renting versus buying costs over time, check our [Rent vs. Buy Calculator](/calculators/rent-vs-buy/) or evaluate property purchasing power with the [Home Affordability Calculator](/calculators/home-affordability/).
 
 ---
 
@@ -170,3 +204,5 @@ To compare renting versus buying costs over time, check our [Rent vs. Buy Calcul
   * A1: Standard underwriting guidelines recommend spending no more than **28% of your gross monthly income** on total housing costs (PITI + HOA), and keeping total debt payments (housing + student loans, auto loans, credit cards) under **36% of gross income**.
 * **Q2: Does property tax remain fixed for 30 years?**
   * A2: No. While fixed-rate principal and interest payments remain constant for 30 years, municipal property tax assessments and home insurance premiums adjust annually, altering your total monthly escrow payment over time.
+* **Q3: Why does a slightly higher interest rate on a shorter-term loan sometimes still lower the total interest paid?**
+  * A3: A shorter term dramatically reduces the number of payments over which interest accrues, so even a mortgage with a somewhat higher rate but a much shorter term (like 15 years vs. 30 years) can still result in far less total interest paid over the life of the loan.

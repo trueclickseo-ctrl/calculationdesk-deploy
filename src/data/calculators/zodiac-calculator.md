@@ -11,12 +11,12 @@ clusterPriority: "primary"
 searchIntent: "informational"
 authorId: "editorial-team"
 reviewerId: "calculationdesk-review-team"
-lastUpdated: "2026-08-09"
+lastUpdated: "2026-08-14"
 formulaVerified: true
-version: "2.0"
+version: "2.1"
 contentStatus: "published"
-lastReviewed: "2026-08-09"
-nextReviewDate: "2026-11-09"
+lastReviewed: "2026-08-14"
+nextReviewDate: "2026-11-14"
 refreshPriority: "high"
 seoPriority:
   tier: 1
@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Astrology enthusiasts, curious readers, cultural researchers, and individuals exploring personality archetypes."
   limitations: "Astrology and zodiac classifications are traditional cultural frameworks. They are distinct from scientific astronomy and carry no empirical predictive validity."
   keyTakeaways:
- - "Provides dual classification: Western Sun Sign and Chinese Zodiac Animal."
- - "Displays elemental associations (Fire, Earth, Air, Water for Western; Wood, Fire, Earth, Metal, Water for Chinese)."
- - "Identifies exact date boundaries for all 12 Western signs."
- - "100% free with instant output."
+    - "Provides dual classification: Western Sun Sign and Chinese Zodiac Animal."
+    - "Displays elemental associations (Fire, Earth, Air, Water for Western; Wood, Fire, Earth, Metal, Water for Chinese)."
+    - "Identifies exact date boundaries for all 12 Western signs."
+    - "100% free with instant output."
 peopleAlsoAsk:
   - "What is my Western Sun Sign?"
   - "How do I find my Chinese Zodiac animal?"
@@ -45,6 +45,10 @@ examples:
     inputs: "Birth Date = October 15, 1995 (1995-10-15)"
     calculation: "Step 1 (Western): Oct 15 falls between Sept 23 and Oct 22 -> Libra (Element: Air). Step 2 (Chinese): (1995 - 4) mod 12 = 1991 mod 12 = 11 -> Pig (Element: Water)."
     result: "Western: Libra (Air) | Chinese: Pig (Water)"
+  - title: "Zodiac Profile Calculation: August 8, 1988"
+    inputs: "Birth Date = August 8, 1988 (1988-08-08)"
+    calculation: "Step 1 (Western): Aug 8 falls between Jul 23 and Aug 22 -> Leo (Element: Fire). Step 2 (Chinese): (1988 - 4) mod 12 = 1984 mod 12 = 4 -> Dragon (Element: Earth)."
+    result: "Western: Leo (Fire) | Chinese: Dragon (Earth)"
 faqs:
   - q: "What is my Western Sun Sign?"
     a: "Your Sun Sign (or star sign) represents the constellation position of the sun on your birth date in tropical Western astrology. It is determined by your month and day of birth."
@@ -59,6 +63,21 @@ faqs:
 references:
   - "https://en.wikipedia.org/wiki/Zodiac"
   - "https://en.wikipedia.org/wiki/Chinese_zodiac"
+formulaDescription: "The calculator splits the birth date into year, month, and day, then runs two independent lookups. For the Western Sun Sign, it checks the birth month and day against 12 fixed date-range boundaries (each sign spans roughly one calendar month) and returns the first match, wrapping around to Capricorn for the December/January boundary. For the Chinese Zodiac Animal, it computes (Birth Year minus 4) modulo 12 and uses that index to select from a fixed 12-animal cycle, with a correction added if the raw modulo result is negative."
+variablesExplained:
+  - name: "WESTERN_SIGNS"
+    description: "A fixed ordered list of the 12 Western zodiac signs, each with a start date, end date, associated element, and personality traits, checked in sequence against the birth month and day."
+  - name: "index"
+    description: "The zero-based position within the 12-animal Chinese Zodiac cycle, computed as (year - 4) mod 12, where index 0 is Rat and index 11 is Pig."
+  - name: "CHINESE_ANIMALS"
+    description: "A fixed ordered list of the 12 Chinese Zodiac animals in cycle order (Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig), each with an associated element and traits."
+stepByStep: "1) Select your birth date using the date picker. 2) Click 'Solve Zodiacs'. 3) The calculator extracts the year, month, and day from the date. 4) It checks the month/day against the 12 Western sign date ranges to find your Sun Sign and its element. 5) It computes (year - 4) mod 12 to find your position in the 12-year Chinese cycle and looks up the corresponding animal and element. 6) Both results are displayed side by side with their traits."
+realWorldUses: "The Zodiac Calculator supports cultural and entertainment use cases: looking up your own Western and Chinese zodiac profile at once, researching astrological traditions for writing or trivia, comparing zodiac pairings with friends or family for fun, and exploring how the Chinese 12-year animal cycle intersects with a given Western sign."
+commonMistakes:
+  - "Treating zodiac classifications as scientifically validated personality predictors rather than traditional cultural frameworks."
+  - "Assuming the Chinese Zodiac year always matches the calendar year—people born in January or early February may actually belong to the previous lunar year's animal, since the real Chinese New Year shifts date each year (this calculator uses the calendar year as a simplified approximation, not the exact lunisolar New Year date)."
+  - "Confusing Western tropical astrology date ranges with the astronomical constellations of the same name, which have shifted position over centuries due to axial precession."
+  - "Assuming zodiac boundary dates are universal—some traditions and calendars use slightly different cutoff dates for Western signs than the ones used here."
 ---
 
 # Zodiac Calculator – Western & Chinese Zodiac Guide
@@ -130,6 +149,28 @@ Let's calculate the zodiac profile for a birth date of **October 15, 1995**:
    - Index 11 $\rightarrow$ **Pig**.
    - Element: **Water**.
    - Traits: Compassionate, generous, diligent.
+
+---
+
+### Second Worked Example: August 8, 1988
+
+The famously "lucky" date of **August 8, 1988** produces its own zodiac profile:
+
+1. **Western Sun Sign**:
+   - Month 8 (August), Day 8.
+   - Fits in the range **Jul 23 to Aug 22** $\rightarrow$ **Leo**.
+   - Element: **Fire**.
+   - Traits: Dramatic, confident, self-assured, generous.
+
+2. **Chinese Zodiac Animal**:
+   - Year: 1988.
+   - Calculation: $(1988 - 4) \pmod{12} = 1984 \pmod{12} = 4$.
+   - Index 4 $\rightarrow$ **Dragon**.
+   - Element: **Earth**.
+   - Traits: Confident, intelligent, enthusiastic, inspiring.
+
+> [!NOTE]
+> 1988 is broadly known as a Dragon year in Chinese culture — the calculator's simple (Year − 4) mod 12 formula confirms it independently of any lookup table, since Dragon always falls at index 4 of the 12-animal cycle.
 
 ---
 

@@ -11,12 +11,12 @@ clusterPriority: "primary"
 searchIntent: "informational"
 authorId: "editorial-team"
 reviewerId: "calculationdesk-review-team"
-lastUpdated: "2026-08-09"
+lastUpdated: "2026-08-14"
 formulaVerified: true
-version: "2.0"
+version: "2.1"
 contentStatus: "published"
-lastReviewed: "2026-08-09"
-nextReviewDate: "2026-11-09"
+lastReviewed: "2026-08-14"
+nextReviewDate: "2026-11-14"
 refreshPriority: "high"
 seoPriority:
   tier: 1
@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Anyone wanting to relive the classic schoolyard FLAMES game without manually crossing out letters on paper."
   limitations: "FLAMES is a traditional childhood game intended purely for entertainment. It carries no psychological or scientific relationship validity."
   keyTakeaways:
- - "Accurately automates the classic 1-to-1 letter cancellation rule."
- - "Uses the standard FLAMES acronym: Friends, Love, Affection, Marriage, Enmity, Sister (Sibling)."
- - "Executes step-by-step circular elimination without manual counting errors."
- - "100% free and instant to play on mobile or desktop."
+    - "Accurately automates the classic 1-to-1 letter cancellation rule."
+    - "Uses the standard FLAMES acronym: Friends, Love, Affection, Marriage, Enmity, Sister (Sibling)."
+    - "Executes step-by-step circular elimination without manual counting errors."
+    - "100% free and instant to play on mobile or desktop."
 peopleAlsoAsk:
   - "What does FLAMES stand for?"
   - "How do you calculate FLAMES manually on paper?"
@@ -45,6 +45,10 @@ examples:
     inputs: "First Name = Alex, Second Name = Jane"
     calculation: "Step 1: Normalize -> 'alex' and 'jane'. Step 2: Cancel matching letters ('a' and 'e'). Step 3: Remaining letters -> Alex has (l, x), Jane has (j, n). Total count N = 4. Step 4: Eliminate from F-L-A-M-E-S: Round 1 (step 4) removes M; Round 2 removes L; Round 3 removes F; Round 4 removes A; Round 5 removes S."
     result: "Relationship Status = E (Enmity)"
+  - title: "FLAMES Game Example: Harry & Sally"
+    inputs: "First Name = Harry, Second Name = Sally"
+    calculation: "Step 1: Normalize -> 'harry' and 'sally'. Step 2: Cancel matching letter ('a'). Step 3: Remaining letters -> Harry has (h, r, r), Sally has (s, l, l). Total count N = 6. Step 4: Eliminate from F-L-A-M-E-S: Round 1 (step 6) removes S; Round 2 removes F; Round 3 removes A; Round 4 removes L; Round 5 removes E."
+    result: "Relationship Status = M (Marriage)"
 faqs:
   - q: "What does FLAMES stand for?"
     a: "FLAMES is an acronym representing six relationship categories: F = Friends, L = Love, A = Affection, M = Marriage, E = Enmity, and S = Sister (Sibling)."
@@ -56,6 +60,21 @@ faqs:
     a: "Each matching letter is canceled out on a strict 1-to-1 pairing basis. For example, if Name 1 has two 'a's and Name 2 has one 'a', only one 'a' from each name is canceled, leaving one 'a' remaining in Name 1."
 references:
   - "https://en.wikipedia.org/wiki/FLAMES_(game)"
+formulaDescription: "The calculator lowercases and strips both names down to letters only, then cancels out matching letters between the two names one pair at a time (not all-at-once) until no shared letters remain. It counts the total number of leftover letters (N) and uses that count to repeatedly eliminate a letter from the six-letter word F-L-A-M-E-S in a circular counting pattern, similar to the classic paper elimination game, until only one letter is left standing."
+variablesExplained:
+  - name: "n1Arr, n2Arr"
+    description: "The two input names after normalization, split into individual letter arrays with spaces, numbers, and punctuation removed and everything lowercased."
+  - name: "N (count)"
+    description: "The total number of letters left in both arrays after every 1-to-1 matching letter pair has been canceled out between the two names."
+  - name: "flames"
+    description: "The working array ['F','L','A','M','E','S'] that letters are progressively removed from, using a circular index that advances by N positions (wrapping around the shrinking array) each round."
+stepByStep: "1) Type the first name into the 'First Person's Name' field. 2) Type the second name into the 'Second Person's Name' field. 3) Click 'Play FLAMES' (or press Enter). 4) The calculator lowercases both names, strips non-letters, and cancels matching letters one pair at a time between the two names. 5) It counts the total number of uncanceled letters remaining (N). 6) Starting from F, it counts forward N positions around the F-L-A-M-E-S circle and removes whichever letter it lands on, then keeps counting from the next remaining letter each round. 7) This repeats until a single letter remains, which maps to a relationship category and description."
+realWorldUses: "FLAMES is built purely for nostalgic, lighthearted entertainment: replaying the classic schoolyard paper game digitally, testing friend or crush name pairs at a party, running celebrity or fictional-couple matchups for fun, and settling playful debates about whose FLAMES result is 'better' among friends."
+commonMistakes:
+  - "Assuming FLAMES has any psychological or scientific basis—it is a traditional counting game, not a compatibility assessment."
+  - "Canceling every occurrence of a shared letter instead of pairing them 1-to-1, which changes the remaining count N and can produce a different final letter."
+  - "Including spaces, middle names, or punctuation in the count, which alters N and the elimination sequence versus using first names only."
+  - "Restarting the count from F after each elimination instead of continuing from the next remaining letter—this is the most common manual scoring mistake."
 ---
 
 # FLAMES Game Calculator – Classic Name Relationship Predictor
@@ -124,6 +143,45 @@ Start with `['F', 'L', 'A', 'M', 'E', 'S']` (Length 6):
 
 #### Final Result
 **E** $\rightarrow$ **Enmity**!
+
+---
+
+### Second Worked Example: "Harry" & "Sally"
+
+A six-letter count produces a very different outcome for **Harry** and **Sally**:
+
+#### Step 1: Normalize Names
+* Name 1: `"harry"` (`'h'`, `'a'`, `'r'`, `'r'`, `'y'`)
+* Name 2: `"sally"` (`'s'`, `'a'`, `'l'`, `'l'`, `'y'`)
+
+#### Step 2: Cancel Common Letters
+* `'a'` appears in both $\rightarrow$ cancel one `'a'` from each name (1-to-1 rule).
+* No other letters match across the two names.
+* Remaining letters in Harry: `'h'`, `'r'`, `'r'` (3 letters).
+* Remaining letters in Sally: `'s'`, `'l'`, `'l'` (3 letters).
+
+#### Step 3: Count Remaining Letters ($N$)
+$$N = 3 + 3 = \mathbf{6}$$
+
+#### Step 4: Circular Elimination on FLAMES
+Start with `['F', 'L', 'A', 'M', 'E', 'S']` (Length 6):
+
+* **Round 1** (Count to 6): `F(1), L(2), A(3), M(4), E(5), S(6)` $\rightarrow$ Eliminate **S**.
+  - Remaining: `['F', 'L', 'A', 'M', 'E']`. Resume count from **F**.
+* **Round 2** (Count 6, wrapping through 5 letters): `F(1), L(2), A(3), M(4), E(5), F(6)` $\rightarrow$ Eliminate **F**.
+  - Remaining: `['L', 'A', 'M', 'E']`. Resume count from **L**.
+* **Round 3** (Count 6, wrapping through 4 letters): `L(1), A(2), M(3), E(4), L(5), A(6)` $\rightarrow$ Eliminate **A**.
+  - Remaining: `['L', 'M', 'E']`. Resume count from **M**.
+* **Round 4** (Count 6, wrapping through 3 letters): `M(1), E(2), L(3), M(4), E(5), L(6)` $\rightarrow$ Eliminate **L**.
+  - Remaining: `['M', 'E']`. Resume count from **M**.
+* **Round 5** (Count 6, wrapping through 2 letters): `M(1), E(2), M(3), E(4), M(5), E(6)` $\rightarrow$ Eliminate **E**.
+  - Remaining: `['M']`.
+
+#### Final Result
+**M** $\rightarrow$ **Marriage**!
+
+> [!NOTE]
+> Even though "Harry" and "Sally" only share one canceled letter versus two for "Alex" and "Jane," a higher leftover count (N = 6 instead of 4) sends the elimination all the way around the circle multiple times before settling on a result — small differences in shared letters can swing the final category dramatically.
 
 ---
 

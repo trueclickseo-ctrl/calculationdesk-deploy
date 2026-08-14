@@ -11,12 +11,12 @@ clusterPriority: "primary"
 searchIntent: "transactional"
 authorId: "editorial-team"
 reviewerId: "calculationdesk-review-team"
-lastUpdated: "2026-08-09"
+lastUpdated: "2026-08-14"
 formulaVerified: true
-version: "2.0"
+version: "2.1"
 contentStatus: "published"
-lastReviewed: "2026-08-09"
-nextReviewDate: "2026-11-09"
+lastReviewed: "2026-08-14"
+nextReviewDate: "2026-11-14"
 refreshPriority: "high"
 seoPriority:
   tier: 1
@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Webmasters, DevOps engineers, system administrators, e-commerce site owners, and web developers."
   limitations: "Calculates baseline HTML/image traffic. Does not account for background bot crawlers, media streaming spikes, or CDN caching offload percentage."
   keyTakeaways:
- - "Calculates Required Throughput Rate (Mbps), Raw Monthly Transfer (GB), and Peak Data Transfer Allowance (GB)."
- - "Distinguishes continuous bandwidth line rate (Mbps) from cumulative monthly transfer volume (GB)."
- - "Applies traffic redundancy multipliers (typically 1.5x to 2.0x) to absorb daily traffic spikes."
- - "Supports average page size inputs in both KB and MB."
+    - "Calculates Required Throughput Rate (Mbps), Raw Monthly Transfer (GB), and Peak Data Transfer Allowance (GB)."
+    - "Distinguishes continuous bandwidth line rate (Mbps) from cumulative monthly transfer volume (GB)."
+    - "Applies traffic redundancy multipliers (typically 1.5x to 2.0x) to absorb daily traffic spikes."
+    - "Supports average page size inputs in both KB and MB."
 peopleAlsoAsk:
   - "What is the difference between bandwidth and monthly data transfer?"
   - "How much bandwidth does a website with 100,000 pageviews need?"
@@ -59,6 +59,23 @@ faqs:
 references:
   - "https://www.ietf.org/"
   - "https://httparchive.org/"
+formulaDescription: "The calculator first normalizes the entered average page size to megabytes (dividing by 1,024 if entered in KB), then multiplies it by monthly pageviews and divides by 1,024 to get Raw Monthly Transfer in gigabytes. It multiplies that raw figure by the user-entered Redundancy/Peak Factor (typically 1.5-2.0) to produce the Peak Data Transfer Allowance, which accounts for uneven daily traffic distribution. Finally, it converts the peak gigabyte figure into megabits (× 8,000) and divides by the number of seconds in a 30-day month (2,592,000) to produce the Required Continuous Line Throughput Rate in Mbps — the sustained network speed the server's connection needs to support that traffic level evenly across the month."
+variablesExplained:
+  - name: "sizeInMB"
+    description: "The average page size normalized to megabytes — if entered in KB, the value is divided by 1,024; if entered in MB, it is used directly."
+  - name: "rawTransfer"
+    description: "The Raw Monthly Transfer in gigabytes: (monthly pageviews × sizeInMB) ÷ 1,024, representing the baseline data volume with no redundancy buffer."
+  - name: "peakTransfer"
+    description: "The Peak Data Transfer Allowance in gigabytes: rawTransfer × the Redundancy/Peak Factor, representing the recommended monthly allowance to account for uneven traffic distribution."
+  - name: "reqMbps"
+    description: "The Required Continuous Line Throughput Rate in Mbps: (peakTransfer × 8,000) ÷ 2,592,000 (the number of seconds in a 30-day month), representing the sustained bandwidth speed needed."
+stepByStep: "1) Enter your website's monthly page views. 2) Enter your average page size and select its unit (KB or MB). 3) Enter a Redundancy/Peak Factor (defaults to 1.5, meaning 50% headroom above baseline traffic). 4) Click 'Solve Bandwidth'. 5) The calculator computes Raw Monthly Transfer by multiplying pageviews by page size. 6) It applies the redundancy factor to produce the Peak Data Transfer Allowance. 7) It converts that peak allowance into a continuous Mbps line rate by dividing by the number of seconds in a 30-day month, giving you the sustained bandwidth your hosting plan needs to support."
+realWorldUses: "This calculator supports web hosting and infrastructure planning: choosing between shared hosting, VPS, and dedicated server tiers based on projected traffic, sizing a CDN bandwidth commitment before launch, estimating hosting cost overage risk for a growing site, and understanding the difference between a monthly data cap (GB) and the continuous network speed (Mbps) needed to serve that traffic smoothly."
+commonMistakes:
+  - "Confusing monthly data transfer volume (GB, a cumulative total) with continuous bandwidth rate (Mbps, an instantaneous speed) — hosting plans often advertise one or the other, and they answer different sizing questions."
+  - "Skipping the redundancy/peak factor and sizing hosting only for average traffic, which leaves no headroom for daily peak hours or viral traffic spikes."
+  - "Assuming a low average page size means low bandwidth needs — a small page size at very high pageview volume (or vice versa) can still require substantial monthly transfer and line rate."
+  - "Not accounting for CDN offload — this calculator estimates origin-server bandwidth needs without caching; a properly configured CDN can reduce actual origin bandwidth by 60-80%."
 ---
 
 # Website Bandwidth Calculator – Estimate Monthly Data Transfer and Throughput
@@ -144,13 +161,31 @@ $$S_{\text{Mbps}} = \frac{366.2109 \times 8,000}{2,592,000} = \frac{2,929,687.5}
 
 ---
 
+### Second Worked Example: Higher Traffic with 2.0x Redundancy
+
+Let's calculate for a larger site receiving **500,000 pageviews/month**, with an **average page size of 3.0 MB**, using a more conservative **2.0 redundancy factor**:
+
+#### Step 1: Calculate Raw Monthly Data Transfer
+$$T_{\text{raw}} = \frac{500,000 \times 3.0 \text{ MB}}{1,024} = \mathbf{1,464.84 \text{ GB / month}}$$
+
+#### Step 2: Calculate Peak Data Transfer Allowance (2.0x Redundancy)
+$$T_{\text{peak}} = 1,464.84 \times 2.0 = \mathbf{2,929.69 \text{ GB / month}}$$
+
+#### Step 3: Compute Required Continuous Line Throughput (Mbps)
+$$S_{\text{Mbps}} = \frac{2,929.69 \times 8,000}{2,592,000} = \mathbf{9.04 \text{ Mbps}}$$
+
+> [!NOTE]
+> This second site has 5x the pageviews of the first example but only about 8x the required throughput (1.13 Mbps → 9.04 Mbps) — the gap comes from both the larger page size (2.5 MB → 3.0 MB) and the higher redundancy factor (1.5x → 2.0x), both compounding on top of the pageview increase.
+
+---
+
 ### Strategies to Reduce Server Bandwidth Costs
 
 1. **Implement Cloudflare or Fastly CDN**: CDNs cache static images, CSS, and JS assets on edge servers near site visitors, offloading **60% to 80%** of data transfer away from your origin server.
 2. **Compress Images (WebP/AVIF)**: Converting legacy PNG/JPEG graphics to modern WebP format reduces page payload sizes by 30% to 50% without visible loss of visual quality.
 3. **Enable Gzip / Brotli Compression**: Enabling server-side Brotli compression reduces text asset (HTML, JS, CSS) transfer sizes by up to 75%.
 
-To calculate individual consumer internet consumption, visit our [Data Usage Calculator](file:///d:/Project-Calculator/src/data/calculators/data-usage.md) or estimate file download durations with the [Download Time Calculator](file:///d:/Project-Calculator/src/data/calculators/download-time.md).
+To calculate individual consumer internet consumption, visit our [Data Usage Calculator](/calculators/data-usage/) or estimate file download durations with the [Download Time Calculator](/calculators/download-time/).
 
 ---
 

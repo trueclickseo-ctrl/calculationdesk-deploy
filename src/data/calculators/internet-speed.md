@@ -11,12 +11,12 @@ clusterPriority: "primary"
 searchIntent: "transactional"
 authorId: "editorial-team"
 reviewerId: "calculationdesk-review-team"
-lastUpdated: "2026-08-09"
+lastUpdated: "2026-08-14"
 formulaVerified: true
-version: "2.0"
+version: "2.1"
 contentStatus: "published"
-lastReviewed: "2026-08-09"
-nextReviewDate: "2026-11-09"
+lastReviewed: "2026-08-14"
+nextReviewDate: "2026-11-14"
 refreshPriority: "high"
 seoPriority:
   tier: 1
@@ -31,10 +31,10 @@ aiSummary:
   whoShouldUse: "Gamers, remote workers, IT managers, video streamers, and home internet subscribers."
   limitations: "Converts theoretical bandwidth values. Does not run a live latency speed test or measure live Wi-Fi connection quality."
   keyTakeaways:
- - "Translates bandwidth rates between Mbps, MB/s, Gbps, KB/s, and GB/s."
- - "Clarifies the fundamental 8-to-1 ratio between bits (Mb) and bytes (MB)."
- - "Provides estimated download durations for music files, web videos, and HD movies."
- - "Distinguishes bandwidth unit conversion from live network speed tests."
+    - "Translates bandwidth rates between Mbps, MB/s, Gbps, KB/s, and GB/s."
+    - "Clarifies the fundamental 8-to-1 ratio between bits (Mb) and bytes (MB)."
+    - "Provides estimated download durations for music files, web videos, and HD movies."
+    - "Distinguishes bandwidth unit conversion from live network speed tests."
 peopleAlsoAsk:
   - "What is the difference between Mbps and MB/s?"
   - "Why is my 100 Mbps internet downloading files at only 12.5 MB/s?"
@@ -59,6 +59,23 @@ faqs:
 references:
   - "https://www.ietf.org/"
   - "https://www.ieee.org/"
+formulaDescription: "The calculator converts any entered speed value into a common base unit — bits per second (bps) — by multiplying the value by the source unit's fixed conversion factor. It then divides that base bps figure by the target unit's own fixed factor to produce the converted result. Because 1 Byte equals 8 bits, every byte-based unit (KB/s, MB/s, GB/s) has a conversion factor exactly 8 times larger than its bit-based counterpart (Kbps, Mbps, Gbps) at the same size prefix. The same base bps value also drives the file-download-time estimates, which divide a fixed file size (in MB) by the converted MB/s rate."
+variablesExplained:
+  - name: "fromObj.factor, toObj.factor"
+    description: "The fixed bits-per-second conversion factor for the selected source and target units — for example, Mbps = 1,000,000 bps and MB/s = 8,000,000 bps."
+  - name: "bpsVal"
+    description: "The entered value converted into the common base unit of bits per second, computed as value × fromObj.factor."
+  - name: "convertedVal"
+    description: "The final converted result in the target unit, computed as bpsVal ÷ toObj.factor."
+  - name: "mbPerSec, getDownloadTime"
+    description: "mbPerSec is bpsVal converted specifically to Megabytes per second (bpsVal ÷ 8,000,000), used to estimate download duration for a given file size in MB, assuming 100% theoretical efficiency with no network overhead."
+stepByStep: "1) Enter your network speed value. 2) Select the 'From Unit' (e.g. Mbps, as advertised by most ISPs). 3) Select the 'To Unit' you want to convert to (e.g. MB/s, as shown by most download managers). 4) The calculator converts your value into base bits-per-second, then divides by the target unit's factor to produce the equivalent rate. 5) It simultaneously computes equivalencies across all six supported units and estimates download durations for a 5 MB song, a 250 MB video, and a 4 GB HD movie at 100% theoretical efficiency."
+realWorldUses: "This converter is useful for evaluating an ISP's advertised Mbps plan against real download-manager MB/s speeds, estimating how long a large game or movie download will realistically take on a given connection, comparing gigabit fiber plans against older cable or DSL speeds, and explaining to non-technical users why their '100 Mbps' internet does not download files at 100 megabytes per second."
+commonMistakes:
+  - "Confusing Megabits (Mb, lowercase b) with Megabytes (MB, uppercase B) — the two differ by a factor of 8, and ISPs almost always advertise the bit-based figure."
+  - "Expecting the calculator's converted MB/s rate to match real-world download speeds exactly — real downloads lose roughly 10-20% of theoretical throughput to TCP/IP overhead, Wi-Fi interference, and server-side rate limits."
+  - "Treating this tool as a live speed test — it performs static mathematical conversions on values you type in, not a real-time measurement of your actual connection."
+  - "Forgetting that the download-time estimates assume 100% efficiency with zero overhead, so they represent a theoretical best case rather than a guaranteed real-world result."
 ---
 
 # Internet Speed Calculator – Convert Mbps, Gbps, MB/s and More
@@ -128,6 +145,24 @@ $$\text{Target MB/s} = \frac{100,000,000}{8,000,000} = \mathbf{12.5 \text{ MB/s}
 
 ---
 
+### Second Worked Example: 1 Gbps Gigabit Fiber
+
+Gigabit fiber plans are increasingly common. Let's convert **1 Gbps** to MB/s:
+
+#### Step 1: Convert 1 Gbps to Base Bits per Second
+$$\text{bps} = 1 \times 1,000,000,000 = \mathbf{1,000,000,000 \text{ bps}}$$
+
+#### Step 2: Convert Base bps to Megabytes per Second (MB/s)
+$$\text{Target MB/s} = \frac{1,000,000,000}{8,000,000} = \mathbf{125 \text{ MB/s}}$$
+
+#### Step 3: Compute Estimated File Download Duration
+* **4 GB HD Movie (4,000 MB)**: $\frac{4,000 \text{ MB}}{125 \text{ MB/s}} = \mathbf{32.0 \text{ seconds}}$
+
+> [!NOTE]
+> A 1 Gbps connection is exactly 10 times faster than a 100 Mbps connection, so its theoretical 4 GB movie download time (32.0s) is exactly one-tenth of the 100 Mbps example's (320s / 5m 20s) — a useful sanity check for these unit conversions.
+
+---
+
 ### Speed Converter vs. Live Speed Test
 
 > [!NOTE]
@@ -136,7 +171,7 @@ $$\text{Target MB/s} = \frac{100,000,000}{8,000,000} = \mathbf{12.5 \text{ MB/s}
 
 If your converted MB/s speed seems faster than what you experience during real downloads, remember that **TCP/IP packet headers, Wi-Fi attenuation, and server rate limits** typically reduce real-world throughput by 10% to 15%.
 
-For dedicated transfer calculations with overhead controls, use our [Download Time Calculator](file:///d:/Project-Calculator/src/data/calculators/download-time.md) or evaluate hosting capacity with the [Website Bandwidth Calculator](file:///d:/Project-Calculator/src/data/calculators/bandwidth-calculator.md).
+For dedicated transfer calculations with overhead controls, use our [Download Time Calculator](/calculators/download-time/) or evaluate hosting capacity with the [Website Bandwidth Calculator](/calculators/bandwidth-calculator/).
 
 ---
 

@@ -11,12 +11,12 @@ clusterPriority: "primary"
 searchIntent: "transactional"
 authorId: "editorial-team"
 reviewerId: "calculationdesk-review-team"
-lastUpdated: "2026-08-09"
+lastUpdated: "2026-08-14"
 formulaVerified: true
-version: "2.0"
+version: "2.1"
 contentStatus: "published"
-lastReviewed: "2026-08-09"
-nextReviewDate: "2026-11-09"
+lastReviewed: "2026-08-14"
+nextReviewDate: "2026-11-14"
 refreshPriority: "high"
 seoPriority:
   tier: 1
@@ -29,12 +29,12 @@ aiSummary:
   formulaSummary: "Total Kernels in 1/1000th Acre = Ears * KernelRows * KernelsPerRow | Yield (bu/acre) = Total Kernels / KernelSizeFactor"
   whenToUse: "Use this pre-harvest estimation tool during the R3 (milk) to R6 (black layer) growth stages to estimate grain storage needs and harvest logistics."
   whoShouldUse: "Corn growers, agronomists, crop insurance adjusters, farm managers, and grain elevator operators."
-  limitations: "Provides a field pre-harvest estimate. Does not account for combine header harvest loss (typically 1–3 bu/acre), late-season stalk lodging, or extreme test weight variations."
+  limitations: "Provides a field pre-harvest estimate. Does not account for combine header harvest loss (typically 1-3 bu/acre), late-season stalk lodging, or extreme test weight variations."
   keyTakeaways:
- - "Calculates Estimated Crop Yield (Bushels per Acre) and Standard Row Sampling Length."
- - "Supports 30-inch (17' 5\" row length), 36-inch (14' 6\" row length), and 38-inch (13' 9\" row length) row spacings."
- - "Factors in Kernel Size Factors: 75 (large/wet), 90 (average), 105 (small/dry)."
- - "Accurately documents the Yield Component Method without relying on ear weight assumptions."
+    - "Calculates Estimated Crop Yield (Bushels per Acre) and Standard Row Sampling Length."
+    - "Supports 30-inch (17' 5\" row length), 36-inch (14' 6\" row length), and 38-inch (13' 9\" row length) row spacings."
+    - "Factors in Kernel Size Factors: 75 (large/wet), 90 (average), 105 (small/dry)."
+    - "Accurately documents the Yield Component Method without relying on ear weight assumptions."
 peopleAlsoAsk:
   - "How do you calculate corn yield using the 1/1000th acre method?"
   - "What is the row sampling length for 30-inch corn rows?"
@@ -53,12 +53,29 @@ faqs:
   - q: "What is the 1/1000th Acre Row Method?"
     a: "Because counting an entire acre is impossible, farmers measure a specific row length that equals exactly 1/1000th of an acre (17 feet 5 inches for 30-inch rows). Counting ears in this sample length represents thousands of ears per acre."
   - q: "What is the Kernel Size Factor?"
-    a: "The kernel size factor represents the number of kernels in a bushel (divided by 1,000). **90** (90,000 kernels/bu) is the standard for average grain fill. In dry years with small kernels, use **105**. In ideal wet years with large kernels, use **75**."
+    a: "The kernel size factor represents the number of kernels in a bushel (divided by 1,000). 90 (90,000 kernels/bu) is the standard for average grain fill. In dry years with small kernels, use 105. In ideal wet years with large kernels, use 75."
   - q: "When should I estimate corn yield in the field?"
-    a: "Perform yield estimates during the **R3 (milk stage)** or later (August/September) after kernel set is complete. Estimating before the R3 stage causes major errors because kernel abortion may still occur."
+    a: "Perform yield estimates during the R3 (milk stage) or later (August/September) after kernel set is complete. Estimating before the R3 stage causes major errors because kernel abortion may still occur."
 references:
   - "https://extension.purdue.edu/"
   - "https://extension.iastate.edu/"
+formulaDescription: "The calculator uses the university extension Yield Component Method. It first determines the row sampling length that equals exactly 1/1000th of an acre for the field's row spacing (43.56 square feet divided by row width in feet). Within that sample length, it multiplies the ear count by kernel rows per ear and kernels per row to get total sample kernels. Dividing that total by the selected Kernel Size Factor (representing thousands of kernels per bushel) produces the estimated yield in bushels per acre."
+variablesExplained:
+  - name: "Row Spacing"
+    description: "The distance between corn rows in inches (commonly 30, 36, or 38 inches), which determines the exact row sampling length that equals 1/1000th of an acre."
+  - name: "Ear Count"
+    description: "The number of harvestable ears counted within the 1/1000th-acre row sample length."
+  - name: "Kernel Rows per Ear and Kernels per Row"
+    description: "The average number of kernel rows around a typical ear, and the average number of kernels along each row - multiplied together to estimate kernels per ear."
+  - name: "Kernel Size Factor"
+    description: "A divisor representing thousands of kernels per bushel, selected based on expected kernel size and grain fill quality: 75 for large/wet-season kernels, 90 for an average season, or 105 for small/drought-stressed kernels."
+stepByStep: "1) Determine your row spacing and measure out the corresponding 1/1000th-acre sample row length (17'5\" for 30-inch rows, 14'6\" for 36-inch rows, or 13'9\" for 38-inch rows). 2) Count the number of harvestable ears within that sample length. 3) Select a handful of representative ears and count kernel rows per ear and kernels per row, averaging across samples. 4) Select a kernel size factor matching the season's grain fill conditions. 5) The calculator multiplies ear count by kernel rows and kernels per row to get total sample kernels, then divides by the kernel size factor to estimate bushels per acre."
+realWorldUses: "Used by corn growers and farm managers to estimate pre-harvest yield for grain storage and bin capacity planning, by agronomists conducting field scouting and yield forecasting, by crop insurance adjusters estimating yield loss after weather damage, and by grain elevator operators and marketers forecasting incoming harvest volumes before combines enter the field."
+commonMistakes:
+  - "Sampling too few locations across a field - taking ear counts only near field entrances or in unusually lush spots skews the estimate; extension guidance recommends at least 5 to 10 random sampling locations across a field."
+  - "Estimating too early in the growing season - counting kernels before the R3 (milk) stage risks counting kernels that will later abort, producing an inflated estimate."
+  - "Counting undeveloped or aborted tip kernels - only fully formed kernels that will actually be harvested by the combine should be counted, not small unpollinated kernels at the ear tip."
+  - "Treating the hand-estimated yield as equal to final combine yield - pre-harvest estimates typically run 5% to 10% higher than actual combine yield monitor totals due to header loss, stalk lodging, and other harvest losses."
 ---
 
 # Corn Yield Estimator – Estimate Corn Yield Per Acre
@@ -75,12 +92,12 @@ Developed by land-grant university agronomists, the Yield Component Method estim
 
 ```
                   1/1000th Acre Row Sampling Guide
-                  
+
    |<-------------- Row Sampling Length -------------->|
    +-----+-----+-----+-----+-----+-----+-----+-----+-----+
    | Ear | Ear | Ear | Ear | Ear | Ear | Ear | Ear | Ear |
    +-----+-----+-----+-----+-----+-----+-----+-----+-----+
-   
+
    30-inch Row Spacing  ->  17 feet 5 inches (17.42 ft)
    36-inch Row Spacing  ->  14 feet 6 inches (14.52 ft)
    38-inch Row Spacing  ->  13 feet 9 inches (13.75 ft)
@@ -130,6 +147,22 @@ $$\text{Yield} = \frac{20,480}{90} = 227.555 \rightarrow \mathbf{227.6 \text{ Bu
 
 ---
 
+### Second Worked Example: Drought-Stressed Field with Small Kernels
+
+Let's calculate the estimated corn yield for a stressed field with **30-inch rows**, containing **30 ears** in the sample, averaging **14 kernel rows per ear** and **35 kernels per row**, using the small-kernel **105 kernel size factor**:
+
+#### Step 1: Calculate Kernels per Ear & Total Sample Kernels
+$$\text{Kernels per Ear} = 14 \times 35 = \mathbf{490 \text{ kernels}}$$
+$$\text{Total Sample Kernels} = 30 \times 490 = \mathbf{14,700 \text{ kernels in } \frac{1}{1,000}\text{th acre}}$$
+
+#### Step 2: Compute Estimated Yield (Bushels per Acre)
+$$\text{Yield} = \frac{14,700}{105} = \mathbf{140.0 \text{ Bushels per Acre}}$$
+
+> [!NOTE]
+> Both a lower ear count and smaller kernel counts (fewer rows and kernels per row) combine with the higher 105 kernel size factor in this drought-stressed example, driving the estimated yield down to 140.0 bu/acre compared to 227.6 bu/acre in the healthy first example - illustrating how sensitive yield estimates are to each of the four input variables.
+
+---
+
 ### Why Pre-Harvest Yield Estimates Differ From Combine Yield Monitors
 
 Pre-harvest hand estimates typically overestimate final combine yield monitor totals by 5% to 10% due to real-world harvest losses:
@@ -138,7 +171,7 @@ Pre-harvest hand estimates typically overestimate final combine yield monitor to
 2. **Stalk Lodging & Unharvested Ears**: Windstorms causing stalk breakage leave low-hanging ears beneath header snout pickers.
 3. **Sampling Bias**: Taking ear counts only near field entrance roads or in exceptionally lush spots skews average yield estimates higher than full-field averages. Sample at least 5 to 10 random locations across the field.
 
-To calculate storage capacity for your harvested corn crop, check our [Grain Bin Capacity Planner](file:///d:/Project-Calculator/src/data/calculators/grain-bin.md) or evaluate pasture stocking rates with the [Cattle per Acre Calculator](file:///d:/Project-Calculator/src/data/calculators/cattle-per-acre.md).
+To calculate storage capacity for your harvested corn crop, check our [Grain Bin Capacity Planner](/calculators/grain-bin/) or evaluate pasture stocking rates with the [Cattle per Acre Calculator](/calculators/cattle-per-acre/).
 
 ---
 
@@ -148,3 +181,5 @@ To calculate storage capacity for your harvested corn crop, check our [Grain Bin
   * A1: Sample at least 1 location for every 10 to 15 acres (minimum 5 to 8 sampling points per field), avoid end-rows, and average the results for an accurate whole-field estimate.
 * **Q2: Should I count undeveloped kernels at the tip of the ear?**
   * A2: Do not count small, unpollinated, or aborted tip kernels. Only count fully formed kernels that will be harvested by the combine.
+* **Q3: How does row spacing itself affect the yield estimate?**
+  * A3: Row spacing doesn't directly appear in the final yield formula - it only determines the correct sample row length to measure out (17'5" for 30-inch rows, for example). As long as the ear count and kernel counts are gathered from the correct sample length for that row spacing, the yield calculation itself is unaffected by which row spacing was used.
