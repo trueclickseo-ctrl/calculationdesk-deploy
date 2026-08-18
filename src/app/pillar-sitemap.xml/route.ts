@@ -10,9 +10,20 @@ const PILLAR_PAGES = [
   'math-calculators',
   'date-time-calculators',
   'conversion-calculators',
+  'unit-converter-calculators',
   'health-calculators',
   'statistics-calculators',
-  'education-calculators'
+  'education-calculators',
+  'business-calculators',
+  'technology-calculators',
+  'biology-calculators',
+  'ecology-calculators',
+  'everyday-life-calculators',
+  'construction-calculators',
+  'lifestyle-calculators',
+  'real-estate-calculators',
+  'physics-calculators',
+  'chemistry-calculators'
 ];
 
 export async function GET() {

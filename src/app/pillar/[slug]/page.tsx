@@ -30,7 +30,7 @@ const PILLARS_CONFIG: Record<string, {
     ],
     guides: [
       { title: "How Compound Interest Works", slug: "how-compound-interest-works" },
-      { title: "How Loan Interest Is Calculated", slug: "how-loan-interest-calculated" }
+      { title: "How Loan Interest Is Calculated", slug: "loan-interest-formula-explained" }
     ]
   },
   'percentage-calculators': {
@@ -75,6 +75,16 @@ const PILLARS_CONFIG: Record<string, {
     ],
     guides: []
   },
+  'unit-converter-calculators': {
+    title: 'Unit Conversion Authority Hub',
+    description: 'Convert between metric and imperial systems for length, weight, area, volume, and temperature.',
+    categorySlug: 'unit-converter',
+    introduction: 'Convert meters to feet, grams to ounces, liters to gallons, and Celsius to Fahrenheit instantly.',
+    faqs: [
+      { q: "Why use standard conversion coefficients?", a: "To ensure absolute precision across scientific, engineering, and culinary calculations." }
+    ],
+    guides: []
+  },
   'health-calculators': {
     title: 'Health & Fitness Calculations Hub',
     description: 'Track BMI, calories, weight, target heart zones, and overall metabolic metrics.',
@@ -102,6 +112,106 @@ const PILLARS_CONFIG: Record<string, {
     introduction: 'Track your academic goals and calculate grades required on final exams to maintain specific grade targets.',
     faqs: [
       { q: "How is a weighted GPA calculated?", a: "By multiplying grade point scores by class credits, summing them, and dividing by total credit hours." }
+    ],
+    guides: []
+  },
+  'business-calculators': {
+    title: 'Business & Productivity Calculations Hub',
+    description: 'Calculate break-even points, profit margins, ROI, markup, and commission schedules.',
+    categorySlug: 'business',
+    introduction: 'Analyze business profitability, unit economics, invoice GST, and sales performance metrics with our verified business calculators.',
+    faqs: [
+      { q: "What is the difference between margin and markup?", a: "Margin is profit expressed as a percentage of sales price, whereas markup is profit expressed as a percentage of cost price." }
+    ],
+    guides: []
+  },
+  'technology-calculators': {
+    title: 'Technology & Hardware Calculations Hub',
+    description: 'Calculate bandwidth, screen aspect ratios, battery life, and digital file sizes.',
+    categorySlug: 'technology',
+    introduction: 'Optimize network bandwidth demands, screen resolutions, battery runtime projections, and data transfer speeds.',
+    faqs: [
+      { q: "How is data transfer speed measured?", a: "Data transfer speed is typically measured in megabits per second (Mbps) or gigabits per second (Gbps)." }
+    ],
+    guides: []
+  },
+  'biology-calculators': {
+    title: 'Biology & Life Sciences Calculations Hub',
+    description: 'Calculate biological parameters, cell growth rates, and ecological metrics.',
+    categorySlug: 'biology',
+    introduction: 'Analyze biological growth models, genetics probabilities, and life science parameters accurately.',
+    faqs: [
+      { q: "Why are standardized growth models used in biology?", a: "They allow predictable modeling of population growth, cellular reproduction, and biomass accumulation." }
+    ],
+    guides: []
+  },
+  'ecology-calculators': {
+    title: 'Ecology & Environmental Science Hub',
+    description: 'Calculate ecological footprints, biodiversity indices, and environmental impact metrics.',
+    categorySlug: 'ecology',
+    introduction: 'Evaluate environmental sustainability metrics, solar generation capacities, and resource consumption indices.',
+    faqs: [
+      { q: "What is an ecological footprint?", a: "It measures the impact of human activities expressed as the amount of land required to sustain their use of natural resources." }
+    ],
+    guides: []
+  },
+  'everyday-life-calculators': {
+    title: 'Everyday Life Calculations Hub',
+    description: 'Calculate daily routine metrics, audiobook playback speeds, birth years, and lifestyle timing.',
+    categorySlug: 'everyday-life',
+    introduction: 'Simplify daily planning with calculators designed for routine tasks, time management, and everyday estimates.',
+    faqs: [
+      { q: "How does audiobook speed adjustment affect listening time?", a: "Listening at 1.5x speed reduces total listening time by 33.3%, while 2.0x speed cuts the listening duration in half." }
+    ],
+    guides: []
+  },
+  'construction-calculators': {
+    title: 'Construction & Building Materials Hub',
+    description: 'Calculate concrete blocks, roof pitch framing, board feet, and building material quantities.',
+    categorySlug: 'construction',
+    introduction: 'Estimate material requirements for building projects, concrete volume, framing lumber, and structural estimates.',
+    faqs: [
+      { q: "Why is material waste factored into construction estimates?", a: "A standard 5% to 10% waste factor accounts for cutting off-cuts, transport damage, and site fitting adjustments." }
+    ],
+    guides: []
+  },
+  'lifestyle-calculators': {
+    title: 'Lifestyle & Personal Interest Hub',
+    description: 'Calculate lifestyle metrics, event timelines, and personal planning numbers.',
+    categorySlug: 'lifestyle',
+    introduction: 'Explore fun, engaging, and practical calculators for personal events, milestone tracking, and lifestyle planning.',
+    faqs: [
+      { q: "How are personal milestone calculations computed?", a: "They use standard calendar date arithmetic accounting for leap years and exact time zone offsets." }
+    ],
+    guides: []
+  },
+  'real-estate-calculators': {
+    title: 'Real Estate & Property Investment Hub',
+    description: 'Calculate mortgages, rental yields, property affordability, and real estate returns.',
+    categorySlug: 'real-estate',
+    introduction: 'Evaluate property investment returns, gross vs net rental yield, mortgage payments, and home buying budgets.',
+    faqs: [
+      { q: "What is net rental yield?", a: "Net rental yield is annual rental income minus property operating expenses, divided by the total property purchase price." }
+    ],
+    guides: []
+  },
+  'physics-calculators': {
+    title: 'Physics & Engineering Mechanics Hub',
+    description: 'Calculate velocity, acceleration, force, energy, and physical dynamics.',
+    categorySlug: 'physics',
+    introduction: 'Solve classical mechanics, thermodynamics, fluid dynamics, and wave equations step-by-step.',
+    faqs: [
+      { q: "What units are standard in physics calculations?", a: "International System of Units (SI) such as meters, kilograms, seconds, and Joules." }
+    ],
+    guides: []
+  },
+  'chemistry-calculators': {
+    title: 'Chemistry & Molecular Science Hub',
+    description: 'Calculate molarity, molecular weights, solution dilutions, and pH balances.',
+    categorySlug: 'chemistry',
+    introduction: 'Compute chemical stoichiometry, solution concentrations, molar masses, and reaction parameters accurately.',
+    faqs: [
+      { q: "What is molarity?", a: "Molarity is the concentration of a solution expressed as the number of moles of solute per liter of solution." }
     ],
     guides: []
   }
